@@ -25,7 +25,7 @@ exclude_patterns = [                    # means: do not treat these as source fo
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 html_logo = "_static/svg/favicon.svg"
-html_favicon = "_static/svg/favicon.svg"
+html_favicon = "_static/png/Logos_&_Icons/sphinx-favicon.png"
 html_title = "Portfolio"
 today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified
 html_show_sourcelink = True         # Sphinx’s built‑in page-source link
@@ -70,6 +70,7 @@ html_theme_options = {
     "pygments_light_style": "default",    
 }
 
+'''
 
 # ======================================================================
 # -------- Custom roles ------------------------------------------------
@@ -80,7 +81,7 @@ rst_prolog = (            # See custom role definitions in the _snippets folder
     Path(__file__).parent / "_snippets" / "rst_prolog.rst"
 ).read_text(encoding="utf-8")
 
-
+'''
 
 # =========================================================================
 # --- Extensions ----------------------------------------------------------
@@ -147,7 +148,7 @@ mermaid_init_js = """
 """
 
 
-
+'''
 
 # ============================================================================
 # ---- Substitution definitions ----------------------------------------------
@@ -156,14 +157,11 @@ mermaid_init_js = """
 rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
 
 
-
+'''
 # ============================================================================
 # --- Disabled (jinja2 templating for landing page) --------------------------
 # ============================================================================
 
-'''
-
-'''
 html_sidebars = {                     # makes left sidebar show on landing page
     "index": [        
         "sidebar-nav-bs.html",

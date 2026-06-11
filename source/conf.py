@@ -17,8 +17,7 @@ release = '0.1'
 # ===========================================================
 
 templates_path = ["_templates"]
-exclude_patterns = [                    # means: do not treat these as source folders
-    '_build',
+exclude_patterns = [                    # means: do not treat these as source folders    
     '_stash/**',
     '_snippets/**',
 ]

@@ -25,11 +25,11 @@ exclude_patterns = [                    # means: do not treat these as source fo
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 html_logo = "_static/svg/favicon.svg"
-html_favicon = "_static/png/Logos_&_Icons/sphinx-favicon.png"
+html_favicon = "_static/png/logos_&_icons/sphinx-favicon.png"
 html_title = "Portfolio"
 today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified
-html_show_sourcelink = True         # Sphinx’s built‑in page-source link
-html_copy_source = True             # default, but kept explicit
+# html_show_sourcelink = True         # Sphinx’s built‑in page-source link
+# html_copy_source = True             # default, but kept explicit
 html_sidebars = {                   # Landing page is full-width. Primary sidebar kept only for interior pages (theme defaults).
     "index": [],
 }

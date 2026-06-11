@@ -22,8 +22,23 @@ exclude_patterns = [                    # means: do not treat these as source fo
    '_snippets/**',
 ]
 
+html_theme = 'pydata_sphinx_theme'
+html_static_path = ['_static']
+html_logo = "_static/svg/favicon.svg"
+html_favicon = "_static/svg/favicon.svg"
+html_title = "Portfolio"
+today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified
+html_show_sourcelink = True         # Sphinx’s built‑in page-source link
+html_copy_source = True             # default, but kept explicit
+html_sidebars = {                   # Landing page is full-width. Primary sidebar kept only for interior pages (theme defaults).
+    "index": [],
+}
+
+extensions = [
+   "sphinx.ext.githubpages",
+]
+
 '''
-html_static_path = ["_static"]
 html_css_files = [
     "css/custom.css",                   # general site-wide custom rules (both global and classes)
     "css/landing-page.css",             # custom rules scoped to landing page
@@ -38,28 +53,7 @@ html_js_files = [
     "js/sidebar-wip-dim.js",             # class you can apply to pages in development to dim their sidebar links
     "js/mermaid-fullscreen-zoom.js",
 ]
-
-html_logo = "_static/png/Logos_&_Icons/unicef_logo.png"
-html_favicon = "_static/svg/favicon.svg"
-html_title = "POA Documentation"
-today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified
-html_show_sourcelink = True         # Sphinx’s built‑in page-source link
-html_copy_source = True             # default, but kept explicit
-html_sidebars = {                   # Landing page is full-width. Primary sidebar kept only for interior pages (theme defaults).
-    "index": [],
-}
 '''
-
-extensions = [
-   "sphinx.ext.githubpages",
-]
-
-
-# -- Options for HTML output -------------------------------------------------
-
-html_theme = 'pydata_sphinx_theme'
-html_static_path = ['_static']
-
 
 
 '''
@@ -143,8 +137,6 @@ mermaid_init_config = {
 }
 
 # The 1.1.0 version relied on mermaid_init_js:
-
-
 
 mermaid_init_js = """
     mermaid.initialize({

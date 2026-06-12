@@ -24,6 +24,20 @@ exclude_patterns = [                    # means: do not treat these as source fo
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+html_theme_options = {
+    "navigation_with_keys": True,           # allow navigation with 'arrows' on keyboard
+    "navbar_start": ["navbar-logo"],        # on the very left of the top bar
+    "navbar_center": ["navbar-nav"],
+    "navbar_persistent": ["search-field"],  # on the right of the top bar
+    "search_bar_text": "Search...",
+    "navbar_align": "content",              # section links on top are centrally aligned
+    "show_toc_level": 3,
+    "pygments_light_style": "default",
+    "logo": {
+        "text": "Péter Komáromy",
+        "alt_text": "Péter Komáromy - Home",
+    },
+}
 html_logo = "_static/png/Logos_&_Icons/logo.png"
 html_favicon = "_static/png/Logos_&_Icons/sphinx-favicon.png"
 html_title = "Portfolio"
@@ -62,12 +76,12 @@ html_js_files = [
 # -- Options for HTML output -------------------------------------------------
 
 html_theme_options = {
-    "navigation_with_keys": True,           # allow navigation with 'arrows' on keyboard
-    "navbar_start": ["navbar-logo"],        # on the very left of the top bar
+    "navigation_with_keys": True,           
+    "navbar_start": ["navbar-logo"],        
     "navbar_center": ["navbar-nav"],    
-    "navbar_persistent": ["search-field"],  # on the right of the top bar
+    "navbar_persistent": ["search-field"],  
     "search_bar_text": "Search...",    
-    "navbar_align": "content",              # section links on top are centrally aligned
+    "navbar_align": "content",              
     "show_toc_level": 3,
     "pygments_light_style": "default",    
 }

@@ -14,6 +14,7 @@
 
    <style>
       h1.gdw-hero-title, p.gdw-hero-subtitle { text-align: center; }
+      .gdw-hero-inner.docutils { padding-top: 15px; }
       .gdw-landing .sd-card.gdw-hero>.sd-card-body { text-align: center; }
       .gdw-landing .gdw-meta { text-align: center; justify-content: center !important;}
       .bd-main .bd-content .bd-article-container .bd-article { padding-left: 0 !important; padding-top: 1.5rem !important; }
@@ -22,7 +23,7 @@
       .bd-page-width { max-width: 100%; }
       html[data-theme="light"] { --card-title-color: #004080; } html[data-theme="dark"] {--card-title-color: #6195c9; }
       .sd-card-title { color: var(--card-title-color); }
-      .gdw-profile-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; display: block; }
+      .gdw-profile-photo { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; object-fit: cover; margin: 0 auto 1rem auto; display: block; }
    </style>
     
 

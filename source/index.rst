@@ -108,7 +108,7 @@
          :shadow: sm
          :class-card: sd-rounded-2
          
-         Lineage context, source logic, technical notes, and data dictionary patterns.
+         Lineage context, source logic, and data dictionary patterns.
 
          :dead-link:`Open data documentation`
 
@@ -116,7 +116,7 @@
          :shadow: sm
          :class-card: sd-rounded-2
          
-         Procedures, concepts, reference material, troubleshooting notes, and rewrite examples.
+         Procedures, concepts, references, and rewrite examples.
 
          :dead-link:`Open writing samples`
 
@@ -124,7 +124,7 @@
          :shadow: sm
          :class-card: sd-rounded-2
          
-         Sphinx, GitHub Pages, version control, and static documentation publishing.
+         Sphinx, GitHub Pages, and version-controlled publishing.
 
          :dead-link:`Open docs-as-code`
       

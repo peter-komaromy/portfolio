@@ -1,0 +1,492 @@
+/* =============================================================
+   ---- Custom rules for sphinx-datatables extension -----------
+   ============================================================= */
+
+
+/* DataTables v2 controls spacing (PyData theme override) */
+.dt-container .dt-length,
+.dt-container .dt-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.dt-container .dt-length label,
+.dt-container .dt-search label {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.dt-container .dt-length select,
+.dt-container .dt-search input {
+    margin: 0;
+}
+
+/* Give PyData focus rings room inside the DataTables top controls row */
+.pst-scrollable-table-container .dt-container>.dt-layout-row:first-child {
+    padding: 0.25rem 0.25rem 0;
+    /* ~4px side + top */
+    box-sizing: border-box;
+}
+
+
+/* 1) Normalize DataTables typography to match the tighter datatables.net look */
+.dt-container {
+    font-size: 0.875rem;
+    /* ~14px if your base is 16px */
+    line-height: 1.25;
+}
+
+/* 2) Tighten header height and keep icons vertically centered */
+.dt-container table.dataTable thead th,
+.dt-container table.dataTable thead td {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    line-height: 1.25 !important;
+    vertical-align: middle !important;
+}
+
+.dt-container .dt-column-header {
+    align-items: center !important;
+}
+
+/* 3) Stop theme button styling from inflating ColumnControl header icon buttons */
+.dt-container button.dtcc-button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    min-height: 0;
+    line-height: 1;
+    font: inherit;
+}
+
+.dt-container button.dtcc-button svg {
+    display: block;
+    /* removes baseline whitespace that can add “mystery” height */
+}
+
+/* 4) Stop theme list/button spacing from inflating ColumnControl dropdown contents */
+.dt-container .dtcc-dropdown {
+    font-size: inherit;
+    line-height: 1.25;
+}
+
+.dt-container .dtcc-dropdown :is(p, ul, ol) {
+    margin: 0;
+}
+
+.dt-container .dtcc-dropdown :is(ul, ol) {
+    padding: 0;
+}
+
+.dt-container .dtcc-dropdown li {
+    margin: 0;
+}
+
+.dt-container .dtcc-dropdown button {
+    padding: 0.25rem 0.5rem;
+    line-height: 1.25;
+}
+
+/* Sphinx/docutils puts <p> (and sometimes other blocks) inside table cells.
+   PyData gives them margins, which breaks DataTables header/control alignment. */
+.dt-container table.dataTable :is(th, td)> :is(p, ul, ol, dl) {
+    margin: 0;
+}
+
+/* Also catch the wrapped header title area */
+.dt-container table.dataTable thead :is(th, td) .dt-column-title> :is(p, ul, ol, dl) {
+    margin: 0;
+}
+
+/* Keep line-height consistent so icons align with text */
+.dt-container table.dataTable thead :is(th, td),
+.dt-container table.dataTable thead :is(th, td) .dt-column-title {
+    line-height: 1.25;
+}
+
+/* Make ColumnControl menus denser without shrinking the actual table */
+.dt-container .dtcc-dropdown {
+    font-size: 0.675rem;
+    line-height: 1;
+}
+
+.dt-container .dtcc-dropdown :is(button, input, select, label) {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Optional: tighter click targets inside the menu */
+.dt-container .dtcc-dropdown button {
+    padding: 0.25rem 0.5rem;
+}
+
+
+
+/* ---------- Responsive chevron placement (inline details) ---------- */
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    border-left: 10px solid var(--blue);
+}
+
+/* Ensure the control cell creates a positioning context and reserves space for the chevron */
+.dt-container table.dataTable.dtr-inline.collapsed>tbody>tr> :is(td, th).dtr-control {
+    position: relative !important;
+    padding-left: 1.75rem !important;
+    /* space for chevron */
+    cursor: pointer;
+}
+
+/* Force the chevron pseudo-element to be absolutely positioned and vertically centered */
+.dt-container table.dataTable.dtr-inline.collapsed>tbody>tr> :is(td, th).dtr-control::before {
+    position: absolute !important;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+}
+
+/* allow ellipsis to work in the control column */
+.dt-container table.dataTable.dtr-inline.collapsed>tbody>tr> :is(td, th).dtr-control>p {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0;
+}
+
+
+/* ---------- Responsive details row layout (title and data side-by-side) ---------- */
+
+.dt-container table.dataTable ul.dtr-details {
+    margin: 0;
+    padding: 0;
+}
+
+.dt-container table.dataTable ul.dtr-details>li {
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+}
+
+.dt-container table.dataTable ul.dtr-details>li>span.dtr-title {
+    flex: 0 0 auto;
+    min-width: 8rem;
+    /* tune */
+    font-weight: 600;
+}
+
+.dt-container table.dataTable ul.dtr-details>li>span.dtr-data {
+    flex: 1 1 auto;
+}
+
+/* Critical: Responsive copies your header/cell HTML, which often contains <p>.
+   Flatten those blocks so they don't force line breaks / margins inside the spans. */
+.dt-container table.dataTable ul.dtr-details :is(.dtr-title, .dtr-data)> :is(p, ul, ol, dl) {
+    margin: 0;
+}
+
+.dt-container table.dataTable ul.dtr-details :is(.dtr-title, .dtr-data)>p {
+    display: inline;
+}
+
+
+
+/* ---------- Row hover (force hover background onto cells, not just tr) ---------- */
+
+/* Hover highlight only for “real” rows, not Responsive child/detail rows */
+.dt-container table.dataTable.display tbody tr:not(.child):hover>*,
+.dt-container table.dataTable.hover tbody tr:not(.child):hover>* {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Ensure child rows never get a hover background (belt-and-suspenders) */
+.dt-container table.dataTable tbody tr.child:hover>* {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    --bs-table-accent-bg: transparent !important;
+    /* if Bootstrap accent bg is involved */
+}
+
+/* Neutralise Bootstrap’s .table defaults specifically for DataTables tables */
+.dt-container table.dataTable.table> :not(caption)>*>* {
+    padding: 0.5rem 0.75rem;
+}
+
+
+/* ================================================================ */
+
+/* Disable PyData’s scroll wrapper for DataTables, without widening the page */
+.pst-scrollable-table-container:has(> .dt-container),
+.pst-scrollable-table-container:has(> .dataTables_wrapper),
+.pst-scrollable-table-container:has(> table.dataTable) {
+    overflow: visible;
+
+    /* critical: stop the wrapper itself from adding horizontal overflow */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+}
+
+/* ================================================================= */
+
+
+
+/* Do not highlight the Responsive child/details row when its parent row is hovered */
+.dt-container table.dataTable tbody tr:not(.child):hover+tr.child,
+.dt-container table.dataTable tbody tr:not(.child):hover+tr.child>* {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    --bs-table-accent-bg: transparent !important;
+}
+
+/* Keep child rows neutral even if something else targets them */
+.dt-container table.dataTable tbody tr.child,
+.dt-container table.dataTable tbody tr.child>* {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    --bs-table-accent-bg: transparent !important;
+}
+
+
+/* ---------------------------------------------------------------------- */
+
+/* 1) Undo nowrap in the Responsive child row only */
+.dt-container table.dataTable.nowrap tr.child>td {
+    white-space: normal !important;
+}
+
+/* 2) Ensure the detail values can actually wrap and shrink in your flex layout */
+.dt-container table.dataTable ul.dtr-details>li>span.dtr-data {
+    min-width: 0;
+    /* critical for flex items with long content */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    /* break long tokens (IDs, etc.) */
+    word-break: break-word;
+    /* fallback */
+}
+
+/* 3) If your “inline-code” styling prevents wrapping, override it in details */
+.dt-container table.dataTable tr.child :is(code, .inline-code) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* ============================================================
+   --- Constrain "Data Origin & Logic" column -----------------
+   ============================================================ */
+
+/* When the column is visible in the main table */
+.dt-container table.dataTable td.dt-origin-logic .sd-tab-set {
+    max-width: 60%;
+}
+
+/* When the column is hidden and shown via Responsive child row (index shown below) */
+.dt-container table.dataTable tr.child ul.dtr-details>li[data-dt-column="5"]>span.dtr-data {
+    max-width: 60%;
+}
+
+/* Ensure prose wraps inside that constrained area */
+.dt-container table.dataTable td.dt-origin-logic .sd-tab-content,
+.dt-container table.dataTable tr.child ul.dtr-details>li[data-dt-column="5"] .sd-tab-content {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Code blocks: do NOT wrap. Horizontal scroll instead. */
+.dt-container table.dataTable td.dt-origin-logic :is(pre, .highlight),
+.dt-container table.dataTable tr.child ul.dtr-details>li[data-dt-column="5"] :is(pre, .highlight) {
+    white-space: pre;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Tabs: compact labels inside DataTables only when explicitly marked */
+.dt-container .sd-tab-set.dt-tabs-compact .sd-tab-label {
+    font-size: inherit;
+    /* match the DataTables cell font size */
+    line-height: 1.25;
+}
+
+/* Optional: if the labels still look “too tall”, tighten padding */
+.dt-container .sd-tab-set.dt-tabs-compact .sd-tab-label {
+    padding: 0.25rem 0.5rem;
+}
+
+
+
+/* ============================================================
+   DataTables header + borders (dark blue accent)
+   ============================================================ */
+
+html[data-theme="light"] {
+    --blue: #004080;
+}
+
+html[data-theme="dark"] {
+    --blue: #6195c9;
+}
+
+:root {
+    --dt-accent-blue: #004080;
+    /* dark blue */
+}
+
+/* 2px dark-blue top border on header */
+.dt-container table.dataTable thead {
+    border-top: 4px solid var(--blue) !important;
+}
+
+/* 2px dark-blue bottom border on table body */
+.dt-container table.dataTable tbody {
+    border-bottom: 4px solid var(--blue) !important;
+}
+
+/* Header text (including docutils <p> wrapper) */
+.dt-container table.dataTable thead :is(th, td),
+.dt-container table.dataTable thead :is(th, td) :is(p, span) {
+    color: var(--blue) !important;
+}
+
+/* Header icons use currentColor, so set color on the icon containers */
+.dt-container table.dataTable thead .dt-column-header,
+.dt-container table.dataTable thead .dtcc,
+.dt-container table.dataTable thead .dtcc-button,
+.dt-container table.dataTable thead .dtcc-button-icon,
+.dt-container table.dataTable thead svg {
+    color: var(--blue) !important;
+}
+
+/* Ensure SVG strokes follow currentColor (your icons use stroke="currentColor") */
+.dt-container table.dataTable thead svg {
+    stroke: currentColor !important;
+}
+
+/* Hidden-column labels shown in Responsive child rows */
+.dt-container table.dataTable tr.child ul.dtr-details>li>span.dtr-title,
+.dt-container table.dataTable tr.child ul.dtr-details>li>span.dtr-title :is(p, span) {
+    color: var(--blue) !important;
+}
+
+
+
+/* ---- Open icon ---------------------- */
+
+button.colref-open-icon {
+    border: 0;
+    background: transparent;
+    padding: 0 0.125rem;
+    color: var(--blue);
+    line-height: 1;
+}
+
+button.colref-open-icon:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------TRUNCATION -------------------------------------------------- */
+
+.dt-container table.dataTable tbody td.dt-trunc> :is(p, span, code, ul, ol, dl) {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+
+/* Column-specific max widths
+.dt-container table.dataTable tbody td.dt-botname> :is(p, ul, ol, dl) {
+    max-width: var(--colref-botname-max, 25rem);
+}
+
+.dt-container table.dataTable tbody td.dt-functionality> :is(p, ul, ol, dl) {
+    max-width: var(--colref-functionality-max, 35rem);
+}
+
+.dt-container table.dataTable tbody td.dt-attended> :is(p, ul, ol, dl) {
+    max-width: var(--colref-attended-max, 5rem);
+}
+
+.dt-container table.dataTable tbody td.dt-schedule> :is(p, ul, ol, dl) {
+    max-width: var(--colref-schedule-max, 14rem);
+}
+
+.dt-container table.dataTable tbody td.dt-host> :is(p, ul, ol, dl) {
+    max-width: var(--colref-host-max, 40rem);
+}
+
+.dt-container table.dataTable tbody td.dt-systems> :is(p, ul, ol, dl) {
+    max-width: var(--colref-systems-max, 40rem);
+}
+
+.dt-container table.dataTable tbody td.dt-accounts> :is(p, ul, ol, dl) {
+    max-width: var(--colref-accounts-max, 40rem);
+}
+
+.dt-container table.dataTable tbody td.dt-rolerights> :is(p, ul, ol, dl) {
+    max-width: var(--colref-rolerights-max, 40rem);
+} */
+
+/* ============================================================
+   ColRef DataTables: no horizontal overflow for profile tables.
+   Fixes long inline <code> and other tokens spilling outside <td>.
+   ============================================================ */
+
+/* table never becomes wider than its container */
+.dt-container table.dataTable.dt-fixed {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed;
+}
+
+
+/* DataTables v2 uses layout wrappers that can overflow without this. */
+.dt-container :is(.dt-layout-row, .dt-layout-cell) {
+    min-width: 0;
+}
+
+/* Lock colref tables to their container width. */
+.dt-container table.dataTable.dt-profile-table8,
+.dt-container table.dataTable.dt-profile-perf {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed;
+}
+
+/* Never allow main-row cells to paint outside their column. */
+.dt-container table.dataTable:is(.dt-profile-table8, .dt-profile-perf) tbody tr:not(.child)> :is(td, th) {
+    overflow: hidden;
+}
+
+/* Responsive control cell: your earlier rule sets <p> to inline, which breaks ellipsis.
+   Override it for colref tables. */
+.dt-container table.dataTable.dtr-inline.collapsed>tbody>tr> :is(td, th).dtr-control>p {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Truncate docutils wrappers, including inline code.
+   The !important overrides your rem-based max-width caps. */
+.dt-container table.dataTable:is(.dt-profile-table8, .dt-profile-perf) tbody td.dt-trunc> :is(p, span, code, ul, ol, dl) {
+    display: block;
+    width: 100%;
+    max-width: 100% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

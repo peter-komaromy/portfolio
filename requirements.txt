@@ -1,2 +1,7 @@
 sphinx
 pydata-sphinx-theme
+sphinx-design
+sphinx-copybutton
+sphinx-togglebutton
+sphinx-datatables
+sphinxcontrib-jquery

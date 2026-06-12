@@ -1,0 +1,44 @@
+/* =========================================
+ ----- Ellipsis Styling --------------------
+ -- for the Column reference section -------
+ =========================================== */
+
+/* This is to truncate column names in the left sidebar.
+Needed because some names are too long for the sidebar to contain (e.g., SAP ones)
+and wrapping them would look awkward */
+
+
+/* Keep sidebar items on one line with ellipsis */
+.bd-sidebar-primary nav.bd-links ul.bd-sidenav { display: block !important; }
+.bd-sidebar-primary nav.bd-links ul.bd-sidenav > li { min-width: 0 !important; }
+.bd-sidebar-primary nav.bd-links ul.bd-sidenav > li > a {
+    display: block !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;  /* cancel global word-wrap: break-word */
+    word-break: keep-all !important;
+    hyphens: manual !important;
+}
+
+/* Sidebar field name tooltip — grow horizontally without wrapping */
+.tooltip.fieldref-tip { --bs-tooltip-opacity: 1; }
+
+.tooltip.fieldref-tip .tooltip-inner {
+  /* Make width follow content, not a fixed max */
+    width: max-content;                 /* expand to content width */
+    max-width: min(90vw, 72rem);        /* clamp to viewport so it doesn’t overflow */
+    white-space: nowrap;                /* no wrapping inside the bubble */
+
+    /* Optional niceties */
+    text-align: left;
+    border: 1px solid var(--pst-color-border);
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    font-size: 0.875rem;
+    line-height: 1.35;
+    padding: .35rem .5rem;
+    /* In case PyData forces a background/text color: */
+    background: var(--pst-color-surface);
+    color: var(--pst-color-text-base);
+}

@@ -1,0 +1,1338 @@
+/* CASCADING STYLE SHEET  - CUSTOM */
+
+/* ============================
+   --- General site rule ------
+   ============================ */
+
+/* This is important: without this, the theme's responsiveness doesn't fully work
+.bd-main .bd-content .bd-article-container {
+    max-width: 100%;
+}
+
+.bd-page-width {
+    max-width: 100%;
+} */
+
+
+/* Shrink the PRIMARY sidebar on pages marked with the pst-primary-sidebar-narrow class.
+   Default is ~25% on desktop. 25% * 0.6 = 15% (about 40% narrower). */
+@media (min-width: 960px) {
+    .bd-container__inner:has(.pst-primary-sidebar-narrow) .bd-sidebar-primary {
+        width: 15%;
+        flex: 0 0 15%;
+        min-width: 12rem;
+    }
+}
+
+/*===========================================================================================================================
+  ===========================================================================================================================
+  --------- 2. GENERIC RULES ------------------------------------------------------------------------------------------------
+  ===========================================================================================================================
+  =========================================================================================================================== */
+
+/* Color variables for light and dark mode */
+
+html[data-theme="light"] {
+    --blue: #004080;
+}
+
+html[data-theme="dark"] {
+    --blue: #6195c9;
+}
+
+/* =================================
+   ----- 2.1 Buttonsets ------------
+   ================================= */
+
+:root {
+    --deepblue: #0b3d91;
+    --deepblue-600: #092e6d;
+}
+
+.align-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.align-end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.btn-group-vertical>.btn {
+    margin-top: 0;
+}
+
+.btn-group-vertical>.btn:not(:first-child) {
+    border-top-width: 0;
+}
+
+.btn-group-vertical .btn {
+    text-align: left;
+}
+
+.btn-narrow {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+}
+
+
+.btn-deepblue {
+    color: #fff;
+    background-color: var(--deepblue);
+    border-color: var(--deepblue);
+}
+
+.btn-deepblue:hover,
+.btn-deepblue:active,
+.btn-deepblue.active {
+    color: #fff;
+    background-color: var(--deepblue-600);
+    border-color: var(--deepblue-600);
+}
+
+.btn-deepblue:focus {
+    box-shadow: 0 0 0 .25rem rgba(11, 61, 145, .25);
+}
+
+.btn-outline-deepblue {
+    color: var(--deepblue);
+    border-color: var(--deepblue);
+    background-color: transparent;
+}
+
+.btn-outline-deepblue:hover,
+.btn-check:checked+.btn-outline-deepblue,
+.btn-check:active+.btn-outline-deepblue,
+.btn-outline-deepblue:active,
+.btn-outline-deepblue.active {
+    color: #fff;
+    background-color: var(--deepblue);
+    border-color: var(--deepblue);
+}
+
+.btn-outline-deepblue:focus {
+    box-shadow: 0 0 0 .25rem rgba(11, 61, 145, .25);
+}
+
+
+/* ============================================
+   ------ 2.2 Badges on Buttons ---------------
+   ============================================= */
+
+/* anchor + default padding so text doesn't sit under badges */
+.btn.badge-anchor {
+    position: relative;
+    padding-right: 2.6rem;
+}
+
+/* single-badge case: badge directly under the button */
+.btn.badge-anchor>.gdw-badge {
+    position: absolute;
+    top: .3rem;
+    right: .5rem;
+    pointer-events: none;
+}
+
+/* two-badge case: wrapper positioned; badges flex inside */
+.btn.badge-anchor .gdw-badges {
+    position: absolute;
+    top: .3rem;
+    right: .5rem;
+    display: flex;
+    gap: .25rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* tiny pill style (both single and multi use the same look) */
+.gdw-badge {
+    background: rgb(108, 145, 126);
+    color: #fff;
+    border-radius: 999px;
+    font-size: .60rem;
+    line-height: 1;
+    padding: .15rem .35rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    opacity: .95;
+}
+
+/* more right-space when showing two badges */
+.btn.badge-anchor.has-2-badges {
+    padding-right: 4.2rem;
+}
+
+
+/* ======================================
+   ---- 2.3 Popovers --------------------
+   ====================================== */
+
+.popover {
+    width: 30rem;
+    max-width: 30rem;
+    z-index: 1080;
+}
+
+.popover .popover-body {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Popover look  */
+.popover.pop-deepblue {
+    --bs-popover-border-color: var(--deepblue);
+    --bs-popover-border-width: 4px;
+    --bs-popover-arrow-outer-color: var(--deepblue);
+    --bs-popover-arrow-color: #fff;
+    border: var(--bs-popover-border-width) solid var(--deepblue);
+}
+
+.popover.pop-deepblue .popover-header {
+    background-color: transparent;
+    border-bottom: 0;
+    color: var(--deepblue);
+    margin-top: 0;
+}
+
+/* Remove heading margins inside popovers */
+h3.popover-header {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+}
+
+
+
+
+/*=======================================================================
+  ---- 2.4 Tooltips -----------------------------------------------------
+  ======================================================================= */
+
+.has-bstooltip {
+    border-bottom: 1px dotted var(--pst-color-text-muted);
+    cursor: help;
+}
+
+.tooltip-inner {
+    max-width: 350px;
+}
+
+
+/*=====================================================
+  ---- 2.5 Custom directive (.. callout::) ------------
+  ===================================================== */
+
+.custom-callout-outer {
+    border-left: 4px solid #b2beb5;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.callout-header {
+    display: flex;
+    align-items: center;
+    background-color: #b2beb5;
+    color: black;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.custom-callout-body {
+    padding: 0.75rem;
+    color: #212529;
+    font-size: 18px;
+}
+
+/* if icon needs color: */
+.callout-header svg.svg-inline--fa {
+    font-weight: 300 !important;
+    opacity: 0.5 !important;
+}
+
+/* Make callout stretch vertically inside container */
+.custom-callout-outer {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+
+/************************************************************
+ --- GRID items' horizontal alignment -----------------------
+ ************************************************************/
+
+.sd-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    column-gap: var(--sd-gutter-x) !important;
+    row-gap: var(--sd-gutter-y) !important;
+}
+
+.sd-grid>.sd-col {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.sd-grid>.sd-col>* {
+    flex: 1 !important;
+}
+
+/* Fixes the collapsing .container inside grid-item */
+.sd-row>.sd-col>.container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+/* =======================================
+   ----- 2.6 TABS ------------------------
+   =======================================*/
+
+/* no borders for left/right/bottom of tab content area */
+.sd-tab-content.docutils {
+    padding-top: 30px !important;
+    border-color: #004080 !important;
+}
+
+/* rounded corners for active tabs */
+.sd-tab-set>input:checked+.sd-tab-label {
+    border-radius: 0.6em 0.6em 0 0 !important;
+}
+
+/* Class for nested tab labels (default state) */
+.sd-tab-set.nested-tabs>input+label {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    font-weight: 400;
+}
+
+/* Class for nested tab labels (active/selected) */
+.sd-tab-set.nested-tabs>input:checked+label {
+    color: #004080 !important;
+    font-weight: 400;
+}
+
+/* Keep the tab panel area a constant height across items */
+.tab-stable .sd-tab-content {
+    min-height: 50rem;
+    overflow-anchor: none;
+}
+
+/* Add breathing room so the page bottom doesn't clamp the viewport */
+.tab-stable {
+    margin-bottom: 4rem;
+}
+
+
+/*===========================================================
+     ----------- Main CARD-class -----------------------
+     --- (custom-title & no-bullets + icons) -----------
+  ===========================================================*/
+
+.sd-card-title.custom-title {
+    color: #004080;
+    border-bottom: solid 1px #004080;
+}
+
+.sd-card.no-bullets .sd-card-body {
+    padding-left: 1.8em;
+}
+
+.sd-card.no-bullets .sd-card-body li>p {
+    margin: 0;
+}
+
+/* Remove the paragraph margin Docutils adds inside <li> */
+.sd-card.no-bullets .sd-card-body ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.sd-card.no-bullets .sd-card-body li {
+    position: relative;
+    padding-left: 1.9em;
+}
+
+.sd-card.no-bullets .sd-card-body li :is(svg[data-icon], svg.svg-inline--fa, i.fa-solid, i.fa-regular, i.fa-brands) {
+    position: absolute;
+    left: 0;
+    top: 0.26em;
+    width: 1.2em;
+    color: #004080 !important;
+}
+
+
+/* ==========================================================
+  ----- Other miscellaneous card-classes --------------------
+  =========================================================== */
+
+.sd-container-fluid.sd-mb-4:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* class */
+.sd-card.custom-format .line-block,
+.sd-card.custom-format ul:last-child {
+    margin-bottom: 0;
+}
+
+/* class */
+.sd-card.custom-format {
+    border-left: 4px solid rgb(10, 125, 145);
+}
+
+/* class */
+.sd-card.custom-format-2 {
+    font-size: 18px;
+}
+
+/* class */
+.sd-card.custom-format3 {
+    border-left: 4px solid var(--sd-color-muted-bg) !important;
+}
+
+/* Vertical spacing between stacked cards */
+.sd-row.sd-row-cols-1 {
+    row-gap: 0.7rem !important;
+}
+
+/* Default card text style (applies to all cards unless overridden) */
+.sd-card-text {
+    font-size: 0.9em;
+    text-align: left;
+}
+
+/* Custom background card */
+.sd-card.custom-card {
+    height: 100px !important;
+    max-height: 100px !important;
+    overflow: hidden;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Card body layout override */
+.custom-card .sd-card-body {
+    background-color: transparent !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Override text styling inside custom-card only */
+.custom-card .sd-card-text {
+    color: #004080;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Show pointer cursor and lift on hover */
+a .sd-card {
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+/* hover state */
+a .sd-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* supposed to be preventing card text from overflowing border when zooming in, but doesn't work */
+.sd-card.custom-card {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* same as above */
+.custom-card .sd-card-body {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   -------- 2.8. IMAGES -----------------------------------------------------
+   ==========================================================================*/
+
+/* Caption placed above the bordered image block */
+.img-caption-top {
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.35;
+}
+
+/* Full‑width top/bottom rules with no gap to the image */
+.tb-blue-rule-wide {
+    border-top: 6px solid #0151a2;
+    padding-block: 0;
+    line-height: 0;
+}
+
+.tb-blue-rule-wide img {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+}
+
+/* ================================================
+   ------------- LOGO -----------------------------
+   ================================================*/
+
+/*logo_title*/
+html body .bd-header .navbar-brand .logo__title {
+    color: white !important;
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* Color for TOC-Captions in primary sidebar */
+.bd-sidebar .bd-links .caption-text {
+    color: var(--blue) !important;
+    font-weight: bold;
+}
+
+/*******************************************************************************************/
+
+/* User-Guide-logo Class */
+figure.logo-left {
+    text-align: left !important;
+}
+
+figure.logo-left img {
+    display: inline-block;
+    width: 33%;
+}
+
+/* left nav bar default text disappear */
+.bd-links__title {
+    display: none !important;
+}
+
+/*=================================================================
+  ----- PyData theme: miscellaneous rules --------------------------
+  =================================================================*/
+
+html {
+    font-size: clamp(16px, 1.2vw, 20px);
+}
+
+.bd-main {
+    font-size: 1rem;
+}
+
+.bd-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bd-header {
+    background-color: #004080 !important;
+}
+
+.bd-header .navbar-brand a,
+.bd-header .pst-navbar-icon a {
+    color: white !important;
+}
+
+.bd-header ul.navbar-nav li.nav-item .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bd-header .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* All top-level navbar links */
+.bd-header .navbar-nav>.nav-item>.nav-link {
+    color: white !important;
+}
+
+/* The dropdown toggle specifically */
+.bd-header .nav-item.dropdown>.nav-link.dropdown-toggle {
+    color: white !important;
+}
+
+/*==================================================================
+  --------- UNICEF LOGO + PAGE TITLE -------------------------------
+  ==================================================================*/
+
+.bd-header .navbar-brand .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 0.75rem;
+}
+
+.bd-header .navbar-brand .logo__title {
+    align-items: center;
+    font-size: 1.2rem !important;
+    font-weight: 600;
+    white-space: nowrap;
+    color: white !important;
+}
+
+.bd-header .navbar-brand .logo__title:hover {
+    text-decoration: underline;
+    text-decoration-color: white !important;
+}
+
+.pst-navbar-icon svg {
+    color: white !important;
+    fill: white !important;
+}
+
+/*===============================================================================
+  ---- TABLE CLASS 1. (table with one header row) -------------------------------
+  ===============================================================================*/
+
+.grid-table-1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    border-top: 6px solid var(--blue);
+    border-bottom: 6px solid var(--blue);
+    font-size: 18px;
+}
+
+/* Header row */
+.grid-table-1 thead th {
+    color: var(--blue);
+    text-align: left;
+    font-weight: 700;
+    background: transparent !important;
+}
+
+table.grid-table-1 thead tr {
+    background-color: transparent !important;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: transparent;
+}
+
+.table tbody tr:nth-child(2n) {
+    background-color: transparent;
+}
+
+/* 1) Remove default block margins inside table cells (p, ul, etc.) */
+table.grid-table-1 th> :first-child,
+table.grid-table-1 td> :first-child {
+    margin-top: 0;
+}
+
+table.grid-table-1 th> :last-child,
+table.grid-table-1 td> :last-child {
+    margin-bottom: 0;
+}
+
+/* 2) Set minimum row height via the cells (works for header + body)
+   Uses Bootstrap's own cell selector pattern because your table also has class="table". */
+table.grid-table-1.table> :not(caption)>*>* {
+    height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+/* Body rows: one thin rule between rows (no double rules) */
+.grid-table-1 tbody td {
+    border-top: 1px solid #000;
+}
+
+/* Cell basics */
+.grid-table-1 th,
+.grid-table-1 td {
+    padding: 6px;
+    vertical-align: middle;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Code inside cells wraps sensibly */
+.grid-table-1 td code,
+.grid-table-1 th code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Second column tweak */
+.grid-table-1 td:nth-child(2) {
+    padding-right: 15px;
+}
+
+
+
+/*==============================================================================
+  ----- TABLE CLASS 2. (Table with two header rows) ----------------------------
+  ==============================================================================*/
+
+.grid-table-2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    border-top: 6px solid #004080;
+    border-bottom: 6px solid #004080;
+}
+
+/* Base cell styling */
+.grid-table-2 th,
+.grid-table-2 td {
+    padding: 6px;
+    vertical-align: middle;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Header block */
+.grid-table-2 thead th {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Alignment: first header row centered, second row left */
+.grid-table-2 thead tr:first-child th {
+    text-align: center;
+}
+
+.grid-table-2 thead tr:nth-child(2) th {
+    text-align: left;
+}
+
+.grid-table-2 thead tr:last-child th {
+    border-bottom: 1px solid #000;
+}
+
+/* Draw the 1px separator above the second header row */
+.grid-table-2 thead tr:nth-child(2) th {
+    border-top: 1px solid #000;
+}
+
+/* …except above columns 1–3 (as in your original design) */
+.grid-table-2 thead tr:nth-child(2) th:nth-child(-n+3) {
+    border-top: 0;
+}
+
+/* Body rows: single 1px rule between rows */
+.grid-table-2 tbody td {
+    border-top: 1px solid #0000;
+}
+
+/* No zebra striping */
+.grid-table-2 tr {
+    background: transparent;
+}
+
+/* Code wraps inside cells */
+.grid-table-2 td code,
+.grid-table-2 th code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+
+/****************************************************************************************/
+/****** TABLE CLASS 3. (Table with one header row and Increased line-spacing) **************/
+/****************************************************************************************/
+
+.grid-table-3 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    border-left: none;
+    border-right: none;
+    border-top: 6px solid #004080;
+    border-bottom: 6px solid #004080;
+    font-size: 18px;
+
+}
+
+.grid-table-3 th,
+.grid-table-3 td {
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 6px;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+    vertical-align: middle;
+}
+
+.grid-table-3 th {
+    color: #000000;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #000000;
+}
+
+.grid-table tr:nth-child(odd),
+.grid-table tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.grid-table td code,
+.grid-table th code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+tr td:nth-child(2) {
+    padding-right: 15px;
+    text-align: left;
+}
+
+.grid-table-3 td {
+    line-height: 1.5;
+}
+
+
+/*=================================================================
+ ------ LINKS -----------------------------------------------------
+ ==================================================================*/
+
+/* Scope to links within the main content area */
+.document a:link {
+    font-weight: bold;
+    color: #004080;
+    text-decoration: underline;
+}
+
+/* Visited links within the main content area */
+.document a:visited {
+    font-weight: bold;
+    color: #447888;
+    text-decoration: underline;
+}
+
+/* Mouse over links within the main content area */
+.document a:hover {
+    font-weight: bold;
+    color: #447888;
+    text-decoration: underline;
+}
+
+/* Selected (active) links within the main content area */
+.document a:active {
+    font-weight: bold;
+    color: #447888;
+    text-decoration: underline;
+}
+
+/*==================================================================
+  ------- HEADINGS -------------------------------------------------
+  ==================================================================*/
+
+
+.bd-article h1,
+.bd-article h2,
+.bd-article h3 {
+    color: var(--blue) !important;
+    font-family: "Arial", Helvetica, sans-serif;
+    text-align: left
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+
+/*--- Heading classes ---- */
+
+/* When the page carries the .small-h1 class */
+.small-h1 h1 {
+    font-size: 1.1rem;
+    line-height: 1.25;
+}
+
+.custom-style {
+    color: #436175;
+    font-family: "Arial", Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   --- CONTENT TEXT ----------------------------------------
+   ========================================================= */
+
+body {
+    text-align: left
+}
+
+/* --- Bullet list style types -------------------------- */
+
+.bd-article ul {
+    list-style-type: square;
+}
+
+.bd-article ul ul {
+    list-style-type: circle;
+}
+
+/* --- FOOTNOTES ------------------------------------------ */
+
+.bd-article aside.footnote-list.brackets {
+    font-size: 16px;
+}
+
+/* ---- Blue class ------------------------------------------ */
+
+
+.bd-article .blue {
+    color: var(--blue) !important;
+}
+
+
+/*=================================================
+  ---------SEARCH BAR -----------------------------
+  =================================================*/
+
+.bd-header input[type="search"] {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.9rem;
+    height: 1.8rem;
+    line-height: 1.2;
+}
+
+.navbar-persistent--container input[type="search"] {
+    width: 140px;
+    max-width: 100%;
+}
+
+/*===================================================
+  --------- INLINE CLASSES --------------------------
+  ===================================================*/
+
+.highlight-red {
+    color: #fdf900 !important;
+    background-color: #931504;
+    padding: 2px 4px;
+    font-family: monospace;
+    border-radius: 3px;
+    font-size: 80%;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+}
+
+.highlight-green {
+    color: #fdf900 !important;
+    background-color: #0b9304;
+    padding: 2px 4px;
+    font-family: monospace;
+    border-radius: 3px;
+    font-size: 80%;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+}
+
+.highlight-olive {
+    color: black !important;
+    background-color: #c0dcc0;
+    padding: 2px 4px;
+    font-family: monospace;
+    border-radius: 3px;
+    font-size: 80%;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 1px solid #4b4b4b;
+}
+
+.highlight-ocher {
+    color: #fdf900 !important;
+    background-color: #808000;
+    padding: 2px 4px;
+    font-family: monospace;
+    border-radius: 3px;
+    font-size: 80%;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+}
+
+/*=================================================================
+  ----------- CODE BLOCKS -----------------------------------------
+  =================================================================*/
+
+div.highlight pre,
+table.highlighttable pre {
+    padding-bottom: 25px !important;
+}
+
+/* Code block wrap */
+.rst-content div[class^=highlight] pre {
+    font-size: 12px !important;
+    line-height: 1.4;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 11px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/*Code Block nowrap */
+.code-block-nowrap div[class^=highlight] pre {
+    font-size: 12px !important;
+    line-height: 1.4;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 11px;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+
+/* =============================================================
+   ---- Col. Ref. Landing  -------------------------------------
+   ============================================================= */
+
+
+/* Column Reference landing cards (retargeted from landing-page.css to .colref-card) */
+
+.sd-card.colref-card {
+    transition: border-color .12s ease, box-shadow .12s ease, transform .06s ease;
+    position: relative;
+    border: none;
+
+    /* Badge palette */
+    --gdw-new: rgb(0, 132, 63);
+    --gdw-soon: rgb(108, 145, 126);
+    --gdw-planned: #6B7280;
+}
+
+/* Grid-item-card titles: accent color */
+.sd-card.colref-card .sd-card-title {
+    color: #004080 !important;
+}
+
+/* Keep the same color if a theme wraps the title in a link later */
+.sd-card.colref-card .sd-card-title a,
+.sd-card.colref-card .sd-card-title a:hover,
+.sd-card.colref-card .sd-card-title a:focus {
+    color: #004080 !important;
+}
+
+.sd-card.colref-card:hover,
+.sd-card.colref-card:focus-within {
+    border: #004080 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14), 0 0 0 1px rgba(10, 125, 145, .28) !important;
+}
+
+/* "NEW" badge */
+.sd-card.colref-card.is-new::after {
+    content: "NEW";
+    position: absolute;
+    top: .4rem;
+    right: .45rem;
+    z-index: 1;
+    padding: .2rem .45rem;
+    border-radius: 9999px;
+    background: var(--gdw-new);
+    color: #fff;
+    font-size: .6rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .02em;
+    pointer-events: none;
+}
+
+/* "SOON" badge */
+.sd-card.colref-card.is-soon::after {
+    content: "SOON";
+    position: absolute;
+    top: .4rem;
+    right: .45rem;
+    z-index: 1;
+    padding: .2rem .45rem;
+    border-radius: 9999px;
+    background: var(--gdw-soon);
+    color: #fff;
+    font-size: .6rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .02em;
+    pointer-events: none;
+}
+
+/* "PLANNED" badge */
+.sd-card.colref-card.is-planned::after {
+    content: "PLANNED";
+    position: absolute;
+    top: .4rem;
+    right: .45rem;
+    z-index: 1;
+    padding: .2rem .45rem;
+    border-radius: 9999px;
+    background: var(--gdw-planned);
+    color: #fff;
+    font-size: .6rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .02em;
+    pointer-events: none;
+}
+
+
+
+:root {
+    --colref-ghost-opacity: .50;
+}
+
+/* Dim only direct content containers so we don’t accidentally double-dim nested text */
+.colref-card.is-planned>.sd-card-header,
+.colref-card.is-planned>.sd-card-body,
+.colref-card.is-planned>.sd-card-footer {
+    opacity: var(--colref-ghost-opacity);
+}
+
+
+/* --- WIP dimming -------------------------------- */
+
+/* WIP links: fainter (lower contrast) without shifting to teal/green */
+.bd-sidebar-primary a.reference.internal.colref-wip,
+.bd-sidebar-primary a.reference.internal.colref-wip:visited,
+.bd-sidebar-primary a.reference.internal.colref-wip:hover,
+.bd-sidebar-primary a.reference.internal.colref-wip:focus,
+.bd-sidebar-primary a.reference.internal.colref-wip:focus-visible {
+    color: #6B7280 !important;
+}
+
+/* Modern browsers: dim relative to theme text color (not the link color) */
+@supports (color: color-mix(in srgb, #000, #fff)) {
+
+    .bd-sidebar-primary a.reference.internal.colref-wip,
+    .bd-sidebar-primary a.reference.internal.colref-wip:visited,
+    .bd-sidebar-primary a.reference.internal.colref-wip:hover,
+    .bd-sidebar-primary a.reference.internal.colref-wip:focus,
+    .bd-sidebar-primary a.reference.internal.colref-wip:focus-visible {
+        color: color-mix(in srgb,
+                var(--pst-color-text-muted, var(--pst-color-text-base, #48566B)),
+                var(--pst-color-background, #ffffff) 50%) !important;
+    }
+}
+
+/* =========================================================================
+   ----- Classes -----------------------------------------------------------
+   ========================================================================= */
+
+/* rst-class */
+p.mb-0 {
+    margin-bottom: 0;
+}
+
+html[data-theme="light"] {
+    --blue: #004080;
+}
+
+html[data-theme="dark"] {
+    --blue: #6195c9;
+}
+
+/*class for rst role */
+.bd-article .blue {
+    color: var(--blue) !important;
+}
+
+
+/* class for rst role */
+.blue-bold {
+    color: var(--blue) !important;
+    font-weight: 500;
+}
+
+
+
+/* --------------------------------------- */
+/* rst-class */
+p.para-list {
+    margin-bottom: 0;
+}
+
+p.para-list+ul,
+p.para-list+ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p.para-list+ul li,
+p.para-list+ol li {
+    margin-bottom: 0;
+}
+
+p.para-list+ul li>p,
+p.para-list+ol li>p {
+    margin-bottom: 0;
+}
+
+/* bottom spacing only after last list item */
+p.para-list+ul li:last-child,
+p.para-list+ol li:last-child {
+    margin-bottom: 1.15rem;
+}
+
+/* -------------------------------- */
+
+.sd-card .sd-card-body a.reference.internal[href="#"] {
+    color: var(--pst-color-text-muted, #9aa0a6);
+    text-decoration-color: currentColor;
+    opacity: .50;
+}
+
+
+
+/* =========================================================
+   ---- At a glance icon layout ----------------------------
+   ========================================================= */
+
+.bd-article ul.at-a-glance {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bd-article ul.at-a-glance>li>p {
+    margin: 0;
+}
+
+.bd-article ul.at-a-glance>li {
+    position: relative;
+    padding-left: 1.9em;
+}
+
+/* First icon in the row. This is the "lead" icon */
+.bd-article ul.at-a-glance>li>p> :is(svg[data-icon],
+    svg.svg-inline--fa,
+    i.fa-solid,
+    i.fa-regular,
+    i.fa-brands):first-child {
+    position: absolute;
+    left: 0;
+    top: 0.26em;
+    width: 1.2em;
+    color: var(--blue) !important;
+}
+
+/* Any later icons in the same line stay inline */
+.bd-article ul.at-a-glance>li>p> :is(svg[data-icon],
+    svg.svg-inline--fa,
+    i.fa-solid,
+    i.fa-regular,
+    i.fa-brands):not(:first-child) {
+    display: inline-block;
+    width: 1em;
+    margin-left: 0.45em;
+    margin-right: 0.2em;
+    vertical-align: -0.125em;
+    color: var(--blue) !important;
+}
+
+/* -------------------------------------------------------------- */
+
+.dead-link {
+    color: var(--pst-color-text-muted, #9aa0a6);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    opacity: .50;
+    cursor: default;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* Reusable clone of the landing-page CTA button */
+a.sd-btn.gdw-cta-btn,
+button.sd-btn.gdw-cta-btn {
+    background-color: rgb(108, 145, 126) !important;
+    border-color: rgb(108, 145, 126) !important;
+    color: #fff !important;
+    font-weight: 450 !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    width: auto;
+    min-width: 11rem;
+    max-width: 12rem;
+    gap: .5rem;
+    box-sizing: border-box;
+    line-height: 1.25;
+    font-size: .85rem;
+
+    text-decoration: none !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
+    transition: background-color .12s ease, box-shadow .12s ease, transform .06s ease;
+}
+
+a.sd-btn.gdw-cta-btn:hover,
+a.sd-btn.gdw-cta-btn:focus,
+a.sd-btn.gdw-cta-btn:focus-visible,
+button.sd-btn.gdw-cta-btn:hover,
+button.sd-btn.gdw-cta-btn:focus,
+button.sd-btn.gdw-cta-btn:focus-visible {
+    background-color: #4F5E77 !important;
+    border-color: #4F5E77 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+    transform: translateY(-1px);
+}
+
+a.sd-btn.gdw-cta-btn:active,
+button.sd-btn.gdw-cta-btn:active {
+    background-color: #46546B !important;
+    border-color: #46546B !important;
+    color: #fff !important;
+}
+
+a.sd-btn.gdw-cta-btn .doc,
+a.sd-btn.gdw-cta-btn:hover .doc,
+a.sd-btn.gdw-cta-btn:focus .doc,
+button.sd-btn.gdw-cta-btn .doc,
+button.sd-btn.gdw-cta-btn:hover .doc,
+button.sd-btn.gdw-cta-btn:focus .doc {
+    text-decoration: none !important;
+}
+
+/* ---------------------------------------------------------- */
+
+img.pbi-inline-icon {
+    height: 1em;
+    width: auto;
+    vertical-align: -0.12em;
+    margin-right: 0.25em;
+}

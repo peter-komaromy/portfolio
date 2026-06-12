@@ -1,0 +1,65 @@
+/* =========================================================
+   ---- Mermaid --------------------------------------------
+   ========================================================= */
+
+.mermaid-container>pre>svg {
+    height: auto !important;
+}
+
+/* div.mermaid-container-fullscreen>pre.mermaid>svg {
+	height: auto !important;
+} */
+
+/* Make the modal actually full-screen */
+.mermaid-fullscreen-modal {
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.mermaid-container-fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    padding: 12px !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    width: 100% !important;
+    height: 100% !important;
+    touch-action: none;
+    cursor: grab;
+}
+
+.mermaid-container-fullscreen .mermaid svg:active {
+    cursor: grabbing;
+}
+
+
+.mermaid-container-fullscreen,
+.mermaid-container-fullscreen pre.mermaid,
+.mermaid-container-fullscreen .mermaid svg {
+    background: transparent !important;
+}
+
+.custom-mermaid pre {
+    margin-top: 0em;
+}
+
+.custom-mermaid .mermaid-container>pre {
+    display: contents !important;
+}
+
+.custom-mermaid .mermaid-container {
+    padding-bottom: 2rem;
+}

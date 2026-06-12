@@ -28,8 +28,8 @@ html_logo = "_static/png/Logos_&_Icons/pic1.png"
 html_favicon = "_static/png/Logos_&_Icons/sphinx-favicon.png"
 html_title = "Portfolio"
 today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified
-# html_show_sourcelink = True         # Sphinx’s built‑in page-source link
-# html_copy_source = True             # default, but kept explicit
+# html_show_sourcelink = True       # Sphinx’s built‑in page-source link
+# html_copy_source = True           # default, but kept explicit
 html_sidebars = {                   # Landing page is full-width. Primary sidebar kept only for interior pages (theme defaults).
     "index": [],
 }
@@ -38,7 +38,7 @@ extensions = [
    "sphinx.ext.githubpages",
 ]
 
-'''
+
 html_css_files = [
     "css/custom.css",                   # general site-wide custom rules (both global and classes)
     "css/landing-page.css",             # custom rules scoped to landing page
@@ -46,6 +46,8 @@ html_css_files = [
     "css/datatables_custom.css",        # custom rules for sphinx-datatables
     "css/mermaid-custom.css",
 ]
+
+'''
 html_js_files = [
     "js/fieldref-sidebar-tooltips.js",
     "js/bots-datatables-init.js",        # for interactive tables (sphinx-datatables) to work properly
@@ -81,29 +83,29 @@ rst_prolog = (            # See custom role definitions in the _snippets folder
     Path(__file__).parent / "_snippets" / "rst_prolog.rst"
 ).read_text(encoding="utf-8")
 
-'''
+
 
 # =========================================================================
 # --- Extensions ----------------------------------------------------------
 # =========================================================================
 
-import os
-import sys
-sys.path.insert(0, os.path.abspath("_ext")) # load custom extensions (poa_ext.py)
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath("_ext")) # load custom extensions (poa_ext.py)
 extensions = [
     "sphinx_design",
     "sphinx_copybutton",
     "sphinx_togglebutton",   
     "sphinx_datatables",
-    "sphinxcontrib.jquery",                 # needed for sphinx-datatables
-    "sphinxcontrib.mermaid",
-    "poa_ext",                              # custom extensions
+    "sphinxcontrib.jquery",                 # needed for sphinx-datatables    
+    # "poa_ext",                            # custom extensions
 ]
 
 # ===========================================================================
 # --- Togglebutton & Datatables ---------------------------------------------
 # ===========================================================================
 
+'''
 
 togglebutton_selector = ".toggle, .admonition.dropdown, .admonition.landing-toggle" # needed for these classes to work
 datatables_version = "2.3.5"
@@ -111,42 +113,6 @@ datatables_js  = "js/datatables.min.js"
 datatables_css = "css/datatables.min.css"
 datatables_class = "datatable-disabled" # set to something non-existing which is never used
 datatables_options = "{}"               # string here left empty because we init in bots_datatables_init.js
-
-# ============================================================================
-# ---- Mermaid ---------------------------------------------------------------
-# ============================================================================
-
-
-# For HTML: keep as "raw" (client-side JS rendering)
-# For PDF/LaTeX: switch to "png" and ensure mmdc is installed
-mermaid_output_format = "raw"
-mermaid_fullscreen = True
-mermaid_height = "600px"  # Inline preview
-mermaid_include_elk = True
-mermaid_fullscreen_button = "🔍"
-mermaid_d3_zoom = False  # the extension's built-in pan and wheel-zoom. It adds unlimited zoom both in and out when scroolwheeled and unlimited whitespace all around the image when panned. Disabled here because we need reasonable limits to these functions. To control those limits, custom js is added (see mermaid-fullscreen-zoom.js)
-
-
-# Optional: customize the injected Mermaid.js initialization
-# Useful for setting theme, font, or disabling security restrictions
-# we are on version 2.0.1 which recommends mermaid_init_config:
-mermaid_init_config = {
-    "startOnLoad": False,
-    "sequence": {
-        "useMaxWidth": True,
-    },
-}
-
-# The 1.1.0 version relied on mermaid_init_js:
-
-mermaid_init_js = """
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'default',
-        sequence: { useMaxWidth: true },
-    });
-"""
-
 
 '''
 

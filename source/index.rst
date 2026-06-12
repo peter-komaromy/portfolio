@@ -55,7 +55,7 @@
                      <p class="gdw-hero-role">Technical Writer</p>
                   </div>
                </div>
-               <p class="gdw-hero-copy">Structured documentation for complex data and software workflows.</p>
+               <p class="gdw-hero-copy">Structured documentation for data systems and software workflows.</p>
 
          .. grid:: 2
                :gutter: 4

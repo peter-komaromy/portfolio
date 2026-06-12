@@ -51,9 +51,9 @@
                                     
                <h1 class="gdw-hero-title">DOCUMENTATION SYSTEMS PORTFOLIO</h1>
                <p class="gdw-hero-subtitle">Péter Komáromy, Technical Writer</p>
-               <p class="gdw-hero-subtitle">Data documentation · Information architecture · Docs-as-code UX</p>
+               <p class="gdw-hero-subtitle">Data documentation · Information architecture · Docs-as-Code UX</p>
 
-            I build structured documentation for complex data and software workflows, with emphasis on reader tasks, navigable content models, and maintainable Sphinx publishing.
+            I build structured docs for complex data and software workflows. My work prioritizes reader tasks, clear content models, and maintainable publishing.
 
          .. grid:: 2
                :gutter: 4

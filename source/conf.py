@@ -12,6 +12,7 @@ copyright = '2026, Peter Komaromy'
 author = 'Peter Komaromy'
 release = '0.1'
 
+
 # ===========================================================
 # -- General config and custom assets -----------------------
 # ===========================================================
@@ -21,9 +22,14 @@ exclude_patterns = [                    # means: do not treat these as source fo
    '_stash/**',
    '_snippets/**',
 ]
-
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+
+
+# ===========================================================
+# -- Options for HTML output --------------------------------
+# ===========================================================
+
 html_theme_options = {
     "navigation_with_keys": True,           # allow navigation with 'arrows' on keyboard
     "navbar_start": ["navbar-logo"],        # on the very left of the top bar
@@ -58,7 +64,6 @@ html_css_files = [
     "css/landing-page.css",             # custom rules scoped to landing page
     "css/fieldref-ellipsis.css",        # custom rules for truncating long text in sidebar (only used on DOA portal currently)
     "css/datatables_custom.css",        # custom rules for sphinx-datatables
-    "css/mermaid-custom.css",
 ]
 
 '''
@@ -67,24 +72,14 @@ html_js_files = [
     "js/bots-datatables-init.js",        # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/sidebar-wip-dim.js",             # class you can apply to pages in development to dim their sidebar links
-    "js/mermaid-fullscreen-zoom.js",
 ]
 '''
 
 
 '''
-# -- Options for HTML output -------------------------------------------------
 
-html_theme_options = {
-    "navigation_with_keys": True,           
-    "navbar_start": ["navbar-logo"],        
-    "navbar_center": ["navbar-nav"],    
-    "navbar_persistent": ["search-field"],  
-    "search_bar_text": "Search...",    
-    "navbar_align": "content",              
-    "show_toc_level": 3,
-    "pygments_light_style": "default",    
-}
+
+
 
 '''
 

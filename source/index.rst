@@ -47,7 +47,7 @@
 
             .. raw:: html
 
-               <h1 class="gdw-hero-title">DOCUMENTATION SYSTEMS PORTFOLIO</h1>
+               <h1 class="gdw-hero-title">TECHNICAL WRITING PORTFOLIO</h1>
                <div class="gdw-hero-identity">
                   <img class="gdw-profile-photo" src="_static/png/Logos_&_Icons/pic1.png" alt="Péter Komáromy">
                   <div>

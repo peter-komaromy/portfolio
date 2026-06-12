@@ -13,6 +13,7 @@
 .. raw:: html
 
    <style>
+      .bd-page-width { max-width: 100%; }
       h1.gdw-hero-title, p.gdw-hero-subtitle { text-align: center; }
       .gdw-hero-inner.docutils { padding-top: 15px; }
       .gdw-landing .sd-card.gdw-hero>.sd-card-body { text-align: center; }
@@ -20,7 +21,6 @@
       .bd-main .bd-content .bd-article-container .bd-article { padding-left: 0 !important; padding-top: 1.5rem !important; }
       .sd-container-fluid.sd-sphinx-override.sd-mb-4.docutils { margin-bottom: 1.3rem !important; }
       .bd-main .bd-content .bd-article-container { max-width: 130em;}
-      .bd-page-width { max-width: 100%; }
       html[data-theme="light"] { --card-title-color: #004080; } html[data-theme="dark"] {--card-title-color: #6195c9; }
       .sd-card-title { color: var(--card-title-color); }
       html[data-theme="dark"] .bd-content img.gdw-profile-photo:not(.only-dark, .dark-light) { background-color: transparent; border-radius: 50%;}
@@ -45,17 +45,17 @@
 
          .. div:: gdw-hero-inner
 
-            .. image:: _static/png/Logos_&_Icons/pic1.png
-               :alt: Péter Komáromy
-               :class: gdw-profile-photo
-
             .. raw:: html
-                                    
-               <h1 class="gdw-hero-title">DOCUMENTATION SYSTEMS PORTFOLIO</h1>
-               <p class="gdw-hero-subtitle">Péter Komáromy, Technical Writer</p>
-               <p class="gdw-hero-subtitle">Data documentation · Information architecture · Docs-as-Code UX</p>
 
-            I build structured docs for complex data and software workflows. My work prioritizes reader tasks, clear content models, and maintainable publishing.
+               <h1 class="gdw-hero-title">DOCUMENTATION SYSTEMS PORTFOLIO</h1>
+               <div class="gdw-hero-identity">
+                  <img class="gdw-profile-photo" src="_static/png/Logos_&_Icons/pic1.png" alt="Péter Komáromy">
+                  <div>
+                     <p class="gdw-hero-name">Péter Komáromy</p>
+                     <p class="gdw-hero-role">Technical Writer</p>
+                  </div>
+               </div>
+               <p class="gdw-hero-copy">Structured documentation for complex data and software workflows.</p>
 
          .. grid:: 2
                :gutter: 4

@@ -22,6 +22,7 @@
       .bd-page-width { max-width: 100%; }
       html[data-theme="light"] { --card-title-color: #004080; } html[data-theme="dark"] {--card-title-color: #6195c9; }
       .sd-card-title { color: var(--card-title-color); }
+      .gdw-profile-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; display: block; }
    </style>
     
 
@@ -31,7 +32,7 @@
 
    Péter Komáromy Portfolio
    ========================
-   
+
 .. ------------------------------------------------------------------------------------------
 
 .. div:: gdw-landing
@@ -42,14 +43,17 @@
 
          .. div:: gdw-hero-inner
 
+            .. image:: _static/png/Logos_&_Icons/pic1.png
+               :alt: Péter Komáromy
+               :class: gdw-profile-photo
+
             .. raw:: html
-                                 
-               <h1 class="gdw-hero-title">PÉTER KOMÁROMY PORTFOLIO</h1>
-               <p class="gdw-hero-subtitle">Technical Writer | Data Documentation | Sphinx UX Design</p>
+                                    
+               <h1 class="gdw-hero-title">DOCUMENTATION SYSTEMS PORTFOLIO</h1>
+               <p class="gdw-hero-subtitle">Péter Komáromy, Technical Writer</p>
+               <p class="gdw-hero-subtitle">Data documentation · Information architecture · Docs-as-code UX</p>
 
-            I design documentation for complex technical systems where readers need fast orientation, reliable structure, and enough detail to act.
-
-            This portfolio presents selected case studies, writing samples, documentation design work, and docs-as-code implementation examples.
+            I build structured documentation for complex data and software workflows, with emphasis on reader tasks, navigable content models, and maintainable Sphinx publishing.
 
          .. grid:: 2
                :gutter: 4
@@ -87,7 +91,7 @@
                .. grid-item::
                   :columns: 3
 
-   .. grid:: 1 2 2 3
+   .. grid:: 1 2 2 4
       :gutter: 2
 
       .. grid-item-card:: Documentation Design

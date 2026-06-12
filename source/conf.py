@@ -24,7 +24,7 @@ exclude_patterns = [                    # means: do not treat these as source fo
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
-html_logo = "_static/png/Logos_&_Icons/pic1.png"
+html_logo = "_static/png/Logos_&_Icons/sphinx-favicon.png"
 html_favicon = "_static/png/Logos_&_Icons/sphinx-favicon.png"
 html_title = "Portfolio"
 today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified

@@ -23,6 +23,7 @@
       .bd-page-width { max-width: 100%; }
       html[data-theme="light"] { --card-title-color: #004080; } html[data-theme="dark"] {--card-title-color: #6195c9; }
       .sd-card-title { color: var(--card-title-color); }
+      html[data-theme="dark"] .bd-content img.gdw-profile-photo:not(.only-dark, .dark-light) { background-color: transparent; border-radius: 50%;}
       .gdw-profile-photo { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; object-fit: cover; margin: 0 auto 1rem auto; display: block; }
    </style>
     

@@ -157,27 +157,17 @@
          <a class="gdw-utility__link" href="#" target="_blank" rel="noopener">Contact</a>
 
 .. -----------------------------------------------------------------------------------------
-   .. toctree::
-      :hidden:
-      :includehidden:
-
-      case-studies/index
-      documentation-design/index
-      data-documentation/index
-      writing-samples/index
-      docs-as-code/index
-      about/index
-      cv-contact/index
-
-
+   
 .. toctree::
    :hidden:
    :includehidden:
+   
+   1link/documentation-design
+   2link/data-documentation
+   3link/writing-samples
+   4link/docs-as-code
+   5link/about
 
-   1link/link
-   2link/link
-   3link/link
-   4link/link
-   5link/link
+
 
 

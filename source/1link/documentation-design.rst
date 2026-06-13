@@ -1,3 +1,3 @@
-Documentation Design
-====================
+Docs Design
+===========
 

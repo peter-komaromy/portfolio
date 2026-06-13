@@ -1,3 +1,3 @@
-Docs-as-Code
+Case Studies
 ============
 

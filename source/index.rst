@@ -162,11 +162,9 @@
    :hidden:
    :includehidden:
    
-   1link/documentation-design
-   2link/data-documentation
-   3link/writing-samples
-   4link/docs-as-code
-   5link/about
+   1link/case-studies
+   2link/writing-samples
+   3link/cv
 
 
 

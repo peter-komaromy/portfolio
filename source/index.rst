@@ -49,7 +49,7 @@
 
                <h1 class="gdw-hero-title">TECHNICAL WRITING PORTFOLIO</h1>
                <div class="gdw-hero-identity">
-                  <img class="gdw-profile-photo" src="_static/png/Logos_&_Icons/pic1.png" alt="Péter Komáromy">
+                  <img class="gdw-profile-photo" src="_static/png/Logos_&_Icons/selfpic.png" alt="Péter Komáromy">
                   <div>
                      <p class="gdw-hero-name">Péter Komáromy</p>
                      <p class="gdw-hero-role">Technical Writer</p>
@@ -67,7 +67,7 @@
                   :columns: 2
          
                   .. button-link:: #
-                     :color: secondary
+                     :color: primary
                      :class: sd-mt-2
 
                      View case studies
@@ -76,7 +76,7 @@
                   :columns: 2
 
                   .. button-link:: #
-                     :color: secondary
+                     :color: primary
                      :class: sd-mt-2
 
                      View writing samples
@@ -85,7 +85,7 @@
                   :columns: 2
 
                   .. button-link:: #
-                     :color: secondary
+                     :color: primary
                      :class: sd-mt-2
 
                      Download CV

@@ -27,7 +27,7 @@ Sanitized reconstructions with synthetic names, systems, and values.
 
       Entry points, navigation, onboarding paths, and maintenance links.
 
-      :dead-link:`Open case study`
+      :doc:`Open case study <case-studies/portal-ux>`
 
    .. grid-item-card:: Data Dictionary
       :shadow: sm
@@ -35,7 +35,7 @@ Sanitized reconstructions with synthetic names, systems, and values.
 
       Searchable field documentation with lineage, filters, and notes.
 
-      :dead-link:`Open case study`
+      :doc:`Open case study <case-studies/data-dictionary>`
 
    .. grid-item-card:: Process Docs
       :shadow: sm
@@ -43,7 +43,7 @@ Sanitized reconstructions with synthetic names, systems, and values.
 
       Process logic, data-model context, and task-based procedures.
 
-      :dead-link:`Open case study`
+      :doc:`Open case study <case-studies/process-docs>`
 
 .. toctree::
    :hidden:

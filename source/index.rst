@@ -5,7 +5,6 @@
    - both primary and secondary sidebars removed
    - default title hidden, custom title added
    - wrappers and custom CSS classes applied
-   - existing gdw-* class names preserved intentionally
    - mind that you cannot add comments anywhere within the main <div> directive as it breaks the directive
 
 :html_theme.sidebar_secondary.remove: true

@@ -48,8 +48,6 @@ html_logo = "_static/png/Logos_&_Icons/logo.png"
 html_favicon = "_static/png/Logos_&_Icons/sphinx-favicon.png"
 html_title = "Portfolio"
 today_fmt = "%Y-%m-%d"              # timestamp allowed and yyyy-mm-dd format specified
-# html_show_sourcelink = True       # Sphinx’s built‑in page-source link
-# html_copy_source = True           # default, but kept explicit
 html_sidebars = {                   # Landing page is full-width. Primary sidebar kept only for interior pages (theme defaults).
     "index": [],
 }
@@ -57,17 +55,18 @@ html_css_files = [
     "css/custom.css",                   # general site-wide custom rules (both global and classes)
     "css/landing-page.css",             # custom rules scoped to landing page
     # "css/fieldref-ellipsis.css",      # custom rules for truncating long text in sidebar (only used on DOA portal currently)
-    # "css/datatables_custom.css",        # custom rules for sphinx-datatables
+    "css/datatables_custom.css",        # custom rules for sphinx-datatables
 ]
 
-'''
+
 html_js_files = [
-    "js/fieldref-sidebar-tooltips.js",
-    "js/bots-datatables-init.js",        # for interactive tables (sphinx-datatables) to work properly
+    # "js/fieldref-sidebar-tooltips.js",
+    "js/coref-datatables-init.js",        # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
-    "js/sidebar-wip-dim.js",             # class you can apply to pages in development to dim their sidebar links
+    "js/colref-offcanvas.js",
+    # "js/sidebar-wip-dim.js",             # class you can apply to pages in development to dim their sidebar links
 ]
-'''
+
 
 
 # ======================================================================
@@ -85,25 +84,23 @@ rst_prolog = (
 # --- Extensions ----------------------------------------------------------
 # =========================================================================
 
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath("_ext")) # load custom extensions (poa_ext.py)
+import os
+import sys
+sys.path.insert(0, os.path.abspath("_ext")) # load custom extensions
 extensions = [
     "sphinx.ext.githubpages",
     "sphinx_design",
     "sphinx_copybutton",
-    # "sphinx_togglebutton",   
-    # "sphinx_datatables",
-    # "sphinxcontrib.jquery",               # needed for sphinx-datatables    
-    # "poa_ext",                            # custom extensions
+    "sphinx_togglebutton",
+    "sphinx_datatables",
+    "sphinxcontrib.jquery",               # needed for sphinx-datatables
+    "poa_ext",                            # custom extensions
 ]
 
 
 # ===========================================================================
 # --- Togglebutton & Datatables ---------------------------------------------
 # ===========================================================================
-
-'''
 
 togglebutton_selector = ".toggle, .admonition.dropdown, .admonition.landing-toggle" # needed for these classes to work
 datatables_version = "2.3.5"
@@ -112,7 +109,6 @@ datatables_css = "css/datatables.min.css"
 datatables_class = "datatable-disabled" # set to something non-existing which is never used
 datatables_options = "{}"               # string here left empty because we init in bots_datatables_init.js
 
-'''
 
 # ============================================================================
 # ---- Substitution definitions ----------------------------------------------
@@ -120,3 +116,8 @@ datatables_options = "{}"               # string here left empty because we init
 
 rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
 
+
+
+# === NOTES ==========================================================
+# html_show_sourcelink = True       # Sphinx’s built‑in page-source link
+# html_copy_source = True           # default, but kept explicit

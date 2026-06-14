@@ -15,7 +15,7 @@
 
 
 /* Shrink the PRIMARY sidebar on pages marked with the pst-primary-sidebar-narrow class.
-   Default is ~25% on desktop. 25% * 0.6 = 15% (about 40% narrower). */
+   Default is ~25% on desktop. 25% * 0.6 = 15% (about 40% narrower). 
 @media (min-width: 960px) {
     .bd-container__inner:has(.pst-primary-sidebar-narrow) .bd-sidebar-primary {
         width: 15%;
@@ -536,7 +536,7 @@ figure.logo-left img {
   =================================================================*/
 
 html {
-    font-size: clamp(16px, 1.2vw, 20px);
+    font-size: 16px;
 }
 
 .bd-main {

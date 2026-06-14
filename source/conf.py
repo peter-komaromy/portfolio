@@ -92,9 +92,9 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx_design",
     "sphinx_copybutton",
-    "sphinx_togglebutton",   
-    "sphinx_datatables",
-    "sphinxcontrib.jquery",                 # needed for sphinx-datatables    
+    # "sphinx_togglebutton",   
+    # "sphinx_datatables",
+    # "sphinxcontrib.jquery",                 # needed for sphinx-datatables    
     # "poa_ext",                            # custom extensions
 ]
 

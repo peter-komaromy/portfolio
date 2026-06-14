@@ -94,7 +94,7 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_datatables",
     "sphinxcontrib.jquery",               # needed for sphinx-datatables
-    "poa_ext",                            # custom extensions
+    "gdw_ext",                            # custom extensions
 ]
 
 

@@ -94,16 +94,9 @@ extensions = [
     "sphinx_copybutton",
     # "sphinx_togglebutton",   
     # "sphinx_datatables",
-    # "sphinxcontrib.jquery",                 # needed for sphinx-datatables    
+    # "sphinxcontrib.jquery",               # needed for sphinx-datatables    
     # "poa_ext",                            # custom extensions
 ]
-
-
-# ============================================================================
-# ---- Substitution definitions ----------------------------------------------
-# ============================================================================
-
-rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
 
 
 # ===========================================================================
@@ -121,5 +114,9 @@ datatables_options = "{}"               # string here left empty because we init
 
 '''
 
+# ============================================================================
+# ---- Substitution definitions ----------------------------------------------
+# ============================================================================
 
+rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
 

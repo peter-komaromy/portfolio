@@ -15,19 +15,15 @@
 
 
 /* Shrink the PRIMARY sidebar on pages marked with the pst-primary-sidebar-narrow class.
-   Default is ~25% on desktop. 25% * 0.6 = 15% (about 40% narrower). 
+   Default is ~25% on desktop. 25% * 0.6 = 15% (about 40% narrower). */
 @media (min-width: 960px) {
     .bd-container__inner:has(.pst-primary-sidebar-narrow) .bd-sidebar-primary {
         width: 15%;
         flex: 0 0 15%;
         min-width: 12rem;
     }
-} */
-
-#pst-collapse-sidebar-button {
-    visibility: hidden !important;
-    pointer-events: none !important;
 }
+
 
 
 /*===========================================================================================================================

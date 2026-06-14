@@ -54,10 +54,10 @@ html_sidebars = {                   # Landing page is full-width. Primary sideba
     "index": [],
 }
 html_css_files = [
-    "css/custom.css",                   # general site-wide custom rules (both global and classes)
-    "css/landing-page.css",             # custom rules scoped to landing page
-    "css/fieldref-ellipsis.css",        # custom rules for truncating long text in sidebar (only used on DOA portal currently)
-    "css/datatables_custom.css",        # custom rules for sphinx-datatables
+    # "css/custom.css",                   # general site-wide custom rules (both global and classes)
+    # "css/landing-page.css",             # custom rules scoped to landing page
+    # "css/fieldref-ellipsis.css",      # custom rules for truncating long text in sidebar (only used on DOA portal currently)
+    # "css/datatables_custom.css",        # custom rules for sphinx-datatables
 ]
 
 '''

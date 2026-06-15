@@ -3,5 +3,5 @@ pydata-sphinx-theme
 sphinx-design
 sphinx-copybutton
 sphinx-togglebutton
-sphinx-datatables==0.5.0
+sphinx-datatables==1.0.0
 sphinxcontrib-jquery

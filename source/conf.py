@@ -61,9 +61,9 @@ html_css_files = [
 
 html_js_files = [
     #"js/fieldref-sidebar-tooltips.js",
-    #"js/colref-datatables-init.js",      # for interactive tables (sphinx-datatables) to work properly
-    #"js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
-    #"js/colref-offcanvas.js",
+    "js/colref-datatables-init.js",      # for interactive tables (sphinx-datatables) to work properly
+    "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
+    "js/colref-offcanvas.js",
     #"js/sidebar-wip-dim.js",           # class you can apply to pages in development to dim their sidebar links
 ]
 
@@ -101,21 +101,11 @@ extensions = [
 # ===========================================================================
 
 togglebutton_selector = ".toggle, .admonition.dropdown, .admonition.landing-toggle" # needed for these classes to work
-datatables_version = "2.3.5"
+datatables_version = "2.3.8"
 datatables_js  = "js/datatables.min.js"
 datatables_css = "css/datatables.min.css"
-#datatables_class = "sphinx-datatable"    # set to something non-existing which is never used
-#datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
-
-datatables_class = "sphinx-datatable"
-datatables_options = """
-{
-  paging: true,
-  searching: true,
-  info: true,
-  ordering: true
-}
-"""
+datatables_class = "datatable-disabled" # set to something non-existing which is never used
+datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
 
 '''
 datatables_class = "sphinx-datatable"

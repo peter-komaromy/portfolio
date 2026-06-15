@@ -452,27 +452,26 @@ button.colref-open-icon:hover {
     table-layout: fixed;
 }
 
-
 /* DataTables v2 uses layout wrappers that can overflow without this. */
 .dt-container :is(.dt-layout-row, .dt-layout-cell) {
     min-width: 0;
 }
 
-/* Lock colref tables to their container width. */
-.dt-container table.dataTable.dt-profile-table8,
-.dt-container table.dataTable.dt-profile-perf {
+
+/* ============================================================
+   ColRef DataTables: fixed visible columns + truncation
+   ============================================================ */
+
+.dt-container table.dataTable:is(.dt-profile-colref7, .dt-profile-perf, .dt-profile-perf5) {
     width: 100% !important;
     max-width: 100% !important;
-    table-layout: fixed;
+    table-layout: fixed !important;
 }
 
-/* Never allow main-row cells to paint outside their column. */
-.dt-container table.dataTable:is(.dt-profile-table8, .dt-profile-perf) tbody tr:not(.child)> :is(td, th) {
+.dt-container table.dataTable:is(.dt-profile-colref7, .dt-profile-perf, .dt-profile-perf5) tbody tr:not(.child)> :is(td, th) {
     overflow: hidden;
 }
 
-/* Responsive control cell: your earlier rule sets <p> to inline, which breaks ellipsis.
-   Override it for colref tables. */
 .dt-container table.dataTable.dtr-inline.collapsed>tbody>tr> :is(td, th).dtr-control>p {
     display: block;
     width: 100%;
@@ -480,9 +479,7 @@ button.colref-open-icon:hover {
     margin: 0;
 }
 
-/* Truncate docutils wrappers, including inline code.
-   The !important overrides your rem-based max-width caps. */
-.dt-container table.dataTable:is(.dt-profile-table8, .dt-profile-perf) tbody td.dt-trunc> :is(p, span, code, ul, ol, dl) {
+.dt-container table.dataTable:is(.dt-profile-colref7, .dt-profile-perf, .dt-profile-perf5) tbody td.dt-trunc> :is(p, span, code, ul, ol, dl) {
     display: block;
     width: 100%;
     max-width: 100% !important;

@@ -60,8 +60,8 @@ html_css_files = [
 
 
 html_js_files = [
-    # "js/fieldref-sidebar-tooltips.js",
-    "js/colref-datatables-init.js",       # for interactive tables (sphinx-datatables) to work properly
+    "js/fieldref-sidebar-tooltips.js",
+    "js/colref-datatables-init.js",      # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/colref-offcanvas.js",
     # "js/sidebar-wip-dim.js",           # class you can apply to pages in development to dim their sidebar links

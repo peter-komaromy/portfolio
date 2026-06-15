@@ -109,52 +109,21 @@ datatables_css = "css/datatables.min.css"
 
 datatables_class = "sphinx-datatable"
 
-datatables_options = {
-    "autoWidth": False,
-    "order": [],
-    "responsive": True,
-    "columnControl": [
-        "order",
-        ["search", "spacer", "orderAsc", "orderDesc", "orderClear"],
-    ],
-    "ordering": {
-        "indicators": False,
-    },
-    "columns": [
-        {"width": "39%"},
-        {"width": "29%"},
-        {"width": "16%"},
-        {"width": "16%"},
-        {},
-        {},
-        {},
-    ],
-    "columnDefs": [
-        {"targets": 0, "responsivePriority": 1, "className": "dt-trunc dt-colname"},
-        {"targets": 1, "responsivePriority": 2, "className": "dt-trunc dt-definition"},
-        {
-            "targets": 2,
-            "responsivePriority": 3,
-            "className": "dt-trunc dt-samples",
-            "columnControl": [
-                "order",
-                ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"],
-            ],
-        },
-        {
-            "targets": 3,
-            "responsivePriority": 4,
-            "className": "dt-trunc dt-sourcesys",
-            "columnControl": [
-                "order",
-                ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"],
-            ],
-        },
-        {"targets": 4, "className": "none"},
-        {"targets": 5, "className": "none"},
-        {"targets": 6, "className": "none"},
-    ],
+datatables_options = """
+{
+  autoWidth: false,
+  order: [],
+  responsive: true,
+  columnControl: [
+    "order",
+    ["search", "spacer", "orderAsc", "orderDesc", "orderClear"]
+  ],
+  ordering: {
+    indicators: false
+  }
 }
+"""
+
 
 # ============================================================================
 # ---- Substitution definitions ----------------------------------------------

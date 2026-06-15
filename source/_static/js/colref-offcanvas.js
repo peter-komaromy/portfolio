@@ -368,7 +368,7 @@
         }
 
         // Run per tab (each “case type” is a tab). If there are no tabs (single-definition
-        // pages like Mart_Trips), treat the detail container as the one “tab”.
+        // pages like DM_Trips), treat the detail container as the one “tab”.
         const tabs = detailEl.querySelectorAll(".sd-tab-content");
         const tabTargets = tabs.length ? Array.from(tabs) : [detailEl];
 

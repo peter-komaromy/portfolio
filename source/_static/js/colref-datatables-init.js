@@ -33,21 +33,23 @@
         return !!(el && el.classList && el.classList.contains(cls));
     }
 
+// =====================================================================================
+
     function detectProfile(table) {
         // Explicit per-page override via table class
         if (hasClass(table, "dt-profile-perf")) return "perf6";
-        if (hasClass(table, "dt-profile-colref7")) return "colref7";
-        if (hasClass(table, "dt-profile-perf5")) return "perf5";
+        if (hasClass(table, "dt-profile-colref7")) return "colref7";        
 
         // Fallback auto-detect by column count
         const thCount = table.querySelectorAll("thead th").length;
         if (thCount === 6) return "perf6";
-        if (thCount === 7) return "colref7";
-        if (thCount === 5) return "perf5";
+        if (thCount === 7) return "colref7";        
 
         // Safe default
         return "colref7";
     }
+
+// =======================================================================================
 
     function markReady(table) {
         table.classList.add(READY_CLASS);
@@ -89,9 +91,14 @@
             },
         };
 
+// =====================================================================================================================
+
         const profiles = {
-            // 7-column colref pages (Mart_Person, Mart_Trips):
+            // 7-column colref pages (DM_Person, DM_Trips):
             // 0 ColName, 1 Def, 2 Samples, 3 SourceSys, 4 SourceTable, 5 Remark, 6 TechNotes
+            
+            // ------------------------------------------------------------------------------
+
             colref7: {
                 // Fixed widths for the 4 visible columns. Columns 4–6 are forced into Responsive child rows via className: "none".
                 columns: [
@@ -126,6 +133,8 @@
                     { targets: 6, className: "none" }, // Technical Notes
                 ],
             },
+
+            // -------------------------------------------------------------------------
 
             // 6-column performance pages:
             // 0 ColName, 1 Def, 2 Samples, 3 SourceSys, 4 Remark, 5 DataOriginLogic
@@ -162,6 +171,8 @@
                 ],
             }, 
         };
+
+// =======================================================================================================================
 
         const profile = detectProfile(table);
         const opts = jQuery.extend(true, {}, base, profiles[profile] || {});

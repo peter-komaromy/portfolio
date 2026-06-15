@@ -16,18 +16,18 @@
 .. rst-class:: pst-primary-sidebar-narrow
 
 
-Mart_Vendors
+DM_Vendors
 ============
 
 **Column Reference**
 
 |br|
 
-Filter with header icons > Expand row toggles for hidden fields > Click truncated text or  :fas:`circle-info;sd-text-info`  for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides>`. \| To contribute, use the |ColRef_Excel_Link_Mart_Vendors|.
+Filter with header icons > Expand row toggles for hidden fields > Click truncated text or  :fas:`circle-info;sd-text-info`  for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides>`. \| To contribute, use the |ColRef_Excel_Link_DM_Vendors|.
 
 
 .. =================================================================================================================
-.. --- Mart_Vendors Col. Ref. ---------------------------------------------------------------------------------------
+.. --- DM_Vendors Col. Ref. ---------------------------------------------------------------------------------------
 .. =================================================================================================================
 
 
@@ -557,7 +557,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - 
 
     * - LFA1.Extract_Timestamp
-      - Date and time when the vendor record was extracted into the Mart_Vendors.
+      - Date and time when the vendor record was extracted into the DM_Vendors.
       - ``2025-06-10 15:37:50.000``
       - SAP
       - LFA1

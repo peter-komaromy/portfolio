@@ -8,8 +8,8 @@
 # ==================================================
 
 project = 'Portfolio'
-copyright = '2026, Peter Komaromy'
-author = 'Peter Komaromy'
+copyright = '2026, Péter Komáromy'
+author = 'Péter Komáromy'
 release = '0.1'
 
 
@@ -61,12 +61,11 @@ html_css_files = [
 
 html_js_files = [
     # "js/fieldref-sidebar-tooltips.js",
-    "js/coref-datatables-init.js",        # for interactive tables (sphinx-datatables) to work properly
+    "js/coref-datatables-init.js",       # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/colref-offcanvas.js",
-    # "js/sidebar-wip-dim.js",             # class you can apply to pages in development to dim their sidebar links
+    # "js/sidebar-wip-dim.js",           # class you can apply to pages in development to dim their sidebar links
 ]
-
 
 
 # ======================================================================
@@ -77,7 +76,6 @@ from pathlib import Path
 rst_prolog = (
     Path(__file__).parent / "_snippets" / "rst_prolog.rst"
 ).read_text(encoding="utf-8")
-
 
 
 # =========================================================================
@@ -117,7 +115,7 @@ datatables_options = "{}"               # string here left empty because we init
 rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
 
 
-
 # === NOTES ==========================================================
+
 # html_show_sourcelink = True       # Sphinx’s built‑in page-source link
 # html_copy_source = True           # default, but kept explicit

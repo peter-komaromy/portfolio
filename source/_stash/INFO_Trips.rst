@@ -15,17 +15,17 @@
 
 .. rst-class:: pst-primary-sidebar-narrow
 
-Mart_Trips
+DM_Trips
 ==========
 
 **Column Reference**
 
 |br|
 
-Filter with header icons > Expand row toggles for hidden fields > Click truncated text or :fas:`circle-info;sd-text-info` for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides>`. \| To contribute, use the |ColRef_Excel_Link_Mart_Trips|.
+Filter with header icons > Expand row toggles for hidden fields > Click truncated text or :fas:`circle-info;sd-text-info` for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides>`. \| To contribute, use the |ColRef_Excel_Link_DM_Trips|.
 
 .. =================================================================================================================
-.. --- Mart_Trips Col. Ref. ----------------------------------------------------------------------------------------
+.. --- DM_Trips Col. Ref. ----------------------------------------------------------------------------------------
 .. =================================================================================================================
 
 .. list-table::
@@ -618,7 +618,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
     * - PTRV_HEAD.Extract_Timestamp
-      - Date and time when the trip header record was extracted from SAP into Mart_Trips.
+      - Date and time when the trip header record was extracted from SAP into DM_Trips.
       - ``2025-01-03 00:09:40.000``
       - SAP
       - PTRV_HEAD (General Trip Data)
@@ -639,7 +639,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.SNAME_Employee’s Name (Sortable by LAST NAME FIRST NAME)
       - The traveller's sortable full name (LAST NAME FIRST NAME)
@@ -647,7 +647,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0002.MIDNM_Middle Name
       - The traveller's middle name.
@@ -655,7 +655,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0002 HR Master Record (Personal Data)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0002.NACHN_Last Name
       - The traveller's last name.
@@ -663,7 +663,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0002 HR Master Record (Personal Data)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person```
+      - Inserted unchanged from ``DM.DM_Person```
 
     * - PA0002.NATIO_Nationality
       - Code for the traveller's nationality.
@@ -671,7 +671,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0002 HR Master Record (Personal Data)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0002.VORNA_First Name
       - The traveller's first name
@@ -679,7 +679,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0002 HR Master Record (Personal Data)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0105-0010.USRID_LONG_Communication: Long Identification/Number
       - The traveller's CLIENT email address
@@ -687,7 +687,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0105-0010 HR Master Record (Communications)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0000.STAT2_Employment Status
       - Shows whether the traveller has active's employment status 
@@ -695,7 +695,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0000 HR Master Record (Actions)
       - ``3`` = active, ``0`` = not active
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0016.CTTYP_Contract Type:T547S.CTTXT_Text for contract type (Contract Elements infotype)
       - Name of the traveller's contract type.
@@ -703,7 +703,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0016 HR Master Record (Contract Elements)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0008.TRFGR_Pay Scale Group
       - Code for the traveller's post level.
@@ -711,7 +711,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0008 HR Master Record (Basic Pay)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.PERSG_Employee Group
       - Code for the traveller's employee group.
@@ -719,7 +719,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.PERSG_Employee Group:T501T.PTEXT_Name of Employee Group
       - Nem of the traveller's employee group
@@ -727,7 +727,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.PERSK_Employee Subgroup
       - Code for the traveller's employee subgroup.
@@ -735,7 +735,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.PERSK_Employee Subgroup:T503T.PTEXT_Name of Employee Subgroup
       - Nem of the traveller's employee subgroup
@@ -743,7 +743,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.PLANS_Position
       - Code for the traveller's post.
@@ -751,7 +751,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.PLANS_Position:HRP1000.STEXT_Object Name
       - Name of the traveller's post title.
@@ -759,7 +759,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.WERKS_Personnel Area
       - Code for the traveller's personnel area.
@@ -767,7 +767,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.WERKS_Personnel Area:T500P.NAME1_Personnel Area Text
       - Nem of the traveller's personnel area
@@ -775,7 +775,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.BTRTL_Personnel Subarea
       - Code for the traveller's personnel subarea.
@@ -783,7 +783,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.BTRTL_Personnel Subarea:T001P.BTEXT_Personnel Subarea Text
       - Name of the traveller's personnel subarea
@@ -791,7 +791,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.ORGEH_Organizational Unit
       - Code for the traveller's organizational unit.
@@ -799,7 +799,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.ORGEH_Organizational Unit:T527X.ORGTX_Short Text of Organizational Unit
       - Name of the traveller's organizational unit
@@ -807,7 +807,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.GSBER_Service Area PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
       - Code for the traveller's Service Area.
@@ -815,7 +815,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
       - Name of the traveller's Service Area.
@@ -823,7 +823,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0001 HR Master Record (Organizational Assignment)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - PA0077.FUNC_TITLE_Comment
       - Free-text comment to describe the traveller's function or title.
@@ -831,7 +831,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - PA0077 HR Master Record (Additional Personal Data)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - LFA1.LIFNR_Account Number of Vendor or Creditor
       - Vendor account number in the traveller's SAP vendor master record.
@@ -839,7 +839,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - LFA1 Vendor Master (General)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - LFA1.NAME1_Name 1
       - Vendor name in the traveller's SAP vendor master record.
@@ -847,7 +847,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - SAP
       - LFA1 Vendor Master (General)
       - N/A
-      - Inserted unchanged from ``Mart.Mart_Person``
+      - Inserted unchanged from ``DM.DM_Person``
 
     * - LFA1.KTOKK_Supplier Account Group
       - Code for the vendor's supplier account group.
@@ -1494,7 +1494,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 AND s.[EXP_TYPE_Travel Expense Type] LIKE 'Z___'
                 AND TRY_CAST(RIGHT(s.[EXP_TYPE_Travel Expense Type], 2) AS int) IS NOT NULL
         )
-        FROM Mart.Mart_Trips AS t;
+        FROM DM.DM_Trips AS t;
 
 .. =====================================================================================================
 
@@ -1511,7 +1511,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (First)] = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (First) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 1;
@@ -1531,7 +1531,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Second)] = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Second) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 2;
@@ -1551,7 +1551,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Third)] = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Third) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 3;
@@ -1571,7 +1571,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Forth)] = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Forth) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 4;
@@ -1593,7 +1593,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Fifth)] = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Fifth) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 5;
@@ -1637,7 +1637,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
         )
-        FROM Mart.Mart_Trips t;
+        FROM DM.DM_Trips t;
 
 .. =====================================================================================================
 
@@ -1678,7 +1678,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
         )
-        FROM Mart.Mart_Trips t;
+        FROM DM.DM_Trips t;
 
 .. =====================================================================================================
 
@@ -1719,7 +1719,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
         )
-        FROM Mart.Mart_Trips t;
+        FROM DM.DM_Trips t;
 
 .. =====================================================================================================
 
@@ -1760,7 +1760,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
         )
-        FROM Mart.Mart_Trips t;
+        FROM DM.DM_Trips t;
 
         -- Note that SP spells Fourth as 'Forth'
 
@@ -1803,7 +1803,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
         )
-        FROM Mart.Mart_Trips t;
+        FROM DM.DM_Trips t;
 
 .. =====================================================================================================
 
@@ -1824,7 +1824,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (First)]      = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (First) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 1;
@@ -1848,7 +1848,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Second)]      = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Second) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 2;
@@ -1872,7 +1872,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Third)]      = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Third) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 3;
@@ -1896,7 +1896,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Forth)]      = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Forth) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 4;
@@ -1922,7 +1922,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         UPDATE t
         SET t.[TR-Agent: (Fifth)]      = b.[EXP_TYPE_Travel Expense Type],
             t.[TR-Agent: (Fifth) Name] = b.[SPTXT_Name of Travel Expense Type]
-        FROM Mart.Mart_Trips t
+        FROM DM.DM_Trips t
         JOIN [temp].SREC_TR_Agent b
             ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
             AND b.RowNum = 5;
@@ -1939,7 +1939,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
     .. code-block:: tsql
         
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- TR-Agent] = (
             SELECT
                 ROUND(
@@ -1960,7 +1960,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[tcurr_to-currency] = 'USD'
-                AND b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] LIKE 'Z___'
                 AND TRY_CAST(RIGHT(b.[EXP_TYPE_Travel Expense Type], 2) AS int) IS NOT NULL
             WHERE 1 = 1
@@ -1972,16 +1972,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_TERM
     :title: PTRV_SREC.EXP_TYPE > TERM - Terminal
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
     
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- TERM - Terminal] =
         (
             SELECT
@@ -2004,7 +2004,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'TERM'
         );
 
@@ -2014,16 +2014,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_GR2%
     :title: PTRV_SREC.EXP_TYPE > GR2% - 2% Carbon Offsetting
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
     
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- GR2% - 2% Carbon Offsetting] =
         (
             SELECT
@@ -2046,7 +2046,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'GR2%'
         );     
 
@@ -2055,16 +2055,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_ZMSC
     :title: PTRV_SREC.EXP_TYPE > ZMSC - Miscellaneous Trav. Expenses
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
     
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- ZMSC - Miscellaneous Trav. Expenses] =
         (
             SELECT
@@ -2087,7 +2087,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'ZMSC'
         ); 
 
@@ -2096,16 +2096,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_AIRP
     :title: PTRV_SREC.EXP_TYPE > AIRP - Airfare (Paid by CLIENT NYHO)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
     
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
     
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- AIRP - Airfare (Paid by CLIENT NYHO)] =
         (
             SELECT
@@ -2128,7 +2128,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'AIRP'
         );     
 
@@ -2137,16 +2137,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_ZENT
     :title: PTRV_SREC.EXP_TYPE > ZENT - Staff Entitlement Expenses
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
     
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- ZENT - Staff Entitlement Expenses - Staff Entitlement Expenses] =
         (
             SELECT
@@ -2169,7 +2169,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'ZENT'
         );     
 
@@ -2178,16 +2178,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_AIR
     :title: PTRV_SREC.EXP_TYPE > AIR - Airfare (Paid by Person/Lump)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- AIR - Airfare (Paid by Person/Lump)] =
         (
             SELECT
@@ -2210,7 +2210,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'AIR'
         );     
 
@@ -2219,16 +2219,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_HOTL
     :title: PTRV_SREC.EXP_TYPE > HOTL - Hotel
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- HOTL - Hotel] =
         (
             SELECT
@@ -2251,7 +2251,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'HOTL'
         );     
 
@@ -2260,16 +2260,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_GR2E
     :title: PTRV_SREC.EXP_TYPE > GR2E - 2% Carbon Offset - Entl IP
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- GR2E - 2% Carbon Offset - Entl IP] =
         (
             SELECT
@@ -2292,7 +2292,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'GR2E'
         );     
 
@@ -2301,16 +2301,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_GR1E
     :title: PTRV_SREC.EXP_TYPE > GR1E - 1% Acces. Premise Entl IP
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- GR1E - 1% Acces. Premise Entl IP] =
         (
             SELECT
@@ -2333,7 +2333,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'GR1E'
         );     
 
@@ -2342,16 +2342,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_AIRT
     :title: PTRV_SREC.EXP_TYPE > AIRT - Airport Tax
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- AIRT - Airport Tax] =
         (
             SELECT
@@ -2374,7 +2374,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'AIRT'
         );     
 
@@ -2383,16 +2383,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_AGNV
     :title: PTRV_SREC.EXP_TYPE > AGNV - Airfare (Paid by CLIENT GVA)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- AGNV - Airfare (Paid by CLIENT GVA)] =
         (
             SELECT
@@ -2415,7 +2415,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'AGNV'
         );     
 
@@ -2424,16 +2424,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_VIPA
     :title: PTRV_SREC.EXP_TYPE > VIPA - VISA/Passport
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- VIPA - VISA/Passport] =
         (
             SELECT
@@ -2456,7 +2456,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'VIPA'
         );     
 
@@ -2465,16 +2465,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_AUTO
     :title: PTRV_SREC.EXP_TYPE > AUTO - Local Car Hire
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- AUTO - Local Car Hire] =
         (
             SELECT
@@ -2497,7 +2497,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'AUTO'
         );     
 
@@ -2506,16 +2506,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_MED
     :title: PTRV_SREC.EXP_TYPE > MED - Medical Srvcs (Vaccine, Etc.)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- MED - Medical Srvcs (Vaccine, Etc.)] =
         (
             SELECT
@@ -2538,7 +2538,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'MED'
         );     
 
@@ -2547,16 +2547,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_ZCAR
     :title: PTRV_SREC.EXP_TYPE > ZCAR - Personal Vehicle/Mileage
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- ZCAR - Personal Vehicle/Mileage] =
         (
             SELECT
@@ -2579,7 +2579,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'ZCAR'
         );     
 
@@ -2588,16 +2588,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_ACPH
     :title: PTRV_SREC.EXP_TYPE > ACPH - Airfare (Paid by CLIENT CPH)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- ACPH - Airfare (Paid by CLIENT CPH)] =
         (
             SELECT
@@ -2620,7 +2620,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'ACPH'
         );     
 
@@ -2629,16 +2629,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_EXBG
     :title: PTRV_SREC.EXP_TYPE > EXBG - Excess Baggage
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- EXBG - Excess Baggage] =
         (
             SELECT
@@ -2661,7 +2661,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'EXBG'
         );     
 
@@ -2670,16 +2670,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_TELE
     :title: PTRV_SREC.EXP_TYPE > TELE - Telecommunication
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- TELE - Telecommunication] =
         (
             SELECT
@@ -2702,7 +2702,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'TELE'
         );     
 
@@ -2711,16 +2711,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_DNGR
     :title: PTRV_SREC.EXP_TYPE > DNGR - Danger Pay
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- DNGR - Danger Pay] =
         (
             SELECT
@@ -2743,7 +2743,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'DNGR'
         );
 
@@ -2752,16 +2752,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_GR1L
     :title: PTRV_SREC.EXP_TYPE > GR1L - 1% Acces. Premise Entl LS
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- GR1L - 1% Acces. Premise Entl LS] =
         (
             SELECT
@@ -2784,7 +2784,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'GR1L'
         );     
 
@@ -2793,16 +2793,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_GR2L
     :title: PTRV_SREC.EXP_TYPE > GR2L - 2% Carbon Offset - Entl LS
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- GR2L - 2% Carbon Offset - Entl LS] =
         (
             SELECT
@@ -2825,7 +2825,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'GR2L'
         );     
 
@@ -2834,16 +2834,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_OTRN
     :title: PTRV_SREC.EXP_TYPE > OTRN - Other Transpo. (Train, Etc.)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- OTRN - Other Transpo. (Train, Etc.)] =
         (
             SELECT
@@ -2866,7 +2866,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'OTRN'
         );     
 
@@ -2875,16 +2875,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_FCUV
     :title: PTRV_SREC.EXP_TYPE > FCUV - Fuel Cost (CLIENT Vehicle)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- FCUV - Fuel Cost (CLIENT Vehicle)] =
         (
             SELECT
@@ -2907,7 +2907,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'FCUV'
         );     
 
@@ -2916,16 +2916,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_SEAL
     :title: PTRV_SREC.EXP_TYPE > SEAL - Security Escort Allowance
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- SEAL - Security Escort Allowance] =
         (
             SELECT
@@ -2948,7 +2948,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'SEAL'
         );     
 
@@ -2957,16 +2957,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_AIRS
     :title: PTRV_SREC.EXP_TYPE > AIRS - Airfare (Self-Ticketing)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- AIRS - Airfare (Self-Ticketing)] =
         (
             SELECT
@@ -2989,7 +2989,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'AIRS'
         );     
 
@@ -2998,16 +2998,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_CPCK
     :title: PTRV_SREC.EXP_TYPE > CPCK - Conference Package
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- CPCK - Conference Package] =
         (
             SELECT
@@ -3030,7 +3030,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'CPCK'
         );     
 
@@ -3039,16 +3039,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_MOMS
     :title: PTRV_SREC.EXP_TYPE > MOMS - Airfare Additional Tax (CPH)
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- MOMS - Airfare Additional Tax (CPH)] =
         (
             SELECT
@@ -3071,7 +3071,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'MOMS'
         );     
 
@@ -3080,16 +3080,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_CFEE
     :title: PTRV_SREC.EXP_TYPE > CFEE - Conference Registration Fee
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- CFEE - Conference Registration Fee] =
         (
             SELECT
@@ -3112,7 +3112,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'CFEE'
         );     
 
@@ -3121,16 +3121,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_SEAT
     :title: PTRV_SREC.EXP_TYPE > SEAT - Seat Selection
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- SEAT - Seat Selection] =
         (
             SELECT
@@ -3153,7 +3153,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'SEAT'
         );     
 
@@ -3162,16 +3162,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_CRHI
     :title: PTRV_SREC.EXP_TYPE > CRHI - Conference Room Hire
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- CRHI - Conference Room Hire] =
         (
             SELECT
@@ -3194,7 +3194,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'CRHI'
         );     
 
@@ -3203,16 +3203,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. colref-detail:: trips_YCPH
     :title: PTRV_SREC.EXP_TYPE > YCPH - CPH: SN Brussels Airlines
 
-    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``Mart_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
 
     - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
     - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
-    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``Mart.p_Mart_Trips_FX``).
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
     - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
 
     .. code-block:: tsql
 
-        UPDATE Mart.Mart_Trips
+        UPDATE DM.DM_Trips
         SET [PTRV_SREC.EXP_TYPE -- YCPH - CPH] =
         (
             SELECT
@@ -3235,7 +3235,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
                 AND r.[KURST_Exchange rate type] = 'M'
                 AND r.[TCURR_To-currency] = 'USD'
-            WHERE b.[REINR_Trip Number] = Mart_Trips.[PTRV_HEAD.REINR_Trip Number]
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
                 AND b.[EXP_TYPE_Travel Expense Type] = 'YCPH'
         );     
 

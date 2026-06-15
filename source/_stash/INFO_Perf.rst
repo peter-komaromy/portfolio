@@ -13,14 +13,14 @@
 
 .. rst-class:: pst-primary-sidebar-narrow
 
-Mart_Performance
+DM_Performance
 ================
 
 **Column Reference**
 
 |br|
 
-Filter with header icons > Expand row toggles for hidden fields > Click truncated text or :fas:`circle-info;sd-text-info` for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides>`. \| To contribute, use the |ColRef_Excel_Link_Mart_Perf|.
+Filter with header icons > Expand row toggles for hidden fields > Click truncated text or :fas:`circle-info;sd-text-info` for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides>`. \| To contribute, use the |ColRef_Excel_Link_DM_Perf|.
 
 .. =================================================================================================================
 .. --- Header ------------------------------------------------------------------------------------------------------
@@ -1068,7 +1068,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases            
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.number]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.number]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s number.
             - :fa:`filter` *Filter:* Include cases with the specified HR case types; exclude cases with blank case numbers, cancelled or blank status, and 'Demo Quality Assurance' service.
@@ -1077,7 +1077,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -1097,7 +1097,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 
         .. tab-item:: SG Inc 
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.number]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.number]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s number from the incident record.
             - :fa:`filter` *Filter:* Excludes incidents where both ``[task.state.sys_choice]`` and ``[incident.incident_state.sys_choice]`` are cancelled.
@@ -1106,7 +1106,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     
                 SELECT
                     [task.number] AS [Case Number]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -1133,7 +1133,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -1168,7 +1168,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.number];[contract_sla.name]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.number];[contract_sla.name]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:*
             - :fa:`filter` *Filter:*
@@ -1192,11 +1192,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             'RAS HRBP-', ''
                         ) AS Modified_SLA_Name
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;  
+                    DM.dbo.DM_SG_RAS;  
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Requisition Action]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Requisition Action]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:*
             - :fa:`filter` *Filter:*            
@@ -1206,7 +1206,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT
                     [Requisition Action] 
                 FROM
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -1239,7 +1239,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.u_business_area:shc_business_area.u_name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.u_Service_Area:shc_Service_Area.u_name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]``
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Use the case’s Service Area name to look up the business-area code in the TGSBT list.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -1248,10 +1248,10 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 
                 SELECT DISTINCT
                     T.[GSBER_Service Area] AS [Service Area - Code]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SAP_raw.dbo.TGSBT AS T
                     ON T.[GTEXT_Service Area description]
-                    = REPLACE(S.[shc_case.u_business_area:shc_business_area.u_name], 'Ã¼', 'ü')
+                    = REPLACE(S.[shc_case.u_Service_Area:shc_Service_Area.u_name], 'Ã¼', 'ü')
                 WHERE S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
                     AND (
@@ -1270,14 +1270,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Subject Person - PERNR]; Mart_Performance.[Case Open Date]`` → ``SAP_raw.dbo.PA0001.[GSBER_Service Area]``; ``Mart_Performance.[Service Area - Name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Subject Person - PERNR]; DM_Performance.[Case Open Date]`` → ``SAP_raw.dbo.PA0001.[GSBER_Service Area]``; ``DM_Performance.[Service Area - Name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]``
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Use the subject person and the case open date to pick the date‑effective GSBER code from PA0001; if still empty, use the business‑area name to look up the GSBER code in TGSBT.
             - :fa:`filter` *Filter:* Includes incidents with case numbers starting ``'INC'``; leaves out non‑incidents.
 
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Service Area - Code] = J.[GSBER_Service Area]
                 FROM (
                     SELECT [PERNR_Personnel number], [GSBER_Service Area], [BEGDA_Start Date], [ENDDA_End Date]
@@ -1287,7 +1287,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND [Subject Person - PERNR] = J.[PERNR_Personnel number]
                     AND [Case Open Date] BETWEEN J.[BEGDA_Start Date] AND J.[ENDDA_End Date];
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Service Area - Code] = [GSBER_Service Area]
                 FROM SAP_raw.dbo.TGSBT WITH (TABLOCK)
                 WHERE [Service Area - Name] = [GTEXT_Service Area description]
@@ -1296,7 +1296,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 
         .. tab-item:: SG Trv
 
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-task].[task.sys_id]`` → ``SN_raw.dbo.x_adsr_unall_travel_case.[u_business_area_code]``
+            - :fa:`database` *Lineage:* ``SN.dbo.[10-task].[task.sys_id]`` → ``SN_raw.dbo.x_adsr_unall_travel_case.[u_Service_Area_code]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the travel case’s business‑area code from the travel case extract.
             - :fa:`filter` *Filter:* Include records with TRV prefix, Demo assignment group, created ≥ 2024-03-11, and with linked Travel SLA; leave out 'Cancelled' or blank and no close date.
@@ -1304,7 +1304,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             .. code-block:: tsql
 
                 SELECT DISTINCT
-                    J.u_business_area_code AS [Service Area - Code]
+                    J.u_Service_Area_code AS [Service Area - Code]
                 FROM SN.dbo.[10-task] AS M
                 INNER JOIN SN.dbo.[10-task_sla] AS J2
                     ON M.[task.sys_id] = J2.[task_sla.task.value]
@@ -1319,7 +1319,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -1329,7 +1329,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG CIC
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.sn_hr_core_business_area.[u_name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]`` .
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.sn_hr_core_Service_Area.[u_name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]`` .
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Look up the SAP Service Area code in the TGSBT table.
             - :fa:`filter` *Filter:* Includes records where number starts with 'CIC'; leaves out records where status contains 'Cancel'/'Read'.
@@ -1341,8 +1341,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM SN.dbo.[10-task] AS M
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_invoices AS I
                     ON M.[task.sys_id] = I.sys_id
-                LEFT JOIN SN_raw.dbo.sn_hr_core_business_area AS BA
-                    ON I.[business_area.value] = BA.sys_id
+                LEFT JOIN SN_raw.dbo.sn_hr_core_Service_Area AS BA
+                    ON I.[Service_Area.value] = BA.sys_id
                 LEFT JOIN SAP_raw.dbo.TGSBT AS T
                     ON T.[GTEXT_Service Area description] = REPLACE(BA.u_name, 'Ã¼', 'ü')
                 LEFT JOIN SN_raw.dbo.task AS RT
@@ -1395,7 +1395,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         [SPRAS_Language Key] = 'E'
                 ) AS A
                 INNER JOIN 
-                    Mart_Performance AS i 
+                    DM_Performance AS i 
                     ON A.[GTEXT_Service Area description] = i.[Subject Person - Duty Station]
                 WHERE 
                     i.Platform = 'TMS';
@@ -1404,7 +1404,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Person.[PA0001.GSBER_Service Area]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Person.[PA0001.GSBER_Service Area]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:*
             - :fa:`filter` *Filter:*
@@ -1418,11 +1418,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM 
                     [MANUAL].dbo.[2022_Monitoring_Sheet_updated] AS M
                 LEFT JOIN 
-                    Mart.dbo.Mart_Person AS J 
+                    DM.dbo.DM_Person AS J 
                     ON FORMAT(M.[Post], '00000000') = J.[PA0001.PLANS_Position]
                     AND M.[Case Creation Date] BETWEEN J.BEGDA_Master AND J.ENDDA_Master
                 LEFT JOIN 
-                    Mart.dbo.Mart_Performance AS i 
+                    DM.dbo.DM_Performance AS i 
                     ON i.[Case Number] = M.[ID]
                 WHERE 
                     i.[Platform] = 'Sharepoint';
@@ -1440,7 +1440,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.u_business_area:shc_business_area.u_name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.u_Service_Area:shc_Service_Area.u_name]``
             - :fa:`tag` *Setting Type:* Derived — Conversion
             - :fa:`cogs` *How:* Use the case’s business‑area name with a character correction.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -1450,9 +1450,9 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     REPLACE(
-                        S.[shc_case.u_business_area:shc_business_area.u_name], 'Ã¼', 'ü'
+                        S.[shc_case.u_Service_Area:shc_Service_Area.u_name], 'Ã¼', 'ü'
                     ) AS [Service Area - Name]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -1472,35 +1472,35 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Service Area - Code]`` → ``SAP_raw.dbo.TGSBT.[GTEXT_Service Area description]``; ``Mart_SG_Incidents.[task.location:cmn_location.name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.full_name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.country]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Service Area - Code]`` → ``SAP_raw.dbo.TGSBT.[GTEXT_Service Area description]``; ``DM_SG_Incidents.[task.location:cmn_location.name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.full_name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.country]``
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Use the GSBER code to retrieve the business‑area description from TGSBT; if the name is missing, use the incident location to fetch the country from the locations list as a fallback.
             - :fa:`filter` *Filter:* Includes incidents with case numbers starting ``'INC'``; leaves out non‑incidents.
 
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Service Area - Name] = [GTEXT_Service Area description]
                 FROM SAP_raw.dbo.TGSBT WITH (TABLOCK)
                 WHERE LEFT([Case Number],3) = 'INC'
                     AND [Service Area - Code] = [GSBER_Service Area];
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Service Area - Name] = SN.dbo.[10-cmn_location].[cmn_location.country]
                 FROM SN.dbo.[10-cmn_location] WITH (TABLOCK)
-                INNER JOIN Mart.dbo.Mart_SG_Incidents WITH (TABLOCK)
-                    ON Mart.dbo.Mart_SG_Incidents.[task.location:cmn_location.name] = SN.dbo.[10-cmn_location].[cmn_location.full_name]
+                INNER JOIN DM.dbo.DM_SG_Incidents WITH (TABLOCK)
+                    ON DM.dbo.DM_SG_Incidents.[task.location:cmn_location.name] = SN.dbo.[10-cmn_location].[cmn_location.full_name]
                 WHERE LEFT([Case Number],3) = 'INC'
-                    AND Mart.dbo.Mart_SG_Incidents.[task.number] = Mart_Performance.[Case Number]
-                    AND Mart_Performance.[Service Area - Name] IS NULL;
+                    AND DM.dbo.DM_SG_Incidents.[task.number] = DM_Performance.[Case Number]
+                    AND DM_Performance.[Service Area - Name] IS NULL;
 
                 -- Code to be reviewed; data should not come from raw tables.
                 
         .. tab-item:: SG Trv
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.x_adsr_unall_travel_case.[u_business_area_code]`` → ``Mart_Calendar.[Service Area - Name]`` (keyed by ``Mart_Calendar.[Service Area - Code]`` at latest ``Mart_Calendar.[Master Date]``)
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.x_adsr_unall_travel_case.[u_Service_Area_code]`` → ``DM_Calendar.[Service Area - Name]`` (keyed by ``DM_Calendar.[Service Area - Code]`` at latest ``DM_Calendar.[Master Date]``)
             - :fa:`tag` *Setting Type:* Derived — Mapping
-            - :fa:`cogs` *How:* Use the business‑area code to look up the business‑area name in ``Mart_Calendar`` for the latest calendar date.
+            - :fa:`cogs` *How:* Use the business‑area code to look up the business‑area name in ``DM_Calendar`` for the latest calendar date.
             - :fa:`filter` *Filter:* Includes records with TRV prefix, in Demo assignment groups, created on or after 2024-03-11, and with linked Travel SLA; leave out 'Cancelled' or blank and no close date.
             
             .. code-block:: tsql
@@ -1513,9 +1513,9 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_travel_case AS J
                     ON M.[task.sys_id] = J.sys_id
-                LEFT JOIN Mart.dbo.Mart_Calendar AS C
-                    ON J.[u_business_area_code] = C.[Service Area - Code]
-                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM Mart.dbo.Mart_Calendar ORDER BY 1 DESC)
+                LEFT JOIN DM.dbo.DM_Calendar AS C
+                    ON J.[u_Service_Area_code] = C.[Service Area - Code]
+                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM DM.dbo.DM_Calendar ORDER BY 1 DESC)
                 WHERE M.[task.number] LIKE 'TRV%'
                     AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
                     AND M.[task.sys_created_on] >= '2024-03-11'
@@ -1524,14 +1524,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
 
         .. tab-item:: SG CIC
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.sn_hr_core_business_area.[u_name]`` .
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.sn_hr_core_Service_Area.[u_name]`` .
             - :fa:`tag` *Setting Type:* Derived — Conversion
             - :fa:`cogs` *How:* Fix the Service Area name by replacing 'Ã¼' with 'ü'.
             - :fa:`filter` *Filter:* Includes records where number starts with 'CIC'; leaves out records where status contains 'Cancel'/ 'Read'.
@@ -1543,8 +1543,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM SN.dbo.[10-task] AS M
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_invoices AS INV
                     ON M.[task.sys_id] = INV.sys_id
-                LEFT JOIN SN_raw.dbo.sn_hr_core_business_area AS BA
-                    ON INV.[business_area.value] = BA.sys_id
+                LEFT JOIN SN_raw.dbo.sn_hr_core_Service_Area AS BA
+                    ON INV.[Service_Area.value] = BA.sys_id
                 LEFT JOIN SN_raw.dbo.task AS RT
                     ON RT.[number] = M.[task.number]
                 LEFT JOIN (
@@ -1574,7 +1574,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Country]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Country]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -1585,11 +1585,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     Country
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Person.[PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Person.[PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -1603,17 +1603,17 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM 
                     [MANUAL].dbo.[2022_Monitoring_Sheet_updated] AS M
                 LEFT JOIN 
-                    Mart.dbo.Mart_Person AS J 
+                    DM.dbo.DM_Person AS J 
                     ON FORMAT(M.[Post], '00000000') = J.[PA0001.PLANS_Position]
                     AND M.[Case Creation Date] BETWEEN J.BEGDA_Master AND J.ENDDA_Master
                 LEFT JOIN 
-                    Mart.dbo.Mart_Performance AS i 
+                    DM.dbo.DM_Performance AS i 
                     ON i.[Case Number] = M.[ID]
                 WHERE 
                     i.[Platform] = 'Sharepoint';
 
                 -- Updated in a temporary table called #temp
-                -- and at the end of the SP the values of #temp are inserted into the Mart_Performance table.
+                -- and at the end of the SP the values of #temp are inserted into the DM_Performance table.
 
 
 .. ===========================================================================================
@@ -1628,34 +1628,34 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.Service Area - Name`` ; ``Mart_Performance.Service Area - Code``
+            - :fa:`database` *Lineage:* ``DM_Performance.Service Area - Name`` ; ``DM_Performance.Service Area - Code``
             - :fa:`tag` *Setting Type:* Derived — Concatenation
             - :fa:`cogs` *How:* Combine the business-area name and the business-area code with a hyphen.
             - :fa:`filter` *Filter:* Include Request Portal cases; exclude rows with case numbers starting with 'INC'.
                     
             .. code-block:: tsql
 
-                UPDATE Mart.dbo.Mart_Performance
+                UPDATE DM.dbo.DM_Performance
                 SET [Service Area - Full] = CONCAT([Service Area - Name], '-', [Service Area - Code])
                 WHERE Platform = 'Request Portal'
                     AND LEFT([Case Number], 3) <> 'INC';
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Service Area - Name]; Mart_Performance.[Service Area - Code]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Service Area - Name]; DM_Performance.[Service Area - Code]``
             - :fa:`tag` *Setting Type:* Derived — Concatenation
             - :fa:`cogs` *How:* Combine the business‑area name and the GSBER code with a hyphen.
             - :fa:`filter` *Filter:* Include incidents with case numbers starting ``'INC'``; exclude non‑incidents.
             
             .. code-block:: tsql 
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Service Area - Full] = CONCAT([Service Area - Name], '-', [Service Area - Code])
                 WHERE LEFT([Case Number],3) = 'INC';
 
         .. tab-item:: SG Trv
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Service Area - Name]``; ``Mart_Performance.[Service Area - Code]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Service Area - Name]``; ``DM_Performance.[Service Area - Code]``
             - :fa:`tag` *Setting Type:* Derived — Concatenation
             - :fa:`cogs` *How:* Combine business‑area name and business‑area code with a hyphen.
             - :fa:`filter` *Filter:* Includes records with ``[task.number]`` that are ``'TRV%'``-prefixed, in Demo assignment groups, created on or after ``'2024-03-11'`` , tied to a Travel SLA and with an SLA-breach flag present; leaves out cancelled records, records where both status and close date are blank, and records already loaded with the same ``[Case Number]`` and ``[Last Update Datetime]`` .
@@ -1670,26 +1670,26 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_travel_case AS J
                     ON M.[task.sys_id] = J.sys_id
-                LEFT JOIN Mart.dbo.Mart_Calendar AS C
-                    ON J.[u_business_area_code] = C.[Service Area - Code]
-                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM Mart.dbo.Mart_Calendar ORDER BY 1 DESC)
+                LEFT JOIN DM.dbo.DM_Calendar AS C
+                    ON J.[u_Service_Area_code] = C.[Service Area - Code]
+                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM DM.dbo.DM_Calendar ORDER BY 1 DESC)
                 WHERE M.[task.number] LIKE 'TRV%'
                     AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
                     AND M.[task.sys_created_on] >= '2024-03-11'
                     AND S.[task_sla.has_breached] IS NOT NULL
                     AND ISNULL(M.[task.state.sys_choice], '') <> 'Cancelled'
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
-                    AND NULLIF(J.u_business_area_code, '') IS NOT NULL
+                    AND NULLIF(J.u_Service_Area_code, '') IS NOT NULL
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
 
         .. tab-item:: SG CIC
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.sn_hr_core_business_area.[u_name]``; ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]`` .
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.sn_hr_core_Service_Area.[u_name]``; ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]`` .
             - :fa:`tag` *Setting Type:* Derived — Concatenation
             - :fa:`cogs` *How:* Fix the Service Area name by replacing 'Ã¼' with 'ü'; look up the SAP Service Area code; combine name and code with '-'.
             - :fa:`filter` *Filter:* Includes records where number starts with 'CIC'; leaves out records where status contains 'cancelled'/'read'.
@@ -1701,8 +1701,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM SN.dbo.[10-task] AS M
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_invoices AS I
                     ON M.[task.sys_id] = I.sys_id
-                LEFT JOIN SN_raw.dbo.sn_hr_core_business_area AS BA
-                    ON I.[business_area.value] = BA.sys_id
+                LEFT JOIN SN_raw.dbo.sn_hr_core_Service_Area AS BA
+                    ON I.[Service_Area.value] = BA.sys_id
                 LEFT JOIN SAP_raw.dbo.TGSBT AS T
                     ON T.[GTEXT_Service Area description] = REPLACE(BA.u_name, 'Ã¼', 'ü')
                 WHERE M.[task.number] LIKE 'CIC%'
@@ -1712,18 +1712,18 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Service Area - Name]; [Service Area - Code]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Service Area - Name]; [Service Area - Code]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
             
             .. code-block:: tsql
                 
-                -- Complex query, see details in SP p_Mart_Performance_RAS.					
+                -- Complex query, see details in SP p_DM_Performance_RAS.					
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Service Area - Name]; [Service Area - Code]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Service Area - Name]; [Service Area - Code]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:*
             - :fa:`filter` *Filter:*
@@ -1735,13 +1735,13 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Service Area - Full], 
                     CONCAT([Service Area - Name], '-', [Service Area - Code]) AS [Service Area Combined]
                 FROM 
-                    Mart.dbo.Mart_Performance
+                    DM.dbo.DM_Performance
                 WHERE 
                     [Platform] = 'TMS';
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart_Person.[PA0001.GSBER_Service Area]; [PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description]``
+            - :fa:`database` *Lineage:* ``DM_Person.[PA0001.GSBER_Service Area]; [PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -1761,11 +1761,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM 
                     [MANUAL].dbo.[2022_Monitoring_Sheet_updated] M
                 LEFT JOIN 
-                    Mart.dbo.Mart_Person J 
+                    DM.dbo.DM_Person J 
                     ON FORMAT(M.[Post], '00000000') = J.[PA0001.PLANS_Position]
                     AND M.[Case Creation Date] BETWEEN J.BEGDA_Master AND J.ENDDA_Master
                 LEFT JOIN 
-                    Mart.dbo.Mart_Performance i 
+                    DM.dbo.DM_Performance i 
                     ON i.[Case Number] = M.[ID]
                 WHERE 
                     i.[Platform] = 'Sharepoint';
@@ -1783,7 +1783,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.u_business_area:shc_business_area.u_name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]`` → ``SAP_Raw.dbo.ZDEPT_UNIT.[REGION_Region]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.u_Service_Area:shc_Service_Area.u_name]`` → ``SAP_raw.dbo.TGSBT.[GSBER_Service Area]`` → ``SAP_Raw.dbo.ZDEPT_UNIT.[REGION_Region]``
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Use the business-area name to look up the business-area code, then use that code to look up the Region in ZDEPT_UNIT.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -1793,10 +1793,10 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     Z.[REGION_Region] AS [Region]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SAP_raw.dbo.TGSBT AS T
                     ON T.[GTEXT_Service Area description]
-                      = REPLACE(S.[shc_case.u_business_area:shc_business_area.u_name], 'Ã¼', 'ü')
+                      = REPLACE(S.[shc_case.u_Service_Area:shc_Service_Area.u_name], 'Ã¼', 'ü')
                 JOIN SAP_Raw.dbo.ZDEPT_UNIT AS Z
                     ON Z.[GSBER_Service Area] = T.[GSBER_Service Area]
                 WHERE
@@ -1818,24 +1818,24 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.location:cmn_location.name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.full_name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.u_region:u_region.u_sap_code]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.location:cmn_location.name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.full_name]`` → ``SN.dbo.[10-cmn_location].[cmn_location.u_region:u_region.u_sap_code]``
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Use the incident’s location to look up the SAP region code in the locations list, then normalize the code from ``'Reg2R'`` to ``'Reg2'``.
             - :fa:`filter` *Filter:* Includes incidents with case numbers starting ``'INC'`` and a matching location; leaves out incidents without a matching location or non‑incidents.
                 
             .. code-block:: tsql 
 
-                UPDATE Mart_Performance 
+                UPDATE DM_Performance 
                 SET Region = SN.dbo.[10-cmn_location].[cmn_location.u_region:u_region.u_sap_code]
                 FROM SN.dbo.[10-cmn_location] 
                 WITH ( TABLOCK )
-                INNER JOIN Mart.dbo.Mart_SG_Incidents 
+                INNER JOIN DM.dbo.DM_SG_Incidents 
                     WITH ( TABLOCK )
-                    ON	Mart.dbo.Mart_SG_Incidents.[task.location:cmn_location.name] = SN.dbo.[10-cmn_location].[cmn_location.full_name]
+                    ON	DM.dbo.DM_SG_Incidents.[task.location:cmn_location.name] = SN.dbo.[10-cmn_location].[cmn_location.full_name]
                 WHERE	LEFT([Case Number],3) = 'INC'
-                    AND Mart.dbo.Mart_SG_Incidents.[task.number] = Mart_Performance.[Case Number]
+                    AND DM.dbo.DM_SG_Incidents.[task.number] = DM_Performance.[Case Number]
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET Region = 'Reg2'
                 WHERE Region = 'Reg2R'
                     AND LEFT ( [Case Number] , 3 ) = 'INC'
@@ -1844,7 +1844,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Trv
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.x_adsr_unall_travel_case.[u_business_area_code]`` → ``Mart_Calendar.[Region]`` (keyed by ``Mart_Calendar.[Service Area - Code]`` at latest ``Mart_Calendar.[Master Date]``)
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.x_adsr_unall_travel_case.[u_Service_Area_code]`` → ``DM_Calendar.[Region]`` (keyed by ``DM_Calendar.[Service Area - Code]`` at latest ``DM_Calendar.[Master Date]``)
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Use the travel case’s business‑area code to look up the Region in the latest calendar.
             - :fa:`filter` *Filter:* Includes records with ``[task.number]`` prefixed with ``'TRV%'`` , in Demo assignment groups, created on or after ``'2024-03-11'`` , tied to a Travel SLA, with SLA activity present, with either ``[task.state.sys_choice]`` or ``[task.closed_at]`` present, and with a non‑blank business‑area code; leaves out records with status ``'Cancelled'`` , records where both status and close date are missing, and records already loaded with the same ``[Case Number]`` and ``[Last Update Datetime]`` .
@@ -1859,19 +1859,19 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_travel_case AS J
                     ON M.[task.sys_id] = J.sys_id
-                LEFT JOIN Mart.dbo.Mart_Calendar AS C
-                    ON J.[u_business_area_code] = C.[Service Area - Code]
-                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM Mart.dbo.Mart_Calendar ORDER BY 1 DESC)
+                LEFT JOIN DM.dbo.DM_Calendar AS C
+                    ON J.[u_Service_Area_code] = C.[Service Area - Code]
+                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM DM.dbo.DM_Calendar ORDER BY 1 DESC)
                 WHERE M.[task.number] LIKE 'TRV%'
                     AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
                     AND M.[task.sys_created_on] >= '2024-03-11'
                     AND S.[task_sla.has_breached] IS NOT NULL
                     AND ISNULL(M.[task.state.sys_choice], '') <> 'Cancelled'
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
-                    AND NULLIF(J.u_business_area_code, '') IS NOT NULL
+                    AND NULLIF(J.u_Service_Area_code, '') IS NOT NULL
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -1887,7 +1887,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 
                 SELECT DISTINCT
                     R.REGION_Region AS [Region]
-                FROM Mart.dbo.Mart_Performance AS I
+                FROM DM.dbo.DM_Performance AS I
                 INNER JOIN SAP_Raw.dbo.ZDEPT_UNIT AS R
                     ON I.[Service Area - Code] = R.[GSBER_Service Area]
                 WHERE I.[Case Number] LIKE 'CIC%';
@@ -1903,11 +1903,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Complex query; see details in SP p_Mart_Performance_RAS.
+                -- Complex query; see details in SP p_DM_Performance_RAS.
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Region]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Region]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -1918,11 +1918,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     [Region]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Calendar.[Region]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Calendar.[Region]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -1934,9 +1934,9 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     i.[Region], 
                     J.[Region]
                 FROM 
-                    Mart.dbo.Mart_Calendar J
+                    DM.dbo.DM_Calendar J
                 INNER JOIN 
-                    Mart.dbo.Mart_Performance i 
+                    DM.dbo.DM_Performance i 
                     ON i.[Service Area - Code] = J.[Service Area - Code]
                 WHERE 
                     i.[Platform] = 'Sharepoint';
@@ -1954,7 +1954,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.task.[state]`` → ``SN_raw.dbo.sys_choice.[label]``; ``Mart_SG_Cases.[task.state.sys_choice]``
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.task.[state]`` → ``SN_raw.dbo.sys_choice.[label]``; ``DM_SG_Cases.[task.state.sys_choice]``
             - :fa:`tag` *Setting Type:* Derived — Mapping
             - :fa:`cogs` *How:* Look up the status label from the choices list; if that is unavailable, use the case’s status text.
             - :fa:`filter` *Filter:* Include cases with the specified HR case types; exclude cases with blank case numbers, cancelled or blank status, and 'Demo Quality Assurance' service.            
@@ -1964,7 +1964,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     COALESCE(Sc.[label], S.[task.state.sys_choice]) AS [Status]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 LEFT JOIN SN_raw.dbo.task AS T
                 ON T.[number] = S.[task.number]
                 LEFT JOIN (
@@ -1993,7 +1993,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[incident.incident_state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[incident.incident_state.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s incident‑state text.
             - :fa:`filter` *Filter:* Exclude incidents where both ``[task.state.sys_choice]`` and ``[incident.incident_state.sys_choice]`` are cancelled.
@@ -2002,7 +2002,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [incident.incident_state.sys_choice] AS [Status]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -2043,7 +2043,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (COALESCE(M.[task.state.sys_choice], C1.[label], C2.[label]) IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -2059,7 +2059,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 
                 SELECT DISTINCT
                     SC.[label] AS [Status]
-                FROM Mart.dbo.Mart_Performance AS I
+                FROM DM.dbo.DM_Performance AS I
                 INNER JOIN SN_raw.dbo.task AS RT
                     ON RT.[number] = I.[Case Number]
                 LEFT JOIN (
@@ -2072,7 +2072,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.state.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:*
             - :fa:`filter` *Filter:*
@@ -2083,7 +2083,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number], 
                     [task.state.sys_choice]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -2094,7 +2094,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                -- Complex query, see details in procedure p_Mart_Performance_TMS.
+                -- Complex query, see details in procedure p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC                  
 
@@ -2133,7 +2133,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.parent:task.number]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.parent:task.number]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s parent number.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2143,7 +2143,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number]             AS [Case Number],
                     S.[task.parent:task.number] AS [Parent Case Number]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -2163,7 +2163,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.parent:task.number]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.parent:task.number]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s parent number from the incident record.
             - :fa:`filter` *Filter:* Includes incidents where either ``[task.state.sys_choice]`` or ``[incident.incident_state.sys_choice]`` is not ``'Cancelled'``/ ``'Canceled'``; leaves out incidents where both are ``'Cancelled'``/ ``'Canceled'`` .
@@ -2172,7 +2172,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [task.parent:task.number] AS [Parent Case Number]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');  
 
@@ -2199,7 +2199,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -2222,7 +2222,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.number]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.number]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2232,11 +2232,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT 
                     [task.number]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
                 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Requisition Number]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Requisition Number]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2247,7 +2247,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     [Requisition Number]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -2258,7 +2258,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
             
-            -- Field not mentioned in p_Mart_Performance_JC.
+            -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. ===========================================================================================
@@ -2273,7 +2273,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.state.sys_choice]``
             - :fa:`tag` *Setting Type:* Derived — Calculation
             - :fa:`cogs` *How:* Set to ``1`` when the case status is cancelled; otherwise ``0``.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2286,7 +2286,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             WHEN S.[task.state.sys_choice] = 'Cancelled' THEN 1
                             ELSE 0
                         END AS [Cancelled]
-                    FROM Mart.dbo.Mart_SG_Cases AS S
+                    FROM DM.dbo.DM_SG_Cases AS S
                     WHERE
                         S.[task.number] IS NOT NULL
                         AND LEN(S.[task.number]) > 0
@@ -2306,14 +2306,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Status]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Status]``
             - :fa:`tag` *Setting Type:* Derived — Calculation
             - :fa:`cogs` *How:* Set to ``1`` when ``[Status]`` is ``'Cancelled'`` or ``'Canceled'``; otherwise ``0``.
             - :fa:`filter` *Filter:* Includes incidents with case numbers starting ``'INC'``; leaves out non‑incidents.
                 
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Cancelled] =
                     CASE 
                         WHEN [Status] = 'Cancelled' OR [Status] = 'Canceled' THEN '1'
@@ -2344,7 +2344,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -2367,7 +2367,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.state.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -2381,11 +2381,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         ELSE 0 
                     END AS [Cancelled Flag]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Cancelled]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Cancelled]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2396,7 +2396,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     [Cancelled]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -2407,7 +2407,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. ===========================================================================================
@@ -2422,7 +2422,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.closed_at]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.closed_at]``
             - :fa:`tag` *Setting Type:* Derived — Calculation
             - :fa:`cogs` *How:* Set to ``1`` when the case has a close timestamp; otherwise ``0``.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2432,7 +2432,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     CASE WHEN S.[task.closed_at] IS NOT NULL THEN 1 ELSE 0 END AS [Case Closed]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -2452,7 +2452,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[incident.incident_state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[incident.incident_state.sys_choice]``
             - :fa:`tag` *Setting Type:* Derived — Calculation
             - :fa:`cogs` *How:* Set to ``1`` when the incident state is ``'Closed'`` or ``'Resolved'``; otherwise ``0``.
             - :fa:`filter` *Filter:* Includes incidents where either ``[task.state.sys_choice]`` or ``[incident.incident_state.sys_choice]`` is not ``'Cancelled'``/ ``'Canceled'``; leaves out incidents where both are ``'Cancelled'``/ ``'Canceled'`` .
@@ -2464,7 +2464,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         WHEN [incident.incident_state.sys_choice] IN ('Closed','Resolved') THEN '1'
                         ELSE '0'
                     END AS [Case Closed]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled'); 
 
@@ -2491,7 +2491,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -2517,7 +2517,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.closed_at];[task_sla.end_time]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.closed_at];[task_sla.end_time]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2531,11 +2531,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         ELSE 0 
                     END AS [Case Closed Flag]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[TMS_action_end_date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[TMS_action_end_date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2549,7 +2549,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         ELSE 1 
                     END AS [Case Closed Flag]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -2586,7 +2586,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.short_description.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.short_description.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s short description text.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2596,7 +2596,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[task.short_description.sys_choice] AS [Short Description]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -2616,16 +2616,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Case Number]`` → ``Mart_SG_Incidents.[task.number]`` → ``Mart_SG_Incidents.[task.short_description.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Case Number]`` → ``DM_SG_Incidents.[task.number]`` → ``DM_SG_Incidents.[task.short_description.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s short description from the incident record.
             - :fa:`filter` *Filter:* Includes incidents with case numbers starting ``'INC'`` and ``[Case Number]`` matching ``[task.number]``; leaves out non‑incidents.
             
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Short Description] = R.[task.short_description.sys_choice]
-                FROM Mart_SG_Incidents R
+                FROM DM_SG_Incidents R
                 WHERE LEFT([Case Number],3) = 'INC'
                     AND [Case Number] = R.[task.number];
 
@@ -2652,7 +2652,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -2675,7 +2675,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.short_description.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.short_description.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2686,7 +2686,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     [task.short_description.sys_choice]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -2697,7 +2697,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_TMS.
+                -- Field not mentioned in p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC
 
@@ -2708,7 +2708,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. ===========================================================================================
@@ -2723,7 +2723,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.description]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.description]``
             - :fa:`tag` **Setting Type:** Direct
             - :fa:`cogs` **How:** Use the case’s full description text.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2733,7 +2733,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[task.description] AS [Description]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -2753,16 +2753,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Case Number]`` → ``Mart_SG_Incidents.[task.number]`` → ``Mart_SG_Incidents.[task.description]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Case Number]`` → ``DM_SG_Incidents.[task.number]`` → ``DM_SG_Incidents.[task.description]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s full description from the incident record.
             - :fa:`filter` *Filter:* Includes incidents with case numbers starting ``'INC'`` and ``[Case Number]`` matching ``[task.number]``; leaves out non‑incidents.
         
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Description] = R.[task.description]
-                FROM Mart_SG_Incidents R
+                FROM DM_SG_Incidents R
                 WHERE LEFT([Case Number],3) = 'INC'
                     AND [Case Number] = R.[task.number];
 
@@ -2789,7 +2789,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -2812,7 +2812,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.description]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.description]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -2823,7 +2823,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number], 
                     [task.description]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -2834,7 +2834,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
 
-                -- Field not mentioned in p_Mart_Performance_TMS   
+                -- Field not mentioned in p_DM_Performance_TMS   
 
         .. tab-item:: SharePoint JC
 
@@ -2849,7 +2849,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
                 .. code-block:: tsql
                 
-                    -- Field not mentioned in p_Mart_Performance_JC
+                    -- Field not mentioned in p_DM_Performance_JC
 
 
 .. ===========================================================================================
@@ -2864,7 +2864,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.topic_category:shc_topic_category.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.topic_category:shc_topic_category.name]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s topic category name.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2874,7 +2874,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     SELECT DISTINCT
                         S.[task.number] AS [Case Number],
                         S.[shc_case.topic_category:shc_topic_category.name] AS [Reporting Process - Category]
-                    FROM Mart.dbo.Mart_SG_Cases AS S
+                    FROM DM.dbo.DM_SG_Cases AS S
                     WHERE
                         S.[task.number] IS NOT NULL
                         AND LEN(S.[task.number]) > 0
@@ -2901,7 +2901,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_INC.					
+                -- Field not mentioned in p_DM_Performance_INC.					
 
         .. tab-item:: SG Trv
 
@@ -2912,7 +2912,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
             
-                -- Field commented out from p_Mart_Performance_TRV.				
+                -- Field commented out from p_DM_Performance_TRV.				
 
         .. tab-item:: SG CIC
 
@@ -2923,7 +2923,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                                 
-                -- Field commented out from p_Mart_Performance_CIC.
+                -- Field commented out from p_DM_Performance_CIC.
 
         .. tab-item:: SG RAS
 
@@ -2934,7 +2934,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
             
-                -- Field commented out from p_Mart_Performance_RAS.
+                -- Field commented out from p_DM_Performance_RAS.
 
         .. tab-item:: TMS
 
@@ -2945,7 +2945,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql	
             
-                -- Field not mentioned in p_Mart_Performance_TMS.            
+                -- Field not mentioned in p_DM_Performance_TMS.            
 
         .. tab-item:: SharePoint JC
                 
@@ -2956,7 +2956,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. =====================================================================================================
@@ -2971,7 +2971,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.topic_detail:shc_topic_detail.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.topic_detail:shc_topic_detail.name]``
             - :fa:`tag` **Setting Type:** Direct
             - :fa:`cogs` **How:** Use the case’s topic detail name.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -2981,7 +2981,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[shc_case.topic_detail:shc_topic_detail.name] AS [Reporting Process - Topic]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -3008,7 +3008,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
                 
@@ -3019,7 +3019,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
 
-                -- Field commented out in p_Mart_Performance_TRV				
+                -- Field commented out in p_DM_Performance_TRV				
 
         .. tab-item:: SG CIC
 
@@ -3030,7 +3030,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
                 
-                -- Field commented out in p_Mart_Performance_CIC            
+                -- Field commented out in p_DM_Performance_CIC            
 
         .. tab-item:: SG RAS
 
@@ -3041,7 +3041,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field commented out in p_Mart_Performance_RAS            
+                -- Field commented out in p_DM_Performance_RAS            
 
         .. tab-item:: TMS
 
@@ -3052,7 +3052,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_TMS            
+                -- Field not mentioned in p_DM_Performance_TMS            
 
         .. tab-item:: SharePoint JC
 
@@ -3063,7 +3063,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_JC
+                -- Field not mentioned in p_DM_Performance_JC
 
 
 .. =====================================================================================================
@@ -3078,7 +3078,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.hr_service:shc_service.name]``; ``Mart_SG_Cases.[task.number]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.hr_service:shc_service.name]``; ``DM_SG_Cases.[task.number]``
             - :fa:`tag` *Setting Type:* Derived — Business-rule
             - :fa:`cogs` *How:* Use the case’s service name; when the service is ``'Separation from Service'`` and the case number starts with ``'HRL'``, label it ``'Separation from Service - HRL'``.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -3093,7 +3093,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         THEN 'Separation from Service - HRL'
                         ELSE S.[shc_case.hr_service:shc_service.name]
                     END AS [Reporting Process - Name]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -3113,7 +3113,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.business_service:cmdb_ci_service.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.business_service:cmdb_ci_service.name]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s business service name.
             - :fa:`filter` *Filter:* Includes incidents where either ``[task.state.sys_choice]`` or ``[incident.incident_state.sys_choice]`` is not ``'Cancelled'``/``'Canceled'``; leaves out incidents where both are ``'Cancelled'``/ ``'Canceled'`` .
@@ -3122,7 +3122,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [task.business_service:cmdb_ci_service.name] AS [Reporting Process - Name]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -3155,7 +3155,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -3184,7 +3184,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*	
@@ -3195,7 +3195,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number], 
                     CONCAT('RAS Case ', ISNULL('', 'Other')) AS [Formatted Label]
                 FROM 
-                    Mart_SG_RAS;
+                    DM_SG_RAS;
 
                 -- 'RAS Case' text hardcoded in the field.
                 -- The CONCAT function does not use any column reference,
@@ -3203,7 +3203,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Reporting Process]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Reporting Process]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -3214,7 +3214,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     [Reporting Process]
                 FROM 
-                    Mart_Onboarding;
+                    DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -3240,7 +3240,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.u_type.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.u_type.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s Type value.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -3250,7 +3250,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[shc_case.u_type.sys_choice] AS [Reporting Process - Type]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -3270,7 +3270,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.u_type.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.u_type.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s Type value.
             - :fa:`filter` *Filter:* Includes cases with a non‑blank case number and the specified HR case types, and status blank or not ``'Cancelled'``/ ``'Canceled'``; leaves out the ``'Demo Quality Assurance'`` service.
@@ -3279,7 +3279,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [incident.category.sys_choice] AS [Reporting Process - Type]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -3312,7 +3312,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -3337,7 +3337,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[contract_sla.name]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[contract_sla.name]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -3357,7 +3357,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         'RAS HRBP-', ''
                     ) AS [Cleaned SLA Name]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -3368,7 +3368,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                -- Field not mentioned in p_Mart_Performance_TMS.            
+                -- Field not mentioned in p_DM_Performance_TMS.            
 
         .. tab-item:: SharePoint JC
 
@@ -3401,7 +3401,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[shc_case.u_subtype.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[shc_case.u_subtype.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s Subtype value.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -3411,7 +3411,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[shc_case.u_subtype.sys_choice] AS [Reporting Process - Subtype]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -3431,7 +3431,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[incident.subcategory.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[incident.subcategory.sys_choice]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s subcategory value.
             - :fa:`filter` *Filter:* Includes incidents where either ``[task state]`` or ``[incident state]`` is not ``'Cancelled'``/ ``'Canceled'``; leaves out incidents where both are ``'Cancelled'``/ ``'Canceled'`` .
@@ -3440,7 +3440,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [incident.subcategory.sys_choice] AS [Reporting Process - Subtype]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -3473,7 +3473,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -3489,7 +3489,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                -- Field commented out in p_Mart_Performance_CIC
+                -- Field commented out in p_DM_Performance_CIC
 
         .. tab-item:: SG RAS
 
@@ -3511,7 +3511,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_TMS            
+                -- Field not mentioned in p_DM_Performance_TMS            
 
         .. tab-item:: SharePoint JC
 
@@ -3544,7 +3544,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
             
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.assignment_group:sys_user_group.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.assignment_group:sys_user_group.name]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the case’s assignment group (team name).
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -3554,7 +3554,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[task.assignment_group:sys_user_group.name] AS [Assignment Group (Team Name)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -3574,7 +3574,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.assignment_group:sys_user_group.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.assignment_group:sys_user_group.name]``
             - :fa:`tag` *Setting Type:* Direct
             - :fa:`cogs` *How:* Use the incident’s assignment group (team name).
             - :fa:`filter` *Filter:* Includes incidents where either ``[task state]`` or ``[incident state]`` is not ``'Cancelled'``/ ``'Canceled'``; leaves out incidents where both are ``'Cancelled'``/ ``'Canceled'`` .
@@ -3583,7 +3583,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [task.assignment_group:sys_user_group.name] AS [Assignment Group (Team Name)]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -3610,7 +3610,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -3633,7 +3633,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.assignment_group:sys_user_group.name]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.assignment_group:sys_user_group.name]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -3644,7 +3644,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     task.number,
                     task.[assignment_group:sys_user_group.name]
                 FROM 
-                    Mart_SG_RAS;
+                    DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -3666,7 +3666,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                -- Field not mentioned in p_Mart_Performance_JC
+                -- Field not mentioned in p_DM_Performance_JC
 
 
 
@@ -3682,7 +3682,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.assignment_group:sys_user_group.name]``; ``Mart_SG_Cases.[shc_case.hr_service:shc_service.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.assignment_group:sys_user_group.name]``; ``DM_SG_Cases.[shc_case.hr_service:shc_service.name]``
             - :fa:`tag` *Setting Type:* Derived — Business-rule
             - :fa:`cogs` *How:* Per service, use the most common assignment group and map names to standard labels; as an exception, use the case's HR assignement group for ``'Special Leave'`` in ``'HR Maintenance'`` or ``'HR Offboarding'``.
             - :fa:`filter` *Filter:* Includes cases with the specified HR case types; excludes cases with blank case numbers, cancelled or blank status, and ``'Demo Quality Assurance'`` service.
@@ -3691,7 +3691,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 /* 
                 Table variable @Stream_Designator is created in SP.
-                To insert data into @Stream_Designator, Mart_SG_Cases is used as source.
+                To insert data into @Stream_Designator, DM_SG_Cases is used as source.
                 [Stream] is updated based on [task.assignment_group:sys_user_group.name] (aliased as StreamName) from @Stream_Designator.
                 For Special Leave, the stream is forced to the case’s assignment group when it is HR Maintenance or HR Offboarding.
                 The query below reproduces the SP’s business logic but omits
@@ -3705,7 +3705,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                       ProcessName = S.[shc_case.hr_service:shc_service.name],
                       RawStream   = S.[task.assignment_group:sys_user_group.name],
                       Volume      = COUNT(*)
-                    FROM Mart.dbo.Mart_SG_Cases AS S
+                    FROM DM.dbo.DM_SG_Cases AS S
                     WHERE S.[task.assignment_group:sys_user_group.name] IS NOT NULL
                     GROUP BY
                         S.[shc_case.hr_service:shc_service.name],
@@ -3751,7 +3751,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                       THEN S.[task.assignment_group:sys_user_group.name]
                       ELSE N.StreamName
                       END AS [Stream]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 LEFT JOIN Norm AS N
                     ON N.ProcessName = S.[shc_case.hr_service:shc_service.name]
                 WHERE
@@ -3847,7 +3847,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task.assignment_group:sys_user_group.name]``; ``Mart_SG_Cases.[shc_case.hr_service:shc_service.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task.assignment_group:sys_user_group.name]``; ``DM_SG_Cases.[shc_case.hr_service:shc_service.name]``
             - :fa:`tag` *Setting Type:* Derived — Business‑rule
             - :fa:`cogs` *How:* Per service, use the most common assignment group and map it to a broader section label (Internal, HR Admin, Finance, Payroll, Customer Care).
             - :fa:`filter` *Filter:* Includes cases with a non‑blank case number and the specified HR case types, and status blank or not ``'Cancelled'``/ ``'Canceled'``; leaves out the ``'Demo Quality Assurance'`` service.
@@ -3857,7 +3857,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 /*
                 SP declares temporary table to group SG cases by reporting process & assignment group;
                 inserts each combination as both Stream & Section.
-                Next, joins result to Mart_Performance on [Reporting Process – Name].
+                Next, joins result to DM_Performance on [Reporting Process – Name].
                 */ 
 
                 WITH Designator AS (
@@ -3865,7 +3865,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         ProcessName = S.[shc_case.hr_service:shc_service.name],
                         RawSection  = S.[task.assignment_group:sys_user_group.name],
                         Volume      = COUNT(*)
-                    FROM Mart.dbo.Mart_SG_Cases AS S
+                    FROM DM.dbo.DM_SG_Cases AS S
                     WHERE S.[task.assignment_group:sys_user_group.name] IS NOT NULL
                     GROUP BY
                         S.[shc_case.hr_service:shc_service.name],
@@ -3901,7 +3901,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     N.SectionName   AS [Section]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 LEFT JOIN NormSec AS N
                     ON N.ProcessName = S.[shc_case.hr_service:shc_service.name]
                 WHERE
@@ -3998,7 +3998,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task.priority.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task.priority.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4008,7 +4008,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[task.priority.sys_choice] AS [Case Priority]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -4028,7 +4028,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Incidents.[task.priority.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Incidents.[task.priority.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -4037,7 +4037,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [task.priority.sys_choice] AS [Case Priority]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -4064,7 +4064,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -4087,7 +4087,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.priority.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.priority.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4098,7 +4098,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     [task.priority.sys_choice]
                 FROM
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -4109,7 +4109,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                -- Field not mentioned in p_Mart_Performance_TMS
+                -- Field not mentioned in p_DM_Performance_TMS
 
         .. tab-item:: SharePoint JC
 
@@ -4120,7 +4120,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
         
-                -- Field not mentioned in p_Mart_Performance_JC
+                -- Field not mentioned in p_DM_Performance_JC
 
 
 .. =====================================================================================================
@@ -4145,7 +4145,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number]        AS [Case Number],
                     R.[u_complexity_factor] AS [Complexity Factor]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 LEFT JOIN SN_raw.dbo.task AS T
                 ON T.[number] = S.[task.number]
                 LEFT JOIN SN_raw.dbo.sn_hr_core_case_relations AS R
@@ -4176,7 +4176,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_INC.
+                -- Field not mentioned in p_DM_Performance_INC.
 
         .. tab-item:: SG Trv
 
@@ -4187,7 +4187,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
         
-                -- Field not mentioned in p_Mart_Performance_TRV.
+                -- Field not mentioned in p_DM_Performance_TRV.
 
         .. tab-item:: SG CIC
 
@@ -4198,7 +4198,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_CIC.
+                -- Field not mentioned in p_DM_Performance_CIC.
 
         .. tab-item:: SG RAS
 
@@ -4209,7 +4209,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_RAS.
+                -- Field not mentioned in p_DM_Performance_RAS.
 
         .. tab-item:: TMS
 
@@ -4220,7 +4220,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_TMS.            
+                -- Field not mentioned in p_DM_Performance_TMS.            
 
         .. tab-item:: SharePoint JC
 
@@ -4231,7 +4231,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. =====================================================================================================
@@ -4246,7 +4246,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[shc_case.case_reassignment_count]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[shc_case.case_reassignment_count]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4256,7 +4256,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[shc_case.case_reassignment_count] AS [Case Reassignment Count]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -4283,7 +4283,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -4294,7 +4294,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field commented out in p_Mart_Performance_INC
+                -- Field commented out in p_DM_Performance_INC
 
         .. tab-item:: SG CIC
 
@@ -4305,7 +4305,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field commented out in p_Mart_Performance_CIC
+                -- Field commented out in p_DM_Performance_CIC
 
         .. tab-item:: SG RAS
 
@@ -4316,7 +4316,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field commented out in p_Mart_Performance_RAS
+                -- Field commented out in p_DM_Performance_RAS
 
         .. tab-item:: TMS
 
@@ -4327,7 +4327,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_TMS
+                -- Field not mentioned in p_DM_Performance_TMS
 
         .. tab-item:: SharePoint JC
 
@@ -4338,7 +4338,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_JC
+                -- Field not mentioned in p_DM_Performance_JC
 
 
 .. =====================================================================================================
@@ -4363,7 +4363,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     T.[task.opened_at] AS [Case Open DateTime]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SN.dbo.[10-task] AS T
                 ON T.[task.number] = S.[task.number]
                 WHERE
@@ -4391,7 +4391,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 SELECT
                     [task.opened_at] AS [Case Open DateTime]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -4418,7 +4418,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -4441,7 +4441,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.start_time]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.start_time]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4452,11 +4452,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     [task_sla.start_time]
                 FROM
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[TMS_action_start_date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[TMS_action_start_date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4467,7 +4467,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     CONVERT(datetime, TMS_action_start_date)
                 FROM
-                    Mart.dbo.Mart_Onboarding;             
+                    DM.dbo.DM_Onboarding;             
 
         .. tab-item:: SharePoint JC
 
@@ -4478,7 +4478,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
                 .. code-block:: tsql
             
-                    -- Field not mentioned in p_Mart_Performance_JC
+                    -- Field not mentioned in p_DM_Performance_JC
 
 
 .. =====================================================================================================
@@ -4504,7 +4504,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number]                 AS [Case Number],
                     CAST(T.[task.opened_at] AS date) AS [Case Open Date]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SN.dbo.[10-task] AS T
                 ON T.[task.number] = S.[task.number]
                 WHERE
@@ -4523,14 +4523,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Incidents.[task.opened_at]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Incidents.[task.opened_at]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
             
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Case Open Date] = CAST ( [Case Open Datetime] AS DATE )
                 WHERE LEFT ( [Case Number] , 3 ) = 'INC';
 
@@ -4557,7 +4557,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -4580,7 +4580,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.start_time]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.start_time]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -4591,11 +4591,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     CAST([task_sla.start_time] AS date)
                 FROM
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[TMS_action_start_date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[TMS_action_start_date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4606,7 +4606,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     [TMS_action_start_date]
                 FROM
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -4650,7 +4650,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number]                 AS [Case Number],
                     T.[task.closed_at]              AS [Case Close DateTime]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SN.dbo.[10-task] AS T
                 ON T.[task.number] = S.[task.number]
                 WHERE
@@ -4669,20 +4669,20 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.closed_at]``, ``SN_raw.dbo.task.[closed_at]`` 
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.closed_at]``, ``SN_raw.dbo.task.[closed_at]`` 
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
         
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Case Close DateTime] = closed_at
                 FROM SN_raw.dbo.task
                 WHERE [Case Number] = number
                     AND LEFT ( [Case Number] , 3 ) = 'INC';
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Case Close DateTime] = NULL
                 WHERE [Case Close DateTime] = '1900-01-01 00:00:00.000'
                     OR [Case Close DateTime] = '1900-01-01 01:00:00.000';
@@ -4710,7 +4710,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -4733,7 +4733,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.closed_at];[task_sla.end_time]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.closed_at];[task_sla.end_time]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4744,11 +4744,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     ISNULL([task.closed_at], [task_sla.end_time])
                 FROM
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[TMS_action_end_date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[TMS_action_end_date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4759,7 +4759,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     CONVERT(datetime, TMS_action_end_date)
                 FROM
-                    Mart.dbo.Mart_Onboarding;     
+                    DM.dbo.DM_Onboarding;     
 
         .. tab-item:: SharePoint JC
 
@@ -4770,7 +4770,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_JC
+                -- Field not mentioned in p_DM_Performance_JC
 
 
 .. =====================================================================================================
@@ -4795,7 +4795,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number]                  AS [Case Number],
                     CAST(T.[task.closed_at] AS date) AS [Case Close Date]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SN.dbo.[10-task] AS T
                 ON T.[task.number] = S.[task.number]
                 WHERE
@@ -4814,24 +4814,24 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc 
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.task.[closed_at]; Mart_SG_Incidents.[task.closed_at]``
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.task.[closed_at]; DM_SG_Incidents.[task.closed_at]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
             
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Case Close DateTime] = closed_at
                 FROM SN_raw.dbo.task
                 WHERE [Case Number] = number
                     AND LEFT([Case Number],3) = 'INC';
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Case Close DateTime] = NULL
                 WHERE [Case Close DateTime] IN ('1900-01-01 00:00:00.000','1900-01-01 01:00:00.000');
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Case Close Date] = CAST([Case Close DateTime] AS DATE)
                 WHERE LEFT([Case Number],3) = 'INC';
 
@@ -4858,7 +4858,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -4881,7 +4881,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.closed_at];[task_sla.end_time]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.closed_at];[task_sla.end_time]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -4892,11 +4892,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     CAST(ISNULL([task.closed_at], [task_sla.end_time]) AS date)
                 FROM
-                    Mart.dbo.Mart_SG_RAS; 
+                    DM.dbo.DM_SG_RAS; 
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[TMS_action_end_date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[TMS_action_end_date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -4907,7 +4907,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     TMS_action_end_date
                 FROM
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -4941,7 +4941,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``SN_raw.dbo.task.opened_at`` ; ``Mart_Calendar.Master Date``
+            - :fa:`database` *Lineage:* ``SN_raw.dbo.task.opened_at`` ; ``DM_Calendar.Master Date``
             - :fa:`tag` *Setting Type:* Derived — Conversion
             - :fa:`cogs` *How:* Convert the case’s opening time to local time by adding +2h between last Sunday of March and last Sunday of October (Demo); otherwise +1h.
             - :fa:`filter` *Filter:* Include Request Portal cases that have a case number, belong to the specified HR case classes, and have an opening time, even if the case status is blank; exclude cancelled cases and the Demo Quality Assurance service.
@@ -4955,12 +4955,12 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             THEN DATEADD(HOUR, 2, T.[opened_at])
                         ELSE DATEADD(HOUR, 1, T.[opened_at])
                     END AS [Open Datetime - Local]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 JOIN SN_raw.dbo.task AS T
                 ON T.[number] = S.[task.number]
                 LEFT JOIN (
                     SELECT YEAR([Master Date]) AS MY, MAX([Master Date]) AS MaxMD
-                    FROM Mart.dbo.Mart_Calendar
+                    FROM DM.dbo.DM_Calendar
                     WHERE [Service Area - Full] = '1950 - Global Shared Services Centre'
                         AND [Day of Week] = 7
                         AND DATEPART(MONTH, [Master Date]) = 3
@@ -4969,7 +4969,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 ON YEAR(CAST(T.[opened_at] AS date)) = J_Start.MY
                 LEFT JOIN (
                     SELECT YEAR([Master Date]) AS MY, MAX([Master Date]) AS MaxMD
-                    FROM Mart.dbo.Mart_Calendar
+                    FROM DM.dbo.DM_Calendar
                     WHERE [Service Area - Full] = '1950 - Global Shared Services Centre'
                         AND [Day of Week] = 7
                         AND DATEPART(MONTH, [Master Date]) = 10
@@ -5000,7 +5000,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -5026,7 +5026,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -5067,7 +5067,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_TMS.
+                -- Field not mentioned in p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC
 
@@ -5078,7 +5078,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
             
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. =====================================================================================================
@@ -5093,7 +5093,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task.closed_at]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task.closed_at]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5103,7 +5103,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     LEFT(CONVERT(VARCHAR, S.[task.closed_at], 23), 7) AS [YYYY-MM]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -5120,14 +5120,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Case Close Date]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Case Close Date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
 
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [YYYY-MM] = LEFT ( CONVERT ( VARCHAR , [Case Close Date] , 23 ) , 7 )
                 WHERE LEFT ( [Case Number] , 3 ) = 'INC';
 
@@ -5154,7 +5154,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -5177,7 +5177,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.closed_at]``; ``[task_sla.end_time]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.closed_at]``; ``[task_sla.end_time]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -5188,11 +5188,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [task.number],
                     LEFT(CONVERT(VARCHAR, ISNULL([task.closed_at], [task_sla.end_time]), 23), 7)
                 FROM
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[TMS_action_end_date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[TMS_action_end_date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -5203,11 +5203,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action],
                     LEFT(CONVERT(VARCHAR, TMS_action_end_date, 23), 7)
                 FROM
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[case close date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[case close date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5221,7 +5221,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [YYYY-MM],
                     LEFT([case close date], 7)
                 FROM
-                    Mart.dbo.Mart_Performance
+                    DM.dbo.DM_Performance
                 WHERE
                     [Platform] = 'Sharepoint';
 
@@ -5238,7 +5238,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.task.calendar_duration`` 
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.task.calendar_duration`` 
             - :fa:`tag` *Setting Type:* Derived — Conversion
             - :fa:`cogs` *How:* Convert the case’s calendar duration from seconds to calendar days, rounded to two decimal places.
             - :fa:`filter` *Filter:* Include Request Portal cases that have a case number and belong to the specified HR case classes, even if the case status is blank; exclude cancelled cases and the Demo Quality Assurance service.
@@ -5252,7 +5252,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             DATEDIFF_BIG(SECOND, '1970-01-01 00:00:00.000', S.[task.calendar_duration]) AS decimal(16,2)
                         ) / 86400 AS DECIMAL(10,2)
                     ) AS [Elapsed Time (Calendar Days)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -5269,24 +5269,24 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.calendar_duration]``, ``Mart_SG_Incidents.[task.closed_at]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.calendar_duration]``, ``DM_SG_Incidents.[task.closed_at]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
         
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET	[Elapsed Time (Calendar Days)] = 
                     CASE
                         WHEN [task.closed_at] IS NOT NULL
                             THEN CAST (CAST (DATEDIFF_BIG(SECOND,'1970-01-01 00:00:00.000',[task.calendar_duration]) AS decimal(16,2))/ 86400 AS decimal (10,2))
                         ELSE NULL
                     END
-                FROM Mart_SG_Incidents 
+                FROM DM_SG_Incidents 
                 WITH (TABLOCK) 
-                INNER JOIN Mart_Performance 
-                    ON Mart_Performance.[Case Number] = Mart_SG_Incidents.[task.number]
+                INNER JOIN DM_Performance 
+                    ON DM_Performance.[Case Number] = DM_SG_Incidents.[task.number]
                 WHERE LEFT ([Case Number], 3)	= 'INC';
 
         .. tab-item:: SG Trv
@@ -5316,7 +5316,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -5347,7 +5347,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.calendar_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.calendar_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -5364,11 +5364,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         AS decimal(10, 2)
                     ) AS [Duration (Days)]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Elapsed Time (Calendar Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Elapsed Time (Calendar Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -5379,7 +5379,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     [Elapsed Time (Calendar Days)]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -5411,7 +5411,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task.opened_at]``, ``Mart.dbo.Mart_SG_Cases.[task.closed_at]``, ``Mart.dbo.Mart_Calendar.[Master Date]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task.opened_at]``, ``DM.dbo.DM_SG_Cases.[task.closed_at]``, ``DM.dbo.DM_Calendar.[Master Date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5424,14 +5424,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         CAST(DATEDIFF_BIG(SECOND, S.[task.opened_at], S.[task.closed_at]) AS decimal(16,2)) / 86400
                         - (
                             SELECT COUNT(DISTINCT C.[Master Date])
-                            FROM Mart.dbo.Mart_Calendar AS C WITH (TABLOCK)
+                            FROM DM.dbo.DM_Calendar AS C WITH (TABLOCK)
                             WHERE C.[Master Date] BETWEEN CAST(S.[task.opened_at] AS date) AND CAST(S.[task.closed_at] AS date)
-                            AND C.[Service Area - Name] = REPLACE(S.[shc_case.u_business_area:shc_business_area.u_name], 'Ã¼','ü')
+                            AND C.[Service Area - Name] = REPLACE(S.[shc_case.u_Service_Area:shc_Service_Area.u_name], 'Ã¼','ü')
                             AND C.[Workday] = 0
                         )
                         AS decimal(10,2)
                     ) AS [Elapsed Time (Business Days)]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE 1=1
                 AND S.[task.number] IS NOT NULL
                 AND LEN(S.[task.number]) > 0
@@ -5448,31 +5448,31 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task.closed_at]``, ``Mart_SG_Incidents.[task.opened_at]``, ``Mart.dbo.Mart_Calendar.[Master Date]``, ``[Workday]``, ``[Service Area - Code]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task.closed_at]``, ``DM_SG_Incidents.[task.opened_at]``, ``DM.dbo.DM_Calendar.[Master Date]``, ``[Workday]``, ``[Service Area - Code]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
 
             .. code-block:: tsql            
 
-                UPDATE	Mart_Performance
+                UPDATE	DM_Performance
                 SET	[Elapsed Time (Business Days)] = 
                     CAST ([task.closed_at] AS DECIMAL (7,2)) 
                         - CAST ([task.opened_at] AS DECIMAL (7,2)) - (SELECT COUNT ( * ) 
-                            FROM Mart.dbo.Mart_Calendar
+                            FROM DM.dbo.DM_Calendar
                             WITH (TABLOCK)
                             WHERE [Master Date] BETWEEN [task.opened_at] AND [task.closed_at] 
                                 AND [Service Area - Code] = '1950'
                                 AND Workday = 0 )
-                FROM Mart_SG_Incidents 
+                FROM DM_SG_Incidents 
                 WITH (TABLOCK) 
-                INNER JOIN Mart_Performance 
-                    ON Mart_Performance.[Case Number] = Mart_SG_Incidents.[task.number]
+                INNER JOIN DM_Performance 
+                    ON DM_Performance.[Case Number] = DM_SG_Incidents.[task.number]
                 WHERE LEFT ([Case Number], 3)	= 'INC';
 
         .. tab-item:: SG Trv
 
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-task].[task.closed_at]``, ``[task.opened_at]``, ``Mart.dbo.Mart_Calendar.[Master Date]``
+            - :fa:`database` *Lineage:* ``SN.dbo.[10-task].[task.closed_at]``, ``[task.opened_at]``, ``DM.dbo.DM_Calendar.[Master Date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5484,7 +5484,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         - CAST(M.[task.opened_at] AS DECIMAL(7,2))
                         - (
                             SELECT COUNT(DISTINCT IC.[Master Date])
-                            FROM Mart.dbo.Mart_Calendar AS IC
+                            FROM DM.dbo.DM_Calendar AS IC
                             WHERE IC.[Master Date] BETWEEN M.[task.opened_at] AND M.[task.closed_at]
                                 AND IC.[Service Area - Name] = REPLACE(CBA.[Service Area - Name], 'Ã¼', 'ü')
                                 AND IC.[Workday] = 0
@@ -5495,9 +5495,9 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_travel_case AS J
                     ON M.[task.sys_id] = J.sys_id
-                LEFT JOIN Mart.dbo.Mart_Calendar AS CBA
-                    ON J.[u_business_area_code] = CBA.[Service Area - Code]
-                    AND CBA.[Master Date] = (SELECT TOP 1 [Master Date] FROM Mart.dbo.Mart_Calendar ORDER BY 1 DESC)
+                LEFT JOIN DM.dbo.DM_Calendar AS CBA
+                    ON J.[u_Service_Area_code] = CBA.[Service Area - Code]
+                    AND CBA.[Master Date] = (SELECT TOP 1 [Master Date] FROM DM.dbo.DM_Calendar ORDER BY 1 DESC)
                 WHERE M.[task.number] LIKE 'TRV%'
                     AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
                     AND M.[task.sys_created_on] >= '2024-03-11'
@@ -5506,14 +5506,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
 
         .. tab-item:: SG CIC
 
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-task].task.opened_at`` ; ``SN.dbo.[10-task].task.closed_at`` ; ``SN_raw.dbo.sn_hr_core_business_area.u_name`` ; ``Mart_Calendar.Master Date`` ; ``Mart_Calendar.Workday`` ; ``Mart_Calendar.Service Area - Name`` 
+            - :fa:`database` *Lineage:* ``SN.dbo.[10-task].task.opened_at`` ; ``SN.dbo.[10-task].task.closed_at`` ; ``SN_raw.dbo.sn_hr_core_Service_Area.u_name`` ; ``DM_Calendar.Master Date`` ; ``DM_Calendar.Workday`` ; ``DM_Calendar.Service Area - Name`` 
             - :fa:`tag` *Setting Type:* Derived — Calculation
             - :fa:`cogs` *How:* Compute from the case’s opening time and closing time, subtracting non‑workdays in the business‑area calendar; present the result in business days to two decimal places.
             - :fa:`filter` *Filter:* Include CIC cases, except those that are cancelled, in read status, or with missing status and close date.
@@ -5525,7 +5525,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     - CAST(M.[task.opened_at] AS DECIMAL(7,2))
                     - (
                         SELECT COUNT(DISTINCT IC.[Master Date])
-                        FROM Mart.dbo.Mart_Calendar AS IC
+                        FROM DM.dbo.DM_Calendar AS IC
                         WHERE IC.[Master Date] BETWEEN M.[task.opened_at] AND M.[task.closed_at]
                             AND REPLACE(BA.u_name, 'Ã¼', 'ü') = IC.[Service Area - Name]
                             AND IC.[Workday] = 0
@@ -5533,15 +5533,15 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM SN.dbo.[10-task] AS M
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_invoices AS INV
                     ON INV.sys_id = M.[task.sys_id]
-                LEFT JOIN SN_raw.dbo.sn_hr_core_business_area AS BA
-                    ON INV.[business_area.value] = BA.sys_id
+                LEFT JOIN SN_raw.dbo.sn_hr_core_Service_Area AS BA
+                    ON INV.[Service_Area.value] = BA.sys_id
                 WHERE M.[task.number] LIKE 'CIC%'
                     AND M.[task.state.sys_choice] NOT LIKE '%Cancel%'
                     AND M.[task.state.sys_choice] NOT LIKE '%Read%';       
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart_SG_RAS.[task.closed_at]; [task.opened_at]``, ``Mart_Calendar.[Master Date]``
+            - :fa:`database` *Lineage:* ``DM_SG_RAS.[task.closed_at]; [task.opened_at]``, ``DM_Calendar.[Master Date]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5554,16 +5554,16 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     - CAST([task.opened_at] AS decimal(7, 2))
                     - (
                         SELECT COUNT(DISTINCT [Master Date])
-                        FROM Mart.dbo.Mart_Calendar
+                        FROM DM.dbo.DM_Calendar
                         WHERE [Master Date] BETWEEN [task.opened_at] AND [task.closed_at]
                         AND Workday = 0
                     ) AS [Adjusted Duration]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Elapsed Time (Business Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Elapsed Time (Business Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -5574,11 +5574,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     [Elapsed Time (Business Days)]
                 FROM 
-                    Mart.dbo.Mart_Onboarding; 
+                    DM.dbo.DM_Onboarding; 
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart_Performance.[Elapsed Time (Calendar Days)]``, ``Mart_Calendar.[Holiday]``
+            - :fa:`database` *Lineage:* ``DM_Performance.[Elapsed Time (Calendar Days)]``, ``DM_Calendar.[Holiday]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5594,19 +5594,19 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         [Case Number] AS CN,
                         SUM(J2.Holiday) AS Holiday_count
                     FROM 
-                        Mart.dbo.Mart_Performance AS M
+                        DM.dbo.DM_Performance AS M
                     LEFT JOIN 
                         [MANUAL].dbo.[2022_Monitoring_Sheet_updated] AS J1
                         ON M.[Case Number] = J1.ID
                     LEFT JOIN 
-                        Mart.dbo.Mart_Calendar AS J2
+                        DM.dbo.DM_Calendar AS J2
                         ON J2.[Service Area - Code] = '1950'
                         AND J2.[Master Date] BETWEEN J1.[Case Creation Date] AND J1.[Vision Update DATE]
                     GROUP BY 
                         [Case Number]
                 ) AS J
                 INNER JOIN 
-                    Mart.dbo.Mart_Performance AS i 
+                    DM.dbo.DM_Performance AS i 
                     ON i.[Case Number] = J.CN
                 WHERE 
                     i.Platform = 'Sharepoint';
@@ -5624,7 +5624,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.business_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.business_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* Converted from epoch (1970-01-01) seconds and divided by 28,800 (8 hours)  
             - :fa:`filter` *Filter:*
@@ -5637,7 +5637,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         DATEDIFF_BIG(SECOND, '1970-01-01 00:00:00.000', S.[task_sla.business_duration])
                         AS decimal(18,2)
                     ) / 28800 AS [Processing Time (Business Days)]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE 1=1
                 AND S.[task.number] IS NOT NULL
                 AND LEN(S.[task.number]) > 0
@@ -5654,21 +5654,21 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Incidents.[task_sla.business_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Incidents.[task_sla.business_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
             
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET	[Processing Time (Business Days)] = 
                     CAST(
                         DATEDIFF(SECOND, '1970-01-01 00:00:00.000', [task_sla.business_duration])
                         AS DECIMAL
                     ) / 28800
                 FROM
-                    Mart_SG_Incidents 
+                    DM_SG_Incidents 
                 WITH (TABLOCK) 
                 WHERE [Case Number] = [task.number]
                     AND	LEFT ([Case Number], 3)	= 'INC'
@@ -5700,7 +5700,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -5732,7 +5732,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.business_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.business_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5746,11 +5746,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         AS decimal
                     ) / 28800 AS [Duration (Business Days)]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Processing Time (Business Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Processing Time (Business Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5761,11 +5761,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     [Processing Time (Business Days)]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Processing Time (Business Days)]``, ``[Case Open Date]``, ``[Case Close Date]``, ``[Freeze Time (Business Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Processing Time (Business Days)]``, ``[Case Open Date]``, ``[Case Close Date]``, ``[Freeze Time (Business Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5783,19 +5783,19 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         [Case Number] AS CN,
                         SUM(J2.Holiday) AS Holiday_count
                     FROM 
-                        Mart.dbo.Mart_Performance AS M
+                        DM.dbo.DM_Performance AS M
                     LEFT JOIN 
                         [MANUAL].dbo.[2022_Monitoring_Sheet_updated] AS J1
                         ON M.[Case Number] = J1.ID
                     LEFT JOIN 
-                        Mart.dbo.Mart_Calendar AS J2
+                        DM.dbo.DM_Calendar AS J2
                         ON J2.[Service Area - Code] = '1950'
                         AND J2.[Master Date] BETWEEN J1.[Case Creation Date] AND J1.[Date JD Classified]
                     GROUP BY 
                         [Case Number]
                 ) AS J
                 INNER JOIN 
-                    Mart.dbo.Mart_Performance AS i 
+                    DM.dbo.DM_Performance AS i 
                     ON i.[Case Number] = J.CN
                 WHERE 
                     Platform = 'Sharepoint';
@@ -5813,7 +5813,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.business_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.business_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5823,7 +5823,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT
                     S.[task.number] AS [Case Number],
                     DATEDIFF_BIG(SECOND, '1970-01-01 00:00:00.000', S.[task_sla.business_duration]) AS [Processing Time (Seconds)]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE 1=1
                 AND S.[task.number] IS NOT NULL
                 AND LEN(S.[task.number]) > 0
@@ -5840,20 +5840,20 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Incidents.[task_sla.business_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Incidents.[task_sla.business_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
             
             .. code-block:: tsql
 
-                UPDATE Mart_Performance 
+                UPDATE DM_Performance 
                 SET	[Processing Time (Seconds)] = 
                     CAST (
                         DATEDIFF (SECOND, '1970-01-01 00:00:00.000', [task_sla.business_duration])
                         AS DECIMAL
                     )
-                FROM Mart_SG_Incidents 
+                FROM DM_SG_Incidents 
                 WITH (TABLOCK)
                 WHERE [Case Number] = [task.number]
                     AND	LEFT ([Case Number], 3)	= 'INC'
@@ -5883,7 +5883,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -5913,7 +5913,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.business_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.business_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5927,11 +5927,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         AS decimal
                     ) / 28800 AS [Duration (Business Days)]
                 FROM 
-                    Mart.dbo.Mart_SG_RAS;
+                    DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Processing Time (Business Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Processing Time (Business Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5942,11 +5942,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     [Requisition Action], 
                     [Processing Time (Business Days)]
                 FROM 
-                    Mart.dbo.Mart_Onboarding;
+                    DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Processing Time (Business Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Processing Time (Business Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -5964,19 +5964,19 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         [Case Number] AS CN,
                         SUM(J2.Holiday) AS Holiday_count
                     FROM 
-                        Mart.dbo.Mart_Performance AS M
+                        DM.dbo.DM_Performance AS M
                     LEFT JOIN 
                         [MANUAL].dbo.[2022_Monitoring_Sheet_updated] AS J1
                         ON M.[Case Number] = J1.ID
                     LEFT JOIN 
-                        Mart.dbo.Mart_Calendar AS J2
+                        DM.dbo.DM_Calendar AS J2
                         ON J2.[Service Area - Code] = '1950'
                         AND J2.[Master Date] BETWEEN J1.[Case Creation Date] AND J1.[Date JD Classified]
                     GROUP BY 
                         [Case Number]
                 ) AS J
                 INNER JOIN 
-                    Mart.dbo.Mart_Performance AS i 
+                    DM.dbo.DM_Performance AS i 
                     ON i.[Case Number] = J.CN;
 
 
@@ -5992,7 +5992,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.pause_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.pause_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6008,7 +6008,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             NULLIF(S.[task_sla.pause_duration], '1900-01-01 00:00:00.000')
                         ) AS decimal(18,2)
                     ) / 86400 AS [Freeze Time (Calendar Days)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -6032,7 +6032,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC. 
+                -- Field not mentioned in p_DM_Performance_INC. 
 
         .. tab-item:: SG Trv
 
@@ -6063,7 +6063,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -6095,7 +6095,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.pause_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.pause_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6111,11 +6111,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             NULLIF([task_sla.pause_duration], '1900-01-01 00:00:00.000')
                         ) AS DECIMAL
                     ) / 86400
-                FROM Mart.dbo.Mart_SG_RAS;    
+                FROM DM.dbo.DM_SG_RAS;    
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Freeze Time (Calendar Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Freeze Time (Calendar Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -6125,7 +6125,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT
                     [Requisition Action],
                     [Freeze Time (Calendar Days)]
-                FROM Mart.dbo.Mart_Onboarding;
+                FROM DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
@@ -6158,7 +6158,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.business_pause_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.business_pause_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6174,7 +6174,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             S.[task_sla.business_pause_duration]
                         ) AS decimal(18,2)
                     ) / 28800 AS [Freeze Time (Business Days)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -6198,7 +6198,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC.   
+                -- Field not mentioned in p_DM_Performance_INC.   
 
         .. tab-item:: SG Trv
 
@@ -6229,7 +6229,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -6261,7 +6261,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.business_pause_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.business_pause_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6277,11 +6277,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             [task_sla.business_pause_duration]
                         ) AS DECIMAL
                     ) / 28800
-                FROM Mart.dbo.Mart_SG_RAS;
+                FROM DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Onboarding.[Freeze Time (Business Days)]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Onboarding.[Freeze Time (Business Days)]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6291,11 +6291,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT
                     [Requisition Action],
                     [Freeze Time (Business Days)]
-                FROM Mart.dbo.Mart_Onboarding;
+                FROM DM.dbo.DM_Onboarding;
 
         .. tab-item:: SharePoint JC
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Freeze Time (Business Days)]``, ``Mart.dbo.Mart_Performance.[Freeze Time (Calendar Days)]``, ``Mart.dbo.Mart_Calendar.[Holiday]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Freeze Time (Business Days)]``, ``DM.dbo.DM_Performance.[Freeze Time (Calendar Days)]``, ``DM.dbo.DM_Calendar.[Holiday]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6309,12 +6309,12 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     SELECT
                         CaseNumber,
                         SUM(Holiday) AS Holiday_count
-                    FROM Mart_Performance
+                    FROM DM_Performance
                     JOIN Monitoring_Sheet ON /* ... */
-                    JOIN Mart_Calendar ON /* ... */
+                    JOIN DM_Calendar ON /* ... */
                     GROUP BY CaseNumber
                 ) AS J
-                JOIN Mart_Performance AS i
+                JOIN DM_Performance AS i
                     ON i.CaseNumber = J.CaseNumber
                 WHERE Platform = 'Sharepoint';
 
@@ -6331,7 +6331,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.business_pause_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.business_pause_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6345,7 +6345,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         '1970-01-01 00:00:00.000',
                         S.[task_sla.business_pause_duration]
                     ) AS [Freeze Time (Seconds)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -6369,7 +6369,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC.
+                -- Field not mentioned in p_DM_Performance_INC.
 
         .. tab-item:: SG Trv
 
@@ -6398,7 +6398,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -6428,7 +6428,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task_sla.business_pause_duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task_sla.business_pause_duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6442,7 +6442,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         '1970-01-01 00:00:00.000',
                         [task_sla.business_pause_duration]
                     )
-                FROM Mart.dbo.Mart_SG_RAS;
+                FROM DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -6453,7 +6453,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TMS.
+                -- Field not mentioned in p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC
 
@@ -6486,7 +6486,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task.state.sys_choice]``, ``Mart.dbo.Mart_SG_Cases.[shc_case.u_rejectreason.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task.state.sys_choice]``, ``DM.dbo.DM_SG_Cases.[shc_case.u_rejectreason.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -6500,7 +6500,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             OR LEN(ISNULL(S.[shc_case.u_rejectreason.sys_choice], '')) > 0
                         THEN 1 ELSE 0
                     END AS [Reject Count]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -6524,7 +6524,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC.
+                -- Field not mentioned in p_DM_Performance_INC.
 
         .. tab-item:: SG Trv
 
@@ -6552,7 +6552,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -6578,7 +6578,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG RAS
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_RAS.[task.state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_RAS.[task.state.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -6591,7 +6591,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         WHEN [task.state.sys_choice] = 'Closed Incomplete' THEN 1
                         ELSE 0
                     END
-                FROM Mart.dbo.Mart_SG_RAS;
+                FROM DM.dbo.DM_SG_RAS;
 
         .. tab-item:: TMS
 
@@ -6602,7 +6602,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
         
-                -- Field not mentioned in p_Mart_Performance_TMS.
+                -- Field not mentioned in p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC
 
@@ -6613,7 +6613,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. =====================================================================================================
@@ -6636,13 +6636,13 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             .. code-block:: tsql
 
                 -- Source Field(s)
-                Mart.dbo.Mart_SG_Cases.[shc_case.u_rejectreason.sys_choice]
+                DM.dbo.DM_SG_Cases.[shc_case.u_rejectreason.sys_choice]
 
                 -- Query
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[shc_case.u_rejectreason.sys_choice] AS [Reject Reason]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -6666,7 +6666,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: 
                 
-                -- Field not mentioned in p_Mart_Performance_INC.
+                -- Field not mentioned in p_DM_Performance_INC.
 
         .. tab-item:: SG Trv
 
@@ -6677,7 +6677,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block::
                 
-                -- Column commented out from SP p_Mart_Performance_TRV.
+                -- Column commented out from SP p_DM_Performance_TRV.
 
         .. tab-item:: SG CIC
 
@@ -6688,7 +6688,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block::
                 
-                -- Column commented out from SP p_Mart_Performance_CIC.
+                -- Column commented out from SP p_DM_Performance_CIC.
 
         .. tab-item:: SG RAS
 
@@ -6699,7 +6699,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
         
-                -- Column commented out from SP p_Mart_Performance_RAS.
+                -- Column commented out from SP p_DM_Performance_RAS.
 
         .. tab-item:: TMS
 
@@ -6710,7 +6710,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TMS.
+                -- Field not mentioned in p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC
 
@@ -6721,7 +6721,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. =====================================================================================================
@@ -6736,14 +6736,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[shc_case.sla_suspended_reason.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[shc_case.sla_suspended_reason.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
             
             .. code-block:: tsql
 
-                WITH Mart_Performance_RTC AS (
+                WITH DM_Performance_RTC AS (
                     SELECT
                         J1.number AS [Parent No],
                         COUNT(*)  AS [RTC]
@@ -6761,8 +6761,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         S.[shc_case.sla_suspended_reason.sys_choice],
                         CASE WHEN ISNULL(R.[RTC], 0) > 0 THEN 'No reason code available' ELSE NULL END
                     ) AS [Suspended Reason]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
-                LEFT JOIN Mart_Performance_RTC AS R
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
+                LEFT JOIN DM_Performance_RTC AS R
                     ON R.[Parent No] = S.[task.number]
                 WHERE
                     S.[task.number] IS NOT NULL
@@ -6780,7 +6780,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Incidents.[incident.hold_reason.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Incidents.[incident.hold_reason.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -6790,7 +6790,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT
                     [incident.hold_reason.sys_choice] AS [Suspended Reason]
                 FROM
-                    Mart_SG_Incidents
+                    DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');            
 
@@ -6823,7 +6823,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -6869,7 +6869,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TMS.
+                -- Field not mentioned in p_DM_Performance_TMS.
 
         .. tab-item:: SharePoint JC
 
@@ -6880,7 +6880,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_JC.
+                -- Field not mentioned in p_DM_Performance_JC.
 
 
 .. =====================================================================================================
@@ -6902,7 +6902,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Suspension Type] = sc.dependent_value
                 FROM SN_raw.dbo.sys_choice AS sc
                 WHERE sc.element = 'sla_suspended_reason'
@@ -6923,7 +6923,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
 
@@ -6934,7 +6934,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TRV.            
+                -- Field not mentioned in p_DM_Performance_TRV.            
 
         .. tab-item:: SG CIC
 
@@ -6945,7 +6945,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Column commented out from p_Mart_Performance_CIC
+                -- Column commented out from p_DM_Performance_CIC
 
         .. tab-item:: SG RAS
 
@@ -7000,11 +7000,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
         
-                DROP TABLE IF EXISTS #Mart_Performance_RTC;
-                CREATE TABLE #Mart_Performance_RTC
+                DROP TABLE IF EXISTS #DM_Performance_RTC;
+                CREATE TABLE #DM_Performance_RTC
                 ([Parent No] nvarchar(12), [RTC] int);
 
-                INSERT INTO #Mart_Performance_RTC ([Parent No], [RTC])
+                INSERT INTO #DM_Performance_RTC ([Parent No], [RTC])
                 SELECT J1.number AS [Parent No],
                     COUNT(*) AS [RTC]
                 FROM SN_raw.dbo.sn_hr_core_task AS M
@@ -7015,21 +7015,21 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 WHERE M.[u_task_type] = 'return'
                 GROUP BY J1.number;
                 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Return Count] =
                     CASE
                         WHEN R.[RTC] > 0 THEN R.[RTC]
                         WHEN R.[RTC] = 0
-                            AND LEN(Mart_Performance.[Return Reason]) > 0
+                            AND LEN(DM_Performance.[Return Reason]) > 0
                             AND [Suspension Type] = '100' THEN 1
                         ELSE 0
                     END
-                FROM #Mart_Performance_RTC AS R
+                FROM #DM_Performance_RTC AS R
                 WHERE R.[Parent No] = [Case Number]
                     AND Platform = 'Request Portal'
                     AND LEFT([Case Number], 3) <> 'INC';
                 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Return Count] = 0
                 WHERE [Return Count] IS NULL
                     AND Platform = 'Request Portal'
@@ -7044,7 +7044,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -7055,7 +7055,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TRV.            
+                -- Field not mentioned in p_DM_Performance_TRV.            
 
         .. tab-item:: SG CIC
 
@@ -7129,14 +7129,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Suspended Reason]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Suspended Reason]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
         
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Return Reason] =
                     CASE WHEN [Return Count] > 0
                         THEN [Suspended Reason]
@@ -7154,7 +7154,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -7185,7 +7185,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -7199,7 +7199,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block::
                 
-                -- Field not mentioned in p_Mart_Performance_CIC.                
+                -- Field not mentioned in p_DM_Performance_CIC.                
 
         .. tab-item:: SG RAS
 
@@ -7247,7 +7247,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[shc_case.sla_suspended_on]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[shc_case.sla_suspended_on]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -7257,7 +7257,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number]  AS [Case Number],
                     S.[shc_case.sla_suspended_on] AS [Last Return Start Datetime]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -7281,7 +7281,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
 
@@ -7308,7 +7308,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -7377,7 +7377,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task.sys_updated_on]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task.sys_updated_on]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
@@ -7387,7 +7387,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     S.[task.sys_updated_on] AS [Last Update Datetime]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -7411,7 +7411,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
 
@@ -7436,7 +7436,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -7503,14 +7503,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Suspended Reason]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Suspended Reason]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
         
             .. code-block:: tsql
 
-                UPDATE Mart.dbo.Mart_Performance
+                UPDATE DM.dbo.DM_Performance
                 SET [Pending Reason] =
                     CASE
                         WHEN [Return Count] = 0 AND [Suspended Reason] IS NOT NULL
@@ -7529,7 +7529,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
 
@@ -7540,7 +7540,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TRV.            
+                -- Field not mentioned in p_DM_Performance_TRV.            
 
         .. tab-item:: SG CIC
 
@@ -7551,7 +7551,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in Mart_Performance_CIC            
+                -- Field not mentioned in DM_Performance_CIC            
 
         .. tab-item:: SG RAS
 
@@ -7599,14 +7599,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Return Count]``, ``Mart.dbo.Mart_Performance.[Reject Count]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Return Count]``, ``DM.dbo.DM_Performance.[Reject Count]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
         
             .. code-block:: tsql
         
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Return/Reject Check] =
                     CASE
                         WHEN [Return Count] > '0' AND [Reject Count] = '0' THEN 'Returned'
@@ -7626,7 +7626,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
 
@@ -7682,7 +7682,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -7703,7 +7703,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         WHEN I.[Return Count] > '0' AND I.[Reject Count] = '1' THEN 'Both'
                         ELSE 'N/A'
                     END AS [Return/Reject Check]
-                FROM Mart.dbo.Mart_Performance AS I
+                FROM DM.dbo.DM_Performance AS I
                 WHERE I.[Case Number] LIKE 'CIC%';
 
         .. tab-item:: SG RAS
@@ -7752,14 +7752,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Return Count]``, ``[Reject Count]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Return Count]``, ``[Reject Count]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
         
             .. code-block:: tsql
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Returned not Rejected] =
                     CASE
                         WHEN [Return Count] = '1' AND [Reject Count] = '0' THEN '1'
@@ -7777,7 +7777,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC            
+                -- Field not mentioned in p_DM_Performance_INC            
 
         .. tab-item:: SG Trv
 
@@ -7815,7 +7815,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -7834,7 +7834,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         WHEN I.[Return Count] = '1' AND I.[Reject Count] = '0' THEN '1'
                         ELSE '0'
                     END AS [Returned not Rejected]
-                FROM Mart.dbo.Mart_Performance AS I
+                FROM DM.dbo.DM_Performance AS I
                 WHERE I.[Case Number] LIKE 'CIC%';               
 
         .. tab-item:: SG RAS
@@ -7857,7 +7857,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_TMS
+                -- Field not mentioned in p_DM_Performance_TMS
 
         .. tab-item:: SharePoint JC
 
@@ -7883,14 +7883,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Performance.[Return Count]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Performance.[Return Count]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
             
             .. code-block:: tsql
         
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Returned Case] =
                     CASE
                         WHEN [Return Count] > 0 THEN 1
@@ -7908,7 +7908,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
             
         .. tab-item:: SG Trv 
 
@@ -7945,7 +7945,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -7963,7 +7963,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     CASE 
                         WHEN I.[Return Count] = 1 THEN 1
                     END AS [Returned Case]
-                FROM Mart.dbo.Mart_Performance AS I
+                FROM DM.dbo.DM_Performance AS I
                 WHERE I.[Case Number] LIKE 'CIC%';                
 
         .. tab-item:: SG RAS
@@ -8012,7 +8012,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[shc_case.u_emergency]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[shc_case.u_emergency]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8022,7 +8022,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     CASE WHEN S.[shc_case.u_emergency] = 'true' THEN 'Emergency' ELSE 'Standard' END AS [Emergency Flag (Case)]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -8046,11 +8046,11 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Calendar.[Emergency]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Calendar.[Emergency]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8065,9 +8065,9 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_travel_case AS J
                     ON M.[task.sys_id] = J.sys_id
-                LEFT JOIN Mart.dbo.Mart_Calendar AS C
-                    ON J.[u_business_area_code] = C.[Service Area - Code]
-                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM Mart.dbo.Mart_Calendar ORDER BY 1 DESC)
+                LEFT JOIN DM.dbo.DM_Calendar AS C
+                    ON J.[u_Service_Area_code] = C.[Service Area - Code]
+                    AND C.[Master Date] = (SELECT TOP 1 [Master Date] FROM DM.dbo.DM_Calendar ORDER BY 1 DESC)
                 WHERE M.[task.number] LIKE 'TRV%'
                     AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
                     AND M.[task.sys_created_on] >= '2024-03-11'
@@ -8076,14 +8076,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
 
         .. tab-item:: SG CIC
 
-            - :fa:`database` *Lineage:* ``Derived — CASE WHEN SN_raw.dbo.sn_hr_core_business_area.u_emergency = 'true' THEN 'Emergency' ELSE 'Standard' END``
+            - :fa:`database` *Lineage:* ``Derived — CASE WHEN SN_raw.dbo.sn_hr_core_Service_Area.u_emergency = 'true' THEN 'Emergency' ELSE 'Standard' END``
             - :fa:`tag` *Setting Type:* Derived — Business‑rule
             - :fa:`cogs` *How:* If the Service Area is marked as emergency, show “Emergency”; otherwise show “Standard.”
             - :fa:`filter` *Filter:* Include CIC cases; leave out cases marked Cancelled or Read.
@@ -8098,8 +8098,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 FROM SN.dbo.[10-task] AS M
                 LEFT JOIN SN_raw.dbo.x_adsr_unall_invoices AS INV
                     ON INV.sys_id = M.[task.sys_id]
-                LEFT JOIN SN_raw.dbo.sn_hr_core_business_area AS BA
-                    ON INV.[business_area.value] = BA.sys_id
+                LEFT JOIN SN_raw.dbo.sn_hr_core_Service_Area AS BA
+                    ON INV.[Service_Area.value] = BA.sys_id
                 WHERE M.[task.number] LIKE 'CIC%'
                     AND M.[task.state.sys_choice] NOT LIKE '%Cancel%'
                     AND M.[task.state.sys_choice] NOT LIKE '%Read%';
@@ -8150,39 +8150,39 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Calendar.[Emergency]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Calendar.[Emergency]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
             
             .. code-block:: tsql
     
-                UPDATE Mart.dbo.Mart_Performance
+                UPDATE DM.dbo.DM_Performance
                 SET    [Emergency Flag (Country)] = CASE WHEN M.[Emergency] = 1 THEN 'Emergency' ELSE 'Standard' END
-                FROM   Mart.dbo.Mart_Calendar AS M
+                FROM   DM.dbo.DM_Calendar AS M
                 WHERE  M.[Master Date] = [Case Open Date]
-                    AND  M.[Service Area - Code] = Mart_Performance.[Service Area - Code]
+                    AND  M.[Service Area - Code] = DM_Performance.[Service Area - Code]
                     AND  Platform = 'Request Portal'
                     AND  LEFT([Case Number], 3) <> 'INC';
 
         .. tab-item:: SG Inc 
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_Calendar.[Emergency]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_Calendar.[Emergency]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
         
             .. code-block:: tsql            
         
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Emergency Flag (Country)] =
                     CASE WHEN M.[Emergency] = 1 THEN 'Emergency' ELSE 'Standard' END
-                FROM Mart.dbo.Mart_Calendar M WITH (TABLOCK)
+                FROM DM.dbo.DM_Calendar M WITH (TABLOCK)
                 WHERE M.[Master Date] = CAST([Case Open Date] AS DATE)
-                    AND M.[Service Area - Name] = Mart_Performance.[Service Area - Name]
+                    AND M.[Service Area - Name] = DM_Performance.[Service Area - Name]
                     AND LEFT([Case Number],3) = 'INC';
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [Emergency Flag (Country)] = 'Standard'
                 WHERE [Emergency Flag (Country)] IS NULL
                     AND LEFT([Case Number],3) = 'INC';
@@ -8200,7 +8200,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG CIC
 
-            - :fa:`database` *Lineage:* ``Derived — CASE WHEN Mart.dbo.Mart_Calendar.Emergency = 1 THEN 'Emergency' ELSE 'Standard' END``
+            - :fa:`database` *Lineage:* ``Derived — CASE WHEN DM.dbo.DM_Calendar.Emergency = 1 THEN 'Emergency' ELSE 'Standard' END``
             - :fa:`tag` *Setting Type:* Derived — Business‑rule
             - :fa:`cogs` *How:* Use the organization’s calendar for the case’s open date and Service Area; if that day is flagged as emergency, show “Emergency”; otherwise show “Standard.”
             - :fa:`filter` *Filter:* Include CIC cases; leave out cases marked Cancelled or Read.
@@ -8256,7 +8256,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.has_breached]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.has_breached]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8266,7 +8266,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     CASE WHEN S.[task_sla.has_breached] = 'true' THEN 1 ELSE 0 END AS [Overdue]
-                FROM Mart.dbo.Mart_SG_Cases AS S WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases AS S WITH (TABLOCK)
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -8283,7 +8283,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc 
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[task_sla.has_breached]``, ``Mart_SG_Incidents.[task.state.sys_choice]``, ``Mart_SG_Incidents.[incident.incident_state.sys_choice]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[task_sla.has_breached]``, ``DM_SG_Incidents.[task.state.sys_choice]``, ``DM_SG_Incidents.[incident.incident_state.sys_choice]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8302,7 +8302,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             THEN '0'
                         ELSE NULL
                     END AS [Overdue]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -8329,7 +8329,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -8402,7 +8402,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.has_breached]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.has_breached]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8412,7 +8412,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     CASE WHEN S.[task_sla.has_breached] = 'false' THEN 1 ELSE 0 END AS [SLA Met]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -8429,7 +8429,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.task_sla.has_breached`` ; ``Mart_SG_Incidents.task.state.sys_choice`` ; ``Mart_SG_Incidents.incident.incident_state.sys_choice``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.task_sla.has_breached`` ; ``DM_SG_Incidents.task.state.sys_choice`` ; ``DM_SG_Incidents.incident.incident_state.sys_choice``
             - :fa:`tag` *Setting Type:* Derived — Business‑rule
             - :fa:`cogs` *How:* Set to 1 when the case’s SLA breach flag is false and the case is closed or resolved (from either the task status or the incident status). Set to 0 when the breach flag is true and the case is closed or resolved; otherwise leave blank.
             - :fa:`filter` *Filter:* Include Incident cases, except those with both the task status and the incident status set to 'cancelled'.
@@ -8448,7 +8448,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             THEN '0'
                         ELSE NULL
                     END AS [SLA Met]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
             
@@ -8475,7 +8475,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -8548,7 +8548,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[contract_sla.duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[contract_sla.duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8558,7 +8558,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', S.[contract_sla.duration]) AS [SLA Target (Hours)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -8582,7 +8582,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -8613,7 +8613,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -8689,7 +8689,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[contract_sla.duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[contract_sla.duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8699,7 +8699,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', S.[contract_sla.duration]) / 8 AS [SLA Target (Business Days)]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -8716,7 +8716,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Inc
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Incidents.[contract_sla.duration]``
+            - :fa:`database` *Lineage:* ``DM_SG_Incidents.[contract_sla.duration]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8731,7 +8731,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                             [contract_sla.duration]
                         ) AS int
                     ) / 8 AS [SLA Target (Business Days)]
-                FROM Mart_SG_Incidents
+                FROM DM_SG_Incidents
                 WHERE [task.state.sys_choice] NOT IN ('Cancelled','Canceled')
                     OR [incident.incident_state.sys_choice] NOT IN ('Cancelled','Canceled');
 
@@ -8764,7 +8764,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -8840,17 +8840,17 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[task_sla.sla:contract_sla.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[task_sla.sla:contract_sla.name]``
             - :fa:`tag` *Setting Type:*
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
         
             .. code-block:: tsql
 
-                IF EXISTS (SELECT 1 FROM work.sys.tables WHERE [name] = 'Mart_Performance_SLA')
-                    TRUNCATE TABLE work.dbo.Mart_Performance_SLA;
-                IF NOT EXISTS (SELECT 1 FROM work.sys.tables WHERE [name] = 'Mart_Performance_SLA')
-                    CREATE TABLE work.dbo.Mart_Performance_SLA
+                IF EXISTS (SELECT 1 FROM work.sys.tables WHERE [name] = 'DM_Performance_SLA')
+                    TRUNCATE TABLE work.dbo.DM_Performance_SLA;
+                IF NOT EXISTS (SELECT 1 FROM work.sys.tables WHERE [name] = 'DM_Performance_SLA')
+                    CREATE TABLE work.dbo.DM_Performance_SLA
                     (
                         [task.number]                       nvarchar(12)
                         , [task_sla.sla:contract_sla.name]  nvarchar(255)
@@ -8858,28 +8858,28 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         , [Active SLA count]                int
                     );
 
-                INSERT INTO work.dbo.Mart_Performance_SLA
+                INSERT INTO work.dbo.DM_Performance_SLA
                 ([task.number], [task_sla.sla:contract_sla.name], [task_sla.sys_updated_on], [Active SLA count])
                 SELECT
                     [task.number]
                     , [task_sla.sla:contract_sla.name]
                     , [task_sla.sys_updated_on]
                     , COUNT(*) AS [Active SLA count]
-                FROM Mart.dbo.Mart_SG_Cases WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
                 WHERE [contract_sla.type.sys_choice] = 'SLA'
                 GROUP BY [task.number], [task_sla.sla:contract_sla.name], [task_sla.sys_updated_on];
 
                 WITH cte AS
                 (
                     SELECT ROW_NUMBER() OVER (PARTITION BY [task.number] ORDER BY [task.number], [task_sla.sys_updated_on]) AS row_num
-                    FROM work.dbo.Mart_Performance_SLA
+                    FROM work.dbo.DM_Performance_SLA
                 )
                 DELETE FROM cte WHERE row_num > 1;
 
-                UPDATE Mart_Performance
-                SET [SLA Description] = work.dbo.Mart_Performance_SLA.[task_sla.sla:contract_sla.name]
-                FROM work.dbo.Mart_Performance_SLA
-                WHERE work.dbo.Mart_Performance_SLA.[task.number] = [Case Number]
+                UPDATE DM_Performance
+                SET [SLA Description] = work.dbo.DM_Performance_SLA.[task_sla.sla:contract_sla.name]
+                FROM work.dbo.DM_Performance_SLA
+                WHERE work.dbo.DM_Performance_SLA.[task.number] = [Case Number]
                 AND Platform = 'Request Portal'
                 AND LEFT([Case Number], 3) <> 'INC';
 
@@ -8892,7 +8892,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -8917,7 +8917,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -8987,7 +8987,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart_SG_Cases.[contract_sla.schedule:cmn_schedule.name]``
+            - :fa:`database` *Lineage:* ``DM_SG_Cases.[contract_sla.schedule:cmn_schedule.name]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
@@ -8997,7 +8997,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 SELECT DISTINCT
                     S.[task.number] AS [Case Number],
                     TRY_CAST(S.[contract_sla.schedule:cmn_schedule.name] AS nvarchar(255)) AS [SLA Schedule]
-                FROM Mart.dbo.Mart_SG_Cases AS S
+                FROM DM.dbo.DM_SG_Cases AS S
                 WHERE
                     S.[task.number] IS NOT NULL
                     AND LEN(S.[task.number]) > 0
@@ -9021,7 +9021,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -9048,7 +9048,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -9120,15 +9120,15 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.has_breached]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.has_breached]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
         
             .. code-block:: tsql
 
-                DROP TABLE IF EXISTS #Mart_Performance_OLA;
-                CREATE TABLE #Mart_Performance_OLA
+                DROP TABLE IF EXISTS #DM_Performance_OLA;
+                CREATE TABLE #DM_Performance_OLA
                 (
                     [task.number]                         nvarchar(12)
                     , [task_sla.sla:contract_sla.name]    nvarchar(255)
@@ -9137,7 +9137,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [contract_sla.duration]             datetime
                 );
 
-                INSERT INTO #Mart_Performance_OLA
+                INSERT INTO #DM_Performance_OLA
                 (   [task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached], [task_sla.sys_updated_on], [contract_sla.duration] )
                 SELECT
                     [task.number]
@@ -9145,21 +9145,21 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [task_sla.has_breached]
                     , [task_sla.sys_updated_on]
                     , [contract_sla.duration]
-                FROM Mart.dbo.Mart_SG_Cases WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
                 WHERE [contract_sla.type.sys_choice] = 'OLA';
 
                 WITH cte AS
                 (
                     SELECT ROW_NUMBER() OVER (PARTITION BY [task.number] ORDER BY [task.number], [task_sla.sys_updated_on]) AS row_num
-                    FROM #Mart_Performance_OLA
+                    FROM #DM_Performance_OLA
                 )
                 DELETE FROM cte WHERE row_num > 1;
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [OLA Met] =
-                    CASE WHEN #Mart_Performance_OLA.[task_sla.has_breached] = 'false' THEN '1' ELSE '0' END
-                FROM #Mart_Performance_OLA
-                WHERE #Mart_Performance_OLA.[task.number] = [Case Number]
+                    CASE WHEN #DM_Performance_OLA.[task_sla.has_breached] = 'false' THEN '1' ELSE '0' END
+                FROM #DM_Performance_OLA
+                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
                 AND Platform = 'Request Portal'
                 AND LEFT([Case Number], 3) <> 'INC';
 
@@ -9172,7 +9172,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -9197,7 +9197,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -9270,15 +9270,15 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[contract_sla.duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[contract_sla.duration]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:*
         
             .. code-block:: tsql
 
-                DROP TABLE IF EXISTS #Mart_Performance_OLA;
-                CREATE TABLE #Mart_Performance_OLA
+                DROP TABLE IF EXISTS #DM_Performance_OLA;
+                CREATE TABLE #DM_Performance_OLA
                 (
                     [task.number]                         nvarchar(12)
                     , [task_sla.sla:contract_sla.name]    nvarchar(255)
@@ -9287,7 +9287,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [contract_sla.duration]             datetime
                 );
 
-                INSERT INTO #Mart_Performance_OLA
+                INSERT INTO #DM_Performance_OLA
                 (   [task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached], [task_sla.sys_updated_on], [contract_sla.duration] )
                 SELECT
                     [task.number]
@@ -9295,21 +9295,21 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [task_sla.has_breached]
                     , [task_sla.sys_updated_on]
                     , [contract_sla.duration]
-                FROM Mart.dbo.Mart_SG_Cases WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
                 WHERE [contract_sla.type.sys_choice] = 'OLA';
 
                 WITH cte AS
                 (
                     SELECT ROW_NUMBER() OVER (PARTITION BY [task.number] ORDER BY [task.number], [task_sla.sys_updated_on]) AS row_num
-                    FROM #Mart_Performance_OLA
+                    FROM #DM_Performance_OLA
                 )
                 DELETE FROM cte WHERE row_num > 1;
 
-                UPDATE Mart_Performance
+                UPDATE DM_Performance
                 SET [OLA Target (Hours)] =
-                    DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', #Mart_Performance_OLA.[contract_sla.duration])
-                FROM #Mart_Performance_OLA
-                WHERE #Mart_Performance_OLA.[task.number] = [Case Number]
+                    DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', #DM_Performance_OLA.[contract_sla.duration])
+                FROM #DM_Performance_OLA
+                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
                 AND Platform = 'Request Portal'
                 AND LEFT([Case Number], 3) <> 'INC';
 
@@ -9322,7 +9322,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -9353,7 +9353,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -9429,15 +9429,15 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[contract_sla.duration]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[contract_sla.duration]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
         
             .. code-block:: tsql
         
-                DROP TABLE IF EXISTS #Mart_Performance_OLA;
-                CREATE TABLE #Mart_Performance_OLA
+                DROP TABLE IF EXISTS #DM_Performance_OLA;
+                CREATE TABLE #DM_Performance_OLA
                 (
                     [task.number]                        nvarchar(12)
                     , [task_sla.sla:contract_sla.name]   nvarchar(255)
@@ -9446,7 +9446,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [contract_sla.duration]            datetime
                 );
 
-                INSERT INTO #Mart_Performance_OLA
+                INSERT INTO #DM_Performance_OLA
                     ([task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached],
                     [task_sla.sys_updated_on], [contract_sla.duration])
                 SELECT
@@ -9455,7 +9455,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [task_sla.has_breached]
                     , [task_sla.sys_updated_on]
                     , [contract_sla.duration]
-                FROM Mart.dbo.Mart_SG_Cases WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
                 WHERE [contract_sla.type.sys_choice] = 'OLA';
 
                 WITH cte AS (
@@ -9463,15 +9463,15 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         PARTITION BY [task.number]
                         ORDER BY [task.number], [task_sla.sys_updated_on]
                     ) AS row_num
-                    FROM #Mart_Performance_OLA
+                    FROM #DM_Performance_OLA
                 )
                 DELETE FROM cte WHERE row_num > 1;
                 
-                UPDATE Mart.dbo.Mart_Performance
+                UPDATE DM.dbo.DM_Performance
                 SET [OLA Target (Business Days)] =
-                    DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', #Mart_Performance_OLA.[contract_sla.duration]) / 8
-                FROM #Mart_Performance_OLA
-                WHERE #Mart_Performance_OLA.[task.number] = [Case Number]
+                    DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', #DM_Performance_OLA.[contract_sla.duration]) / 8
+                FROM #DM_Performance_OLA
+                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
                 AND Platform = 'Request Portal'
                 AND LEFT([Case Number], 3) <> 'INC'; 
 
@@ -9484,7 +9484,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -9515,7 +9515,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
@@ -9591,15 +9591,15 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 
         .. tab-item:: SG Cases
 
-            - :fa:`database` *Lineage:* ``Mart.dbo.Mart_SG_Cases.[task_sla.sla:contract_sla.name]``
+            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.sla:contract_sla.name]``
             - :fa:`tag` *Setting Type:* 
             - :fa:`cogs` *How:* 
             - :fa:`filter` *Filter:* 
         
             .. code-block:: tsql
         
-                DROP TABLE IF EXISTS #Mart_Performance_OLA;
-                CREATE TABLE #Mart_Performance_OLA
+                DROP TABLE IF EXISTS #DM_Performance_OLA;
+                CREATE TABLE #DM_Performance_OLA
                 (
                     [task.number]                        nvarchar(12)
                     , [task_sla.sla:contract_sla.name]   nvarchar(255)
@@ -9608,7 +9608,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [contract_sla.duration]            datetime
                 );
 
-                INSERT INTO #Mart_Performance_OLA
+                INSERT INTO #DM_Performance_OLA
                 (   [task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached],
                     [task_sla.sys_updated_on], [contract_sla.duration] )
                 SELECT
@@ -9617,7 +9617,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     , [task_sla.has_breached]
                     , [task_sla.sys_updated_on]
                     , [contract_sla.duration]
-                FROM Mart.dbo.Mart_SG_Cases WITH (TABLOCK)
+                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
                 WHERE [contract_sla.type.sys_choice] = 'OLA';
 
                 WITH cte AS (
@@ -9625,14 +9625,14 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         PARTITION BY [task.number]
                         ORDER BY [task.number], [task_sla.sys_updated_on]
                     ) AS row_num
-                    FROM #Mart_Performance_OLA
+                    FROM #DM_Performance_OLA
                 )
                 DELETE FROM cte WHERE row_num > 1;
 
-                UPDATE Mart.dbo.Mart_Performance
-                SET [OLA Description] = #Mart_Performance_OLA.[task_sla.sla:contract_sla.name]
-                FROM #Mart_Performance_OLA
-                WHERE #Mart_Performance_OLA.[task.number] = [Case Number]
+                UPDATE DM.dbo.DM_Performance
+                SET [OLA Description] = #DM_Performance_OLA.[task_sla.sla:contract_sla.name]
+                FROM #DM_Performance_OLA
+                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
                 AND Platform = 'Request Portal'
                 AND LEFT([Case Number], 3) <> 'INC';
 
@@ -9645,7 +9645,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
         
             .. code-block:: tsql
                 
-                -- Field not mentioned in p_Mart_Performance_INC
+                -- Field not mentioned in p_DM_Performance_INC
 
         .. tab-item:: SG Trv
 
@@ -9670,7 +9670,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
                     AND NOT EXISTS (
                         SELECT 1
-                        FROM Mart.dbo.Mart_Performance AS P
+                        FROM DM.dbo.DM_Performance AS P
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );

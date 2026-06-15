@@ -16,19 +16,19 @@
 
 .. rst-class:: pst-primary-sidebar-narrow
 
-Mart_Changes
+DM_Changes
 ============
 
 **Column Reference**
 
 |br|
 
-Filter with header icons > Expand row toggles for hidden fields > Click truncated text or  :fas:`circle-info;sd-text-info` for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides.fabric>`. \| To contribute, use the |ColRef_Excel_Link_Mart_Changes|.
+Filter with header icons > Expand row toggles for hidden fields > Click truncated text or  :fas:`circle-info;sd-text-info` for full details. \| For table introductions, see :doc:`User Guides <../../1_User_Guides/User_Guides.fabric>`. \| To contribute, use the |ColRef_Excel_Link_DM_Changes|.
 
 
 
 .. =================================================================================================================
-.. --- Mart_Changes Col. Ref. ---------------------------------------------------------------------------------------
+.. --- DM_Changes Col. Ref. ---------------------------------------------------------------------------------------
 .. =================================================================================================================
 
 
@@ -61,7 +61,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Changes.00_Change_Key
+    * - DM_Changes.00_Change_Key
       - Reserved for technical purposes
       - ``NULL``
       - SAP
@@ -69,7 +69,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Changes.01_Change_Key
+    * - DM_Changes.01_Change_Key
       - Reserved for technical purposes
       - ``NULL``
       - SAP
@@ -77,7 +77,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Changes.02_Change_Key
+    * - DM_Changes.02_Change_Key
       - Reserved for technical purposes
       - ``NULL``
       - SAP
@@ -93,7 +93,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Person.PA0001_ENAME
+    * - DM_Person.PA0001_ENAME
       - Full name of the SAP user who made the change
       - ``NULL``
       - SAP
@@ -101,7 +101,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Person.PA0105_EMAIL
+    * - DM_Person.PA0105_EMAIL
       - Email address of the SAP user who made the change
       - ``NULL``
       - SAP
@@ -109,7 +109,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Person.HRP1008_Business_Area
+    * - DM_Person.HRP1008_Service_Area
       - Service Area of the SAP user who made the change
       - ``1950``, ``4500``
       - SAP
@@ -117,7 +117,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Person.HRP1001_Org_Unit
+    * - DM_Person.HRP1001_Org_Unit
       - Organizational unit of the SAP user who made the change
       - ``NULL``
       - SAP
@@ -125,7 +125,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Person.Demo_Stream
+    * - DM_Person.Demo_Stream
       - Demo Stream of the SAP user who made the change
       - ``NULL``
       - SAP
@@ -133,8 +133,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - Mart_Changes.Change_Timestamp
-      - Timestamp when the change was recorded in the Mart_Changes table
+    * - DM_Changes.Change_Timestamp
+      - Timestamp when the change was recorded in the DM_Changes table
       - ``2022-01-01 03:08:00.000``
       - SAP
       - N/A

@@ -4501,7 +4501,7 @@
         var matched = [];
 
         // Search term can be a function, regex or string - if a string we apply our
-        // smart filtering regex (assuming the options require that)
+        // sDM filtering regex (assuming the options require that)
         var searchFunc = typeof input === 'function' ? input : null;
         var rpSearch = input instanceof RegExp
             ? input
@@ -4534,7 +4534,7 @@
      * Build a regular expression object suitable for searching a table
      *  @param {string} sSearch string to search for
      *  @param {bool} bRegex treat as a regular expression or not
-     *  @param {bool} bSmart perform smart filtering or not
+     *  @param {bool} bSDM perform sDM filtering or not
      *  @param {bool} bCaseInsensitive Do case-insensitive matching or not
      *  @returns {RegExp} constructed object
      *  @memberof DataTable#oApi
@@ -4546,7 +4546,7 @@
             caseInsensitive: true,
             exact: false,
             regex: false,
-            smart: true
+            sDM: true
         }, inOpts);
 
         if (typeof search !== 'string') {
@@ -4567,8 +4567,8 @@
             search :
             _fnEscapeRegex(search);
 
-        if (options.smart) {
-            /* For smart filtering we want to allow the search to work regardless of
+        if (options.sDM) {
+            /* For sDM filtering we want to allow the search to work regardless of
              * word order. We also want double quoted text to be preserved, so word
              * order is important - a la google. And a negative look around for
              * finding rows which don't contain a given string.
@@ -4594,7 +4594,7 @@
                     word = m ? m[1] : word;
                 }
                 else if (word.charAt(0) === '\u201C') {
-                    // Smart quote match (iPhone users)
+                    // SDM quote match (iPhone users)
                     m = word.match(/^\u201C(.*)\u201D$/);
                     word = m ? m[1] : word;
                 }
@@ -9421,7 +9421,7 @@
     });
 
 
-    _api_register('search()', function (input, regex, smart, caseInsen) {
+    _api_register('search()', function (input, regex, sDM, caseInsen) {
         var ctx = this.context;
 
         if (input === undefined) {
@@ -9448,7 +9448,7 @@
                 _fnFilterComplete(settings, $.extend(settings.oPreviousSearch, {
                     search: input,
                     regex: regex === null ? false : regex,
-                    smart: smart === null ? true : smart,
+                    sDM: sDM === null ? true : sDM,
                     caseInsensitive: caseInsen === null ? true : caseInsen
                 }));
             }
@@ -9483,7 +9483,7 @@
     _api_registerPlural(
         'columns().search()',
         'column().search()',
-        function (input, regex, smart, caseInsen) {
+        function (input, regex, sDM, caseInsen) {
             return this.iterator('column', function (settings, column) {
                 var preSearch = settings.aoPreSearchCols;
 
@@ -9508,7 +9508,7 @@
                     $.extend(preSearch[column], {
                         search: input,
                         regex: regex === null ? false : regex,
-                        smart: smart === null ? true : smart,
+                        sDM: sDM === null ? true : sDM,
                         caseInsensitive: caseInsen === null ? true : caseInsen
                     });
                 }
@@ -10155,9 +10155,9 @@
         "regex": false,
 
         /**
-         * Flag to indicate if DataTables is to use its smart filtering or not.
+         * Flag to indicate if DataTables is to use its sDM filtering or not.
          */
-        "smart": true,
+        "sDM": true,
 
         /**
          * Flag to indicate if DataTables should only trigger a search when
@@ -10622,7 +10622,7 @@
 
 
         /**
-         * Enable or disable filtering of data. Filtering in DataTables is "smart" in
+         * Enable or disable filtering of data. Filtering in DataTables is "sDM" in
          * that it allows the end user to input multiple words (space separated) and
          * will match a row containing those words, even if not in the order that was
          * specified (this allow matching across multiple columns). Note that if you
@@ -11151,8 +11151,8 @@
          * initialisation time. As an object the `search` parameter must be
          * defined, but all other parameters are optional. When `regex` is true,
          * the search string will be treated as a regular expression, when false
-         * (default) it will be treated as a straight string. When `smart`
-         * DataTables will use it's smart filtering methods (to word match at
+         * (default) it will be treated as a straight string. When `sDM`
+         * DataTables will use it's sDM filtering methods (to word match at
          * any point in the data), when false this will not be done.
          */
         "oSearch": $.extend({}, DataTable.models.oSearch),
@@ -11531,7 +11531,7 @@
 
         /**
          * Defining the width of the column, this parameter may take any CSS value
-         * (3em, 20px etc). DataTables applies 'smart' widths to columns which have not
+         * (3em, 20px etc). DataTables applies 'sDM' widths to columns which have not
          * been given a specific width through this interface ensuring that the table
          * remains readable.
          */
@@ -13309,7 +13309,7 @@
             lang = settings.oLanguage,
             tid = settings.sTableId,
             n = $('<div/>', {
-                'class': settings.oClasses.Mart.container,
+                'class': settings.oClasses.DM.container,
             });
 
         opts = $.extend({
@@ -13591,9 +13591,9 @@
             var btn = _fnRenderer(settings, 'pagingButton')(
                 settings,
                 button,
-                btnMart.display,
-                btnMart.active,
-                btnMart.disabled
+                btnDM.display,
+                btnDM.active,
+                btnDM.disabled
             );
 
             var ariaLabel = typeof button === 'string'
@@ -13605,11 +13605,11 @@
             // Common attributes
             $(btn.clicker).attr({
                 'aria-controls': settings.sTableId,
-                'aria-disabled': btnMart.disabled ? 'true' : null,
-                'aria-current': btnMart.active ? 'page' : null,
+                'aria-disabled': btnDM.disabled ? 'true' : null,
+                'aria-current': btnDM.active ? 'page' : null,
                 'aria-label': ariaLabel,
                 'data-dt-idx': button,
-                'tabIndex': btnMart.disabled
+                'tabIndex': btnDM.disabled
                     ? -1
                     : settings.iTabIndex && btn.clicker[0].nodeName.toLowerCase() !== 'span'
                         ? settings.iTabIndex
@@ -16423,11 +16423,11 @@
                         column.search.fixed('dtcc', function (haystack) { return haystack.toLowerCase() != searchTerm; });
                     }
                     else if (searchType === 'contains') {
-                        // Use the built in smart search
+                        // Use the built in sDM search
                         column.search.fixed('dtcc', searchTerm);
                     }
                     else if (searchType === 'notContains') {
-                        // Use the built in smart search
+                        // Use the built in sDM search
                         column.search.fixed('dtcc', function (haystack) { return !haystack.toLowerCase().includes(searchTerm); });
                     }
                     else if (searchType === 'starts') {

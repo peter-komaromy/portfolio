@@ -33,23 +33,21 @@
         return !!(el && el.classList && el.classList.contains(cls));
     }
 
-// =====================================================================================
-
     function detectProfile(table) {
         // Explicit per-page override via table class
         if (hasClass(table, "dt-profile-perf")) return "perf6";
-        if (hasClass(table, "dt-profile-colref7")) return "colref7";        
+        if (hasClass(table, "dt-profile-colref7")) return "colref7";
+        if (hasClass(table, "dt-profile-perf5")) return "perf5";
 
         // Fallback auto-detect by column count
         const thCount = table.querySelectorAll("thead th").length;
         if (thCount === 6) return "perf6";
-        if (thCount === 7) return "colref7";        
+        if (thCount === 7) return "colref7";
+        if (thCount === 5) return "perf5";
 
         // Safe default
         return "colref7";
     }
-
-// =======================================================================================
 
     function markReady(table) {
         table.classList.add(READY_CLASS);
@@ -91,14 +89,9 @@
             },
         };
 
-// =====================================================================================================================
-
         const profiles = {
-            // 7-column colref pages (DM_Person, DM_Trips):
+            // 7-column colref pages (INFO_Person, INFO_Trips):
             // 0 ColName, 1 Def, 2 Samples, 3 SourceSys, 4 SourceTable, 5 Remark, 6 TechNotes
-            
-            // ------------------------------------------------------------------------------
-
             colref7: {
                 // Fixed widths for the 4 visible columns. Columns 4–6 are forced into Responsive child rows via className: "none".
                 columns: [
@@ -134,8 +127,6 @@
                 ],
             },
 
-            // -------------------------------------------------------------------------
-
             // 6-column performance pages:
             // 0 ColName, 1 Def, 2 Samples, 3 SourceSys, 4 Remark, 5 DataOriginLogic
             perf6: {
@@ -169,10 +160,41 @@
                     { targets: 4, className: "none" }, // Remark
                     { targets: 5, className: "none dt-origin-logic" }, // Data Origin & Logic
                 ],
-            }, 
-        };
+            },
 
-// =======================================================================================================================
+            // 5-column performance pages:
+            // Temporary sandbox content -- to be deleted later!
+            perf5: {
+                // Fixed widths for the 4 visible columns. Columns 4–5 are forced into Responsive child rows via className: "none".
+                columns: [
+                    { width: "20%" }, // Column Name
+                    { width: "40%" }, // Definition
+                    { width: "20%" }, // Sample Value(s)
+                    { width: "20%" }, // Source System(s)
+                    {}, // Remark (child row)
+                ],
+                columnDefs: [
+                    { targets: 0, responsivePriority: 1, className: "dt-trunc dt-colname" },
+                    { targets: 1, responsivePriority: 2, className: "dt-trunc dt-definition" },
+                    {
+                        targets: 2,
+                        responsivePriority: 3,
+                        className: "dt-trunc dt-samples",
+                        columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]],
+                    },
+                    {
+                        targets: 3,
+                        responsivePriority: 4,
+                        className: "dt-trunc dt-sourcesys",
+                        columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]],
+                    },
+
+                    // Always hidden in main table (shown in Responsive child rows)
+                    { targets: 4, className: "none" }, // Remark
+                ],
+            },
+
+        };
 
         const profile = detectProfile(table);
         const opts = jQuery.extend(true, {}, base, profiles[profile] || {});

@@ -104,9 +104,11 @@ togglebutton_selector = ".toggle, .admonition.dropdown, .admonition.landing-togg
 datatables_version = "2.3.5"
 datatables_js  = "js/datatables.min.js"
 datatables_css = "css/datatables.min.css"
-datatables_class = "sphinx-datatable" # set to something non-existing which is never used
+#datatables_class = "sphinx-datatable"    # set to something non-existing which is never used
 #datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
-datatables_options = r"""
+
+datatables_class = "sphinx-datatable"
+datatables_options = """
 {
   paging: true,
   searching: true,

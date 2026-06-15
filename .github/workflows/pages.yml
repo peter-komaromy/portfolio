@@ -66,6 +66,12 @@ jobs:
         with:
           path: build/html
 
+      - name: Show Python package versions
+        run: |
+          python -m pip freeze | sort
+          python -m pip show sphinx pydata-sphinx-theme sphinx-datatables sphinxcontrib-jquery
+          python -m sphinx --version
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -78,3 +84,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  

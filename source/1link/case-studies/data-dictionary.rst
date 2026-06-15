@@ -31,21 +31,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. --- DM_Changes Col. Ref. ---------------------------------------------------------------------------------------
 .. =================================================================================================================
 
-.. datatables-js:: table.portfolio-datatable
-
-    {
-        autoWidth: false,
-        order: [],
-        responsive: true,
-        columnControl: [
-        "order",
-        ["search", "spacer", "orderAsc", "orderDesc", "orderClear"]
-        ],
-        ordering: {
-        indicators: false
-        }
-    }
-
 
 .. list-table::
     :header-rows: 1

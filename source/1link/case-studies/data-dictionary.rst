@@ -35,7 +35,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. list-table::
     :header-rows: 1
     :widths: auto
-    :class: sphinx-datatable display hover nowrap dt-profile-colref7
+    :class: sphinx-datatable display hover
 
     * - Column Name
       - Definition

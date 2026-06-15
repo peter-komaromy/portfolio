@@ -107,15 +107,39 @@ datatables_css = "css/datatables.min.css"
 #datatables_class = "datatable-disabled" # set to something non-existing which is never used
 #datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
 
-datatables_class = "portfolio-datatable"
-
-datatables_options = """
+datatables_class = "sphinx-datatable"
+datatables_options = r"""
 {
-  paging: true,
-  searching: true,
-  info: true,
-  ordering: true,
-  responsive: true
+    responsive: {
+        details: { renderer: DataTable.Responsive.renderer.listHiddenNodes() }
+    },
+
+    columnControl: [
+        "order",
+        ["search", "spacer", "orderAsc", "orderDesc", "orderClear"]
+    ],
+
+    
+    columnDefs: [        
+        { targets: 0, responsivePriority: 1, className: "dt-trunc dt-colname" },        
+        { targets: 1, responsivePriority: 2, className: "dt-trunc dt-definition" },        
+        {
+            targets: 2,
+            responsivePriority: 3,
+            className: "dt-trunc dt-samples",
+            columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]]
+        },
+        {
+            targets: 3,
+            responsivePriority: 4,
+            className: "dt-trunc dt-sourcesys",
+            columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]]
+        },
+        { targets: 4, className: "dt-trunc dt-remarks" },        
+        { targets: 5, className: "dt-origin-logic" }
+    ],
+    
+    ordering: { indicators: false }
 }
 """
 

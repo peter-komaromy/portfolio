@@ -462,13 +462,13 @@ button.colref-open-icon:hover {
    ColRef DataTables: fixed visible columns + truncation
    ============================================================ */
 
-.dt-container table.dataTable:is(.dt-profile-colref7, .dt-profile-perf, .dt-profile-perf5) {
+.dt-container table.dataTable:is(.dt-profile-colref8, .dt-profile-perf, .dt-profile-perf5) {
     width: 100% !important;
     max-width: 100% !important;
     table-layout: fixed !important;
 }
 
-.dt-container table.dataTable:is(.dt-profile-colref7, .dt-profile-perf, .dt-profile-perf5) tbody tr:not(.child)> :is(td, th) {
+.dt-container table.dataTable:is(.dt-profile-colref8, .dt-profile-perf, .dt-profile-perf5) tbody tr:not(.child)> :is(td, th) {
     overflow: hidden;
 }
 
@@ -479,7 +479,7 @@ button.colref-open-icon:hover {
     margin: 0;
 }
 
-.dt-container table.dataTable:is(.dt-profile-colref7, .dt-profile-perf, .dt-profile-perf5) tbody td.dt-trunc> :is(p, span, code, ul, ol, dl) {
+.dt-container table.dataTable:is(.dt-profile-colref8, .dt-profile-perf, .dt-profile-perf5) tbody td.dt-trunc> :is(p, span, code, ul, ol, dl) {
     display: block;
     width: 100%;
     max-width: 100% !important;

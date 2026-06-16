@@ -36,17 +36,17 @@
     function detectProfile(table) {
         // Explicit per-page override via table class
         if (hasClass(table, "dt-profile-perf")) return "perf6";
-        if (hasClass(table, "dt-profile-colref7")) return "colref7";
+        if (hasClass(table, "dt-profile-colref8")) return "colref8";
         if (hasClass(table, "dt-profile-perf5")) return "perf5";
 
         // Fallback auto-detect by column count
         const thCount = table.querySelectorAll("thead th").length;
         if (thCount === 6) return "perf6";
-        if (thCount === 7) return "colref7";
+        if (thCount === 8) return "colref8";
         if (thCount === 5) return "perf5";
 
         // Safe default
-        return "colref7";
+        return "colref8";
     }
 
     function markReady(table) {
@@ -92,11 +92,12 @@
         const profiles = {
             // 7-column colref pages (INFO_Person, INFO_Trips):
             // 0 ColName, 1 Def, 2 Samples, 3 SourceSys, 4 SourceTable, 5 Remark, 6 TechNotes
-            colref7: {
+            colref8: {
                 // Fixed widths for the 4 visible columns. Columns 4–6 are forced into Responsive child rows via className: "none".
                 columns: [
-                    { width: "39%" }, // Column Name
-                    { width: "29%" }, // Definition
+                    { width: "16%" }, // Data Mart
+                    { width: "26%" }, // Column Name
+                    { width: "26%" }, // Definition
                     { width: "16%" }, // Sample Value(s)
                     { width: "16%" }, // Source System(s)
                     {}, // Source Table (child row)
@@ -105,25 +106,31 @@
                 ],
 
                 columnDefs: [
-                    { targets: 0, responsivePriority: 1, className: "dt-trunc dt-colname" },
-                    { targets: 1, responsivePriority: 2, className: "dt-trunc dt-definition" },
+                    { 
+                        targets: 0,
+                        responsivePriority: 1,
+                        className: "dt-trunc dt-colname",
+                        columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]],
+                    },
+                    { targets: 1, responsivePriority: 2, className: "dt-trunc dt-colname" },
+                    { targets: 2, responsivePriority: 2, className: "dt-trunc dt-definition" },
                     {
-                        targets: 2,
+                        targets: 3,
                         responsivePriority: 3,
                         className: "dt-trunc dt-samples",
                         columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]],
                     },
                     {
-                        targets: 3,
+                        targets: 4,
                         responsivePriority: 4,
                         className: "dt-trunc dt-sourcesys",
                         columnControl: ["order", ["searchList", "spacer", "orderAsc", "orderDesc", "orderClear"]],
                     },
 
                     // Always hidden in main table (shown in Responsive child rows)
-                    { targets: 4, className: "none" }, // Source Table
-                    { targets: 5, className: "none" }, // Remark
-                    { targets: 6, className: "none" }, // Technical Notes
+                    { targets: 5, className: "none" }, 
+                    { targets: 6, className: "none" }, 
+                    { targets: 7, className: "none" }, 
                 ],
             },
 

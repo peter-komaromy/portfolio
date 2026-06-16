@@ -34,9 +34,10 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. list-table::
     :header-rows: 1
     :widths: auto
-    :class: sphinx-datatable display hover nowrap dt-profile-colref7
+    :class: sphinx-datatable display hover nowrap dt-profile-colref8
 
-    * - Column Name
+    * - Data Mart
+      - Column Name
       - Definition
       - Sample Value(s)
       - Source System(s)
@@ -44,7 +45,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Remark
       - Technical Notes
 
-    * - PERNR_Personnel number
+    * - DM_Person
+      - PERNR_Personnel number
       - The person's personnel number in SAP
       - ``00236266``
       - SAP
@@ -52,7 +54,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``; used as key in joins and updates
 
-    * - First_Day_of_Month
+    * - DM_Person
+      - First_Day_of_Month
       - Start date of the validity window for the person
       - ``NULL``
       - SAP
@@ -60,7 +63,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Unused column. To be reviewed.      
       - Set from ``BEGDA_Master`` within ``DM_Person``
     
-    * - Last_Day_of_Month
+    * - DM_Person
+      - Last_Day_of_Month
       - End date of the validity window for the person
       - ``NULL``
       - SAP      
@@ -68,7 +72,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Unused column. To be reviewed
       - Set from ``ENDDA_Master`` within ``DM_Person``
 
-    * - PA0000.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0000.AEDTM_Date of Last Change
       - Date the Actions record was last changed
       - ``2025-09-10``
       - SAP      
@@ -76,7 +81,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.BEGDA_Start Date
+    * - DM_Person
+      - PA0000.BEGDA_Start Date
       - Start date of the Actions record's validity period
       - ``2025-09-10``
       - SAP
@@ -84,7 +90,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
     
-    * - PA0000.ENDDA_End Date
+    * - DM_Person
+      - PA0000.ENDDA_End Date
       - End date of the Actions record's validity period
       - ``2025-09-10``
       - SAP
@@ -92,7 +99,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.MASSN_Action Type
+    * - DM_Person
+      - PA0000.MASSN_Action Type
       - Code for the personnel action executed, e.g., hire, transfer, separation
       - ``01``, ``04``, ``10``, ``PF``
       - SAP
@@ -100,7 +108,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0000.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for an Actions record when multiple records share the same key
       - ``000``
       - SAP
@@ -108,7 +117,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.STAT2_Employment Status
+    * - DM_Person
+      - PA0000.STAT2_Employment Status
       - Shows whether the person is actively employed
       - ``3``, ``0``,
       - SAP
@@ -116,7 +126,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``3`` = active, ``0`` = withdrawn/inactivated
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.STAT3_Special Payment Status
+    * - DM_Person
+      - PA0000.STAT3_Special Payment Status
       - Shows whether the person has special payment status
       - ``1``, ``0``
       - SAP
@@ -124,7 +135,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = yes, ``0`` = no
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.MASSG_Reason for Action:T530T.MGTXT_Name of reason for action
+    * - DM_Person
+      - PA0000.MASSG_Reason for Action:T530T.MGTXT_Name of reason for action
       - Text name of the reason for the personnel action
       - ``Hire Person``, ``Promotion``
       - SAP
@@ -132,7 +144,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.MASSN_Action Type:T529T.MNTXT_Name of Action Type
+    * - DM_Person
+      - PA0000.MASSN_Action Type:T529T.MNTXT_Name of Action Type
       - Text name of the personnel action type
       - ``Hire Person``, ``Promotion``
       - SAP
@@ -140,7 +153,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0000.Extract_Timestamp
+    * - DM_Person
+      - PA0000.Extract_Timestamp
       - Date and time the PA0000 record was extracted
       - ``2025-06-10 15:37:50.000``
       - N/A
@@ -148,7 +162,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - PA0001.ABKRS_Payroll Area
+    * - DM_Person 
+      - PA0001.ABKRS_Payroll Area
       - Payroll area code used to group personnel for payroll processing cycles
       - ``CD``, ``GE``, ``DZ``
       - SAP
@@ -156,7 +171,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0001.AEDTM_Date of Last Change
       - Date the Organizational Assignment record was last changed.
       - ``2025-09-10``
       - SAP
@@ -164,7 +180,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.ANSVH_Work Contract
+    * - DM_Person
+      - PA0001.ANSVH_Work Contract
       - Code that classifies that person's work contract
       - ``01``, ``15``
       - SAP
@@ -172,7 +189,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.BEGDA_Start Date
+    * - DM_Person
+      - PA0001.BEGDA_Start Date
       - Start date of the Organizational Assignment record’s validity period.
       - ``2025-09-10``
       - SAP
@@ -180,7 +198,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.BTRTL_Personnel Subarea
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea
       - Code for the person's personnel subarea
       - ``054D``, ``060D``
       - SAP
@@ -188,7 +207,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.BUKRS_Company Code
+    * - DM_Person
+      - PA0001.BUKRS_Company Code
       - Code that records the person's 'company' (The United Nations)
       - ``1000``
       - SAP
@@ -196,7 +216,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.ENAME_Formatted Name of Employee or Applicant
+    * - DM_Person
+      - PA0001.ENAME_Formatted Name of Employee or Applicant
       - Full name of the employee/applicant.
       - ``Jane Smith``
       - SAP
@@ -204,7 +225,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.ENDDA_End Date
+    * - DM_Person
+      - PA0001.ENDDA_End Date
       - End date of the Organizational Assignment record’s validity period.
       - ``2025-09-10``
       - SAP
@@ -212,7 +234,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.FKBER_Functional Area
+    * - DM_Person
+      - PA0001.FKBER_Functional Area
       - Code that records the person's functional area
       - ``FA5``, ``D02``, ``M03``
       - SAP
@@ -220,7 +243,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.GEBER_Fund
+    * - DM_Person
+      - PA0001.GEBER_Fund
       - ?
       - ``0660/A0/04``, ``SC109901``
       - SAP
@@ -228,7 +252,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.GSBER_Service Area
+    * - DM_PersonPA0001.GSBER_Service Area
       - Code for the person's CLIENT Service Area
       - ``1950``, ``4500``
       - SAP
@@ -236,7 +260,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.KOSTL_Cost Center
+    * - DM_Person
+      - PA0001.KOSTL_Cost Center
       - Code for the cost center that .. ? .. the person.
       - ``0090B00000``, ``0310B00000``
       - SAP
@@ -244,7 +269,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.MSTBR_Supervisor Area
+    * - DM_Person
+      - PA0001.MSTBR_Supervisor Area
       - Code for the supervisor area .. ? .. the person
       - ``NULL``
       - SAP
@@ -252,7 +278,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.ORGEH_Organizational Unit
+    * - DM_Person
+      - PA0001.ORGEH_Organizational Unit
       - Code for the person's Organizational Unit
       - ``00000303``
       - SAP
@@ -260,7 +287,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.OTYPE_Object Type
+    * - DM_Person
+      - PA0001.OTYPE_Object Type
       - Code that specifies the object type
       - ``P``, ``S``
       - SAP
@@ -268,7 +296,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``P`` = person, ``S`` = position
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.PERSG_Employee Group
+    * - DM_Person
+      - PA0001.PERSG_Employee Group
       - Code that represents the person's Employee Group
       - ``1``, ``3``, ``C``, ``D``
       - SAP
@@ -276,7 +305,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
-    * - PA0001.PERSK_Employee Subgroup
+    * - DM_Person
+      - PA0001.PERSK_Employee Subgroup
       - Code that represents the person's Employee Subgroup
       - ``AM``, ``GN``, ``NO``
       - SAP
@@ -284,7 +314,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.PLANS_Position
+    * - DM_Person
+      - PA0001.PLANS_Position
       - Code for the person's post
       - ``00000179``
       - SAP
@@ -292,7 +323,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.SBMOD_Administrator Group
+    * - DM_Person
+      - PA0001.SBMOD_Administrator Group
       - Code that represents the person's Administrator Group
       - ``456``, ``Demo``, ``LFP``, ``PAYR``
       - SAP
@@ -300,7 +332,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0001.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for Org. Assignment record when multiple records share the same key.
       - ``000``
       - SAP
@@ -308,7 +341,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.SNAME_Employee’s Name (Sortable by LAST NAME FIRST NAME)
+    * - DM_Person
+      - PA0001.SNAME_Employee’s Name (Sortable by LAST NAME FIRST NAME)
       - The person's sortable full name (LAST NAME FIRST NAME)
       - ``SMITH JANE``
       - SAP
@@ -316,7 +350,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.STELL_Job
+    * - DM_Person
+      - PA0001.STELL_Job
       - Code that represents the person's job
       - ``00000052``
       - SAP
@@ -324,7 +359,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.UNAME_Name of Person Who Changed Object
+    * - DM_Person
+      - PA0001.UNAME_Name of Person Who Changed Object
       - SAP user name of the person who changed the record
       - ``JSMITH``
       - SAP
@@ -332,7 +368,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.VDSK1_Organizational Key
+    * - DM_Person
+      - PA0001.VDSK1_Organizational Key
       - ?
       - ``006000000060``
       - SAP
@@ -340,7 +377,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.WERKS_Personnel Area
+    * - DM_Person
+      - PA0001.WERKS_Personnel Area
       - Code for the person's Personnel Area
       - ``006``, ``053``
       - SAP
@@ -348,7 +386,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.Extract_Timestamp
+    * - DM_Person
+      - PA0001.Extract_Timestamp
       - Date and time the Org. Assignment record was extracted
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -356,7 +395,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.ABKRS_Payroll Area:T549T.ATEXT_Payroll Area Text
+    * - DM_Person
+      - PA0001.ABKRS_Payroll Area:T549T.ATEXT_Payroll Area Text
       - Human-readable name for the person's payroll area
       - ``Belarus``, ``IP - Budapest``
       - SAP
@@ -364,7 +404,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.ANSVH_Work Contract:T542T.ATX_Work Contract Text
+    * - DM_Person
+      - PA0001.ANSVH_Work Contract:T542T.ATX_Work Contract Text
       - Human-readable name for the person's work contract
       - ``Cost Attribution``, ``SLWOP``
       - SAP
@@ -372,7 +413,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.BTEXT_Personnel Subarea Text
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.BTEXT_Personnel Subarea Text
       - Human-reasable name for the person's Personnel Subarea
       - ``Budapest``, ``Cairo``
       - SAP
@@ -380,7 +422,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOBDE_Grouping of Personnel Subareas for Time Recording
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOBDE_Grouping of Personnel Subareas for Time Recording
       - ?
       - ``01``
       - SAP
@@ -388,7 +431,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOBUR_Personnel Subarea Grouping for Appraisals
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOBUR_Personnel Subarea Grouping for Appraisals
       - ?
       - ``00``
       - SAP
@@ -396,7 +440,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOPTB_Personnel subarea grouping for premiums
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOPTB_Personnel subarea grouping for premiums
       - ?
       - ``00``
       - SAP
@@ -404,7 +449,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOSID_Personnel Subarea Grouping for Work Schedules
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOSID_Personnel Subarea Grouping for Work Schedules
       - ?
       - ``01``
       - SAP
@@ -412,7 +458,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOSTA_Statistics Modifier
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOSTA_Statistics Modifier
       - ?
       - ``00``
       - SAP
@@ -420,7 +467,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOURA_Personnel Subarea Grouping for Leave Types
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOURA_Personnel Subarea Grouping for Leave Types
       - ?
       - ``00``
       - SAP
@@ -428,7 +476,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOVER_Personnel Subarea Grpg for Substitution/Availability Types
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOVER_Personnel Subarea Grpg for Substitution/Availability Types
       - ?
       - ``00``, ``97``
       - SAP
@@ -436,7 +485,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.MOZKO_Grouping of Personnel Subareas for Time Quota Types
+    * - DM_Person
+      - PA0001.BTRTL_Personnel Subarea:T001P.MOZKO_Grouping of Personnel Subareas for Time Quota Types
       - ?
       - ``00``, ``97``, ``98``
       - SAP
@@ -444,7 +494,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
+    * - DM_Person
+      - PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
       - Human-readable name of the person's Service Area
       - ``Central Support Services Team``, ``Egypt``,
       - SAP
@@ -452,7 +503,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.KOKRS_Controlling Area:TKA01.BEZEI_Name of the controlling area
+    * - DM_Person
+      - PA0001.KOKRS_Controlling Area:TKA01.BEZEI_Name of the controlling area
       - Name of the person's controlling area
       - ``CLIENT``
       - SAP
@@ -460,7 +512,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.KOSTL_Cost Center:CSKT.KTEXT_General Name
+    * - DM_Person
+      - PA0001.KOSTL_Cost Center:CSKT.KTEXT_General Name
       - General name of the person's cost center
       - ``Administrative Serv``, ``Alexandria, Egypt``
       - SAP
@@ -468,7 +521,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.KOSTL_Cost Center:CSKT.LTEXT_Description
+    * - DM_Person
+      - PA0001.KOSTL_Cost Center:CSKT.LTEXT_Description
       - Long description of the person's cost center
       - ``Administrative Serv``, ``Alexandria, Egypt``
       - SAP
@@ -476,7 +530,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.ORGEH_Organizational Unit:T527X.ORGTX_Short Text of Organizational Unit
+    * - DM_Person
+      - PA0001.ORGEH_Organizational Unit:T527X.ORGTX_Short Text of Organizational Unit
       - Short name of the person's Organizational Unit
       - ``Finance Unit, Demo``, ``Operations Section, Egypt``
       - SAP
@@ -484,7 +539,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.OTYPE_Object Type:T777O.OTEXT_Object Type Text
+    * - DM_Person
+      - PA0001.OTYPE_Object Type:T777O.OTEXT_Object Type Text
       - ?
       - ``Person``, ``Position``
       - SAP
@@ -492,7 +548,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.PERSG_Employee Group:T501T.PTEXT_Name of Employee Group
+    * - DM_Person
+      - PA0001.PERSG_Employee Group:T501T.PTEXT_Name of Employee Group
       - Name of the person's employee group
       - ``Local Staff``, ``Intl. Professionals``
       - SAP
@@ -500,7 +557,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.PERSK_Employee Subgroup:T503T.PTEXT_Name of Employee Subgroup
+    * - DM_Person
+      - PA0001.PERSK_Employee Subgroup:T503T.PTEXT_Name of Employee Subgroup
       - Name of the person's employee subgroup
       - ``Indiv.Consultants``, ``Field Service``
       - SAP
@@ -508,7 +566,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.PLANS_Position:T528B.ORGEH_Organizational Unit
+    * - DM_Person
+      - PA0001.PLANS_Position:T528B.ORGEH_Organizational Unit
       - Code for the person's organizational unit
       - ``00000000``
       - SAP
@@ -516,7 +575,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.PLANS_Position:T528B.STELL_Job
+    * - DM_Person
+      - PA0001.PLANS_Position:T528B.STELL_Job
       - Code for the person's job (?)
       - ``00000000``
       - SAP
@@ -524,7 +584,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.PLANS_Position:T528B.TRFGR_Pay Scale Group
+    * - DM_Person
+      - PA0001.PLANS_Position:T528B.TRFGR_Pay Scale Group
       - ?
       - ``NULL``
       - SAP
@@ -532,7 +593,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0002.AEDTM_Date of Last Change
       - Date the Personal Data record was last changed.
       - ``2025-09-10``
       - SAP
@@ -540,7 +602,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.ANZKD_Number of Children
+    * - DM_Person
+      - PA0002.ANZKD_Number of Children
       - Shows how many children the person has.
       - ``NULL``
       - SAP
@@ -548,7 +611,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.BEGDA_Start Date
+    * - DM_Person
+      - PA0002.BEGDA_Start Date
       - Start date of the Personal Data record's validity period.
       - ``2025-09-10``
       - SAP
@@ -556,7 +620,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.ENDDA_End Date
+    * - DM_Person
+      - PA0002.ENDDA_End Date
       - End date of the Personal Data record's validity period.
       - ``2025-09-10``
       - SAP
@@ -564,7 +629,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.FAMDT_Valid From Date of Current Marital Status
+    * - DM_Person
+      - PA0002.FAMDT_Valid From Date of Current Marital Status
       - Effective date from which the current marital status applies in SAP.
       - ``2025-09-10``
       - SAP
@@ -572,7 +638,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.FAMST_Marital Status Key
+    * - DM_Person
+      - PA0002.FAMST_Marital Status Key
       - Code for the person’s marital status
       - ``1``, ``5``, ``Z``
       - SAP
@@ -580,7 +647,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBDAT_Date of Birth
+    * - DM_Person
+      - PA0002.GBDAT_Date of Birth
       - The person's date of birth as recorded in SAP
       - ``2025-09-10``
       - SAP
@@ -588,7 +656,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBDEP_State
+    * - DM_Person
+      - PA0002.GBDEP_State
       - State/region code for the person's place of birth.
       - ``08``, ``DF``, ``SZ``
       - SAP
@@ -596,7 +665,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBJHR_Year of Birth
+    * - DM_Person
+      - PA0002.GBJHR_Year of Birth
       - The person's year of birth
       - ``1981``
       - SAP
@@ -604,7 +674,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBLND_Country of Birth
+    * - DM_Person
+      - PA0002.GBLND_Country of Birth
       - Code for the person's country of birth
       - ``012``
       - SAP
@@ -612,7 +683,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBMON_Month of Birth
+    * - DM_Person
+      - PA0002.GBMON_Month of Birth
       - The person's month of birth
       - ``02``, ``12``
       - SAP
@@ -620,7 +692,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBORT_Birthplace
+    * - DM_Person
+      - PA0002.GBORT_Birthplace
       - City or locality of the person's birth
       - ``Abdine``, ``Tobelo``
       - SAP
@@ -628,7 +701,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBPAS_Date of Birth According to Passport
+    * - DM_Person
+      - PA0002.GBPAS_Date of Birth According to Passport
       - The person's date of birth as recorded in their passport
       - ``1981``
       - SAP
@@ -636,7 +710,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GBTAG_Birth Date (to Month/Year)
+    * - DM_Person
+      - PA0002.GBTAG_Birth Date (to Month/Year)
       - Day or month component of the person's birth date.
       - ``08``, ``31``
       - SAP
@@ -644,7 +719,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.GESCH_Gender
+    * - DM_Person
+      - PA0002.GESCH_Gender
       - The person's gender
       - ``1``, ``2``
       - SAP
@@ -652,7 +728,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.INITS_Initials
+    * - DM_Person
+      - PA0002.INITS_Initials
       - The person's initials
       - ``MD``
       - SAP
@@ -660,7 +737,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.ITXEX_Text Exists for Infotype
+    * - DM_Person
+      - PA0002.ITXEX_Text Exists for Infotype
       - Shows whether text is stored for this SAP infotype
       - ``X``, ``NULL``
       - SAP
@@ -668,7 +746,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.KNZNM_Name Format Indicator for Employee in a List
+    * - DM_Person
+      - PA0002.KNZNM_Name Format Indicator for Employee in a List
       - Format indicator for showing the employee’s name in lists.
       - ``00``
       - SAP
@@ -676,7 +755,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.MIDNM_Middle Name
+    * - DM_Person
+      - PA0002.MIDNM_Middle Name
       - The person's middle name
       - ``Jane``, ``John``
       - SAP
@@ -684,7 +764,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NACH2_Second Name
+    * - DM_Person
+      - PA0002.NACH2_Second Name
       - The person's second given name
       - ``Jane``, ``John``
       - SAP
@@ -692,7 +773,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NACHN_Last Name
+    * - DM_Person
+      - PA0002.NACHN_Last Name
       - The person's last name
       - ``Smith``
       - SAP
@@ -700,7 +782,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NAME2_Name at Birth
+    * - DM_Person
+      - PA0002.NAME2_Name at Birth
       - The person's birth name
       - ``Jane Smith``
       - SAP
@@ -708,7 +791,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NATI2_Second Nationality
+    * - DM_Person
+      - PA0002.NATI2_Second Nationality
       - Code for the person's second nationality
       - ``012``, ``060``
       - SAP
@@ -716,7 +800,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NATI3_Third Nationality
+    * - DM_Person
+      - PA0002.NATI3_Third Nationality
       - Code for the person's third nationality
       - ``012``, ``060``
       - SAP
@@ -724,7 +809,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NATIO_Nationality
+    * - DM_Person
+      - PA0002.NATIO_Nationality
       - Code for the person's nationality
       - ``012``, ``060``
       - SAP
@@ -732,7 +818,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.NCHMC_Last Name (Field for Search Help)
+    * - DM_Person
+      - PA0002.NCHMC_Last Name (Field for Search Help)
       - Uppercase version of the person's last name for search purposes.
       - ``SMITH``
       - SAP
@@ -740,7 +827,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.PERMO_Modifier for Personnel Identifier
+    * - DM_Person
+      - PA0002.PERMO_Modifier for Personnel Identifier
       - Modifier for generating the person's personnel number.
       - ``UN``
       - SAP
@@ -748,7 +836,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.RUFNM_Nickname
+    * - DM_Person
+      - PA0002.RUFNM_Nickname
       - The person's nickname
       - ``NULL``
       - SAP
@@ -756,7 +845,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0002.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for an Personal Data record when multiple records share the same key.
       - ``000``
       - SAP
@@ -764,7 +854,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.SPRSL_Communication Language
+    * - DM_Person
+      - PA0002.SPRSL_Communication Language
       - Code for language the person uses for communication
       - ``NULL``
       - SAP
@@ -772,7 +863,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.UNAME_Name of Person Who Changed Object
+    * - DM_Person
+      - PA0002.UNAME_Name of Person Who Changed Object
       - User name of the person who changed the Personal Data record.
       - ``JSMITH``
       - SAP
@@ -780,7 +872,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.VNAMC_First Name (Field for Search Help)
+    * - DM_Person
+      - PA0002.VNAMC_First Name (Field for Search Help)
       - Uppercase version of the person's first name for search purposes.
       - ``JANE``
       - SAP
@@ -788,7 +881,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.VORNA_First Name
+    * - DM_Person
+      - PA0002.VORNA_First Name
       - The person's first name
       - ``Jane``
       - SAP
@@ -796,7 +890,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.ANRED_Form-of-Address Key:T522T.ATEXT_Form of Address Text
+    * - DM_Person
+      - PA0002.ANRED_Form-of-Address Key:T522T.ATEXT_Form of Address Text
       - Form of address used for the person
       - ``Dr``, ``Ms``
       - SAP
@@ -804,7 +899,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.SPRSL_Communication Language:T002T.SPTXT_Name of Language
+    * - DM_Person
+      - PA0002.SPRSL_Communication Language:T002T.SPTXT_Name of Language
       - Name of the language the person uses for communication
       - ``NULL``
       - SAP
@@ -812,7 +908,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0002.Extract_Timestamp
+    * - DM_Person
+      - PA0002.Extract_Timestamp
       - Date and time the Personal Data record was extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -820,7 +917,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0008.AEDTM_Date of Last Change
       - Date the Basic Pay record was last changed.
       - ``2025-06-10``
       - SAP
@@ -828,7 +926,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.ANSAL_Annual salary
+    * - DM_Person
+      - PA0008.ANSAL_Annual salary
       - The person's annual salary amount
       - ``0.00``
       - SAP
@@ -836,7 +935,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.BEGDA_Start Date
+    * - DM_Person
+      - PA0008.BEGDA_Start Date
       - Start date of the Basic Pay record's validity period
       - ``2025-06-10``
       - SAP
@@ -844,7 +944,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.BSGRD_Capacity Utilization Level
+    * - DM_Person
+      - PA0008.BSGRD_Capacity Utilization Level
       - The person's capacity utilization level, expressed as a percentage.
       - ``70``
       - SAP
@@ -852,7 +953,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.DIVGV_Working Hours per Payroll Period
+    * - DM_Person
+      - PA0008.DIVGV_Working Hours per Payroll Period
       - Shows how many hours the person works per Payroll Period
       - ``81.56``
       - SAP
@@ -860,7 +962,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.EIN03_Time/Measurement Unit
+    * - DM_Person
+      - PA0008.EIN03_Time/Measurement Unit
       - Unit of time or measurement for the person's payroll data (field 03)
       - ``030``
       - SAP
@@ -868,7 +971,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.EIN04_Time/Measurement Unit
+    * - DM_Person
+      - PA0008.EIN04_Time/Measurement Unit
       - Unit of time or measurement for the person's payroll data (field 04)
       - ``NULL``
       - SAP
@@ -876,7 +980,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.EIN05_Time/Measurement Unit
+    * - DM_Person
+      - PA0008.EIN05_Time/Measurement Unit
       - Unit of time or measurement for the person's payroll data (field 05)
       - ``NULL``
       - SAP
@@ -884,7 +989,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.ENDDA_End Date
+    * - DM_Person
+      - PA0008.ENDDA_End Date
       - End date of the Basic Pay record’s validity period.
       - ``2025-06-10``
       - SAP
@@ -892,7 +998,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.ITXEX_Text Exists for Infotype
+    * - DM_Person
+      - PA0008.ITXEX_Text Exists for Infotype
       - Shows whether text is stored for this SAP Infotype
       - ``X``, ``NULL``
       - SAP
@@ -900,7 +1007,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA01_Wage Type
+    * - DM_Person
+      - PA0008.LGA01_Wage Type
       - Wage type applied to the person in payroll (field 01).
       - ``0010``
       - SAP
@@ -908,7 +1016,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA02_Wage Type
+    * - DM_Person
+      - PA0008.LGA02_Wage Type
       - Wage type applied to the person in payroll (field 02).
       - ``0032``, ``0080``
       - SAP
@@ -916,7 +1025,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA03_Wage Type
+    * - DM_Person
+      - PA0008.LGA03_Wage Type
       - Wage type applied to the person in payroll (field 03).
       - ``0032``, ``0050``, ``0080``
       - SAP
@@ -924,7 +1034,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA04_Wage Type
+    * - DM_Person
+      - PA0008.LGA04_Wage Type
       - Wage type applied to the person in payroll (field 04).
       - ``0050``, ``0270``
       - SAP
@@ -932,7 +1043,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA05_Wage Type
+    * - DM_Person
+      - PA0008.LGA05_Wage Type
       - Wage type applied to the person in payroll (field 05).
       - ``0050``, ``0350``
       - SAP
@@ -940,7 +1052,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA06_Wage Type
+    * - DM_Person
+      - PA0008.LGA06_Wage Type
       - Wage type applied to the person in payroll (field 06).
       - ``NULL``
       - SAP
@@ -948,7 +1061,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.LGA07_Wage Type
+    * - DM_Person
+      - PA0008.LGA07_Wage Type
       - Wage type applied to the person in payroll (field 07)
       - ``NULL``
       - SAP
@@ -956,7 +1070,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.PREAS_Reason for Changing Master Data
+    * - DM_Person
+      - PA0008.PREAS_Reason for Changing Master Data
       - Code for the reason why the HR Master Data was changed
       - ``01``, ``02``, ``03``, ``04``
       - SAP
@@ -964,7 +1079,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0008.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for Basic Pay record when multiple records share the same key.
       - ``000``
       - SAP
@@ -972,7 +1088,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.SPRPS_Lock Indicator for HR Master Data Record
+    * - DM_Person
+      - PA0008.SPRPS_Lock Indicator for HR Master Data Record
       - Shows whether the person's HR master data record is locked.
       - ``X``, ``NULL``
       - SAP
@@ -980,7 +1097,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.STVOR_Date of Next Increase
+    * - DM_Person
+      - PA0008.STVOR_Date of Next Increase
       - Date of the person's next scheduled pay increase.
       - ``2025-06-10``
       - SAP
@@ -988,7 +1106,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.SUBTY_Subtype
+    * - DM_Person
+      - PA0008.SUBTY_Subtype
       - Code for the subtype pf the person's Basic Pay record.
       - ``NULL``
       - SAP
@@ -996,7 +1115,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.TRFAR_Pay scale type
+    * - DM_Person
+      - PA0008.TRFAR_Pay scale type
       - Type of the person's post
       - ``G``, ``FS``, ``NO``
       - SAP
@@ -1004,7 +1124,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.TRFGB_Pay Scale Area
+    * - DM_Person
+      - PA0008.TRFGB_Pay Scale Area
       - Area of the person's post
       - ``AZ``, ``BW``
       - SAP
@@ -1012,7 +1133,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.TRFGR_Pay Scale Group
+    * - DM_Person
+      - PA0008.TRFGR_Pay Scale Group
       - Code that shows the person's post
       - ``P-2``, ``G-7``, ``NO-2``
       - SAP
@@ -1020,7 +1142,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.TRFST_Pay Scale Level
+    * - DM_Person
+      - PA0008.TRFST_Pay Scale Level
       - Step of where the person is in their post
       - ``06``, ``18``
       - SAP
@@ -1028,7 +1151,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.UNAME_Name of Person Who Changed Object
+    * - DM_Person
+      - PA0008.UNAME_Name of Person Who Changed Object
       - User name of the SAP user who last changed the person's Basic Pay record.
       - ``JSMITH``
       - SAP
@@ -1036,7 +1160,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.VGLGB_Comparison pay scale area
+    * - DM_Person
+      - PA0008.VGLGB_Comparison pay scale area
       - The person's pay scale area used for comparison purposes in pay scale classification.
       - ``BJ``, ``CG``
       - SAP
@@ -1044,7 +1169,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.VGLGR_Comparison pay scale group
+    * - DM_Person
+      - PA0008.VGLGR_Comparison pay scale group
       - The person's post level group
       - ``P-2``, ``G-7``
       - SAP
@@ -1052,7 +1178,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.VGLST_Comparison pay scale level
+    * - DM_Person
+      - PA0008.VGLST_Comparison pay scale level
       - The person's pay scale level used for comparison purposes in pay scale classification.
       - ``04``, ``13``
       - SAP
@@ -1060,7 +1187,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.VGLTA_Comparison pay scale type
+    * - DM_Person
+      - PA0008.VGLTA_Comparison pay scale type
       - Pay scale type used for comparison purposes in pay scale classification.
       - ``P``, ``G``, ``NO``
       - SAP
@@ -1068,7 +1196,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.WAERS_Currency Key
+    * - DM_Person
+      - PA0008.WAERS_Currency Key
       - Code for the currency of the person's Basic Pay amounts
       - ``USD``
       - SAP
@@ -1076,7 +1205,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.PREAS_Reason for Changing Master Data\:T530F.RTEXT_Text on Reason for Change (Basic Pay Infotype)
+    * - DM_Person
+      - PA0008.PREAS_Reason for Changing Master Data\:T530F.RTEXT_Text on Reason for Change (Basic Pay Infotype)
       - Text description of why the person's Basic Pay record was changed.
       - ``Special Post Allowance``, ``Grant next SPA increment``
       - SAP
@@ -1084,7 +1214,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.WAERS_Currency Key:TCURT.KTEXT_Short text
+    * - DM_Person
+      - PA0008.WAERS_Currency Key:TCURT.KTEXT_Short text
       - Short text description of the currency of the person's Basic Pay amounts
       - ``Austr. Dollar``
       - SAP
@@ -1092,7 +1223,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.WAERS_Currency Key:TCURT.LTEXT_Long Text
+    * - DM_Person
+      - PA0008.WAERS_Currency Key:TCURT.LTEXT_Long Text
       - Long text description of the currency of the person's Basic Pay amounts
       - ``Australian Dollar``
       - SAP
@@ -1100,7 +1232,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0008.Extract_Timestamp
+    * - DM_Person
+      - PA0008.Extract_Timestamp
       - Timestamp of when the Basic Pay record was extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1108,7 +1241,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.BEGDA_Start Date
+    * - DM_Person
+      - PA0016.BEGDA_Start Date
       - Start date of the Contract Elements record’s validity period
       - ``2025-06-10``
       - SAP
@@ -1116,7 +1250,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.CTEDT_Contract End Date
+    * - DM_Person
+      - PA0016.CTEDT_Contract End Date
       - End date of the person's contract
       - ``2025-06-10``
       - SAP
@@ -1124,7 +1259,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.CTTYP_Contract Type
+    * - DM_Person
+      - PA0016.CTTYP_Contract Type
       - Code for the person's contract type
       - ``Z3``, ``Z5``
       - SAP
@@ -1132,7 +1268,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.ENDDA_End Date
+    * - DM_Person
+      - PA0016.ENDDA_End Date
       - End date of the Contract Elements record's validity period.
       - ``2025-06-10``
       - SAP
@@ -1140,7 +1277,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.ITXEX_Text Exists for Infotype
+    * - DM_Person
+      - PA0016.ITXEX_Text Exists for Infotype
       - Shows whether text is stored for this SAP Infotype
       - ``X``, ``NULL``
       - SAP
@@ -1148,7 +1286,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.KGZFR_Sick Pay Supplement Period (Number)
+    * - DM_Person
+      - PA0016.KGZFR_Sick Pay Supplement Period (Number)
       - Duration of the person's sick pay supplement measured in weeks
       - ``6``
       - SAP
@@ -1156,7 +1295,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.LFZFR_Period of Continued Pay (Number)
+    * - DM_Person
+      - PA0016.LFZFR_Period of Continued Pay (Number)
       - Duration of the person's continued pay entitlement measured in weeks
       - ``42``
       - SAP
@@ -1164,7 +1304,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.LFZSO_Special Rule for Continued Pay
+    * - DM_Person
+      - PA0016.LFZSO_Special Rule for Continued Pay
       - ?
       - ``00``
       - SAP
@@ -1172,7 +1313,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.PRBZT_Probationary Period (Number)
+    * - DM_Person
+      - PA0016.PRBZT_Probationary Period (Number)
       - The person's probationary period measured in months
       - ``3``
       - SAP
@@ -1180,7 +1322,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0016.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for the Contract Elements record when multiple records share the same key.
       - ``000``
       - SAP
@@ -1188,7 +1331,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.SPRPS_Lock Indicator for HR Master Data Record
+    * - DM_Person
+      - PA0016.SPRPS_Lock Indicator for HR Master Data Record
       - Shows whether the person's HR Master Data record is locked
       - ``X``, ``NULL``
       - SAP
@@ -1196,7 +1340,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.CTTYP_Contract Type:T547S.CTTXT_Text for contract type (Contract Elements infotype)
+    * - DM_Person
+      - PA0016.CTTYP_Contract Type:T547S.CTTXT_Text for contract type (Contract Elements infotype)
       - Text description of the person's contract type
       - ``Permanent``, ``Fixed-term``
       - SAP
@@ -1204,7 +1349,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0016.Extract_Timestamp
+    * - DM_Person
+      - PA0016.Extract_Timestamp
       - Date and time when the person's Contract Elements record was last extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1212,7 +1358,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0077.AEDTM_Date of Last Change
       - Date when the person's Additional Personal Data record was last changed.
       - ``2025-06-10``
       - SAP
@@ -1220,7 +1367,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.BEGDA_Start Date
+    * - DM_Person
+      - PA0077.BEGDA_Start Date
       - Start date of the Additional Personal Data record's validity period.
       - ``2025-06-10``
       - SAP
@@ -1228,7 +1376,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.ENDDA_End Date
+    * - DM_Person
+      - PA0077.ENDDA_End Date
       - Start date of the Additional Personal Data record's validity period.
       - ``2025-06-10``
       - SAP
@@ -1236,7 +1385,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.FUNC_TITLE_Comment
+    * - DM_Person
+      - PA0077.FUNC_TITLE_Comment
       - Free-text comment field to describe the person's function or title.
       - ``2018 Annual Results Report Writer``
       - SAP
@@ -1244,7 +1394,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.MILSA_Military status
+    * - DM_Person
+      - PA0077.MILSA_Military status
       - Code for the person's military status
       - ``00``
       - SAP
@@ -1252,7 +1403,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.ON_PERM_Checkbox
+    * - DM_Person
+      - PA0077.ON_PERM_Checkbox
       - Shows whether the person is on a permanent contract.
       - ``X``, ``NULL``
       - SAP
@@ -1260,7 +1412,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.PAID_PERSONAL_Checkbox
+    * - DM_Person
+      - PA0077.PAID_PERSONAL_Checkbox
       - Shows whether the person has a paid personal agreement
       - ``X``, ``NULL``
       - SAP
@@ -1268,7 +1421,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.PART_TIME_Checkbox
+    * - DM_Person
+      - PA0077.PART_TIME_Checkbox
       - Shows whether the person works part-time
       - ``X``, ``NULL``
       - SAP
@@ -1276,7 +1430,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.PO_MOU_Comment
+    * - DM_Person
+      - PA0077.PO_MOU_Comment
       - Free-text comment for memorandum of understanding or partner agreement information.
       - ``Stand-By Partner Agreement deployed by DRC``
       - SAP
@@ -1284,7 +1439,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.SEQNR_Number of Infotype Record With Same Key
+    * - DM_Person
+      - PA0077.SEQNR_Number of Infotype Record With Same Key
       - Sequence number for the Additional Personal Data record when multiple records share the same key.
       - ``000``
       - SAP
@@ -1292,7 +1448,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.SYSTEM_ACCESS_Checkbox
+    * - DM_Person
+      - PA0077.SYSTEM_ACCESS_Checkbox
       - Shows whether the person has system access
       - ``X``, ``NULL``
       - SAP
@@ -1300,7 +1457,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0077.Extract_Timestamp
+    * - DM_Person
+      - PA0077.Extract_Timestamp
       - Date and time when the Additional Personal Data record was last extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1308,7 +1466,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0105-0001.AEDTM_Date of Last Change
       - Date when the Communications record was last changed.
       - ``2025-06-10``
       - SAP
@@ -1316,7 +1475,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.BEGDA_Start Date
+    * - DM_Person
+      - PA0105-0001.BEGDA_Start Date
       - Start date of the Communications record's validity pediod for Subtype 0001.
       - ``2025-06-10``
       - SAP
@@ -1324,7 +1484,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.ENDDA_End Date
+    * - DM_Person
+      - PA0105-0001.ENDDA_End Date
       - End date of the Communications record's validity pediod for Subtype 0001.
       - ``2025-06-10``
       - SAP
@@ -1332,7 +1493,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0105-0001.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for Subtype 0001 of the Communications record when multiple records share the same key.
       - ``000``
       - SAP
@@ -1340,7 +1502,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.SUBTY_Subtype
+    * - DM_Person
+      - PA0105-0001.SUBTY_Subtype
       - Subtype identifier of the person's Communications record.
       - ``0001``
       - SAP
@@ -1348,7 +1511,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.UNAME_Name of Person Who Changed Object
+    * - DM_Person
+      - PA0105-0001.UNAME_Name of Person Who Changed Object
       - SAP user name of the person who last changed Subtype 0001 of the Communications record.
       - ``JSMITH``
       - SAP
@@ -1356,7 +1520,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.USRID_Communication Identification/Number
+    * - DM_Person
+      - PA0105-0001.USRID_Communication Identification/Number
       - The person's SAP user name
       - ``JSMITH``
       - SAP
@@ -1364,7 +1529,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0001.Extract_Timestamp
+    * - DM_Person
+      - PA0105-0001.Extract_Timestamp
       - Date and time when the Communications Subtype 0001 record was last extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1372,7 +1538,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.AEDTM_Date of Last Change
+    * - DM_Person
+      - PA0105-0010.AEDTM_Date of Last Change
       - Date when Subtype 0010 of the Communications record was last changed.
       - ``2025-06-10``
       - SAP
@@ -1380,7 +1547,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.BEGDA_Start Date
+    * - DM_Person
+      - PA0105-0010.BEGDA_Start Date
       - Start date of validity period for Subtype 0010 of the Communications record.
       - ``2025-06-10``
       - SAP
@@ -1388,7 +1556,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.ENDDA_End Date
+    * - DM_Person
+      - PA0105-0010.ENDDA_End Date
       - Start date of validity period for Subtype 0010 of the Communications record.
       - ``2025-06-10``
       - SAP
@@ -1396,7 +1565,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.SEQNR_Number of Infotype Record with Same Key
+    * - DM_Person
+      - PA0105-0010.SEQNR_Number of Infotype Record with Same Key
       - Sequence number for Subtype 0010 of the Communications record when multiple records share the same key.
       - ``000``
       - SAP
@@ -1404,7 +1574,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.SUBTY_Subtype
+    * - DM_Person
+      - PA0105-0010.SUBTY_Subtype
       - Subtype identifier of the person's Communications record.
       - ``0010``
       - SAP
@@ -1412,7 +1583,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.UNAME_Name of Person Who Changed Object
+    * - DM_Person
+      - PA0105-0010.UNAME_Name of Person Who Changed Object
       - SAP user name of the person who last changed Subtype 0010 of the Communications record.
       - ``JSMITH``
       - SAP
@@ -1420,7 +1592,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.USRID_LONG_Communication: Long Identification/Number
+    * - DM_Person
+      - PA0105-0010.USRID_LONG_Communication: Long Identification/Number
       - The person's CLIENT email address.
       - ``jsmith@example.org``
       - SAP
@@ -1428,7 +1601,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0105-0010.Extract_Timestamp
+    * - DM_Person
+      - PA0105-0010.Extract_Timestamp
       - Date and time when the Communications Subtype 0010 record was last extracted
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1436,7 +1610,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.BEGDA_Start Date
+    * - DM_Person
+      - PA0964.BEGDA_Start Date
       - Start date of the PA0964-Infotype record's validity period.
       - ``2025-06-10``
       - SAP
@@ -1444,7 +1619,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.ENDDA_End Date
+    * - DM_Person
+      - PA0964.ENDDA_End Date
       - Start date of the PA0964-Infotype record's validity period.
       - ``2025-06-10``
       - SAP
@@ -1452,7 +1628,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.ICTYP_Type of Identification Number
+    * - DM_Person
+      - PA0964.ICTYP_Type of Identification Number
       - Type of the person's identification number
       - ``IN``
       - SAP
@@ -1460,7 +1637,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.IDNUM_Identification Number
+    * - DM_Person
+      - PA0964.IDNUM_Identification Number
       - The person's SAP Identification Number
       - ``100040``, ``0907684``
       - SAP
@@ -1468,7 +1646,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.ITXEX_Text Exists for Infotype
+    * - DM_Person
+      - PA0964.ITXEX_Text Exists for Infotype
       - Shows whether text is stored for this SAP Infotype
       - ``X``, ``NULL``
       - SAP
@@ -1476,7 +1655,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.SEQNR_Number of Infotype Record with Same Key 
+    * - DM_Person
+      - PA0964.SEQNR_Number of Infotype Record with Same Key 
       - Sequence number for the person's 0964-Infotype record when multiple records share the same key.
       - ``000``
       - SAP
@@ -1484,7 +1664,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.SPRPS_Lock Indicator for HR Master Data Record
+    * - DM_Person
+      - PA0964.SPRPS_Lock Indicator for HR Master Data Record
       - Shows whether the person's HR Master Data record is locked.
       - ``X``, ``NULL``
       - SAP
@@ -1492,7 +1673,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.SUBTY_Subtype
+    * - DM_Person
+      - PA0964.SUBTY_Subtype
       - Subtype indicator for the person's PA0964 record
       - ``IN``
       - SAP
@@ -1500,7 +1682,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0964.UNAME_Name of Person Who Changed Object
+    * - DM_Person
+      - PA0964.UNAME_Name of Person Who Changed Object
       - User name of the person who last changed the PA0964 record.
       - ``JSMITH``
       - SAP
@@ -1508,7 +1691,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
     
-    * - PA0964.Extract_Timestamp
+    * - DM_Person
+      - PA0964.Extract_Timestamp
       - Date and time when the person's PA0964 record was last extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1516,7 +1700,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.OBJID_Object ID
+    * - DM_Person
+      - HRP1001.OBJID_Object ID
       - ID of the source OM object in person-object relationship.
       - ``NULL``
       - SAP
@@ -1524,7 +1709,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - OM Object = SAP Organizational Management object such as person (P), position (S), organizational unit (O), or job (C)
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.OTJID_Concatenation of Object Type and Object ID
+    * - DM_Person
+      - HRP1001.OTJID_Concatenation of Object Type and Object ID
       - Combined code 'OTYPE+OBJID' for the source OM object in the person-object relationship
       - ``NULL``
       - SAP
@@ -1532,7 +1718,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - OM Object = SAP Organizational Management object such as person (P), position (S), organizational unit (O), or job (C)
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.PROZT_Weighting Percentage
+    * - DM_Person
+      - HRP1001.PROZT_Weighting Percentage
       - Weighting percentage of the person-object relationship.
       - ``NULL``
       - SAP
@@ -1540,7 +1727,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.SOBID_ID of Related Object
+    * - DM_Person
+      - HRP1001.SOBID_ID of Related Object
       - ID of the target OM object in the person-object relationship.
       - ``NULL``
       - SAP
@@ -1548,7 +1736,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - OM Object = SAP Organizational Management object such as person (P), position (S), organizational unit (O), or job (C)
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.ISTAT_Planning Status:T777S.STEXT_Planning Status Name
+    * - DM_Person
+      - HRP1001.ISTAT_Planning Status:T777S.STEXT_Planning Status Name
       - Name for the planning status of the Organizational Management relationship record.
       - ``NULL``
       - SAP
@@ -1556,7 +1745,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.OTYPE_Object Type:T777O.OTEXT_Object Type Text
+    * - DM_Person
+      - HRP1001.OTYPE_Object Type:T777O.OTEXT_Object Type Text
       - Name for the object type of the source OM object in the person-object relationship.
       - ``NULL``
       - SAP
@@ -1564,7 +1754,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Object = SAP Organizational Management object such as person (P), position (S), organizational unit (O), or job (C)
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.PLVAR_Plan Version:T777P.PTEXT_Plan Version Text
+    * - DM_Person
+      - HRP1001.PLVAR_Plan Version:T777P.PTEXT_Plan Version Text
       - Name for the plan version as used in the Organizational Management relationship record.
       - ``NULL``
       - SAP
@@ -1572,7 +1763,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.RELAT_Relationship Between Objects:T777V.RTEXT_Relationship Name (Bottom Up)
+    * - DM_Person
+      - HRP1001.RELAT_Relationship Between Objects:T777V.RTEXT_Relationship Name (Bottom Up)
       - Name of the relationship type, using bottom-up wording, between the source and related OM objects.
       - ``NULL``
       - SAP
@@ -1580,7 +1772,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Object = SAP Organizational Management object such as person (P), position (S), organizational unit (O), or job (C)
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.SUBTY_Subtype:T777U.SUTXT_Subtype Text
+    * - DM_Person
+      - HRP1001.SUBTY_Subtype:T777U.SUTXT_Subtype Text
       - Subtype indicator of the Organizational Management relationship record.
       - ``NULL``
       - SAP
@@ -1588,7 +1781,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - HRP1001.Extract_Timestamp
+    * - DM_Person
+      - HRP1001.Extract_Timestamp
       - Date and time when the Organizational Management relationships record was last extracted.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1596,7 +1790,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Object = SAP Organizational Management object such as person (P), position (S), organizational unit (O), or job (C)
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
-    * - PA0001.WERKS_Personnel Area:T500P.NAME1_Personnel Area Text
+    * - DM_Person
+      - PA0001.WERKS_Personnel Area:T500P.NAME1_Personnel Area Text
       - Name for the person's Personnel Area.
       - ``Hungary``, ``Egypt``
       - SAP
@@ -1604,7 +1799,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Looked up after insert from ``SAP_raw.dbo.T500P`` by matching ``[PA0001.WERKS_Personnel Area] = [PERSA_Personnel Area]``.
 
-    * - Master_List_of_FT_Posts.Stream
+    * - DM_Person
+      - Master_List_of_FT_Posts.Stream
       - Functional stream of the person's full-time post, as recorded in the Master List of FT Posts.
       - ``BIS - Customer Care``, ``Finance - GA``
       - SAP
@@ -1612,7 +1808,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied from ``MANUAL.dbo.Master_List_of_FT_Posts.[Stream]`` where ``[Position] = [PA0001.PLANS_Position]``.
 
-    * - DM_Person.current_record_flag
+    * - DM_Person
+      - DM_Person.current_record_flag
       - Show whether the row has current record for the person.
       - ``1``, ``0``
       - SAP
@@ -1620,7 +1817,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = current record; ``0`` = historical or future record
       - Computed per row: set to ``1`` when ``GETDATE()`` falls between ``BEGDA_Master`` and ``ENDDA_Master``; otherwise ``0``.
 
-    * - LFA1.LIFNR_Account Number of Vendor or Creditor
+    * - DM_Person
+      - LFA1.LIFNR_Account Number of Vendor or Creditor
       - The person's vendor account number in their vendor master record
       - ``S72008889``
       - SAP
@@ -1628,7 +1826,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied from ``DM.dbo.DM_Vendors`` where ``[LFB1.PERNR_Personnel Number] = [PERNR_Personnel number]``.
 
-    * - LFA1.NAME1_Name 1
+    * - DM_Person
+      - LFA1.NAME1_Name 1
       - The person's vendor name in their vendor master record
       - ``Jane Smith``
       - SAP
@@ -1636,7 +1835,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``DM.dbo.DM_Vendors`` by joining ``[LFB1.PERNR_Personnel Number]`` to ``[PERNR_Personnel number]``; copied 1:1.
 
-    * - AD.sAMAccountName
+    * - DM_Person
+      - AD.sAMAccountName
       - The person's logon name in Active Directory.
       - ``jsmith``
       - AD
@@ -1644,7 +1844,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.AccountExpirationDate
+    * - DM_Person
+      - AD.AccountExpirationDate
       - Date when the person's AD account is set to expire.
       - ``2025-06-10``
       - AD
@@ -1652,7 +1853,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.AD_OU
+    * - DM_Person
+      - AD.AD_OU
       - Code for the organizational Unit under which the person's AD account resides.
       - ``AFG``, ``BSR``
       - AD
@@ -1660,7 +1862,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.AD_OU_Region
+    * - DM_Person
+      - AD.AD_OU_Region
       - Region derived from the person's AD Organizational Unit.
       - ``Reg1``, ``HO``
       - AD
@@ -1668,7 +1871,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.EmailAddress
+    * - DM_Person
+      - AD.EmailAddress
       - The person's primary email address as recorded in AD.
       - ``jsmith@example.org``
       - AD
@@ -1676,7 +1880,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.Created
+    * - DM_Person
+      - AD.Created
       - Date and time when the person's AD account was created.
       - ``2025-06-10 15:37:50.000``
       - AD
@@ -1684,7 +1889,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.Modified
+    * - DM_Person
+      - AD.Modified
       - Date and time when the person's AD account was last changed.
       - ``2025-06-10 15:37:50.000``
       - AD
@@ -1692,7 +1898,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.clientINdexNumber
+    * - DM_Person
+      - AD.clientINdexNumber
       - CLIENT Index Number stored on the person's AD account.
       - ``674797``, ``01126343``
       - AD
@@ -1700,7 +1907,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.examplePERNR
+    * - DM_Person
+      - AD.examplePERNR
       - SAP personnel number stored on the person's AD account.
       - ``00099626``
       - AD
@@ -1708,7 +1916,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.clientUserType
+    * - DM_Person
+      - AD.clientUserType
       - User type classification for the person in AD.
       - ``Staff``, ``Internship``
       - AD
@@ -1716,7 +1925,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.AD_LSA
+    * - DM_Person
+      - AD.AD_LSA
       - Local Security Administrator of the person's AD account.
       - ``NULL``
       - AD
@@ -1724,7 +1934,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - IRC_Requestor
+    * - DM_Person
+      - IRC_Requestor
       - Identifier for the Requestor in the IRC system for the person.
       - ``NULL``
       - ?
@@ -1732,7 +1943,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Not populated by ``p_DM_Person``. The intended update from ``AD.dbo.AD_Long`` is commented out.
 
-    * - IRC_LSA
+    * - DM_Person
+      - IRC_LSA
       - IRC Identifier of the Local Security Administrator for the person.
       - ``NULL``
       - ?
@@ -1740,7 +1952,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Not populated by ``p_DM_Person``. The intended update from ``AD.dbo.AD_Long`` is commented out.
 
-    * - AD.Manager
+    * - DM_Person
+      - AD.Manager
       - Distinguished Name of the person's manager in AD.
       - ``CN=Jane Smith,OU=Users,OU=GUI,OU=Reg3,DC=CLIENT,DC=org``
       - AD
@@ -1748,7 +1961,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``CN`` = common name; ``OU`` = organizational unit
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.MemberOf
+    * - DM_Person
+      - AD.MemberOf
       - The person's AD memberships listed as group distinguished names.
       - ``CN=AFG-A-Nutrition,OU=Users,OU=AFG,OU=Reg4,DC=CLIENT,DC=org``
       - AD
@@ -1756,7 +1970,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``CN`` = common name; ``OU`` = organizational unit
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.givenName
+    * - DM_Person
+      - AD.givenName
       - The person's first name in AD.
       - ``Jane``
       - AD
@@ -1764,7 +1979,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.surname
+    * - DM_Person
+      - AD.surname
       - The person's last name in AD.
       - ``Smith``
       - AD
@@ -1772,7 +1988,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.DisplayName
+    * - DM_Person
+      - AD.DisplayName
       - The person's full name as displayed in AD
       - ``Jane Smith``
       - AD
@@ -1780,7 +1997,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.PasswordNeverExpires
+    * - DM_Person
+      - AD.PasswordNeverExpires
       - Shows whether the person's AD password is set never to expire
       - ``1900-01-01 00:00:00.000``, ``NULL``
       - AD
@@ -1788,7 +2006,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.PasswordNotRequired
+    * - DM_Person
+      - AD.PasswordNotRequired
       - Shows whether a password is not required for the person's AD account.
       - ``1``, ``0``
       - AD
@@ -1796,7 +2015,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = not required; ``0`` = required
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.PasswordExpired
+    * - DM_Person
+      - AD.PasswordExpired
       - Date and time when the person's AD password was marked as expired.
       - ``2025-06-10 15:37:50.000``
       - AD
@@ -1804,7 +2024,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.PasswordLastSet
+    * - DM_Person
+      - AD.PasswordLastSet
       - Date and time when the person's AD password was last set
       - ``2025-06-10 15:37:50.000``
       - AD
@@ -1812,7 +2033,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.CannotChangePassword
+    * - DM_Person
+      - AD.CannotChangePassword
       - Shows whether the person is prevented from changing their AD password.
       - ``1``, ``0``
       - AD
@@ -1820,7 +2042,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = cannot change password, ``0`` = can change passworrd
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.ScriptPath
+    * - DM_Person
+      - AD.ScriptPath
       - Logon script path assigned to the person's AD account.
       - ``BHG-Script.bat``
       - AD
@@ -1828,7 +2051,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.CanonicalName
+    * - DM_Person
+      - AD.CanonicalName
       - Canonical path of the person's AD object.
       - ``client.org/CEECIS/ALB/Users/JaneSmith``
       - AD
@@ -1836,7 +2060,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.Enabled
+    * - DM_Person
+      - AD.Enabled
       - Shows whether the person's AD account is enabled
       - ``1``, ``0``
       - AD
@@ -1844,7 +2069,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = enabled, ``0`` = not enabled
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.Description
+    * - DM_Person
+      - AD.Description
       - Text description for the person in their AD account.
       - ``/AFG/Reg4/CLIENT - Education Officer``
       - AD
@@ -1852,7 +2078,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.Lockedout
+    * - DM_Person
+      - AD.Lockedout
       - Shows whether the person's AD account is locked out.
       - ``1``, ``0``
       - AD
@@ -1860,7 +2087,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = locked out, ``0`` = not locked out
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.MemberOf_String with DN
+    * - DM_Person
+      - AD.MemberOf_String with DN
       - The person's AD memberships listed as comma-separated group names.
       - ``HUN-Demo-Endorsers_SM,HUN-Users``
       - AD
@@ -1868,7 +2096,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.Name
+    * - DM_Person
+      - AD.Name
       - Common name (CN) of the person's AD object.
       - ``Jane Smith``
       - AD
@@ -1876,7 +2105,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.msRTCSIP-DeploymentLocator
+    * - DM_Person
+      - AD.msRTCSIP-DeploymentLocator
       - Hosting locator for the person's Microsoft communications account (e.g., MS Teams).
       - ``sipfed.online.lync.com``
       - AD
@@ -1884,7 +2114,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.msRTCSIP-FederationEnabled
+    * - DM_Person
+      - AD.msRTCSIP-FederationEnabled
       - Shows whether the person's Microsoft communications account (e.g., MS Teams) is allowed to communicate with with external domains
       - ``1``, ``NULL``
       - AD
@@ -1892,7 +2123,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = allowed
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.msRTCSIP-InternetAccessEnabled
+    * - DM_Person
+      - AD.msRTCSIP-InternetAccessEnabled
       - Shows whether the person's Microsoft communications account has external internet connectivity enabled
       - ``1``, ``NULL``
       - AD
@@ -1900,7 +2132,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = enabled
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.msRTCSIP-Line
+    * - DM_Person
+      - AD.msRTCSIP-Line
       - Telephone URI for the person's enterprise voice line.
       - ``tel:+96265502414;ext=414``
       - AD
@@ -1908,7 +2141,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.msRTCSIP-UserEnabled
+    * - DM_Person
+      - AD.msRTCSIP-UserEnabled
       - Shows whether the person has Microsoft unified communications features enabled (e.g., MS Teams)
       - ``1``, ``NULL``
       - AD
@@ -1916,7 +2150,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = enabled
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - AD.msRTCSIP-PrimaryUserAddress
+    * - DM_Person
+      - AD.msRTCSIP-PrimaryUserAddress
       - Primary SIP address for the person's Microsoft communications account.
       - ``jsmith@example.org``
       - AD
@@ -1924,7 +2159,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
 
-    * - USR02.ACCNT_Account ID
+    * - DM_Person
+      - USR02.ACCNT_Account ID
       - Account ID of the person's SAP user account.
       - ``00003088``
       - SAP
@@ -1932,7 +2168,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.CLASS_User group in user master maintenance
+    * - DM_Person
+      - USR02.CLASS_User group in user master maintenance
       - User group assigned to the person's SAP user master record.
       - ``AZE``, ``Reg1``
       - SAP
@@ -1940,7 +2177,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.ERDAT_Creation Date of the User Master Record
+    * - DM_Person
+      - USR02.ERDAT_Creation Date of the User Master Record
       - Date when the person's SAP user master record was created.
       - ``2025-06-10``
       - SAP
@@ -1948,7 +2186,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.GLTGB_User valid to
+    * - DM_Person
+      - USR02.GLTGB_User valid to
       - Validity end date of the person's SAP user account
       - ``2025-06-10``
       - SAP
@@ -1956,7 +2195,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.GLTGV_User valid from
+    * - DM_Person
+      - USR02.GLTGV_User valid from
       - Validity start date of the person's SAP user account
       - ``2025-06-10``
       - SAP
@@ -1964,7 +2204,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.TRDAT_Last Logon Date
+    * - DM_Person
+      - USR02.TRDAT_Last Logon Date
       - Date and time of the person's last successful logon to SAP.
       - ``2025-06-10 15:37:50.000``
       - SAP
@@ -1972,7 +2213,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.USTYP_User Type
+    * - DM_Person
+      - USR02.USTYP_User Type
       - User type of the person's SAP account
       - ``A``, ``B``, ``C``
       - SAP
@@ -1980,7 +2222,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.BNAME_User Name in User Master Record
+    * - DM_Person
+      - USR02.BNAME_User Name in User Master Record
       - The person's SAP username (BNAME)
       - ``JSMITH``
       - SAP
@@ -1988,7 +2231,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - USR02.UFLAG_User Lock Status
+    * - DM_Person
+      - USR02.UFLAG_User Lock Status
       - Lock-status flag of the person's SAP user account.
       - ``64``, ``128``
       - SAP
@@ -1996,7 +2240,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Updated from ``SAP.dbo.[10-USR02]`` by joining ``BNAME = [PA0105-0001.USRID_Communication Identification/Number]``
 
-    * - DM_Person.AD_OU_for_Org_Unit
+    * - DM_Person
+      - DM_Person.AD_OU_for_Org_Unit
       - The person's organizational unit code from Active Directory
       - ``AZE``, ``CAR``
       - AD
@@ -2004,7 +2249,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - DM_Person.SAP_User_Group_for_Service_Area 
+    * - DM_Person
+      - DM_Person.SAP_User_Group_for_Service_Area 
       - SAP user group code for the person's Service Area
       - ``ETH``
       - SAP
@@ -2012,7 +2258,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Derived inside DM_Person by picking a representative USR02.CLASS value per GSBER.
 
-    * - PA0001.PLANS_Position:HRP1000.STEXT_Object Name
+    * - DM_Person
+      - PA0001.PLANS_Position:HRP1000.STEXT_Object Name
       - The person's post title
       - ``Accounting Officer``
       - SAP
@@ -2020,7 +2267,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - DM_Person.AD_OU_Region_for_Org_Unit
+    * - DM_Person
+      - DM_Person.AD_OU_Region_for_Org_Unit
       - Region derived from the person's AD OU column for the organizational unit.
       - ``Reg1``, ``Reg2``, ``HO``
       - AD
@@ -2028,7 +2276,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - Future-PA0016.BEGDA_Start Date
+    * - DM_Person
+      - Future-PA0016.BEGDA_Start Date
       - Start date of the person's future-dated Contract Elements record
       - ``2025-06-10``
       - SAP
@@ -2036,7 +2285,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - Future-PA0016.CTEDT_Contract End Date
+    * - DM_Person
+      - Future-PA0016.CTEDT_Contract End Date
       - Start date of the person's future-dated Contract Elements record
       - ``2025-06-10``
       - SAP
@@ -2044,7 +2294,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - ZDEPT_UNIT.EMERGENCY_Emergency Indicator
+    * - DM_Person
+      - ZDEPT_UNIT.EMERGENCY_Emergency Indicator
       - Shows whether the person's Service Area has emergency status.
       - ``X``, ``NULL``
       - SAP
@@ -2052,7 +2303,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - DM_Person.PERNR_Active
+    * - DM_Person
+      - DM_Person.PERNR_Active
       - Shows whether the person's personnel number is currently active
       - ``NULL``
       - SAP
@@ -2060,7 +2312,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Not populated
       - N/A
 
-    * - DM_Person.PERNR_Correct
+    * - DM_Person
+      - DM_Person.PERNR_Correct
       - Shows whether the person's personnel number is confirmed as correct
       - ``NULL``
       - SAP
@@ -2068,7 +2321,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Not populated
       - N/A
 
-    * - PA0001.WERKS_Personnel Area:T005.ZZOLDUNCTY_Old CLIENT alphanumeric country code
+    * - DM_Person
+      - PA0001.WERKS_Personnel Area:T005.ZZOLDUNCTY_Old CLIENT alphanumeric country code
       - Legacy CLIENT alphanumeric country code mapped from the person's personnel area.
       - ``NULL``
       - SAP
@@ -2076,7 +2330,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Not populated
       - N/A
 
-    * - Region Desc Short
+    * - DM_Person
+      - Region Desc Short
       - Short text for the person's region.
       - ``Reg1``, ``HO``
       - SAP
@@ -2084,7 +2339,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - Region Desc Long
+    * - DM_Person
+      - Region Desc Long
       - Short text for the person's region.
       - ``Region and Field Area``, ``Head Office``
       - SAP
@@ -2092,7 +2348,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
 
-    * - Sequence_0016
+    * - DM_Person
+      - Sequence_0016
       - Sequence index of the person's Contract Elements records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2100,7 +2357,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - Sequence_0000
+    * - DM_Person
+      - Sequence_0000
       - Sequence index of the person's Actions records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2108,7 +2366,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - Sequence_0001
+    * - DM_Person
+      - Sequence_0001
       - Sequence index of the person's Organizational Assignment records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2116,7 +2375,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - Sequence_0002
+    * - DM_Person
+      - Sequence_0002
       - Sequence index of the person's Personal Data records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2124,7 +2384,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - Sequence_0077
+    * - DM_Person
+      - Sequence_0077
       - Sequence index of the person's Additional Personal Data records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2132,7 +2393,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - Sequence_0105-0001
+    * - DM_Person
+      - Sequence_0105-0001
       - Sequence index of the person's Communications/SAP User Name records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2140,7 +2402,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - Sequence_0105-0010
+    * - DM_Person
+      - Sequence_0105-0010
       - Sequence index of the person's Communications/CLIENT Email Address records by begin date
       - ``-1``, ``0``, ``1``, ``2``
       - N/A
@@ -2148,7 +2411,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``0`` = current record; negative values = earlier records; positive values = future-dated records
       - N/A
 
-    * - DM_Person.latest_record_flag
+    * - DM_Person
+      - DM_Person.latest_record_flag
       - Shows whether the row has the latest record for the DM_Person, regardless of validity dates
       - ``1``, ``0``
       - N/A
@@ -2156,7 +2420,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = latest, ``0`` = not latest
       - Computed per ``PERNR``: set to ``1`` for the row whose ``BEGDA_Master`` equals the max ``BEGDA_Master`` for that ``PERNR``; otherwise ``0``.
 
-    * - (Position) HRP1001.OBJID_Object ID
+    * - DM_Person
+      - (Position) HRP1001.OBJID_Object ID
       - The person's position ID in SAP Organizational Management.
       - ``00000852``
       - SAP
@@ -2164,7 +2429,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``position.HRP1001.OBJID_Object ID``
 
-    * - (Position) HRP1001.SOBID_ID of Related Object
+    * - DM_Person
+      - (Position) HRP1001.SOBID_ID of Related Object
       - Person ID of the holder of the position in Organizational Management.
       - ``00000852``
       - SAP
@@ -2172,7 +2438,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``position.HRP1001.SOBID_ID of Related Object``
 
-    * - (Position) HRP1001.BEGDA_Start Date
+    * - DM_Person
+      - (Position) HRP1001.BEGDA_Start Date
       - Start date of the person's assignment to the position.
       - ``2025-06-10``
       - SAP
@@ -2180,7 +2447,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``position.HRP1001.BEGDA_Start Date``
 
-    * - (Position) HRP1001.ENDDA_End Date
+    * - DM_Person
+      - (Position) HRP1001.ENDDA_End Date
       - End date of the person's assignment to the position.
       - ``2025-06-10``
       - SAP
@@ -2188,7 +2456,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``position.HRP1001.ENDDA_End Date``
 
-    * - (Org Unit) HRP1001.OBJID_Object ID
+    * - DM_Person
+      - (Org Unit) HRP1001.OBJID_Object ID
       - The person's organizational unit ID in SAP Organizational Management.
       - ``00000852``
       - SAP
@@ -2196,7 +2465,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``org.HRP1001.OBJID_Object ID``
     
-    * - (Org Unit) HRP1001.SOBID_ID of Related Object
+    * - DM_Person
+      - (Org Unit) HRP1001.SOBID_ID of Related Object
       - Position ID that belongs to the person's organizational unit.
       - ``00000852``
       - SAP
@@ -2204,7 +2474,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``org.HRP1001.SOBID_ID of Related Object``
 
-    * - (Org Unit) HRP1001.BEGDA_Start Date
+    * - DM_Person
+      - (Org Unit) HRP1001.BEGDA_Start Date
       - Start date of the position's assignment to the organizational unit.
       - ``2025-06-10``
       - SAP
@@ -2212,7 +2483,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``org.HRP1001.BEGDA_Start Date``
 
-    * - (Org Unit) HRP1001.ENDDA_End Date
+    * - DM_Person
+      - (Org Unit) HRP1001.ENDDA_End Date
       - End date of the position's assignment to the organizational unit.
       - ``2025-06-10``
       - SAP
@@ -2220,7 +2492,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``org.HRP1001.ENDDA_End Date``
 
-    * - (Manager Position) HRP1001.OBJID_Object ID
+    * - DM_Person
+      - (Manager Position) HRP1001.OBJID_Object ID
       - Position ID that belongs to the person's manager
       - ``00000852``
       - SAP
@@ -2228,7 +2501,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mposition.HRP1001.OBJID_Object ID``
 
-    * - (Manager Position) HRP1001.SOBID_ID of Related Object
+    * - DM_Person
+      - (Manager Position) HRP1001.SOBID_ID of Related Object
       - The person's position ID that reports to the manager's position.
       - ``00000852``
       - SAP
@@ -2236,7 +2510,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mposition.HRP1001.SOBID_ID of Related Object``
 
-    * - (Manager Position) HRP1001.BEGDA_Start Date
+    * - DM_Person
+      - (Manager Position) HRP1001.BEGDA_Start Date
       - Start date of the reporting line from the person's position to their manager's position.
       - ``2025-06-10``
       - SAP
@@ -2244,7 +2519,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mholder.HRP1001.BEGDA_Start Date``
 
-    * - (Manager Position) HRP1001.ENDDA_End Date
+    * - DM_Person
+      - (Manager Position) HRP1001.ENDDA_End Date
       - End date of the reporting line from the person's position to their manager's position.
       - ``2025-06-10``
       - SAP
@@ -2252,7 +2528,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mposition.HRP1001.ENDDA_End Date``
 
-    * - (Manager) HRP1001.OBJID_Object ID
+    * - DM_Person
+      - (Manager) HRP1001.OBJID_Object ID
       - Person ID of the person's manager
       - ``00000852``
       - SAP
@@ -2260,7 +2537,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mholder.HRP1001.OBJID_Object ID``
 
-    * - (Manager) HRP1001.SOBID_ID of Related Object
+    * - DM_Person
+      - (Manager) HRP1001.SOBID_ID of Related Object
       - Person ID of the person who reports to the manager.
       - ``00000852``
       - SAP
@@ -2268,7 +2546,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mholder.HRP1001.SOBID_ID of Related Object``
 
-    * - (Manager) HRP1001.BEGDA_Start Date
+    * - DM_Person
+      - (Manager) HRP1001.BEGDA_Start Date
       - Start date of the person's reporting relationship to their manager.
       - ``2025-06-10``
       - SAP
@@ -2276,7 +2555,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``[mholder.HRP1001.BEGDA_Start Date]``
 
-    * - (Manager) HRP1001.ENDDA_End Date
+    * - DM_Person
+      - (Manager) HRP1001.ENDDA_End Date
       - End date of the person's reporting relationship to their manager.
       - ``2025-06-10``
       - SAP
@@ -2284,7 +2564,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Copied within DM_Person from ``mholder.HRP1001.ENDDA_End Date``
 
-    * - (Manager) PA0001.ENAME_Formatted Name of Employee or Applicant
+    * - DM_Person
+      - (Manager) PA0001.ENAME_Formatted Name of Employee or Applicant
       - Formatted name of the person's manager
       - ``Jane Smith``
       - SAP
@@ -2292,7 +2573,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Set via self-join to the manager's ``DM_Person`` row using manager ``PERNR`` from ``mholder.HRP1001.SOBID_ID of Related Object`` with date overlap on ``BEGDA_Master..ENDDA_Master``, then copied from ``Manager-PA0001.ENAME_…`` into this column.
 
-    * - (Manager) PA0002.GESCH_Gender
+    * - DM_Person
+      - (Manager) PA0002.GESCH_Gender
       - Gender code for the person's manager
       - ``1``, ``0``
       - SAP
@@ -2300,7 +2582,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``1`` = male, ``0`` = female
       - Set via self-join to the manager's ``DM_Person`` row using ``mholder.HRP1001.SOBID_ID of Related Object`` (the manager's ``PERNR``) with a date-overlap on ``BEGDA_Master..ENDDA_Master``; value taken from the manager's ``PA0002.GESCH_Gender``, then copied from ``Manager-PA0002.GESCH_Gender`` into this column.
 
-    * - (Manager) AD.EmailAddress
+    * - DM_Person
+      - (Manager) AD.EmailAddress
       - Email address of the person's manager
       - ``jsmith@example.org``
       - ?
@@ -2308,7 +2591,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Set via self-join to the manager's ``DM_Person`` row using ``mholder.HRP1001.SOBID_ID of Related Object`` (the manager's ``PERNR``) with a date-overlap on ``BEGDA_Master..ENDDA_Master``; value taken from the manager's ``PA0105-0010.USRID_LONG_Communication: Long Identification/Number``, then copied from ``Manager-AD.EmailAddress`` into this column
 
-    * - (Manager) PA0001.PLANS_Position:HRP1000.STEXT_Object Name
+    * - DM_Person
+      - (Manager) PA0001.PLANS_Position:HRP1000.STEXT_Object Name
       - Post title of the person's manager
       - ``Accounts officer``
       - SAP

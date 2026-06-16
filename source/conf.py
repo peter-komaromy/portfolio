@@ -58,13 +58,12 @@ html_css_files = [
     "css/datatables_custom.css",        # custom rules for sphinx-datatables
 ]
 
-
 html_js_files = [
     "js/fieldref-sidebar-tooltips.js",
     "js/colref-datatables-init.js",      # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/colref-offcanvas.js",
-    #"js/sidebar-wip-dim.js",           # class you can apply to pages in development to dim their sidebar links
+    #"js/sidebar-wip-dim.js",            # class you can apply to pages in development to dim their sidebar links
 ]
 
 
@@ -94,12 +93,6 @@ extensions = [
     "sphinxcontrib.jquery",               # needed for sphinx-datatables
     "gdw_ext",                            # custom extensions
 ]
-
-
-# ===========================================================================
-# --- Togglebutton & Datatables ---------------------------------------------
-# ===========================================================================
-
 togglebutton_selector = ".toggle, .admonition.dropdown, .admonition.landing-toggle" # needed for these classes to work
 datatables_version = "2.3.8"
 datatables_js  = "js/datatables.min.js"
@@ -107,6 +100,18 @@ datatables_css = "css/datatables.min.css"
 datatables_class = "datatable-disabled" # set to something non-existing which is never used
 datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
 
+
+# ============================================================================
+# ---- Substitution definitions ----------------------------------------------
+# ============================================================================
+
+rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
+
+
+# === NOTES ==========================================================
+
+# html_show_sourcelink = True       # Sphinx’s built‑in page-source link
+# html_copy_source = True           # default, but kept explicit
 '''
 datatables_class = "sphinx-datatable"
 datatables_options = r"""
@@ -140,15 +145,3 @@ datatables_options = r"""
 }
 """
 '''
-
-# ============================================================================
-# ---- Substitution definitions ----------------------------------------------
-# ============================================================================
-
-rst_epilog = open("_snippets/rst_epilog.rst", encoding="utf-8").read()
-
-
-# === NOTES ==========================================================
-
-# html_show_sourcelink = True       # Sphinx’s built‑in page-source link
-# html_copy_source = True           # default, but kept explicit

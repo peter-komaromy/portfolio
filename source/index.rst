@@ -66,6 +66,7 @@
                   :columns: 2
          
                   .. button-link:: 1link/case-studies
+                     :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
 
@@ -75,6 +76,7 @@
                   :columns: 2
 
                   .. button-link:: 2link/writing-samples
+                     :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
 
@@ -84,6 +86,7 @@
                   :columns: 2
 
                   .. button-link:: 3link/cv
+                     :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
 

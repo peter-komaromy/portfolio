@@ -65,7 +65,7 @@
                .. grid-item::
                   :columns: 2
          
-                  .. button-link:: 1link/case-studies
+                  .. button-ref:: 1link/case-studies
                      :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
@@ -75,7 +75,7 @@
                .. grid-item::
                   :columns: 2
 
-                  .. button-link:: 2link/writing-samples
+                  .. button-ref:: 2link/writing-samples
                      :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
@@ -85,7 +85,7 @@
                .. grid-item::
                   :columns: 2
 
-                  .. button-link:: 3link/cv
+                  .. button-ref:: 3link/cv
                      :ref-type: doc
                      :color: primary
                      :class: sd-mt-2

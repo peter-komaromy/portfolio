@@ -1,11 +1,10 @@
 :html_theme.sidebar_secondary.remove: true
 
-Case Studies
-============
-
 .. raw:: html
 
    <style>
+      .bd-main .bd-content .bd-article-container { max-width: 100%; }
+      .bd-page-width { max-width: 100%; }
       .case-study-card { height: 100%; }
       .case-study-card .sd-card-body { display: flex; flex-direction: column; }
       .case-study-card .sd-card-body > p:last-child { margin-top: auto; }
@@ -14,7 +13,10 @@ Case Studies
       .sd-card-title { color: var(--card-title-color); }
    </style>
 
-.. rst-class:: case-study-note
+.. rst-class:: case-study-note pst-primary-sidebar-narrow
+
+Case Studies
+============
 
 Sanitized reconstructions with synthetic names, systems, and values.
 

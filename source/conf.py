@@ -56,6 +56,7 @@ html_css_files = [
     "css/landing-page.css",             # custom rules scoped to landing page
     "css/fieldref-ellipsis.css",      # custom rules for truncating long text in sidebar (only used on DOA portal currently)
     "css/datatables_custom.css",        # custom rules for sphinx-datatables
+    "css/colref-offcanvas.css",
 ]
 
 html_js_files = [

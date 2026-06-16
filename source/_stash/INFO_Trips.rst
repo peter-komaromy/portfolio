@@ -31,7 +31,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
 .. list-table::
     :header-rows: 1
     :widths: auto
-    :class: sphinx-datatable display hover nowrap dt-profile-colref7
+    :class: sphinx-datatable display hover nowrap dt-profile-colref8
 
     * - Column Name
       - Definition
@@ -41,7 +41,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Remark
       - Technical Notes
 
-    * - PTRV_HEAD.PERNR_Personnel Number
+    * - DM_Trips
+      - PTRV_HEAD.PERNR_Personnel Number
       - Personnel Number of the traveler to whom the trip record belongs in SAP.
       - ``00000123``
       - SAP
@@ -49,7 +50,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - task.number
+    * - DM_Trips
+      - task.number
       - Identifier of the trip's upstream workflow data in SG.
       - ``TRVL0018921``
       - Request Portal
@@ -57,7 +59,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - SP updates the column by matching SAP's ``REINR`` to SN's travel case field; next, uses the travel case’s ``sys_id`` to fetch the corresponding SN task data; lastly, copies task number into the target.
 
-    * - PTRV_HEAD.REINR_Trip Number
+    * - DM_Trips
+      - PTRV_HEAD.REINR_Trip Number
       - System-assigned number that uniquely identifies the traveler's trip document.
       - ``0000000031``
       - SAP
@@ -65,7 +68,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.HDVRS_Sequential Number of Travel Expenses Table THEADER
+    * - DM_Trips
+      - PTRV_HEAD.HDVRS_Sequential Number of Travel Expenses Table THEADER
       - Sequential number that links the trip header to the corresponding record in the Travel Expenses header table (THEADER).
       - ``54``, ``66``
       - SAP
@@ -73,7 +77,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ZLAND_Trip Country / Trip Country Group
+    * - DM_Trips
+      - PTRV_HEAD.ZLAND_Trip Country / Trip Country Group
       - Code that classifies the country or country group of the trip's destination.
       - ``001``, ``002``
       - SAP
@@ -81,7 +86,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATV1_Beginning Date of Trip Segment
+    * - DM_Trips
+      - PTRV_HEAD.DATV1_Beginning Date of Trip Segment
       - Calendar date when the trip segment starts.
       - ``2025-01-03``
       - SAP
@@ -89,7 +95,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.MOLGA_Country Grouping
+    * - DM_Trips
+      - PTRV_HEAD.MOLGA_Country Grouping
       - Code that classifies the HR country grouping used for the trip.
       - ``UN``
       - SAP
@@ -97,7 +104,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Text description equivalent: ``Non-profit organisations``
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.MOREI_Trip Provision Variant
+    * - DM_Trips
+      - PTRV_HEAD.MOREI_Trip Provision Variant
       - Code that classifies the trip provision variant
       - ``90``
       - SAP
@@ -105,7 +113,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``90`` = ``UN per diem``
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.SCHEM_Trip Schema
+    * - DM_Trips
+      - PTRV_HEAD.SCHEM_Trip Schema
       - Code that indicates the trip schema applied to the document.
       - ``02``
       - SAP
@@ -113,7 +122,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``02`` = ``International``
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.KZREA_Trip Type: Statutory
+    * - DM_Trips
+      - PTRV_HEAD.KZREA_Trip Type: Statutory
       - Code that indicates the statutory (legal) trip type selected for the trip.
       - ``H``, ``N``, ``P``
       - SAP
@@ -121,7 +131,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.BEREI_Trip Type: Enterprise-Specific
+    * - DM_Trips
+      - PTRV_HEAD.BEREI_Trip Type: Enterprise-Specific
       - Code that indicates the enterprise-specific trip type defined by CLIENT.
       - ``5``, ``9``
       - SAP
@@ -129,7 +140,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``5`` = ``1-60 days``, ``9`` = ``over 60 days``
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.KZTKT_Trip Activity Type
+    * - DM_Trips
+      - PTRV_HEAD.KZTKT_Trip Activity Type
       - Code that classifies the type of activity performed on the trip.
       - ``A``, ``B``, ``C``
       - SAP
@@ -137,7 +149,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Text equivalents include ``Family Visit``, ``Consultant Travel``, etc.
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ZORT1_Location
+    * - DM_Trips
+      - PTRV_HEAD.ZORT1_Location
       - Free-text name of the trip's primary location (the city or locality)
       - ``Istanbul``
       - SAP
@@ -145,7 +158,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.HRGIO_Region of Main Destination
+    * - DM_Trips
+      - PTRV_HEAD.HRGIO_Region of Main Destination
       - Numeric identifier for the region of the trip's main destination.
       - ``001``, ``002``
       - SAP
@@ -153,7 +167,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.NDNST_Name of new administrative office (P.S.)
+    * - DM_Trips
+      - PTRV_HEAD.NDNST_Name of new administrative office (P.S.)
       - Text field for the name of the new administrative office (P.S.) relevant to the trip
       - ``NULL``
       - SAP
@@ -161,7 +176,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.KUNDE_Reason for Trip (for example, customer/requisitioner)
+    * - DM_Trips
+      - PTRV_HEAD.KUNDE_Reason for Trip (for example, customer/requisitioner)
       - Free‑text describing the purpose of the trip and/or the requesting unit/person.
       - ``Field visit to ECD Center``
       - SAP
@@ -169,7 +185,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UHRV1_Beginning Time of Trip Segment
+    * - DM_Trips
+      - PTRV_HEAD.UHRV1_Beginning Time of Trip Segment
       - Time of day when the trip segment starts.
       - ``01:25:00``
       - SAP
@@ -177,7 +194,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATB1_End Date of Trip Segment
+    * - DM_Trips
+      - PTRV_HEAD.DATB1_End Date of Trip Segment
       - Date when the trip segment ends.
       - ``2025-01-03``
       - SAP
@@ -185,7 +203,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UHRB1_End Time of Trip Segment
+    * - DM_Trips
+      - PTRV_HEAD.UHRB1_End Time of Trip Segment
       - Time of day when the trip segment ends.
       - ``01:25:00``
       - SAP
@@ -193,7 +212,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATH1_Border Crossing (Trip Out): Date
+    * - DM_Trips
+      - PTRV_HEAD.DATH1_Border Crossing (Trip Out): Date
       - Date when the traveler crosses a border on the outbound leg of the trip.
       - ``2025-01-03``
       - SAP
@@ -201,7 +221,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UHRH1_Time: Border crossing (trip out)
+    * - DM_Trips
+      - PTRV_HEAD.UHRH1_Time: Border crossing (trip out)
       - Time of day when the traveler crosses a border on the outbound leg of the trip.
       - ``01:25:00``
       - SAP
@@ -209,7 +230,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATR1_Border Crossing (Return Trip): Date
+    * - DM_Trips
+      - PTRV_HEAD.DATR1_Border Crossing (Return Trip): Date
       - Date when the traveler crosses the border on the return leg of the trip.
       - ``2025-01-03``
       - SAP
@@ -217,7 +239,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UHRR1_Time: Border crossing(return trip)
+    * - DM_Trips
+      - PTRV_HEAD.UHRR1_Time: Border crossing(return trip)
       - Time of day when the traveler crosses the border on the return leg of the trip.
       - ``01:25:00``
       - SAP
@@ -225,7 +248,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.AGRZ1_Trip Country / Trip Country Group
+    * - DM_Trips
+      - PTRV_HEAD.AGRZ1_Trip Country / Trip Country Group
       - Code that classifies the country or country group relevant to the trip record.
       - ``066``
       - SAP
@@ -233,7 +257,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.GRGIO_Region of Border Crossing: Return Trip
+    * - DM_Trips
+      - PTRV_HEAD.GRGIO_Region of Border Crossing: Return Trip
       - Code that identifies the region where the return‑trip border crossing occured.
       - ``110``
       - SAP
@@ -241,7 +266,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.GRBER_Border crossing: Trip type enterprise-specific
+    * - DM_Trips
+      - PTRV_HEAD.GRBER_Border crossing: Trip type enterprise-specific
       - CLIENT‑defined code for the enterprise‑specific trip type which applies when the border is crossed.
       - ``NULL``
       - SAP
@@ -249,7 +275,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UZKVG_Confirmation of Moving Costs Refund
+    * - DM_Trips
+      - PTRV_HEAD.UZKVG_Confirmation of Moving Costs Refund
       - Shows whether a moving‑costs refund has been confirmed for the traveler.
       - ``NULL``
       - SAP
@@ -257,7 +284,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ZUSAG_Admin. Office That Confirmed Moving Costs Compensation (PS)
+    * - DM_Trips
+      - PTRV_HEAD.ZUSAG_Admin. Office That Confirmed Moving Costs Compensation (PS)
       - Name of the administrative office that issued the confirmation for moving‑costs compensation.
       - ``NULL``
       - SAP
@@ -265,7 +293,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ENDRG_Different End of Travel Allowance (in Separation Allowance)
+    * - DM_Trips
+      - PTRV_HEAD.ENDRG_Different End of Travel Allowance (in Separation Allowance)
       - Shows whether the entitlement to separation/travel allowance ends on a date different from the trip’s end date.
       - ``NULL``
       - SAP
@@ -273,7 +302,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DEPAR_Departure from Residence or Place of Work
+    * - DM_Trips
+      - PTRV_HEAD.DEPAR_Departure from Residence or Place of Work
       - Shows whether the trip started from the traveler’s residence or place of work.
       - ``1``, ``X``
       - SAP
@@ -281,7 +311,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ARRVL_Return Trip: Arrival at Place of Residence or Work
+    * - DM_Trips
+      - PTRV_HEAD.ARRVL_Return Trip: Arrival at Place of Residence or Work
       - Shows whether the return leg of the trip ends at the traveler’s residence or place of work.
       - ``1``, ``X``
       - SAP
@@ -289,7 +320,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.RETRN_Arrival at Accommodations or New Workplace
+    * - DM_Trips
+      - PTRV_HEAD.RETRN_Arrival at Accommodations or New Workplace
       - Shows whether the traveler has reached the temporary accommodation or new workplace for the trip.
       - ``1``, ``X``
       - SAP
@@ -297,7 +329,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATES_Date of Last Change
+    * - DM_Trips
+      - PTRV_HEAD.DATES_Date of Last Change
       - Date when this trip header record was last changed in SAP.
       - ``2025-01-03``
       - SAP
@@ -305,7 +338,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.TIMES_Time of Last Change
+    * - DM_Trips
+      - PTRV_HEAD.TIMES_Time of Last Change
       - Time of day when this trip header record was last changed in SAP.
       - ``01:25:00``
       - SAP
@@ -313,7 +347,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UNAME_Name of person who changed object
+    * - DM_Trips
+      - PTRV_HEAD.UNAME_Name of person who changed object
       - SAP user ID of the person who last changed the trip header record.
       - ``JSMITH``
       - SAP
@@ -321,7 +356,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.REPID_Change Report
+    * - DM_Trips
+      - PTRV_HEAD.REPID_Change Report
       - Technical identifier of the SAP application/report or transaction that performed the last change.
       - ``SAPMP56T/PR01``, ``SAPMP56T/PR05``
       - SAP
@@ -329,7 +365,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``PR01`` = travel request, ``PR05`` = travel expenses
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DANTN_Trip Number of Corresponding Trip to Start Work
+    * - DM_Trips
+      - PTRV_HEAD.DANTN_Trip Number of Corresponding Trip to Start Work
       - Cross‑reference: the Trip Number of the ``PTRV_HEAD`` record that documents the Start‑Work trip.
       - ``NULL``
       - SAP
@@ -337,7 +374,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.FINTN_Trip Number of Associated Business Trip Return
+    * - DM_Trips
+      - PTRV_HEAD.FINTN_Trip Number of Associated Business Trip Return
       - Cross‑reference: the Trip Number of the ``PTRV_HEAD`` record that documents the Return trip.
       - ``NULL``
       - SAP
@@ -345,7 +383,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.REQUEST_Indicator for objects request, plan and expense report
+    * - DM_Trips
+      - PTRV_HEAD.REQUEST_Indicator for objects request, plan and expense report
       - Shows whether a travel request exists for the trip.
       - ``NULL``
       - SAP
@@ -353,7 +392,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.TRAVEL_PLAN_Indicator for objects request, plan and expense report
+    * - DM_Trips
+      - PTRV_HEAD.TRAVEL_PLAN_Indicator for objects request, plan and expense report
       - Shows whether a travel plan exists for the trip.
       - ``NULL``
       - SAP
@@ -361,7 +401,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.EXPENSES_Indicator for objects request, plan and expense report
+    * - DM_Trips
+      - PTRV_HEAD.EXPENSES_Indicator for objects request, plan and expense report
       - Shows whether an expense report exists for the trip.
       - ``X``
       - SAP
@@ -369,7 +410,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``X`` = yes
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ST_TRGTG_Start of Taxation for Per Diem Separation Allowance
+    * - DM_Trips
+      - PTRV_HEAD.ST_TRGTG_Start of Taxation for Per Diem Separation Allowance
       - Date when taxation of the traveler’s per‑diem separation allowance begins for this trip.
       - ``2025-01-03``
       - SAP
@@ -377,7 +419,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ST_TRGALL_Start of Taxation for Complete Separation Allowance
+    * - DM_Trips
+      - PTRV_HEAD.ST_TRGALL_Start of Taxation for Complete Separation Allowance
       - Date when taxation of the traveler’s full separation allowance begins for this trip.
       - ``2025-01-03``
       - SAP
@@ -385,7 +428,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.PERIODENART_Associated Trip Period Types
+    * - DM_Trips
+      - PTRV_HEAD.PERIODENART_Associated Trip Period Types
       - Shows whether the trip is handled as a normal trip or split into separation‑allowance periods.
       - ``NULL``
       - SAP
@@ -393,7 +437,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DAT_REDUC1_Reduction of Entire Separation or Travel Allowance Level 1
+    * - DM_Trips
+      - PTRV_HEAD.DAT_REDUC1_Reduction of Entire Separation or Travel Allowance Level 1
       - Date when the first reduction level for separation/travel allowance takes effect for the trip.
       - ``2025-01-03``
       - SAP
@@ -401,7 +446,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DAT_REDUC2_Reduction of Separation or Travel Allowance Level 2
+    * - DM_Trips
+      - PTRV_HEAD.DAT_REDUC2_Reduction of Separation or Travel Allowance Level 2
       - Date when the second reduction level for separation/travel allowance takes effect for the trip.
       - ``2025-01-03``
       - SAP
@@ -409,7 +455,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATV1_DIENST_Date of Commencement of Work
+    * - DM_Trips
+      - PTRV_HEAD.DATV1_DIENST_Date of Commencement of Work
       - Date the traveler starts work at the duty location for the trip or assignment.
       - ``2025-01-03``
       - SAP
@@ -417,7 +464,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UHRV1_DIENST_Time at Which Work Commences
+    * - DM_Trips
+      - PTRV_HEAD.UHRV1_DIENST_Time at Which Work Commences
       - Time of day when work begins for the trip or assignment.
       - ``01:25:00``
       - SAP
@@ -425,7 +473,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DATB1_DIENST_Date on Which Work Ends
+    * - DM_Trips
+      - PTRV_HEAD.DATB1_DIENST_Date on Which Work Ends
       - Date when the traveler’s work ends for the trip or assignment.
       - ``2025-01-03``
       - SAP
@@ -433,7 +482,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.UHRB1_DIENST_Time at Which Work Ends
+    * - DM_Trips
+      - PTRV_HEAD.UHRB1_DIENST_Time at Which Work Ends
       - Time of day when work ends for the trip or assignment.
       - ``01:25:00``
       - SAP
@@ -441,7 +491,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ABORDNUNG_Associated Superior Separation Allowance
+    * - DM_Trips
+      - PTRV_HEAD.ABORDNUNG_Associated Superior Separation Allowance
       - Identifier that links the trip to the parent separation‑allowance case (i.e., the superior secondment under which it falls).
       - ``NULL``
       - SAP
@@ -449,7 +500,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ST_TRG_TYP_Temporary Assignment (Indicator)
+    * - DM_Trips
+      - PTRV_HEAD.ST_TRG_TYP_Temporary Assignment (Indicator)
       - Shows whether the trip is part of a temporary assignment/secondment for separation‑allowance and taxation handling.
       - ``NULL``
       - SAP
@@ -457,7 +509,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ST_WOHN_TYP_Home for Separation Allowance Taxation
+    * - DM_Trips
+      - PTRV_HEAD.ST_WOHN_TYP_Home for Separation Allowance Taxation
       - Identifies which home location is used as taxation baseline for separation‑allowance calculations on the trip.
       - ``NULL``
       - SAP
@@ -465,7 +518,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.KEIN_REISEGELD_No Separation Allowance for Travel Is Paid (Indicator)
+    * - DM_Trips
+      - PTRV_HEAD.KEIN_REISEGELD_No Separation Allowance for Travel Is Paid (Indicator)
       - Shows whether no separation allowance is paid for this trip.
       - ``NULL``
       - SAP
@@ -473,7 +527,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.TAX_PER_DIEM_Automatic Taxation of Meals and Accommodations Per Diems
+    * - DM_Trips
+      - PTRV_HEAD.TAX_PER_DIEM_Automatic Taxation of Meals and Accommodations Per Diems
       - Shows whether the system automatically taxes meal and lodging per‑diem entitlements for the trip.
       - ``NULL``
       - SAP
@@ -481,7 +536,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.TAX_PD_MAN_Manually Triggered Taxation of Meals Per Diems
+    * - DM_Trips
+      - PTRV_HEAD.TAX_PD_MAN_Manually Triggered Taxation of Meals Per Diems
       - Shows whether taxation of meal per‑diem entitlements was triggered manually for the trip.
       - ``NULL``
       - SAP
@@ -489,7 +545,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.TAX_OV_MAN_Manually Triggered Taxation of Accommodations Per Diems
+    * - DM_Trips
+      - PTRV_HEAD.TAX_OV_MAN_Manually Triggered Taxation of Accommodations Per Diems
       - Shows whether taxation of accommodation per‑diem entitlements was triggered manually for the trip.
       - ``NULL``
       - SAP
@@ -497,7 +554,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.EXCHANGE_DATE_Reference Date of Trip
+    * - DM_Trips
+      - PTRV_HEAD.EXCHANGE_DATE_Reference Date of Trip
       - Reference date that determines currency exchange rates for the trip.
       - ``2025-01-03``
       - SAP
@@ -505,7 +563,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ROUNDING_Travel Amounts Are Rounded (Indicator)
+    * - DM_Trips
+      - PTRV_HEAD.ROUNDING_Travel Amounts Are Rounded (Indicator)
       - Shows whether travel amounts are rounded according to system rules.
       - ``NULL``
       - SAP
@@ -513,7 +572,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DZ_LIMIT_180_Limitation of DA Fee to 180 Days
+    * - DM_Trips
+      - PTRV_HEAD.DZ_LIMIT_180_Limitation of DA Fee to 180 Days
       - Shows whether the daily allowance (DA) is limited to 180 days for the trip.
       - ``NULL``
       - SAP
@@ -521,7 +581,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.CALID_Factory Calendar
+    * - DM_Trips
+      - PTRV_HEAD.CALID_Factory Calendar
       - Code that identifies the factory calendar used to interpret working and non‑working days for the trip.
       - ``NULL``
       - SAP
@@ -529,7 +590,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.DURATION_TRIP_BREAKS_Details on Duration of Private Trip Breaks (PS)
+    * - DM_Trips
+      - PTRV_HEAD.DURATION_TRIP_BREAKS_Details on Duration of Private Trip Breaks (PS)
       - Duration of any private breaks within the trip.
       - ``NULL``
       - SAP
@@ -537,7 +599,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.AGRZ1_Trip Country / Trip Country Group:T706O.TEXT25_Name of Trip Country/Country Group/Region
+    * - DM_Trips
+      - PTRV_HEAD.AGRZ1_Trip Country / Trip Country Group:T706O.TEXT25_Name of Trip Country/Country Group/Region
       - Name of the country, country group, or region recorded for the trip.
       - ``Cairo``
       - SAP
@@ -545,7 +608,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.BEREI_Trip Type: Enterprise-Specific:T706X.TEXT25_Name for enterprise-specific trip type
+    * - DM_Trips
+      - PTRV_HEAD.BEREI_Trip Type: Enterprise-Specific:T706X.TEXT25_Name for enterprise-specific trip type
       - Name of the enterprise‑specific trip type applied.
       - ``1-60 DAYS``, ``OVER 60 DAYS``
       - SAP
@@ -553,7 +617,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.GRBER_Border crossing: Trip type enterprise-specific:T706X.TEXT25_Name for enterprise-specific trip type
+    * - DM_Trips
+      - PTRV_HEAD.GRBER_Border crossing: Trip type enterprise-specific:T706X.TEXT25_Name for enterprise-specific trip type
       - Name of the enterprise‑specific trip type applied when the traveller crosses the border.
       - ``1-60 DAYS``, ``OVER 60 DAYS``
       - SAP
@@ -561,7 +626,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.GRGIO_Region of Border Crossing: Return Trip:T706O.TEXT25_Name of Trip Country/Country Group/Region
+    * - DM_Trips
+      - PTRV_HEAD.GRGIO_Region of Border Crossing: Return Trip:T706O.TEXT25_Name of Trip Country/Country Group/Region
       - Name of the region where the return‑trip border crossing occurs.
       - ``Cairo``
       - SAP
@@ -569,7 +635,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.KZREA_Trip Type: Statutory:T706G.RETXT_Name for Statutory Trip Type
+    * - DM_Trips
+      - PTRV_HEAD.KZREA_Trip Type: Statutory:T706G.RETXT_Name for Statutory Trip Type
       - Name of the statutory (legal) trip type which applies to the trip.
       - ``1-60 DAYS``, ``OVER 60 DAYS``
       - SAP
@@ -577,7 +644,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.KZTKT_Trip Activity Type:T706R.TKTXT_Name for trip activity type
+    * - DM_Trips
+      - PTRV_HEAD.KZTKT_Trip Activity Type:T706R.TKTXT_Name for trip activity type
       - Name of the activity type which applies to the trip.
       - ``Family Visit``, ``Consultant Travel IP``
       - SAP
@@ -585,7 +653,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.MOREI_Trip Provision Variant:T706N.TEXT25_Name for trip provision variant
+    * - DM_Trips
+      - PTRV_HEAD.MOREI_Trip Provision Variant:T706N.TEXT25_Name for trip provision variant
       - Name of the trip provision variant which applies to the trip.
       - ``UN per diem``
       - SAP
@@ -593,7 +662,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.SCHEM_Trip Schema:T706T.STEXT_Name for trip schema
+    * - DM_Trips
+      - PTRV_HEAD.SCHEM_Trip Schema:T706T.STEXT_Name for trip schema
       - Name of the trip schema which applies to the trip.
       - ``International``
       - SAP
@@ -601,7 +671,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.ZLAND_Trip Country / Trip Country Group:T706O.TEXT25_Name of Trip Country/Country Group/Region
+    * - DM_Trips
+      - PTRV_HEAD.ZLAND_Trip Country / Trip Country Group:T706O.TEXT25_Name of Trip Country/Country Group/Region
       - Name of the destination country, country group, or region that applies to the trip.
       - ``Cairo``
       - SAP
@@ -609,7 +680,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.MOLGA_Country Grouping:T500T.LTEXT_Name of HR Country Grouping
+    * - DM_Trips
+      - PTRV_HEAD.MOLGA_Country Grouping:T500T.LTEXT_Name of HR Country Grouping
       - Name of the HR country grouping used for the trip.
       - ``Non-Profit Organizations``
       - SAP
@@ -617,7 +689,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.Extract_Timestamp
+    * - DM_Trips
+      - PTRV_HEAD.Extract_Timestamp
       - Date and time when the trip header record was extracted from SAP into DM_Trips.
       - ``2025-01-03 00:09:40.000``
       - SAP
@@ -625,7 +698,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PTRV_HEAD.tabkey
+    * - DM_Trips
+      - PTRV_HEAD.tabkey
       - Key that uniquely identifies the trip header record in the source system .
       - ``30000000533000032506099``
       - SAP
@@ -633,7 +707,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - For technical purposes
       - Inserted unchanged from ``SAP.[10-PTRV_HEAD]``
 
-    * - PA0001.ENAME_Formatted Name of Employee or Applicant
+    * - DM_Trips
+      - PA0001.ENAME_Formatted Name of Employee or Applicant
       - The traveller's full name.
       - ``Jane Smith``
       - SAP
@@ -641,7 +716,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.SNAME_Employee’s Name (Sortable by LAST NAME FIRST NAME)
+    * - DM_Trips
+      - PA0001.SNAME_Employee’s Name (Sortable by LAST NAME FIRST NAME)
       - The traveller's sortable full name (LAST NAME FIRST NAME)
       - ``SMITH JANE``
       - SAP
@@ -649,7 +725,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0002.MIDNM_Middle Name
+    * - DM_Trips
+      - PA0002.MIDNM_Middle Name
       - The traveller's middle name.
       - ``ANNE``
       - SAP
@@ -657,7 +734,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0002.NACHN_Last Name
+    * - DM_Trips
+      - PA0002.NACHN_Last Name
       - The traveller's last name.
       - ``SMITH``
       - SAP
@@ -665,7 +743,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person```
 
-    * - PA0002.NATIO_Nationality
+    * - DM_Trips
+      - PA0002.NATIO_Nationality
       - Code for the traveller's nationality.
       - ``134``
       - SAP
@@ -673,7 +752,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0002.VORNA_First Name
+    * - DM_Trips
+      - PA0002.VORNA_First Name
       - The traveller's first name
       - ``JANE``
       - SAP
@@ -681,7 +761,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0105-0010.USRID_LONG_Communication: Long Identification/Number
+    * - DM_Trips
+      - PA0105-0010.USRID_LONG_Communication: Long Identification/Number
       - The traveller's CLIENT email address
       - ``jsmith@example.org``
       - SAP
@@ -689,7 +770,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0000.STAT2_Employment Status
+    * - DM_Trips
+      - PA0000.STAT2_Employment Status
       - Shows whether the traveller has active's employment status 
       - ``3``, ``0``
       - SAP
@@ -697,7 +779,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - ``3`` = active, ``0`` = not active
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0016.CTTYP_Contract Type:T547S.CTTXT_Text for contract type (Contract Elements infotype)
+    * - DM_Trips
+      - PA0016.CTTYP_Contract Type:T547S.CTTXT_Text for contract type (Contract Elements infotype)
       - Name of the traveller's contract type.
       - ``Fixed-term``, ``Permanent``
       - SAP
@@ -705,7 +788,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0008.TRFGR_Pay Scale Group
+    * - DM_Trips
+      - PA0008.TRFGR_Pay Scale Group
       - Code for the traveller's post level.
       - ``P-2``, ``G-5``
       - SAP
@@ -713,7 +797,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.PERSG_Employee Group
+    * - DM_Trips
+      - PA0001.PERSG_Employee Group
       - Code for the traveller's employee group.
       - ``1``, ``3``, ``C``, ``D`` 
       - SAP
@@ -721,7 +806,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.PERSG_Employee Group:T501T.PTEXT_Name of Employee Group
+    * - DM_Trips
+      - PA0001.PERSG_Employee Group:T501T.PTEXT_Name of Employee Group
       - Nem of the traveller's employee group
       - ``Intl. professionals``, ``Local Staff``
       - SAP
@@ -729,7 +815,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.PERSK_Employee Subgroup
+    * - DM_Trips
+      - PA0001.PERSK_Employee Subgroup
       - Code for the traveller's employee subgroup.
       - ``AM``, ``GN``, ``NO``
       - SAP
@@ -737,7 +824,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.PERSK_Employee Subgroup:T503T.PTEXT_Name of Employee Subgroup
+    * - DM_Trips
+      - PA0001.PERSK_Employee Subgroup:T503T.PTEXT_Name of Employee Subgroup
       - Nem of the traveller's employee subgroup
       - ``Field Service``, ``Internship``
       - SAP
@@ -745,7 +833,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.PLANS_Position
+    * - DM_Trips
+      - PA0001.PLANS_Position
       - Code for the traveller's post.
       - ``00000179``
       - SAP
@@ -753,7 +842,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.PLANS_Position:HRP1000.STEXT_Object Name
+    * - DM_Trips
+      - PA0001.PLANS_Position:HRP1000.STEXT_Object Name
       - Name of the traveller's post title.
       - ``Accounting Officer``
       - SAP
@@ -761,7 +851,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.WERKS_Personnel Area
+    * - DM_Trips
+      - PA0001.WERKS_Personnel Area
       - Code for the traveller's personnel area.
       - ``006``
       - SAP
@@ -769,7 +860,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.WERKS_Personnel Area:T500P.NAME1_Personnel Area Text
+    * - DM_Trips
+      - PA0001.WERKS_Personnel Area:T500P.NAME1_Personnel Area Text
       - Nem of the traveller's personnel area
       - ``Hungary``, ``Egypt``
       - SAP
@@ -777,7 +869,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.BTRTL_Personnel Subarea
+    * - DM_Trips
+      - PA0001.BTRTL_Personnel Subarea
       - Code for the traveller's personnel subarea.
       - ``054D``
       - SAP
@@ -785,7 +878,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.BTRTL_Personnel Subarea:T001P.BTEXT_Personnel Subarea Text
+    * - DM_Trips
+      - PA0001.BTRTL_Personnel Subarea:T001P.BTEXT_Personnel Subarea Text
       - Name of the traveller's personnel subarea
       - ``Budapest``, ``Cairo``
       - SAP
@@ -793,7 +887,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.ORGEH_Organizational Unit
+    * - DM_Trips
+      - PA0001.ORGEH_Organizational Unit
       - Code for the traveller's organizational unit.
       - ``00000303``
       - SAP
@@ -801,7 +896,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.ORGEH_Organizational Unit:T527X.ORGTX_Short Text of Organizational Unit
+    * - DM_Trips
+      - PA0001.ORGEH_Organizational Unit:T527X.ORGTX_Short Text of Organizational Unit
       - Name of the traveller's organizational unit
       - ``Finance Unit, Demo``, ``Operations Section, Cairo``
       - SAP
@@ -809,7 +905,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.GSBER_Service Area PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
+    * - DM_Trips
+      - PA0001.GSBER_Service Area PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
       - Code for the traveller's Service Area.
       - ``1950``, ``4500``
       - SAP
@@ -817,7 +914,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
+    * - DM_Trips
+      - PA0001.GSBER_Service Area:TGSBT.GTEXT_Service Area description
       - Name of the traveller's Service Area.
       - ``Demo``, ``Egypt``
       - SAP
@@ -825,7 +923,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - PA0077.FUNC_TITLE_Comment
+    * - DM_Trips
+      - PA0077.FUNC_TITLE_Comment
       - Free-text comment to describe the traveller's function or title.
       - ``Annual Results Report Writer``
       - SAP
@@ -833,7 +932,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - LFA1.LIFNR_Account Number of Vendor or Creditor
+    * - DM_Trips
+      - LFA1.LIFNR_Account Number of Vendor or Creditor
       - Vendor account number in the traveller's SAP vendor master record.
       - ``1900004747``
       - SAP
@@ -841,7 +941,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - LFA1.NAME1_Name 1
+    * - DM_Trips
+      - LFA1.NAME1_Name 1
       - Vendor name in the traveller's SAP vendor master record.
       - ``Jane Smith``
       - SAP
@@ -849,7 +950,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Inserted unchanged from ``DM.DM_Person``
 
-    * - LFA1.KTOKK_Supplier Account Group
+    * - DM_Trips
+      - LFA1.KTOKK_Supplier Account Group
       - Code for the vendor's supplier account group.
       - ``ZCON``, ``LOCV``
       - SAP
@@ -857,7 +959,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - ?
 
-    * - LFA1.KTOKK_Supplier account group:T077Y.TXT30_Account Group Name
+    * - DM_Trips
+      - LFA1.KTOKK_Supplier account group:T077Y.TXT30_Account Group Name
       - Name of the vendor's supplier account group.
       - ``NULL``
       - SAP
@@ -865,7 +968,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - ?
 
-    * - PTRV_SHDR.CURRENCY_Currency Key
+    * - DM_Trips
+      - PTRV_SHDR.CURRENCY_Currency Key
       - Code that identifies the currency used for all amounts in the trip record
       - ``USD``
       - SAP
@@ -873,7 +977,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.NUMBER_OF_IMAGES_Number of Attachments
+    * - DM_Trips
+      - PTRV_SHDR.NUMBER_OF_IMAGES_Number of Attachments
       - Number of files attached to the trip record (e.g., scanned receipts)
       - ``1``, ``2``, ``3``
       - SAP
@@ -881,7 +986,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.PD_FOOD_Reimbursement Amount (Total) for Meals per Diems
+    * - DM_Trips
+      - PTRV_SHDR.PD_FOOD_Reimbursement Amount (Total) for Meals per Diems
       - Total amount paid for daily meal allowances on the trip.
       - ``280``
       - SAP
@@ -889,7 +995,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.PD_HOUSING_Reimbursement Amount (Total) for Accommodations per Diems
+    * - DM_Trips
+      - PTRV_SHDR.PD_HOUSING_Reimbursement Amount (Total) for Accommodations per Diems
       - Total amount paid for daily lodging allowances on the trip.
       - ``280``
       - SAP
@@ -897,7 +1004,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.SUM_PAYOUT_Payment Amount
+    * - DM_Trips
+      - PTRV_SHDR.SUM_PAYOUT_Payment Amount
       - Total amount paid out for the trip.
       - ``2800.00``
       - SAP
@@ -905,7 +1013,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.SUM_REIMBU_Reimbursement Amount for a Trip
+    * - DM_Trips
+      - PTRV_SHDR.SUM_REIMBU_Reimbursement Amount for a Trip
       - Total amount reimbursed to the traveler for the trip.
       - ``2800.00``
       - SAP
@@ -913,7 +1022,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.TRIP_TOTAL_Total Cost of Trip
+    * - DM_Trips
+      - PTRV_SHDR.TRIP_TOTAL_Total Cost of Trip
       - Total cost of the trip, including all expense types.
       - ``2800.00``
       - SAP
@@ -921,7 +1031,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.TRIPDUR_Trip Duration in Days
+    * - DM_Trips
+      - PTRV_SHDR.TRIPDUR_Trip Duration in Days
       - Length of the trip in days, from departure to return.
       - ``1``, ``2``, ``3``
       - SAP
@@ -929,7 +1040,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.TXF_FOOD_Total of Tax-Exempt Paid Meals per Diems
+    * - DM_Trips
+      - PTRV_SHDR.TXF_FOOD_Total of Tax-Exempt Paid Meals per Diems
       - Total amount paid for daily meal allowances on the trip that are not taxable.
       - ``280.00``
       - SAP
@@ -937,7 +1049,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_SHDR.Extract_Timestamp
+    * - DM_Trips
+      - PTRV_SHDR.Extract_Timestamp
       - Date and time when the trip record was extracted from SAP.
       - ``2025-01-03 00:09:40.000``
       - SAP
@@ -945,7 +1058,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - TR-Agent: Count
+    * - DM_Trips
+      - TR-Agent: Count
       - Number of travel angencies used during the trip
       - ``1``, ``2``, ``3``, ``4``, ``5``
       - SAP
@@ -953,7 +1067,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Count`
 
-    * - TR-Agent: (First)
+    * - DM_Trips
+      - TR-Agent: (First)
       - Transaction code for the first travel agency used on the trip
       - ``ZV28``
       - SAP
@@ -961,7 +1076,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_First`
 
-    * - TR-Agent: (Second)
+    * - DM_Trips
+      - TR-Agent: (Second)
       - Transaction code for the second travel agency used on the trip
       - ``ZV28``
       - SAP
@@ -969,7 +1085,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Second`
 
-    * - TR-Agent: (Third)
+    * - DM_Trips
+      - TR-Agent: (Third)
       - Transaction code for the third travel agency used on the trip
       - ``ZV28``
       - SAP
@@ -977,7 +1094,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Third`
 
-    * - TR-Agent: (Fourth)
+    * - DM_Trips
+      - TR-Agent: (Fourth)
       - Transaction code for the fourth travel agency used on the trip
       - ``ZV28``
       - SAP
@@ -985,7 +1103,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Fourth`
 
-    * - TR-Agent: (Fifth)
+    * - DM_Trips
+      - TR-Agent: (Fifth)
       - Transaction code for the fifth travel agency used on the trip
       - ``ZV28``
       - SAP
@@ -993,7 +1112,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Fifth`
 
-    * - TR-Agent: (First) USD
+    * - DM_Trips
+      - TR-Agent: (First) USD
       - Service-fee charged by the first travel agency used on the trip
       - ``498.00``
       - SAP
@@ -1001,7 +1121,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_First_USD`
 
-    * - TR-Agent: (Second) USD
+    * - DM_Trips
+      - TR-Agent: (Second) USD
       - Service-fee charged by the second travel agency used on the trip
       - ``498.00``
       - SAP
@@ -1009,7 +1130,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Second_USD`
 
-    * - TR-Agent: (Third) USD
+    * - DM_Trips
+      - TR-Agent: (Third) USD
       - Service-fee charged by the third travel agency used on the trip
       - ``498.00``
       - SAP
@@ -1017,7 +1139,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Third_USD`
 
-    * - TR-Agent: (Fourth) USD
+    * - DM_Trips
+      - TR-Agent: (Fourth) USD
       - Service-fee charged by the fourth travel agency used on the trip
       - ``498.00``
       - SAP
@@ -1025,7 +1148,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Fourth_USD`
 
-    * - TR-Agent: (Fifth) USD
+    * - DM_Trips
+      - TR-Agent: (Fifth) USD
       - Service-fee charged by the fifth travel agency used on the trip
       - ``498.00``
       - SAP
@@ -1033,7 +1157,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Fifth_USD`
 
-    * - TR-Agent: (First) Name
+    * - DM_Trips
+      - TR-Agent: (First) Name
       - Name of the first travel agency used on the trip
       - ``TR-Agent:TVTR04 Adors Turistik``
       - SAP
@@ -1041,7 +1166,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_First_Name`
 
-    * - TR-Agent: (Second) Name
+    * - DM_Trips
+      - TR-Agent: (Second) Name
       - Name of the second travel agency used on the trip
       - ``TR-Agent:TVTR04 Adors Turistik``
       - SAP
@@ -1049,7 +1175,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Second_Name`
 
-    * - TR-Agent: (Third) Name
+    * - DM_Trips
+      - TR-Agent: (Third) Name
       - Name of the third travel agency used on the trip
       - ``TR-Agent:TVTR04 Adors Turistik``
       - SAP
@@ -1057,7 +1184,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Third_Name`
 
-    * - TR-Agent: (Fourth) Name
+    * - DM_Trips
+      - TR-Agent: (Fourth) Name
       - Name of the fourth travel agency used on the trip
       - ``TR-Agent:TVTR04 Adors Turistik``
       - SAP
@@ -1065,7 +1193,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Fourth_Name`
 
-    * - TR-Agent: (Fifth) Name
+    * - DM_Trips
+      - TR-Agent: (Fifth) Name
       - Name of the fifth travel agency used on the trip
       - ``TR-Agent:TVTR04 Adors Turistik``
       - SAP
@@ -1073,7 +1202,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent_Fifth_Name`
 
-    * - PTRV_SREC.EXP_TYPE > TR-Agent
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > TR-Agent
       - Total amount of travel agent service‑fee expenses.
       - ``2800.00``
       - SAP
@@ -1081,7 +1211,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - :colrefopen:`trips_TR-Agent`
 
-    * - PTRV_SREC.EXP_TYPE > TERM - Terminal
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > TERM - Terminal
       - Total amount of expenses at airport/train/bus terminals, e.g., porterage or terminal service fees.
       - ``2800.00``
       - SAP
@@ -1089,7 +1220,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_TERM`
 
-    * - PTRV_SREC.EXP_TYPE > GR2% - 2% Carbon Offsetting
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR2% - 2% Carbon Offsetting
       - Total amount of the 2% levy to fund carbon offsetting (applied to eligible travel costs).
       - ``4.09``
       - SAP
@@ -1097,7 +1229,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Related columns: Same levy is later split by staff category (``Entl IP`` = International Professional; ``Entl LS`` = Local Staff).
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR2%`
 
-    * - PTRV_SREC.EXP_TYPE > ZMSC - Miscellaneous Trav. Expenses
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ZMSC - Miscellaneous Trav. Expenses
       - Total amount of miscellaneous travel expenses.
       - ``280``
       - SAP
@@ -1105,7 +1238,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ZMSC`
 
-    * - PTRV_SREC.EXP_TYPE > AIRP - Airfare (Paid by CLIENT NYHO)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIRP - Airfare (Paid by CLIENT NYHO)
       - Total amount of airfare expenses paid by CLIENT New York HO.
       - ``280.00``
       - SAP
@@ -1113,7 +1247,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIRP`
 
-    * - PTRV_SREC.EXP_TYPE > ZENT - Staff Entitlement Expenses
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ZENT - Staff Entitlement Expenses
       - Total amount of staff entitlement expenses (payments made directly to staff under organizational travel/HR entitlements, e.g., per‑diem‑type allowances).
       - ``2800.00``
       - SAP
@@ -1121,7 +1256,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ZENT`
 
-    * - PTRV_SREC.EXP_TYPE > AIR - Airfare (Paid by Person/Lump)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIR - Airfare (Paid by Person/Lump)
       - Total amount of airfare expenses paid by the traveler or via a lump sum.
       - ``2800.00``
       - SAP
@@ -1129,7 +1265,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIR`
 
-    * - PTRV_SREC.EXP_TYPE > HOTL - Hotel
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > HOTL - Hotel
       - Total amount of hotel expenses for the trip.
       - ``2800.00``
       - SAP
@@ -1137,7 +1274,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_HOTL`
 
-    * - PTRV_SREC.EXP_TYPE > GR2E - 2% Carbon Offset - Entl IP
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR2E - 2% Carbon Offset - Entl IP
       - Total amount of 2% carbon‑offsetting expenses for International Professional staff (Entl IP).
       - ``280.00``
       - SAP
@@ -1145,7 +1283,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR2E`
 
-    * - PTRV_SREC.EXP_TYPE > AIRT - Airport Tax
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIRT - Airport Tax
       - Total amount of airport tax expenses.
       - ``280.00``
       - SAP
@@ -1153,7 +1292,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIRT`
 
-    * - PTRV_SREC.EXP_TYPE > AGNV - Airfare (Paid by CLIENT GVA)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AGNV - Airfare (Paid by CLIENT GVA)
       - Total amount of airfare expenses paid by CLIENT Geneva for the trip.
       - ``280.00``
       - SAP
@@ -1161,7 +1301,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AGNV`
 
-    * - PTRV_SREC.EXP_TYPE > VIPA - VISA/Passport
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > VIPA - VISA/Passport
       - Total amount of visa and passport expenses for the trip.
       - ``280.00``
       - SAP
@@ -1169,7 +1310,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_VIPA`
 
-    * - PTRV_SREC.EXP_TYPE > AUTO - Local Car Hire
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AUTO - Local Car Hire
       - Total amount of local car hire expenses for the trip.
       - ``2800.00``
       - SAP
@@ -1177,7 +1319,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AUTO`
 
-    * - PTRV_SREC.EXP_TYPE > MED - Medical Srvcs (Vaccine, Etc.)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > MED - Medical Srvcs (Vaccine, Etc.)
       - Total amount of medical services expenses for the trip.
       - ``280.00``
       - SAP
@@ -1185,7 +1328,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_MED`
 
-    * - PTRV_SREC.EXP_TYPE > ZCAR - Personal Vehicle/Mileage
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ZCAR - Personal Vehicle/Mileage
       - Total amount of personal‑vehicle mileage expenses for the trip.
       - ``280.00``
       - SAP
@@ -1193,7 +1337,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ZCAR`
 
-    * - PTRV_SREC.EXP_TYPE > ACPH - Airfare (Paid by CLIENT CPH)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ACPH - Airfare (Paid by CLIENT CPH)
       - Total amount of airfare expenses paid by CLIENT Copenhagen.
       - ``2800.00``
       - SAP
@@ -1201,7 +1346,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ACPH`
 
-    * - PTRV_SREC.EXP_TYPE > EXBG - Excess Baggage
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > EXBG - Excess Baggage
       - Total amount of excess baggage expenses for the trip.
       - ``280.00``
       - SAP
@@ -1209,7 +1355,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_EXBG`
 
-    * - PTRV_SREC.EXP_TYPE > TELE - Telecommunication
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > TELE - Telecommunication
       - Total amount of telecommunication expenses for the trip.
       - ``280.00``
       - SAP
@@ -1217,7 +1364,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_TELE`
 
-    * - PTRV_SREC.EXP_TYPE > DNGR - Danger Pay
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > DNGR - Danger Pay
       - Total amount of the UN allowance for visiting hazardous duty stations.
       - ``280.00``
       - SAP
@@ -1225,7 +1373,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_DNGR`
     
-    * - PTRV_SREC.EXP_TYPE > GR1L - 1% Acces. Premise Entl LS
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR1L - 1% Acces. Premise Entl LS
       - Total amount of 1% CLIENT-premise accessibility expenses for Local Staff (Entl LS).
       - ``28.00``
       - SAP
@@ -1233,7 +1382,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR1L`
 
-    * - PTRV_SREC.EXP_TYPE > GR2L - 2% Carbon Offset - Entl LS
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR2L - 2% Carbon Offset - Entl LS
       - Total amount of 2% carbon‑offsetting expenses for Local Staff (Entl LS).
       - ``28.00``
       - SAP
@@ -1241,7 +1391,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR2L`
 
-    * - PTRV_SREC.EXP_TYPE > OTRN - Other Transpo. (Train, Etc.)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > OTRN - Other Transpo. (Train, Etc.)
       - Total amount of non‑air transportation expenses.
       - ``280.00``
       - SAP
@@ -1249,7 +1400,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_OTRN`
 
-    * - PTRV_SREC.EXP_TYPE > FCUV - Fuel Cost (CLIENT Vehicle)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > FCUV - Fuel Cost (CLIENT Vehicle)
       - Total amount of fuel expenses for CLIENT vehicles.
       - ``280.00``
       - SAP
@@ -1257,7 +1409,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_FCUV`
 
-    * - PTRV_SREC.EXP_TYPE > SEAL - Security Escort Allowance
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > SEAL - Security Escort Allowance
       - Total amount of security escort allowance expenses.
       - ``280.00``
       - SAP
@@ -1265,7 +1418,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_SEAL`
 
-    * - PTRV_SREC.EXP_TYPE > AIRS - Airfare (Self-Ticketing)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIRS - Airfare (Self-Ticketing)
       - Total amount of airfare expenses for self‑ticketed travel.
       - ``280.00``
       - SAP
@@ -1273,7 +1427,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIRS`
 
-    * - PTRV_SREC.EXP_TYPE > CPCK - Conference Package
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > CPCK - Conference Package
       - Total amount of conference package expenses.
       - ``2800.00``
       - SAP
@@ -1281,7 +1436,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_CPCK`
 
-    * - PTRV_SREC.EXP_TYPE > MOMS - Airfare Additional Tax (CPH)
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > MOMS - Airfare Additional Tax (CPH)
       - Total amount of airfare additional‑tax expenses (CPH).
       - ``280.00``
       - SAP
@@ -1289,7 +1445,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_MOMS`
 
-    * - PTRV_SREC.EXP_TYPE > CFEE - Conference Registration Fee
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > CFEE - Conference Registration Fee
       - Total amount of conference registration fee expenses.
       - ``280.00``
       - SAP
@@ -1297,7 +1454,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_CFEE`
 
-    * - PTRV_SREC.EXP_TYPE > SEAT - Seat Selection
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > SEAT - Seat Selection
       - Total amount of seat selection expenses.
       - ``28.00``
       - SAP
@@ -1305,7 +1463,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_SEAT`
 
-    * - PTRV_SREC.EXP_TYPE > CRHI - Conference Room Hire
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > CRHI - Conference Room Hire
       - Total amount of conference room hire expenses.
       - ``280.00``
       - SAP
@@ -1313,7 +1472,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_CRHI`
 
-    * - PTRV_SREC.EXP_TYPE > YCPH - CPH: SN Brussels Airlines
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > YCPH - CPH: SN Brussels Airlines
       - Total amount of Brussels Airlines (in Copenhagen) (SN) airfare expenses.
       - ``NULL``
       - SAP
@@ -1321,7 +1481,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_YCPH`
 
-    * - PTRV_PERIO.ACCDT_Trip Settlement Date
+    * - DM_Trips
+      - PTRV_PERIO.ACCDT_Trip Settlement Date
       - Date when the costs of the trip were finalized for payment.
       - ``NULL``
       - SAP
@@ -1329,7 +1490,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_INITIATOR_User Name in User Master Record
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_INITIATOR_User Name in User Master Record
       - SAP user ID of the person who created the trip record.
       - ``JSMITH``
       - SAP
@@ -1337,7 +1499,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_SELF_TICKET_Requesting Self-Ticket
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_SELF_TICKET_Requesting Self-Ticket
       - Shows whether the traveler reserves their own tickets (rather than doing it via an agency).
       - ``NULL``
       - SAP
@@ -1345,7 +1508,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_TRIP_REASON_Trip Reason
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_TRIP_REASON_Trip Reason
       - Text field describing the main reason for the trip.
       - ``Mission International Travel``
       - SAP
@@ -1353,7 +1517,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_TRV_TYPE_TXT_Travel Type
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_TRV_TYPE_TXT_Travel Type
       - Text field describing the type of the trip.
       - ``Duty Travel``
       - SAP
@@ -1361,7 +1526,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_TRV_SUBTYPE_TXT_Travel SubType
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_TRV_SUBTYPE_TXT_Travel SubType
       - Text field giving more detail about the type of the trip.
       - ``International``
       - SAP
@@ -1369,7 +1535,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_STF_DEVISION_Short Text of Organizational Unit
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_STF_DEVISION_Short Text of Organizational Unit
       - Short name of the traveler’s organizational unit.
       - ``Senegal``
       - SAP
@@ -1377,7 +1544,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_ET_TYPE_TRV_ET Travel Type
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_ET_TYPE_TRV_ET Travel Type
       - Text field describing the type of entitlement travel.
       - ``Home Leave``
       - SAP
@@ -1385,7 +1553,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_ET_LAST_FROM_ET Last Taken From
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_ET_LAST_FROM_ET Last Taken From
       - Start date of the traveler’s most recent entitlement trip.
       - ``2025-01-03``
       - SAP
@@ -1393,7 +1562,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_ET_LAST_TO_ET Last Taken To
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_ET_LAST_TO_ET Last Taken To
       - End date of the traveler’s most recent entitlement trip.
       - ``2025-01-03``
       - SAP
@@ -1401,7 +1571,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZZTV_PERS_DAY_INVL_Personal Days Involved flag
+    * - DM_Trips
+      - PTRV_PERIO.ZZTV_PERS_DAY_INVL_Personal Days Involved flag
       - Shows whether the trip includes any personal (non‑work) days.
       - ``NULL``
       - SAP
@@ -1409,7 +1580,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ABKR1_Payroll Area
+    * - DM_Trips
+      - PTRV_PERIO.ABKR1_Payroll Area
       - Payroll area code for the traveler.
       - ``1K``, ``1C``, ``NG``, ``07``
       - SAP
@@ -1417,7 +1589,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ABKR2_Payroll Area
+    * - DM_Trips
+      - PTRV_PERIO.ABKR2_Payroll Area
       - Second payroll area code for the traveler.
       - ``1K``, ``1C``, ``NG``, ``07``
       - SAP
@@ -1425,7 +1598,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ANUEP_Number of Overnight Stays for Per-Diem Settlement
+    * - DM_Trips
+      - PTRV_PERIO.ANUEP_Number of Overnight Stays for Per-Diem Settlement
       - Number of nights used to calculate the daily travel allowances for this trip.
       - ``1``, ``2``, ``3``
       - SAP
@@ -1433,7 +1607,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_AMT_PER_ADULT_Amount Per Adult
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_AMT_PER_ADULT_Amount Per Adult
       - Amount paid per adult for the trip.
       - ``2800.00``
       - SAP
@@ -1441,7 +1616,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_AMT_PER_CHLD_Amount Per Child
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_AMT_PER_CHLD_Amount Per Child
       - Amount paid per child for the trip.
       - ``2800.00``
       - SAP
@@ -1449,7 +1625,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_AMT_LUMSUM_Amount Total Lumsum
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_AMT_LUMSUM_Amount Total Lumsum
       - Total amount paid via a lump sum.
       - ``2800.00``
       - SAP
@@ -1457,7 +1634,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - 
 
-    * - PTRV_PERIO.ZTV_SELF_TICK_AMNT_Self Ticketing Amount
+    * - DM_Trips
+      - PTRV_PERIO.ZTV_SELF_TICK_AMNT_Self Ticketing Amount
       - Amount reimbursed to the traveler for tickets they bought themselves.
       - ``NULL``
       - SAP

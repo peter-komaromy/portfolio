@@ -42,6 +42,420 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Remark
       - Technical Notes    
     
+    * - DM_Trips
+      - TR-Agent: Count
+      - Number of travel angencies used during the trip
+      - ``1``, ``2``, ``3``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Count`
+
+    * - DM_Trips
+      - TR-Agent: (First)
+      - Transaction code for the first travel agency used on the trip
+      - ``ZV28``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_First`
+
+    * - DM_Trips
+      - TR-Agent: (Second)
+      - Transaction code for the second travel agency used on the trip
+      - ``ZV28``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Second`
+
+    * - DM_Trips
+      - TR-Agent: (Third)
+      - Transaction code for the third travel agency used on the trip
+      - ``ZV28``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Third`
+
+    * - DM_Trips
+      - TR-Agent: (Fourth)
+      - Transaction code for the fourth travel agency used on the trip
+      - ``ZV28``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Fourth`
+
+    * - DM_Trips
+      - TR-Agent: (Fifth)
+      - Transaction code for the fifth travel agency used on the trip
+      - ``ZV28``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Fifth`
+
+    * - DM_Trips
+      - TR-Agent: (First) USD
+      - Service-fee charged by the first travel agency used on the trip
+      - ``500.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_First_USD`
+
+    * - DM_Trips
+      - TR-Agent: (Second) USD
+      - Service-fee charged by the second travel agency used on the trip
+      - ``500.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Second_USD`
+
+    * - DM_Trips
+      - TR-Agent: (Third) USD
+      - Service-fee charged by the third travel agency used on the trip
+      - ``500.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Third_USD`
+
+    * - DM_Trips
+      - TR-Agent: (Fourth) USD
+      - Service-fee charged by the fourth travel agency used on the trip
+      - ``500.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Fourth_USD`
+
+    * - DM_Trips
+      - TR-Agent: (Fifth) USD
+      - Service-fee charged by the fifth travel agency used on the trip
+      - ``500.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Fifth_USD`
+
+    * - DM_Trips
+      - TR-Agent: (First) Name
+      - Name of the first travel agency used on the trip
+      - ``TR-Agent:TVTR04 Delta Turistik``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_First_Name`
+
+    * - DM_Trips
+      - TR-Agent: (Second) Name
+      - Name of the second travel agency used on the trip
+      - ``TR-Agent:TVTR04 Delta Turistik``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Second_Name`
+
+    * - DM_Trips
+      - TR-Agent: (Third) Name
+      - Name of the third travel agency used on the trip
+      - ``TR-Agent:TVTR04 Delta Turistik``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Third_Name`
+
+    * - DM_Trips
+      - TR-Agent: (Fourth) Name
+      - Name of the fourth travel agency used on the trip
+      - ``TR-Agent:TVTR04 Delta Turistik``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Fourth_Name`
+
+    * - DM_Trips
+      - TR-Agent: (Fifth) Name
+      - Name of the fifth travel agency used on the trip
+      - ``TR-Agent:TVTR04 Delta Turistik``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent_Fifth_Name`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > TR-Agent
+      - Total amount of travel agent service‑fee expenses.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - :colrefopen:`trips_TR-Agent`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > TERM - Terminal
+      - Total amount of expenses at airport/train/bus terminals, e.g., porterage or terminal service fees.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_TERM`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR2% - 2% Carbon Offsetting
+      - Total amount of the 2% levy to fund carbon offsetting.
+      - ``4.09``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - Related columns: Same levy is later split by staff category (``Entl IP`` = International Professional; ``Entl LS`` = Local Staff).
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR2%`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ZMSC - Miscellaneous Trav. Expenses
+      - Total amount of miscellaneous travel expenses.
+      - ``280``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ZMSC`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIRP - Airfare (Paid by CLIENT NYHO)
+      - Total amount of airfare expenses paid by CLIENT New York HO.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIRP`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ZENT - Staff Entitlement Expenses
+      - Total amount of staff entitlement expenses (payments made directly to staff under organizational travel/HR entitlements, e.g., per‑diem‑type allowances).
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ZENT`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIR - Airfare (Paid by Person/Lump)
+      - Total amount of airfare expenses paid by the traveler or via a lump sum.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIR`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > HOTL - Hotel
+      - Total amount of hotel expenses for the trip.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_HOTL`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR2E - 2% Carbon Offset - Entl IP
+      - Total amount of 2% carbon‑offsetting expenses for International Professional staff.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR2E`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIRT - Airport Tax
+      - Total amount of airport tax expenses.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIRT`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AGNV - Airfare (Paid by CLIENT GVA)
+      - Total amount of airfare expenses paid by CLIENT Geneva for the trip.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AGNV`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > VIPA - VISA/Passport
+      - Total amount of visa and passport expenses for the trip.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_VIPA`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AUTO - Local Car Hire
+      - Total amount of local car hire expenses for the trip.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AUTO`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > MED - Medical Srvcs (Vaccine, Etc.)
+      - Total amount of medical services expenses for the trip.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_MED`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ZCAR - Personal Vehicle/Mileage
+      - Total amount of personal‑vehicle mileage expenses for the trip.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ZCAR`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > ACPH - Airfare (Paid by CLIENT CPH)
+      - Total amount of airfare expenses paid by CLIENT Copenhagen.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_ACPH`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > EXBG - Excess Baggage
+      - Total amount of excess baggage expenses for the trip.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_EXBG`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > TELE - Telecommunication
+      - Total amount of telecommunication expenses for the trip.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_TELE`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > DNGR - Danger Pay
+      - Total amount of allowance for visiting hazardous duty stations.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_DNGR`
+    
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR1L - 1% Acces. Premise Entl LS
+      - Total amount of 1% CLIENT-premise accessibility expenses for Local Staff.
+      - ``28.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR1L`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > GR2L - 2% Carbon Offset - Entl LS
+      - Total amount of 2% carbon‑offsetting expenses for Local Staff.
+      - ``28.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_GR2L`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > OTRN - Other Transpo. (Train, Etc.)
+      - Total amount of non‑air transportation expenses.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_OTRN`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > FCUV - Fuel Cost (CLIENT Vehicle)
+      - Total amount of fuel expenses for CLIENT vehicles.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_FCUV`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > SEAL - Security Escort Allowance
+      - Total amount of security escort allowance expenses.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_SEAL`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > AIRS - Airfare (Self-Ticketing)
+      - Total amount of airfare expenses for self‑ticketed travel.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_AIRS`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > CPCK - Conference Package
+      - Total amount of conference package expenses.
+      - ``2800.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_CPCK`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > MOMS - Airfare Additional Tax (CPH)
+      - Total amount of airfare additional‑tax expenses (CPH).
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_MOMS`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > CFEE - Conference Registration Fee
+      - Total amount of conference registration fee expenses.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_CFEE`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > SEAT - Seat Selection
+      - Total amount of seat selection expenses.
+      - ``28.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_SEAT`
+
+    * - DM_Trips
+      - PTRV_SREC.EXP_TYPE > CRHI - Conference Room Hire
+      - Total amount of conference room hire expenses.
+      - ``280.00``
+      - SAP
+      - PTRV_SREC (Trip Statistics – Receipts)
+      - N/A
+      - Pivoted from ``PTRV_SREC`` receipts. :colrefopen:`trips_CRHI`    
+
     * - DM_Person
       - PERNR_Personnel number
       - The person's personnel number in SAP
@@ -241,36 +655,9 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
     * - DM_Person
-      - PA0001.GEBER_Fund
-      - ?
-      - ``0660/A0/04``, ``SC109901``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
       - PA0001.GSBER_Service Area
       - Code for the person's CLIENT Service Area
       - ``1950``, ``4500``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
-      - PA0001.KOSTL_Cost Center
-      - Code for the cost center that .. ? .. the person.
-      - ``0090B00000``, ``0310B00000``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
-      - PA0001.MSTBR_Supervisor Area
-      - Code for the supervisor area .. ? .. the person
-      - ``NULL``
       - SAP
       - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
       - N/A
@@ -367,15 +754,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0001.VDSK1_Organizational Key
-      - ?
-      - ``006000000060``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0001.WERKS_Personnel Area
       - Code for the person's Personnel Area
       - ``006``, ``053``
@@ -415,78 +793,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - PA0001.BTRTL_Personnel Subarea:T001P.BTEXT_Personnel Subarea Text
       - Human-reasable name for the person's Personnel Subarea
       - ``Budapest``, ``Cairo``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOBDE_Grouping of Personnel Subareas for Time Recording
-      - ?
-      - ``01``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOBUR_Personnel Subarea Grouping for Appraisals
-      - ?
-      - ``00``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOPTB_Personnel subarea grouping for premiums
-      - ?
-      - ``00``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOSID_Personnel Subarea Grouping for Work Schedules
-      - ?
-      - ``01``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOSTA_Statistics Modifier
-      - ?
-      - ``00``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOURA_Personnel Subarea Grouping for Leave Types
-      - ?
-      - ``00``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOVER_Personnel Subarea Grpg for Substitution/Availability Types
-      - ?
-      - ``00``, ``97``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea:T001P.MOZKO_Grouping of Personnel Subareas for Time Quota Types
-      - ?
-      - ``00``, ``97``, ``98``
       - SAP
       - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
       - N/A
@@ -538,15 +844,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0001.OTYPE_Object Type:T777O.OTEXT_Object Type Text
-      - ?
-      - ``Person``, ``Position``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0001.PERSG_Employee Group:T501T.PTEXT_Name of Employee Group
       - Name of the person's employee group
       - ``Local Staff``, ``Intl. Professionals``
@@ -568,24 +865,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - PA0001.PLANS_Position:T528B.ORGEH_Organizational Unit
       - Code for the person's organizational unit
       - ``00000000``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.PLANS_Position:T528B.STELL_Job
-      - Code for the person's job (?)
-      - ``00000000``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.PLANS_Position:T528B.TRFGR_Pay Scale Group
-      - ?
-      - ``NULL``
       - SAP
       - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
       - N/A
@@ -1303,15 +1582,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0016.LFZSO_Special Rule for Continued Pay
-      - ?
-      - ``00``
-      - SAP
-      - PA0016 - HR Master Record: Infotype 0016 (Contract Elements)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0016.PRBZT_Probationary Period (Number)
       - The person's probationary period measured in months
       - ``3``
@@ -1931,25 +2201,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - N/A
       - N/A
       - Updated from ``AD.dbo.AD_Long`` into ``DM.dbo.DM_Person`` by matching either ``EmailAddress = latest [PA0105-0010.USRID_LONG_Communication: Long Identification/Number]`` ending with ``example.org``, or ``examplePERNR = [PERNR_Personnel number]`` (fallback if email not matched).
-
-    * - DM_Person
-      - IRC_Requestor
-      - Identifier for the Requestor in the IRC system for the person.
-      - ``NULL``
-      - ?
-      - N/A
-      - N/A
-      - Not populated by ``p_DM_Person``. The intended update from ``AD.dbo.AD_Long`` is commented out.
-
-    * - DM_Person
-      - IRC_LSA
-      - IRC Identifier of the Local Security Administrator for the person.
-      - ``NULL``
-      - ?
-      - N/A
-      - N/A
-      - Not populated by ``p_DM_Person``. The intended update from ``AD.dbo.AD_Long`` is commented out.
-
+  
     * - DM_Person
       - AD.Manager
       - Distinguished Name of the person's manager in AD.
@@ -2581,15 +2833,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - Set via self-join to the manager's ``DM_Person`` row using ``mholder.HRP1001.SOBID_ID of Related Object`` (the manager's ``PERNR``) with a date-overlap on ``BEGDA_Master..ENDDA_Master``; value taken from the manager's ``PA0002.GESCH_Gender``, then copied from ``Manager-PA0002.GESCH_Gender`` into this column.
 
     * - DM_Person
-      - (Manager) AD.EmailAddress
-      - Email address of the person's manager
-      - ``jsmith@example.org``
-      - ?
-      - ?
-      - N/A
-      - Set via self-join to the manager's ``DM_Person`` row using ``mholder.HRP1001.SOBID_ID of Related Object`` (the manager's ``PERNR``) with a date-overlap on ``BEGDA_Master..ENDDA_Master``; value taken from the manager's ``PA0105-0010.USRID_LONG_Communication: Long Identification/Number``, then copied from ``Manager-AD.EmailAddress`` into this column
-
-    * - DM_Person
       - (Manager) PA0001.PLANS_Position:HRP1000.STEXT_Object Name
       - Post title of the person's manager
       - ``Accounts officer``
@@ -2597,304 +2840,7 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - HRP1001 - Infotype 1001 (Organizational Management relationships)
       - N/A
       - Set via self-join to the manager's ``DM_Person`` row using ``mholder.HRP1001.SOBID_ID of Related Object`` (the manager's ``PERNR`` with a date-overlap on ``BEGDA_Master..ENDDA_Master``; value taken from the manager's ``PA0001.PLANS_Position:HRP1000.STEXT_Object Name``, then copied from ``Manager-PA0001.PLANS_Position:HRP1000.STEXT_Object Name`` into this column
-    
-    * - DM_Changes
-      - CDPOS.TABNAME_Table Name
-      - Name of the SAP table where the change occured
-      - ``BSEC``, ``LFA1``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.TABKEY_Changed table record key
-      - Concatenated key that uniquely identifies the record in the changed SAP table
-      - ``3000000261125 00010101001``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Changes.00_Change_Key
-      - Reserved for technical purposes
-      - ``NULL``
-      - SAP
-      - N/A
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Changes.01_Change_Key
-      - Reserved for technical purposes
-      - ``NULL``
-      - SAP
-      - N/A
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Changes.02_Change_Key
-      - Reserved for technical purposes
-      - ``NULL``
-      - SAP
-      - N/A
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.USERNAME_User name of the person responsible in change document
-      - Username of the SAP user who made the change
-      - ``JSMITH``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Person.PA0001_ENAME
-      - Full name of the SAP user who made the change
-      - ``NULL``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Person.PA0105_EMAIL
-      - Email address of the SAP user who made the change
-      - ``NULL``
-      - SAP
-      - PA0105
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Person.HRP1008_Service_Area
-      - Service Area of the SAP user who made the change
-      - ``1950``, ``4500``
-      - SAP
-      - HRP1008
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Person.HRP1001_Org_Unit
-      - Organizational unit of the SAP user who made the change
-      - ``NULL``
-      - SAP
-      - HRP1001
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Person.Demo_Stream
-      - Demo Stream of the SAP user who made the change
-      - ``NULL``
-      - SAP
-      - ?
-      - N/A
-      - 
-
-    * - DM_Changes
-      - DM_Changes.Change_Timestamp
-      - Timestamp when the change was recorded in the DM_Changes table
-      - ``2022-01-01 03:08:00.000``
-      - SAP
-      - N/A
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS_Parse.CDHDR_Timestamp
-      - Timestamp parsed from the original SAP change document header
-      - ``2022-01-01 03:08:00.000``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.UDATE_Creation date of the change document
-      - Date on which the change document was created in SAP
-      - ``2022-01-01``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.UTIME_Time changed
-      - Time of day when the change was made
-      - ``03:08:00.000``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.TCODE_Transaction in which a change was made
-      - SAP transaction code used for making the change
-      - ``FK03``, ``ME41``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.CHANGE_IND_Application object change type (U, I, E, D)
-      - Type of change made.
-      - ``U``, ``I``, ``E``, ``D``
-      - SAP
-      - CDHDR
-      - ``U`` = update, ``I`` = insert, ``E`` = extension, ``D`` = deletion
-      - 
-
-    * - DM_Changes
-      - CDPOS.VALUE_NEW_New contents of changed field
-      - Value in the field after the change
-      - ``Bampton Road``, ``001653539-0000``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.VALUE_OLD_Old contents of changed field
-      - Value in the field before the change
-      - ``Bampton Road``, ``001653539-0000``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.OBJECTCLAS_Object class
-      - Object class used by SAP to group similar change documents
-      - ``BELEG``, ``IBAN``
-      - SAP
-      - CDPOS
-      - ``BELEG`` = Accounting Documents, ``IBAN`` = International Bank Account Number
-      - 
-
-    * - DM_Changes
-      - CDHDR.OBJECTID_Object Value
-      - Unique identifier of the changed business object instance
-      - ``1900000221``
-      - SAP
-      - CDHDR
-      - Often aligned with ``TABKEY``
-      - 
-
-    * - DM_Changes
-      - CDHDR.CHANGENR_Change Number of Document
-      - System-generated ID for a change event in SAP (i.e., the "change number" of the SAP document)
-      - ``0133557976``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.VERSION_3-Byte field
-      - Version information
-      - ``NULL``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.Expr1
-      - Reserved for technical purposes
-      - ``NULL``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.Expr2
-      - Reserved for technical purposes
-      - ``NULL``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDHDR.Expr3
-      - Reserved for technical purposes
-      - ``NULL``
-      - SAP
-      - CDHDR
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.FNAME_Field Name
-      - Technical field name that was changed in the target SAP table
-      - ``BKTXT``, ``FKBER``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.CHNGIND_Change Type (U, I, E, D)
-      - Type of change applied to the field
-      - ``U``, ``I``, ``E``, ``D``
-      - SAP
-      - CDPOS
-      - ``U`` = update, ``I`` = insert, ``E`` = extension, ``D`` = deletion
-      - 
-
-    * - DM_Changes
-      - CDPOS.TEXT_CASE_Flag: X=Text change
-      - Shows whether the change affected a text field
-      - ``X``, ``NULL``
-      - SAP
-      - CDPOS
-      - ``X`` = yes
-      - 
-
-    * - DM_Changes
-      - CDPOS.UNIT_OLD_Change documents, unit referenced
-      - Measurement unit of the old value before the change
-      - ``KG``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.UNIT_NEW_Change documents, unit referenced
-      - Measurement unit of the new value after the change
-      - ``KG``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.CUKY_OLD_Change documents, referenced currency
-      - Currency code of the old value before the change.
-      - ``USD``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
-    * - DM_Changes
-      - CDPOS.CUKY_NEW_Change documents, referenced currency
-      - Currency code of the new value after the change.
-      - ``USD``
-      - SAP
-      - CDPOS
-      - N/A
-      - 
-
+ 
     * - DM_Changes
       - CDPOS_Parse.GJAHR_Fiscal Year
       - Fiscal year of the accounting document referenced by the change
@@ -3029,3 +2975,1737 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
       - DD03M
       - Lookup for human-readable context from SAP Data Dictionary; explains ``CDPOS.FNAME_Field Name``
       - 
+
+.. ================================================================================================================================
+.. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. -------- OFFCANVAS DETAILS -----------------------------------------------------------------------------------------------------
+.. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. ================================================================================================================================
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Count
+    :title: TR-Agent: Count
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation
+    - :fa:`cogs` *How:* Counts the number of distinct TR-Agent expense-type codes recorded on the trip.
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` is ``Z___`` and ends in two digits.
+
+    .. code-block:: tsql        
+
+        UPDATE t
+        SET [TR-Agent: Count] =
+        (
+            SELECT COUNT(DISTINCT s.[EXP_TYPE_Travel Expense Type])
+            FROM SAP_raw.PTRV_SREC AS s
+            WHERE s.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
+                AND s.[EXP_TYPE_Travel Expense Type] LIKE 'Z___'
+                AND TRY_CAST(RIGHT(s.[EXP_TYPE_Travel Expense Type], 2) AS int) IS NOT NULL
+        )
+        FROM DM.DM_Trips AS t;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_First
+    :title: TR-Agent: (First)
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the 1st distinct TR-Agent ``EXP_TYPE`` code for the trip (ordered by the code value).
+    - :fa:`filter` *Filter:* Distinct ``EXP_TYPE`` values on the trip where the code is ``Z___`` and ends in two digits.   
+    
+    .. code-block:: tsql
+        
+        UPDATE t
+        SET t.[TR-Agent: (First)] = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (First) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 1;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Second
+    :title: TR-Agent: (Second)
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the 2nd distinct TR-Agent ``EXP_TYPE`` code for the trip (ordered by the code value).
+    - :fa:`filter` *Filter:* Distinct ``EXP_TYPE`` values on the trip where the code is ``Z___`` and ends in two digits.
+    
+    .. code-block:: tsql
+             
+        UPDATE t
+        SET t.[TR-Agent: (Second)] = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Second) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 2;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Third
+    :title: TR-Agent: (Third)
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the 3rd distinct TR-Agent ``EXP_TYPE`` code for the trip (ordered by the code value).
+    - :fa:`filter` *Filter:* Distinct ``EXP_TYPE`` values on the trip where the code is ``Z___`` and ends in two digits.  
+    
+    .. code-block:: tsql
+        
+        UPDATE t
+        SET t.[TR-Agent: (Third)] = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Third) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 3;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Fourth
+    :title: TR-Agent: (Forth)
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the 4th distinct TR-Agent ``EXP_TYPE`` code for the trip (ordered by the code value).
+    - :fa:`filter` *Filter:* Distinct ``EXP_TYPE`` values on the trip where the code is ``Z___`` and ends in two digits.
+
+    .. code-block:: tsql        
+        
+        UPDATE t
+        SET t.[TR-Agent: (Forth)] = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Forth) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 4;
+
+        -- Note that Fourth is spelt "Forth" in the SP.
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Fifth
+    :title: TR-Agent: (Fifth)
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the 5th distinct TR-Agent ``EXP_TYPE`` code for the trip (ordered by the code value).
+    - :fa:`filter` *Filter:* Distinct ``EXP_TYPE`` values on the trip where the code is ``Z___`` and ends in two digits.
+
+    .. code-block:: tsql
+        
+        UPDATE t
+        SET t.[TR-Agent: (Fifth)] = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Fifth) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 5;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_First_USD
+    :title: TR-Agent: (First) USD
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]`` + ``REF.REF_Exchange_Rates.[RatePer1From_Practical rate per 1 unit of from currency]``
+    - :fa:`tag` *Setting Type:* Derived - Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where ``EXP_TYPE`` equals the TR-Agent code in the 1st slot and converts the total to USD (rounded to 2 decimals).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the 1st TR-Agent slot’s code.
+
+    .. code-block:: tsql
+
+        UPDATE t
+        SET [TR-Agent: (First) USD] =
+        (
+            SELECT ROUND(
+                SUM(
+                    CASE
+                        WHEN b.[loc_curr_currency key] = 'USD'
+                            THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                        ELSE b.[LOC_AMOUNT_Receipt amount in local currency]
+                            * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                    END
+                ),
+                2
+            )
+            FROM SAP_raw.PTRV_SREC b
+            JOIN [temp].SREC_TR_Agent s
+                ON t.[PTRV_HEAD.REINR_Trip Number] = s.[REINR_Trip Number]
+                AND s.RowNum = 1
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
+        )
+        FROM DM.DM_Trips t;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Second_USD
+    :title: TR-Agent: (Second) USD
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]`` + ``REF.REF_Exchange_Rates.[RatePer1From_Practical rate per 1 unit of from currency]``
+    - :fa:`tag` *Setting Type:* Derived - Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where ``EXP_TYPE`` equals the TR-Agent code in the 1st slot and converts the total to USD (rounded to 2 decimals).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the 2nd TR-Agent slot’s code.    
+    
+    .. code-block:: tsql
+
+        UPDATE t
+        SET [TR-Agent: (Second) USD] =
+        (
+            SELECT ROUND(
+                SUM(
+                    CASE
+                        WHEN b.[loc_curr_currency key] = 'USD'
+                            THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                        ELSE b.[LOC_AMOUNT_Receipt amount in local currency]
+                            * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                    END
+                ),
+                2
+            )
+            FROM SAP_raw.PTRV_SREC b
+            JOIN [temp].SREC_TR_Agent s
+                ON t.[PTRV_HEAD.REINR_Trip Number] = s.[REINR_Trip Number]
+                AND s.RowNum = 2
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
+        )
+        FROM DM.DM_Trips t;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Third_USD
+    :title: TR-Agent: (Third) USD
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]`` + ``REF.REF_Exchange_Rates.[RatePer1From_Practical rate per 1 unit of from currency]``
+    - :fa:`tag` *Setting Type:* Derived - Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where ``EXP_TYPE`` equals the TR-Agent code in the 1st slot and converts the total to USD (rounded to 2 decimals).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the 3rd TR-Agent slot’s code.
+
+    .. code-block:: tsql
+
+        UPDATE t
+        SET [TR-Agent: (Third) USD] =
+        (
+            SELECT ROUND(
+                SUM(
+                    CASE
+                        WHEN b.[loc_curr_currency key] = 'USD'
+                            THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                        ELSE b.[LOC_AMOUNT_Receipt amount in local currency]
+                            * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                    END
+                ),
+                2
+            )
+            FROM SAP_raw.PTRV_SREC b
+            JOIN [temp].SREC_TR_Agent s
+                ON t.[PTRV_HEAD.REINR_Trip Number] = s.[REINR_Trip Number]
+                AND s.RowNum = 3
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
+        )
+        FROM DM.DM_Trips t;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Fourth_USD
+    :title: TR-Agent: (Forth) USD
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]`` + ``REF.REF_Exchange_Rates.[RatePer1From_Practical rate per 1 unit of from currency]``
+    - :fa:`tag` *Setting Type:* Derived - Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where ``EXP_TYPE`` equals the TR-Agent code in the 1st slot and converts the total to USD (rounded to 2 decimals).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the 4th TR-Agent slot’s code.
+
+    .. code-block:: tsql
+        
+        UPDATE t
+        SET [TR-Agent: (Forth) USD] =
+        (
+            SELECT ROUND(
+                SUM(
+                    CASE
+                        WHEN b.[loc_curr_currency key] = 'USD'
+                            THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                        ELSE b.[LOC_AMOUNT_Receipt amount in local currency]
+                            * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                    END
+                ),
+                2
+            )
+            FROM SAP_raw.PTRV_SREC b
+            JOIN [temp].SREC_TR_Agent s
+                ON t.[PTRV_HEAD.REINR_Trip Number] = s.[REINR_Trip Number]
+                AND s.RowNum = 4
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
+        )
+        FROM DM.DM_Trips t;
+
+        -- Note that SP spells Fourth as 'Forth'
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Fifth_USD
+    :title: TR-Agent: (Fifth) USD
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]`` + ``REF.REF_Exchange_Rates.[RatePer1From_Practical rate per 1 unit of from currency]``
+    - :fa:`tag` *Setting Type:* Derived - Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where ``EXP_TYPE`` equals the TR-Agent code in the 1st slot and converts the total to USD (rounded to 2 decimals).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the 5th TR-Agent slot’s code.
+
+    .. code-block:: tsql
+
+        UPDATE t
+        SET [TR-Agent: (Fifth) USD] =
+        (
+            SELECT ROUND(
+                SUM(
+                    CASE
+                        WHEN b.[loc_curr_currency key] = 'USD'
+                            THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                        ELSE b.[LOC_AMOUNT_Receipt amount in local currency]
+                            * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                    END
+                ),
+                2
+            )
+            FROM SAP_raw.PTRV_SREC b
+            JOIN [temp].SREC_TR_Agent s
+                ON t.[PTRV_HEAD.REINR_Trip Number] = s.[REINR_Trip Number]
+                AND s.RowNum = 5
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = t.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = s.[EXP_TYPE_Travel Expense Type]
+        )
+        FROM DM.DM_Trips t;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_First_Name
+    :title: TR-Agent: (First) Name
+
+    - :fa:`database` *Lineage:* ``SAP_raw.T706B5.[SPTXT_Name of Travel Expense Type]`` + ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the English description for the TR-Agent code in the 1st TR-Agent slot for the trip.
+    - :fa:`filter` *Filter:* TR-Agent transaction codes only (``Z___ ending in two digits``) and English text rows (language key ``'E'``).
+
+    .. code-block:: tsql
+
+        -- Source is [temp].SREC_TR_Agent.[SPTXT_Name of Travel Expense Type]
+        -- where [temp].SREC_TR_Agent is built from PTRV_SREC joined to T706B5 (SPRAS='E')
+        -- and RowNum is assigned per trip by ORDER BY [EXP_TYPE_Travel Expense Type].
+
+        UPDATE t
+        SET t.[TR-Agent: (First)]      = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (First) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 1;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Second_Name
+    :title: TR-Agent: (Second) Name
+
+    - :fa:`database` *Lineage:* ``SAP_raw.T706B5.[SPTXT_Name of Travel Expense Type]`` + ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the English description for the TR-Agent code in the 2nd TR-Agent slot for the trip.
+    - :fa:`filter` *Filter:* TR-Agent transaction codes only (``Z___ ending in two digits``) and English text rows (language key ``'E'``).
+
+    .. code-block:: tsql
+
+        -- Source is [temp].SREC_TR_Agent.[SPTXT_Name of Travel Expense Type]
+        -- where [temp].SREC_TR_Agent is built from PTRV_SREC joined to T706B5 (SPRAS='E')
+        -- and RowNum is assigned per trip by ORDER BY [EXP_TYPE_Travel Expense Type].
+        
+        UPDATE t
+        SET t.[TR-Agent: (Second)]      = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Second) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 2;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Third_Name
+    :title: TR-Agent: (Third) Name
+
+    - :fa:`database` *Lineage:* ``SAP_raw.T706B5.[SPTXT_Name of Travel Expense Type]`` + ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the English description for the TR-Agent code in the 3rd TR-Agent slot for the trip.
+    - :fa:`filter` *Filter:* TR-Agent transaction codes only (``Z___ ending in two digits``) and English text rows (language key ``'E'``).
+
+    .. code-block:: tsql
+
+        -- Source is [temp].SREC_TR_Agent.[SPTXT_Name of Travel Expense Type]
+        -- where [temp].SREC_TR_Agent is built from PTRV_SREC joined to T706B5 (SPRAS='E')
+        -- and RowNum is assigned per trip by ORDER BY [EXP_TYPE_Travel Expense Type].
+        
+        UPDATE t
+        SET t.[TR-Agent: (Third)]      = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Third) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 3;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Fourth_Name
+    :title: TR-Agent: (Fourth) Name
+
+    - :fa:`database` *Lineage:* ``SAP_raw.T706B5.[SPTXT_Name of Travel Expense Type]`` + ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the English description for the TR-Agent code in the 4th TR-Agent slot for the trip.
+    - :fa:`filter` *Filter:* TR-Agent transaction codes only (``Z___ ending in two digits``) and English text rows (language key ``'E'``).
+
+    .. code-block:: tsql
+
+        -- Source is [temp].SREC_TR_Agent.[SPTXT_Name of Travel Expense Type]
+        -- where [temp].SREC_TR_Agent is built from PTRV_SREC joined to T706B5 (SPRAS='E')
+        -- and RowNum is assigned per trip by ORDER BY [EXP_TYPE_Travel Expense Type].
+
+        UPDATE t
+        SET t.[TR-Agent: (Forth)]      = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Forth) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 4;
+
+        -- Note that Fourth is spelt "Forth" in the SP
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent_Fifth_Name
+    :title: TR-Agent: (Fifth) Name
+
+    - :fa:`database` *Lineage:* ``SAP_raw.T706B5.[SPTXT_Name of Travel Expense Type]`` + ``SAP_raw.PTRV_SREC.[EXP_TYPE_Travel Expense Type]``
+    - :fa:`tag` *Setting Type:* Derived - Mapping
+    - :fa:`cogs` *How:* Stores the English description for the TR-Agent code in the 5th TR-Agent slot for the trip.
+    - :fa:`filter` *Filter:* TR-Agent transaction codes only (``Z___ ending in two digits``) and English text rows (language key ``'E'``).
+
+    .. code-block:: tsql
+
+        -- Source is [temp].SREC_TR_Agent.[SPTXT_Name of Travel Expense Type]
+        -- where [temp].SREC_TR_Agent is built from PTRV_SREC joined to T706B5 (SPRAS='E')
+        -- and RowNum is assigned per trip by ORDER BY [EXP_TYPE_Travel Expense Type].
+        
+        UPDATE t
+        SET t.[TR-Agent: (Fifth)]      = b.[EXP_TYPE_Travel Expense Type],
+            t.[TR-Agent: (Fifth) Name] = b.[SPTXT_Name of Travel Expense Type]
+        FROM DM.DM_Trips t
+        JOIN [temp].SREC_TR_Agent b
+            ON t.[PTRV_HEAD.REINR_Trip Number] = b.[REINR_Trip Number]
+            AND b.RowNum = 5;
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TR-Agent
+    :title: PTRV_SREC.EXP_TYPE > TR-Agent
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]`` + ``REF.REF_exchange_rates.[RatePer1From_Practical rate per 1 unit of from currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums all TR-Agent receipt lines for the trip, converting each line to USD and rounding to 2 decimals.
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` is ``Z___`` and ends in two digits.
+
+    .. code-block:: tsql
+        
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- TR-Agent] = (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE b.[LOC_AMOUNT_Receipt amount in local currency]
+                            * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_exchange_rates] r
+                ON r.[fcurr_from currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[tcurr_to-currency] = 'USD'
+                AND b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] LIKE 'Z___'
+                AND TRY_CAST(RIGHT(b.[EXP_TYPE_Travel Expense Type], 2) AS int) IS NOT NULL
+            WHERE 1 = 1
+        );
+
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TERM
+    :title: PTRV_SREC.EXP_TYPE > TERM - Terminal
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- TERM - Terminal] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'TERM'
+        );
+
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_GR2%
+    :title: PTRV_SREC.EXP_TYPE > GR2% - 2% Carbon Offsetting
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- GR2% - 2% Carbon Offsetting] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'GR2%'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_ZMSC
+    :title: PTRV_SREC.EXP_TYPE > ZMSC - Miscellaneous Trav. Expenses
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- ZMSC - Miscellaneous Trav. Expenses] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'ZMSC'
+        ); 
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_AIRP
+    :title: PTRV_SREC.EXP_TYPE > AIRP - Airfare (Paid by CLIENT NYHO)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+    
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- AIRP - Airfare (Paid by CLIENT NYHO)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'AIRP'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_ZENT
+    :title: PTRV_SREC.EXP_TYPE > ZENT - Staff Entitlement Expenses
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+    
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- ZENT - Staff Entitlement Expenses - Staff Entitlement Expenses] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'ZENT'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_AIR
+    :title: PTRV_SREC.EXP_TYPE > AIR - Airfare (Paid by Person/Lump)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- AIR - Airfare (Paid by Person/Lump)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'AIR'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_HOTL
+    :title: PTRV_SREC.EXP_TYPE > HOTL - Hotel
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- HOTL - Hotel] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'HOTL'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_GR2E
+    :title: PTRV_SREC.EXP_TYPE > GR2E - 2% Carbon Offset - Entl IP
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- GR2E - 2% Carbon Offset - Entl IP] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'GR2E'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_GR1E
+    :title: PTRV_SREC.EXP_TYPE > GR1E - 1% Acces. Premise Entl IP
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- GR1E - 1% Acces. Premise Entl IP] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'GR1E'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_AIRT
+    :title: PTRV_SREC.EXP_TYPE > AIRT - Airport Tax
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- AIRT - Airport Tax] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'AIRT'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_AGNV
+    :title: PTRV_SREC.EXP_TYPE > AGNV - Airfare (Paid by CLIENT GVA)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- AGNV - Airfare (Paid by CLIENT GVA)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'AGNV'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_VIPA
+    :title: PTRV_SREC.EXP_TYPE > VIPA - VISA/Passport
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- VIPA - VISA/Passport] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'VIPA'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_AUTO
+    :title: PTRV_SREC.EXP_TYPE > AUTO - Local Car Hire
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- AUTO - Local Car Hire] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'AUTO'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_MED
+    :title: PTRV_SREC.EXP_TYPE > MED - Medical Srvcs (Vaccine, Etc.)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- MED - Medical Srvcs (Vaccine, Etc.)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'MED'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_ZCAR
+    :title: PTRV_SREC.EXP_TYPE > ZCAR - Personal Vehicle/Mileage
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- ZCAR - Personal Vehicle/Mileage] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'ZCAR'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_ACPH
+    :title: PTRV_SREC.EXP_TYPE > ACPH - Airfare (Paid by CLIENT CPH)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- ACPH - Airfare (Paid by CLIENT CPH)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'ACPH'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_EXBG
+    :title: PTRV_SREC.EXP_TYPE > EXBG - Excess Baggage
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- EXBG - Excess Baggage] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'EXBG'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_TELE
+    :title: PTRV_SREC.EXP_TYPE > TELE - Telecommunication
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- TELE - Telecommunication] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'TELE'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_DNGR
+    :title: PTRV_SREC.EXP_TYPE > DNGR - Danger Pay
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- DNGR - Danger Pay] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'DNGR'
+        );
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_GR1L
+    :title: PTRV_SREC.EXP_TYPE > GR1L - 1% Acces. Premise Entl LS
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- GR1L - 1% Acces. Premise Entl LS] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'GR1L'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_GR2L
+    :title: PTRV_SREC.EXP_TYPE > GR2L - 2% Carbon Offset - Entl LS
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- GR2L - 2% Carbon Offset - Entl LS] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'GR2L'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_OTRN
+    :title: PTRV_SREC.EXP_TYPE > OTRN - Other Transpo. (Train, Etc.)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- OTRN - Other Transpo. (Train, Etc.)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'OTRN'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_FCUV
+    :title: PTRV_SREC.EXP_TYPE > FCUV - Fuel Cost (CLIENT Vehicle)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- FCUV - Fuel Cost (CLIENT Vehicle)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'FCUV'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_SEAL
+    :title: PTRV_SREC.EXP_TYPE > SEAL - Security Escort Allowance
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- SEAL - Security Escort Allowance] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'SEAL'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_AIRS
+    :title: PTRV_SREC.EXP_TYPE > AIRS - Airfare (Self-Ticketing)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- AIRS - Airfare (Self-Ticketing)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'AIRS'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_CPCK
+    :title: PTRV_SREC.EXP_TYPE > CPCK - Conference Package
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- CPCK - Conference Package] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'CPCK'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_MOMS
+    :title: PTRV_SREC.EXP_TYPE > MOMS - Airfare Additional Tax (CPH)
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- MOMS - Airfare Additional Tax (CPH)] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'MOMS'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_CFEE
+    :title: PTRV_SREC.EXP_TYPE > CFEE - Conference Registration Fee
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- CFEE - Conference Registration Fee] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'CFEE'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_SEAT
+    :title: PTRV_SREC.EXP_TYPE > SEAT - Seat Selection
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- SEAT - Seat Selection] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'SEAT'
+        );     
+
+.. =====================================================================================================
+
+.. colref-detail:: trips_CRHI
+    :title: PTRV_SREC.EXP_TYPE > CRHI - Conference Room Hire
+
+    Each receipt/expense row in SAP's ``PTRV_SREC`` table has a Travel Expense Type column. In ``DM_Trips``, this column is spread (pivoted) into multiple columns, such as this one.
+
+    - :fa:`database` *Lineage:* ``SAP_raw.PTRV_SREC.[LOC_AMOUNT_Receipt amount in local currency]``
+    - :fa:`tag` *Setting Type:* Derived - Calculation/Conversion
+    - :fa:`cogs` *How:* Sums receipt amounts for the trip where the receipt EXP_TYPE equals the column’s code and converts the result to USD (done via ``DM.p_DM_Trips_FX``).
+    - :fa:`filter` *Filter:* Receipt lines for the trip where ``EXP_TYPE`` equals the column’s specific code
+
+    .. code-block:: tsql
+
+        UPDATE DM.DM_Trips
+        SET [PTRV_SREC.EXP_TYPE -- CRHI - Conference Room Hire] =
+        (
+            SELECT
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN b.[loc_curr_currency key] = 'USD'
+                                THEN b.[LOC_AMOUNT_Receipt amount in local currency]
+                            ELSE
+                                b.[LOC_AMOUNT_Receipt amount in local currency]
+                                * r.[RatePer1From_Practical rate per 1 unit of from currency]
+                        END
+                    ),
+                    2
+                )
+            FROM [SAP_raw.PTRV_SREC] b
+            JOIN [REF].[REF_Exchange_Rates] r
+                ON r.[FCURR_From currency] = b.[loc_curr_currency key]
+                AND b.[rec_date_receipt date]
+                    BETWEEN r.[ValidFrom_Date As of Which the Exchange Rate Is Effective] AND r.[ValidTo_Derived end of validity period]
+                AND r.[KURST_Exchange rate type] = 'M'
+                AND r.[TCURR_To-currency] = 'USD'
+            WHERE b.[REINR_Trip Number] = DM_Trips.[PTRV_HEAD.REINR_Trip Number]
+                AND b.[EXP_TYPE_Travel Expense Type] = 'CRHI'
+        );     
+

@@ -1,0 +1,591 @@
+/* ============================================================
+   -------- Column reference offcanvas ------------------------
+   ============================================================ */
+
+
+html[data-theme="light"] {
+    --blue: #004080;
+}
+
+html[data-theme="dark"] {
+    --blue: #6195c9;
+}
+
+
+.colref-offcanvas {
+    width: min(80rem, 92vw);
+}
+
+.colref-offcanvas .colref-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 0.25rem 0 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid var(--dt-accent-blue);
+}
+
+.colref-offcanvas .colref-tabselect {
+    max-width: 28rem;
+}
+
+.colref-offcanvas .colref-tabselect .form-label {
+    font-size: 0.75rem;
+    color: var(--pst-color-text-muted);
+}
+
+/* Hide sphinx-design tab labels when dropdown is active */
+.colref-offcanvas .colref-use-dropdown .sd-tab-label {
+    display: none !important;
+}
+
+
+
+/* Size + base type */
+.offcanvas.colref-offcanvas {
+    /* IMPORTANT: Bootstrap uses this variable, not width: */
+    --bs-offcanvas-width: min(700px, 92vw) !important;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+/* Make ALL form controls inside match the dense font */
+.offcanvas.colref-offcanvas :is(label, button, select, input) {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Header: compact + DataTables accent */
+.offcanvas.colref-offcanvas .offcanvas-header {
+    padding: .5rem .75rem;
+    border-bottom: 4px solid var(--dt-accent-blue);
+}
+
+.offcanvas.colref-offcanvas .offcanvas-title {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0;
+    font-size: 16px;
+    color: var(--dt-accent-blue);
+}
+
+.offcanvas.colref-offcanvas .colref-oc-icon {
+    color: var(--dt-accent-blue);
+    font-size: 14px;
+}
+
+/* Body padding */
+.offcanvas.colref-offcanvas .offcanvas-body {
+    padding: .75rem;
+}
+
+/* Toolbar (system selector row): compact, not “a giant box” */
+.offcanvas.colref-offcanvas .colref-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    padding: .25rem 0 .5rem;
+    margin-bottom: .75rem;
+    border-bottom: 1px solid var(--pst-color-border);
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    color: var(--pst-color-text-muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-label i {
+    color: var(--blue);
+    font-size: 12px;
+}
+
+/* Dropdown menu density */
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu {
+    font-size: 14px;
+    color: black;
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item {
+    padding: .25rem .75rem;
+    line-height: 1.25;
+}
+
+.offcanvas.colref-offcanvas .colref-tabselect {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.offcanvas.colref-offcanvas .colref-tabselect .form-label {
+    margin: 0;
+    font-size: 12px;
+    color: var(--pst-color-text-muted);
+    white-space: nowrap;
+}
+
+.offcanvas.colref-offcanvas .colref-tabselect .form-select {
+    width: auto;
+    max-width: 22rem;
+    padding: .15rem .5rem;
+}
+
+/* When dropdown mode is active, hide tab labels */
+.offcanvas.colref-offcanvas .colref-use-dropdown .sd-tab-label {
+    display: none !important;
+}
+
+/* Cards: remove “documentation card bloat” */
+.offcanvas.colref-offcanvas .sd-card {
+    margin: 0 0 .75rem 0;
+    box-shadow: none;
+    border-color: var(--pst-color-border);
+}
+
+.offcanvas.colref-offcanvas .sd-card .sd-card-body {
+    padding: .5rem .75rem;
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets .sd-card-body {
+    padding-left: 1.25em;
+    /* smaller than the global 1.8em */
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets .sd-card-body li {
+    padding-left: 1.6em;
+    /* smaller icon indent */
+}
+
+/* Technical Notes toggle: shrink + remove centering/max-width */
+.offcanvas.colref-offcanvas .admonition.gdw-toggle {
+    max-width: none;
+    margin: .5rem 0 0;
+    border-radius: .4rem;
+}
+
+.offcanvas.colref-offcanvas .admonition.gdw-toggle>.admonition-title {
+    padding: .35rem .5rem !important;
+    padding-left: 1.85rem !important;
+    font-size: 14px;
+}
+
+.offcanvas.colref-offcanvas .admonition.gdw-toggle>.admonition-title::before {
+    left: .5rem;
+    font-size: 12px;
+}
+
+/* Code blocks: smaller + horizontal scroll */
+.offcanvas.colref-offcanvas div.highlight pre,
+.offcanvas.colref-offcanvas pre {
+    font-size: 12px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+/* Small screens: take full width */
+@media (max-width: 768px) {
+    .offcanvas.colref-offcanvas {
+        --bs-offcanvas-width: 100vw;
+    }
+}
+
+/* Compact, DataTables-like dropdown trigger */
+.offcanvas.colref-offcanvas .colref-switcher-btn {
+    border: 0;
+    background: transparent;
+    padding: .15rem .25rem;
+    color: var(--blue);
+    font: inherit;
+    font-weight: 600;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-btn:hover {
+    text-decoration: underline;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-btn:focus {
+    outline: none;
+    box-shadow: none;
+    /* kills the purple ring */
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-btn:focus-visible {
+    outline: 2px solid rgba(0, 64, 128, .35);
+    outline-offset: 2px;
+    border-radius: .25rem;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-caret {
+    margin-left: .35rem;
+    font-size: 12px;
+}
+
+/* Dropdown menu density */
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu {
+    font-size: inherit;
+    border: 1px solid var(--pst-color-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item {
+    padding: .25rem .75rem;
+    line-height: 1.25;
+}
+
+/* ---- colref-meta -------------------------------------- */
+
+/* Summary meta: render as dense key/value rows (DataTables-like) */
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    margin: 0 0 .75rem 0;
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta .sd-card-body {
+    padding: 0;
+}
+
+/* Outer “table” container */
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--pst-color-border);
+    border-radius: .25rem;
+    overflow: hidden;
+}
+
+/* Row separators */
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li {
+    display: flex;
+    gap: .75rem;
+    padding: .35rem .75rem;
+    border-top: 1px solid var(--pst-color-border);
+    align-items: baseline;
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li:first-child {
+    border-top: 0;
+}
+
+/* “Label” column */
+.offcanvas.colref-offcanvas .colref-kv-key {
+    flex: 0 0 10rem;
+    min-width: 10rem;
+    font-weight: 600;
+    color: #004080;
+    display: inline-flex;
+    align-items: baseline;
+    gap: .5rem;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-key i {
+    width: 1rem;
+    text-align: center;
+    color: #004080;
+}
+
+/* “Value” column */
+.offcanvas.colref-offcanvas .colref-kv-val {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Let inline code wrap in offcanvas (long identifiers) */
+.offcanvas.colref-offcanvas .colref-kv-val :is(code, .inline-code) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Tighten label column on small screens */
+@media (max-width: 576px) {
+    .offcanvas.colref-offcanvas .colref-kv-key {
+        flex-basis: 7.5rem;
+        min-width: 7.5rem;
+    }
+}
+
+/* KV list: kill global absolute-icon bullet styling */
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta .sd-card-body {
+    padding-left: 0 !important;
+    /* undo custom.css bullet indent */
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li {
+    align-items: center;
+    /* was baseline */
+}
+
+/* Neutralize custom.css absolute positioning on icons inside li */
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li :is(svg[data-icon], svg.svg-inline--fa, i.fa-solid, i.fa-regular, i.fa-brands) {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 1rem !important;
+    margin: 0 !important;
+    color: #004080 !important;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-key {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-key :is(i, svg) {
+    flex: 0 0 1rem;
+    line-height: 1;
+}
+
+/* Offcanvas should not inherit the site-wide tab frame */
+.offcanvas.colref-offcanvas .sd-tab-set>.sd-tab-content.docutils {
+    border: 0 !important;
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv {
+    border: 0;
+    border-radius: 0;
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li {
+    border-top: 1px solid var(--pst-color-border);
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li:first-child {
+    border-top: 1px solid var(--pst-color-border);
+}
+
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv>li:last-child {
+    border-bottom: 1px solid var(--pst-color-border);
+}
+
+.offcanvas.colref-offcanvas .offcanvas-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.offcanvas.colref-offcanvas .offcanvas-body {
+    padding: 1rem;
+}
+
+.offcanvas.colref-offcanvas.colref-autoheight {
+    bottom: auto;
+    /* allow height to shrink */
+    height: auto;
+    max-height: 100vh;
+}
+
+.offcanvas.colref-offcanvas.colref-autoheight .offcanvas-body {
+    max-height: calc(100vh - 3.25rem);
+    /* header allowance */
+    overflow-y: auto;
+}
+
+/* Toolbar should not read like a full-width “control bar” */
+.offcanvas.colref-offcanvas .colref-toolbar {
+    justify-content: flex-end;
+    /* instead of space-between */
+    gap: .5rem;
+    border-bottom: 0;
+    padding: 0 0 .25rem;
+    margin-bottom: .5rem;
+}
+
+/* Trigger: single compact, DataTables-like control */
+.offcanvas.colref-offcanvas .colref-switcher-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    white-space: nowrap;
+
+    border: 1px solid var(--pst-color-border);
+    border-radius: .25rem;
+    background: var(--pst-color-surface);
+    padding: .2rem .5rem;
+
+    color: var(--pst-color-text-base, inherit);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-btn:hover {
+    background: rgba(0, 0, 0, .03);
+    text-decoration: none;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-icon {
+    width: 1rem;
+    text-align: center;
+    line-height: 1;
+    font-size: 12px;
+    color: var(--pst-color-text-muted);
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-prefix {
+    color: var(--pst-color-text-muted);
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-current {
+    max-width: 18rem;
+    /* tune */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-weight: 600;
+    color: var(--dt-accent-blue);
+}
+
+/* Menu: show selection via checkmark + subtle background, not inverted colors */
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--pst-color-text-base, inherit);
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .colref-dd-check {
+    width: 1rem;
+    text-align: center;
+    visibility: hidden;
+    color: var(--dt-accent-blue);
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item.is-selected {
+    background: rgba(0, 64, 128, .08);
+    color: var(--pst-color-text-base, inherit);
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item.is-selected .colref-dd-check {
+    visibility: visible;
+}
+
+/* Safety: if Bootstrap applies .active or :active, never go white-on-light */
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item.active,
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item:active {
+    background: rgba(0, 64, 128, .08) !important;
+    color: var(--pst-color-text-base, inherit) !important;
+}
+
+/* Toolbar should blend with the offcanvas body, not use pst "surface" grey */
+.offcanvas.colref-offcanvas .colref-toolbar {
+    background: var(--bs-offcanvas-bg) !important;
+    /* usually white */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* KV list styling should work with or without the card wrapper */
+.offcanvas.colref-offcanvas ul.colref-kv.colref-meta {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Rows */
+.offcanvas.colref-offcanvas ul.colref-kv.colref-meta>li {
+    display: flex;
+    gap: .75rem;
+    padding: .35rem .75rem;
+    border-top: 1px solid var(--pst-color-border);
+    align-items: center;
+}
+
+.offcanvas.colref-offcanvas ul.colref-kv.colref-meta>li:first-child {
+    border-top: 1px solid var(--pst-color-border);
+}
+
+.offcanvas.colref-offcanvas ul.colref-kv.colref-meta>li:last-child {
+    border-bottom: 1px solid var(--pst-color-border);
+}
+
+/* Key/value column sizing */
+.offcanvas.colref-offcanvas {
+    --colref-kv-key-width: 10em;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-key {
+    flex: 0 0 var(--colref-kv-key-width) !important;
+    min-width: var(--colref-kv-key-width) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-val {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.offcanvas.colref-offcanvas .colref-notes-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--pst-color-text-muted);
+    font: inherit;
+}
+
+.offcanvas.colref-offcanvas .colref-notes-row.is-open .colref-notes-chevron {
+    transform: rotate(90deg);
+}
+
+.offcanvas.colref-offcanvas .colref-notes {
+    margin-top: .5rem;
+}
+
+.offcanvas.colref-offcanvas .colref-notes> :last-child {
+    margin-bottom: 0;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-key :is(i, svg) {
+    color: var(--pst-color-text-muted) !important;
+}
+
+/* Two-column “key/value” rows */
+.offcanvas.colref-offcanvas ul.colref-kv>li {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    /* tune */
+    column-gap: .75rem;
+    align-items: start;
+}
+
+/* Key cell */
+.offcanvas.colref-offcanvas .colref-kv-key {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    min-width: 0;
+}
+
+/* Value cell */
+.offcanvas.colref-offcanvas .colref-kv-val {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Docutils tends to keep <p> blocks. Kill margins so rows stay compact. */
+.offcanvas.colref-offcanvas .colref-kv-val :is(p, .line-block) {
+    margin: 0;
+}
+
+/* Offcanvas: remove sphinx-design tab separators (faint lines above/below content) */
+.offcanvas.colref-offcanvas .sd-tab-content {
+    box-shadow: none !important;
+}

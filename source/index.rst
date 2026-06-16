@@ -65,7 +65,7 @@
                .. grid-item::
                   :columns: 2
          
-                  .. button-link:: #
+                  .. button-link:: 1link/case-studies
                      :color: primary
                      :class: sd-mt-2
 
@@ -74,7 +74,7 @@
                .. grid-item::
                   :columns: 2
 
-                  .. button-link:: #
+                  .. button-link:: 2link/writing-samples
                      :color: primary
                      :class: sd-mt-2
 
@@ -83,7 +83,7 @@
                .. grid-item::
                   :columns: 2
 
-                  .. button-link:: #
+                  .. button-link:: 3link/cv
                      :color: primary
                      :class: sd-mt-2
 
@@ -101,7 +101,7 @@
          
          Navigation, entry points, reusable templates, and page structures.
 
-         :dead-link:`Open documentation design`
+         :doc:`Open documentation design <1link/case-studies/portal-ux>`
 
       .. grid-item-card:: Data Documentation
          :shadow: sm
@@ -109,7 +109,7 @@
          
          Lineage context, source logic, and data dictionary patterns.
 
-         :dead-link:`Open data documentation`
+         :doc:`Open data documentation <1link/case-studies/data-dictionary>`
 
       .. grid-item-card:: Writing Samples
          :shadow: sm
@@ -117,7 +117,7 @@
          
          Procedures, concepts, references, and rewrite examples.
 
-         :dead-link:`Open writing samples`
+         :doc:`Open writing samples <2link/writing-samples>`
 
       .. grid-item-card:: Docs-as-Code
          :shadow: sm
@@ -125,7 +125,7 @@
          
          Sphinx, GitHub Pages, and version-controlled publishing.
 
-         :dead-link:`Open docs-as-code`
+         :doc:`Open docs-as-code <2link/writing-samples>`
       
 
    .. div:: gdw-meta

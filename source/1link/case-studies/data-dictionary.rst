@@ -19,18 +19,14 @@
 Data Dictionary
 ===============
 
-**Column Reference**
-
 |br|
 
 Filter with header icons > Expand row toggles for hidden fields > Click truncated text or  :fas:`circle-info;sd-text-info` for full details.
 
 
-
 .. =================================================================================================================
 .. --- DM_Changes Col. Ref. ---------------------------------------------------------------------------------------
 .. =================================================================================================================
-
 
 .. list-table::
     :header-rows: 1

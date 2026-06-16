@@ -487,3 +487,148 @@ button.colref-open-icon:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* ============================================================
+   DataTables dark-mode fixes
+   Keep this block last.
+   ============================================================ */
+
+html[data-theme="dark"] .dt-container {
+    --dt-dark-bg: var(--pst-color-background);
+    --dt-dark-surface: var(--pst-color-surface);
+    --dt-dark-surface-2: color-mix(in srgb, var(--pst-color-surface) 86%, white 14%);
+    --dt-dark-text: var(--pst-color-text-base);
+    --dt-dark-muted: var(--pst-color-text-muted);
+    --dt-dark-border: color-mix(in srgb, var(--blue) 45%, transparent);
+    --dt-dark-hover: color-mix(in srgb, var(--blue) 12%, transparent);
+}
+
+/* Header row */
+html[data-theme="dark"] .dt-container table.dataTable thead,
+html[data-theme="dark"] .dt-container table.dataTable thead tr,
+html[data-theme="dark"] .dt-container table.dataTable thead th,
+html[data-theme="dark"] .dt-container table.dataTable thead td {
+    background: var(--dt-dark-surface) !important;
+    color: var(--blue) !important;
+    border-color: var(--dt-dark-border) !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] .dt-container table.dataTable thead :is(p, span),
+html[data-theme="dark"] .dt-container table.dataTable thead .dt-column-title,
+html[data-theme="dark"] .dt-container table.dataTable thead .dt-column-header,
+html[data-theme="dark"] .dt-container table.dataTable thead .dtcc,
+html[data-theme="dark"] .dt-container table.dataTable thead .dtcc-button,
+html[data-theme="dark"] .dt-container table.dataTable thead .dtcc-button-icon,
+html[data-theme="dark"] .dt-container table.dataTable thead svg {
+    color: var(--blue) !important;
+    stroke: currentColor !important;
+}
+
+/* Main table cells */
+html[data-theme="dark"] .dt-container table.dataTable tbody tr:not(.child) > :is(td, th) {
+    background: var(--dt-dark-bg) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+}
+
+html[data-theme="dark"] .dt-container table.dataTable.display tbody tr:not(.child):hover > *,
+html[data-theme="dark"] .dt-container table.dataTable.hover tbody tr:not(.child):hover > * {
+    background: var(--dt-dark-hover) !important;
+    color: var(--dt-dark-text) !important;
+}
+
+/* Responsive child rows */
+html[data-theme="dark"] .dt-container table.dataTable tbody tr.child,
+html[data-theme="dark"] .dt-container table.dataTable tbody tr.child > td {
+    background: var(--dt-dark-bg) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+}
+
+html[data-theme="dark"] .dt-container table.dataTable tr.child ul.dtr-details > li {
+    border-color: var(--dt-dark-border) !important;
+}
+
+html[data-theme="dark"] .dt-container table.dataTable tr.child ul.dtr-details > li > span.dtr-title,
+html[data-theme="dark"] .dt-container table.dataTable tr.child ul.dtr-details > li > span.dtr-title :is(p, span) {
+    color: var(--blue) !important;
+}
+
+/* Top controls */
+html[data-theme="dark"] .dt-container .dt-length,
+html[data-theme="dark"] .dt-container .dt-search,
+html[data-theme="dark"] .dt-container .dt-info {
+    color: var(--dt-dark-text) !important;
+}
+
+html[data-theme="dark"] .dt-container .dt-length label,
+html[data-theme="dark"] .dt-container .dt-search label {
+    color: var(--dt-dark-text) !important;
+}
+
+html[data-theme="dark"] .dt-container .dt-length select,
+html[data-theme="dark"] .dt-container .dt-search input {
+    background-color: var(--dt-dark-bg) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+}
+
+/* Native select dropdown items */
+html[data-theme="dark"] .dt-container .dt-length select option {
+    background-color: #151a21 !important;
+    color: #e6edf3 !important;
+}
+
+html[data-theme="dark"] .dt-container .dt-length select option:checked {
+    background-color: var(--blue) !important;
+    color: #ffffff !important;
+}
+
+/* Pagination */
+html[data-theme="dark"] .dt-container .dt-paging .dt-paging-button {
+    background: transparent !important;
+    color: var(--dt-dark-text) !important;
+    border-color: transparent !important;
+}
+
+html[data-theme="dark"] .dt-container .dt-paging .dt-paging-button.current,
+html[data-theme="dark"] .dt-container .dt-paging .dt-paging-button.current:hover {
+    background: var(--dt-dark-surface-2) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+}
+
+html[data-theme="dark"] .dt-container .dt-paging .dt-paging-button:hover {
+    background: var(--dt-dark-hover) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+}
+
+html[data-theme="dark"] .dt-container .dt-paging .dt-paging-button.disabled,
+html[data-theme="dark"] .dt-container .dt-paging .dt-paging-button.disabled:hover {
+    background: transparent !important;
+    color: var(--dt-dark-muted) !important;
+    border-color: transparent !important;
+}
+
+
+/* Responsive toggle: closed state */
+html[data-theme="dark"] .dt-container table.dataTable.dtr-inline.collapsed > tbody > tr:not(.parent):not(.dt-hasChild) > :is(td, th).dtr-control::before {
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+    border-left: 10px solid var(--blue) !important;
+    border-right: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Responsive toggle: open state */
+html[data-theme="dark"] .dt-container table.dataTable.dtr-inline.collapsed > tbody > tr:is(.parent, .dt-hasChild) > :is(td, th).dtr-control::before {
+    border-left: 5px solid transparent !important;
+    border-right: 5px solid transparent !important;
+    border-top: 10px solid var(--blue) !important;
+    border-bottom: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}

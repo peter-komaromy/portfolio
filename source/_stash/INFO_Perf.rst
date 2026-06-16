@@ -32,7 +32,8 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
     :widths: auto
     :class: sphinx-datatable display hover nowrap dt-profile-perf   
 
-    * - Column Name
+    * - DM_Performance
+      - Column Name
       - Definition
       - Sample Value(s)
       - Source System(s)
@@ -45,1007 +46,517 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
             ====== Values ==========================================================================================================
             ========================================================================================================================
 
-    * - Case Number
+    * - DM_Performance
+      - Case Number
       - Unique identifier assigned to each case.
       - ``IC0068371``, ``556523-00543447-TMS02``
       - SG, TMS, SharePoint
+      - N/A
       - Value format depends on source system.
       - View details: :colrefopen:`perf_Case_Number` 
 
-    * - Platform
+    * - DM_Performance
+      - Platform
       - The source system where the case originated.      
       - ``Request Portal``, ``TMS``, ``VISION``
       - N/A
       - Fixed value: assigned during load      
       - N/A
 
-    * - Service Area - Code
+    * - DM_Performance
+      - Service Area - Code
       - Numeric ID of the CLIENT Service Area for the case.
       - ``1950``, ``4500``
       - SG, TMS, SharePoint
+      - N/A
       - N/A      
       - View details: :colrefopen:`perf_BA_Code`
 
-    * - Service Area - Name
+    * - DM_Performance
+      - Service Area - Name
       - Human-readable name of the Service Area for the case.
       - ``Demo``, ``Egypt``
       - SG, TMS, SharePoint
+      - N/A
       - Although often a country name, B.A. includes regional offices, divisions, and HO.
       - View details: :colrefopen:`perf_BA_Name`
 
-    * - Service Area - Full
+    * - DM_Performance
+      - Service Area - Full
       - Concatenation of Service Area Name and Code for the case.
       - ``Demo-1950``, ``Egypt-4500``
       - SG, TMS, SharePoint
+      - N/A
       - N/A      
       - View details: :colrefopen:`perf_BA_Full`
 
-    * - Region
+    * - DM_Performance
+      - Region
       - The CLIENT region to which the Service Area belongs.
       - ``Reg1``, ``Reg2R``, ``HO``
       - SG, TMS, SharePoint
       - N/A
+      - N/A
       - View details: :colrefopen:`perf_Region`
 
-    * - Status
+    * - DM_Performance
+      - Status
       - Lifecycle stage of the case.
       - ``Open``, ``Closed Complete``
       - SG, TMS, SharePoint
+      - N/A
       - N/A      
       - View details: :colrefopen:`perf_Status`
 
-    * - Parent Case Number
+    * - DM_Performance
+      - Parent Case Number
       - Identifier of the original case to which the current case is linked as a child.
       - ``FIC0902162``, ``556527``
       - SG, TMS, SharePoint
+      - N/A
       - For tracing case relationships; empty for standalone cases.
       - View details: :colrefopen:`perf_Parent_Case_Number` 
 
-    * - Cancelled
+    * - DM_Performance
+      - Cancelled
       - Shows whether a case was cancelled before completion.
       - ``1``, ``0``
       - SG, TMS, SharePoint
+      - N/A
       - ``1`` = Cancelled; ``0`` = Not cancelled. Column is no longer used because all cancelled cases are now excluded.
       - View details: :colrefopen:`perf_Cancelled`
 
-    * - Case Closed
+    * - DM_Performance
+      - Case Closed
       - Shows whether the case has been closed.
       - ``1``, ``0``
-      - SG, TMS, SharePoint 
+      - SG, TMS, SharePoint
+      - N/A 
       - ``1`` = Closed; ``0`` = Not closed.
       - View details: :colrefopen:`perf_Case_Closed`  
 
-    * - Short Description
+    * - DM_Performance
+      - Short Description
       - Summary of the case description.
       - ``DCT: DPR``, ``MFA Reset for Moussa Diop``
       - SG, TMS, SharePoint
+      - N/A
       - Taken from SG, this is the "Subject" line of the case description.
       - View details: :colrefopen:`perf_Short_Desc`
         
-    * - Description
+    * - DM_Performance
+      - Description
       - The main body of the case description. 
       - ``Trip from 06.11.23 to 12.11.23 to Antananarivo ...``
       - SG, TMS, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Desc`
 
-    * - Reporting Process - Category
+    * - DM_Performance
+      - Reporting Process - Category
       - Category assigned to the case within the reporting process. 
       - ``Invoices posted by Demo via ticketing tool``
       - SG
+      - N/A
       - First and highest level of granularity in the case categorization hierarchy (i.e., Category → Topic → Name → Type → Subtype) 
       - View details: :colrefopen:`perf_RP_Category`
 
-    * - Reporting Process - Topic
+    * - DM_Performance
+      - Reporting Process - Topic
       - Code for the topic of the case within the reporting process.
       - ``ZT``, ``RE``, ``KR``, ``YO``
       - SG
+      - N/A
       - Second level of granularity in the case categorization hierarchy after 'Category'. 
       - View details: :colrefopen:`perf_RP_Topic`
     
-    * - Reporting Process - Name
+    * - DM_Performance
+      - Reporting Process - Name
       - Name assigned to the case within the reporting process. 
       - ``Travel Posting``, ``Invoice receipt``
       - SG, TMS, SharePoint
+      - N/A
       - Third level of granularity in the case categorization hierarchy. Typically, the most referenced in reporting; always populated for SG cases.
       - View details: :colrefopen:`perf_RP_Name`
     
-    * - Reporting Process - Type
+    * - DM_Performance
+      - Reporting Process - Type
       - Type assigned to the case within the reporting process. 
       - ``Incident``, ``Inquiry``
       - SG, TMS, SharePoint
+      - N/A
       - Fourth level of granularity in the case categorization hierarchy. It helps to find more granular groups within reporting processes, e.g., 'PO Invoices' within the 'Invoice Creation' process. 
       - View details: :colrefopen:`perf_RP_Type`
 
-    * - Reporting Process - Subtype
+    * - DM_Performance
+      - Reporting Process - Subtype
       - Subtype assigned to the case within the reporting process. 
       - ``Data incorrect``, ``Login failure``
       - SG, SharePoint
+      - N/A
       - The fifth and last level of granularity in the case categorization hierarchy. Blank for most rows but kept for the sake of completeness. 
       - View details: :colrefopen:`perf_RP_Subtype`
-
-    * - Reporting Process - E2E Subcategory
-      - Subcategory used in end-to-end reporting processes. 
-      - N/A
-      - N/A
-      - Not populated.
-      - N/A
     
-    * - Assignment Group (Team Name)
+    * - DM_Performance
+      - Assignment Group (Team Name)
       - Name of the team responsible for handling the case. 
       - ``Customer Care``, ``IAM`` 
       - SG, TMS
+      - N/A
       - Typically determined by the value of the ``Reporting Process - Name`` column.
       - View details: :colrefopen:`perf_Assignment_Group`
     
-    * - Stream
+    * - DM_Performance
+      - Stream
       - Name of the functional area to which the reporting process belongs. 
       - ``Customer Care``, ``HR Offboarding``, ``MDM``
       - SG, TMS, SharePoint
+      - N/A
       - In this table, 'Stream' is treated as the functional area of the reporting process, not the functional area of the reporting agent. 
       - View details: :colrefopen:`perf_Stream`
 
-    * - Section
+    * - DM_Performance
+      - Section
       - The 'parent' category above Stream to which the reporting process belongs. 
       - ``HR Admin``, ``Finance``
       - SG
+      - N/A
       - Each reporting process belongs to one section. Sections roughly correspond to the lowest level of the WBS hierarchy. 
       - View details: :colrefopen:`perf_Section`
 
-    * - Case Priority
+    * - DM_Performance
+      - Case Priority
       - Priority level of the case. 
       - ``1 - Critical``, ``2 - High``, ``4 - Low``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Case_Priority`
     
-    * - Complexity Factor
+    * - DM_Performance
+      - Complexity Factor
       - Number of invoices submitted within a single case. 
       - ``1``, ``2``
       - SG
+      - N/A
       - Useful for the Invoice Processing team to monitor multi-invoice submissions. No longer used in SLA or volume calculations because the Invoice Processing team now handles multi-invoice cases by creating separate child cases. 
       - View details: :colrefopen:`perf_Complexity_Factor`
     
-    * - Case Reassignment Count
+    * - DM_Performance
+      - Case Reassignment Count
       - Number of times the case was reassigned to a different team. 
       - ``1``, ``2``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Case_Reassignment_Count`
 
-    * - Case Open DateTime
+    * - DM_Performance
+      - Case Open DateTime
       - The UTC date and time when the case was opened. 
       - ``2023-07-07 08:47:53.000``
       - SG, TMS
+      - N/A
       - Due to time-zone difference, the value may differ by 1-2 hours from the time shown in SG. 
       - View details: :colrefopen:`perf_Case_Open_DateTime`
 
-    * - Case Open Date
+    * - DM_Performance
+      - Case Open Date
       - Calendar date when the case was opened. 
       - ``2023-07-07``
       - SG, TMS, SharePoint
+      - N/A
       - Matches the value in ``Case Open DateTime``, but rounded to date. May differ from what is shown in Request Portal due to timezone differences (e.g., if a case was opened around midnight, the date may be one day earlier than what shows in SG.) 
       - View details: :colrefopen:`perf_Case_Open_Date`
     
-    * - Case Close DateTime
+    * - DM_Performance
+      - Case Close DateTime
       - The UTC date and time when the case was closed. 
       - ``2023-07-07 08:47:53.000``
       - SG, TMS
+      - N/A
       - Due to time-zone difference, the value may differ by 1-2 hours from the time shown in SG.
       - View details: :colrefopen:`perf_Case_Close_DateTime`
     
-    * - Case Close Date
+    * - DM_Performance
+      - Case Close Date
       - Calendar date when the case was closed. 
       - ``2023-07-07``
       - SG, TMS, SharePoint
+      - N/A
       - Matches ``Case Close DateTime`` except for minor shifts due to time zone offsets around midnight. 
       - View details: :colrefopen:`perf_Case_Close_Date`
 
-    * - Open Datetime - Local
+    * - DM_Performance Open
+      - Datetime - Local
       - A version of the ``Case Open DateTime`` column, adjusted for local time zone. 
       - ``2023-07-07 08:47:53.000``
       - SG
+      - N/A
       - Converted from UTC to CET. Supports daily SLA and volume tracking. 
       - View details: :colrefopen:`perf_Open_Datetime_Local`
 
-    * - YYYY-MM
+    * - DM_Performance
+      - YYYY-MM
       - Calendar year and month when the case was closed. 
       - ``2023-07``
       - SG, TMS, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_YYYY_MM`
     
-    * - Elapsed Time (Calendar Days)
+    * - DM_Performance
+      - Elapsed Time (Calendar Days)
       - Total time between case opening and closing, measured in calendar days. 
       - ``2.000000``, ``14.270000``
       - SG, TMS, SharePoint
+      - N/A
       - The decimal portion represents, calculated by dividing total seconds by 86,400 (seconds in a day). 
       - View details: :colrefopen:`perf_Elapsed_Time_Calendar_Days`
     
-    * - Elapsed Time (Business Days)
+    * - DM_Performance
+      - Elapsed Time (Business Days)
       - Total case duration, measured in business days.  
       - ``6.900000``, ``14.270000``
       - SG, TMS, SharePoint
+      - N/A
       - The decimal portion represents partial days. 'Business days' = days excluding weekends and holidays. 
       - View details: :colrefopen:`perf_Elapsed_Time_Business_Days`
 
-    * - Processing Time (Business Days)
+    * - DM_Performance
+      - Processing Time (Business Days)
       - Time spent processing the case, measured in business days based on active work time.
       - ``1.125000``, ``4.950000``
       - SG, TMS, SharePoint
+      - N/A
       - Unlike ``Elapsed Time``, this includes only active working periods. 
       - View details: :colrefopen:`perf_Processing_Time_Business_Days`
 
-    * - Processing Time (Seconds)
+    * - DM_Performance
+      - Processing Time (Seconds)
       - Total active processing time measured in seconds. 
       - ``3600``, ``101637``
       - SG, TMS, SharePoint
+      - N/A
       - 'Active' means it only measures periods during which the case was actively handled (i.e., working-time duration only rather than total wall-clock time).
       - View details: :colrefopen:`perf_Processing_Time_Seconds`
     
-    * - Freeze Time (Calendar Days)
+    * - DM_Performance
+      - Freeze Time (Calendar Days)
       - Time a case spent on hold, measured in calendar days. 
       - ``0.170000``, ``3.660000``
       - SG, TMS, SharePoint
+      - N/A
       - The decimal portion represents partial days. 
       - View details: :colrefopen:`perf_Freeze_Time_Calendar_Days`
     
-    * - Freeze Time (Business Days)
+    * - DM_Performance
+      - Freeze Time (Business Days)
       - Time a case spent on hold, measured in business days. 
       - ``0.517847``, ``1.897430``
       - SG, TMS, SharePoint
+      - N/A
       - The decimal portion represents partial days. 
       - View details: :colrefopen:`perf_Freeze_Time_Business_Days`
 
-    * - Freeze Time (Seconds)
+    * - DM_Performance
+      - Freeze Time (Seconds)
       - Time the case spent on hold, measured in seconds. 
       - ``44926``, ``260777``
       - SG, TMS, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Freeze_Time_Seconds`
 
-    * - Reject Count
+    * - DM_Performance
+      - Reject Count
       - Shows whether a case was closed as 'incomplete'. 
       - ``1``, ``0``
       - SG
+      - N/A
       - ``1`` = rejected; ``0`` = not rejected 
       - View details: :colrefopen:`perf_Reject_Count`
     
-    * - Reject Reason
+    * - DM_Performance
+      - Reject Reason
       - Reason why a case was rejected. 
       - ``Ineligible``, ``Outside Demo scope``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Reject_Reason`
     
-    * - Suspended Reason
+    * - DM_Performance
+      - Suspended Reason
       - Reason why a case was suspended. 
       - ``3200``, ``Banking info incomplete``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Suspended_Reason`
 
-    * - Suspension Type
+    * - DM_Performance
+      - Suspension Type
       - Categorisation code for the reason why a case was suspended. 
       - ``0``, ``100``, ``200``, ``300``
       - SG
+      - N/A
       - ``0`` = 'Not suspended'. Other values stand for suspension reasons.
       - View details: :colrefopen:`perf_Suspension_Type`
 
-    * - Return Count
+    * - DM_Performance
+      - Return Count
       - Number of times a case was returned to the requestor before resolution or closure. 
       - ``0``, ``1``, ``2``, ``3``
       - SG, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Return_Count`
     
-    * - Return Reason
+    * - DM_Performance
+      - Return Reason
       - Reason why a case was returned to the requestor 
       - ``Banking info incomplete``, ``Clarification requested``
       - SG, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Return_Reason`
     
-    * - Last Return Start Datetime
+    * - DM_Performance
+      - Last Return Start Datetime
       - Timestamp when the case was last returned to the requestor. Shows the start of the latest return cycle. 
       - ``2023-07-07 08:47:53.000``
       - SG
+      - N/A
       - Mapped to SLA suspension fields in SG. ``NULL`` for RAS. 
       - View details: :colrefopen:`perf_Last_Return_Start_Datetime`
 
-    * - Last Update Datetime
+    * - DM_Performance
+      - Last Update Datetime
       - Timestamp of the latest update to the case record. 
       - ``2023-07-07 08:47:53.000``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Last_Update_Datetime`
 
-    * - Pending Reason
+    * - DM_Performance
+      - Pending Reason
       - Reason why a case is in a pending (on-hold) state. 
       - ``Banking info incomplete``
       - SG, TMS, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Pending_Reason`
     
-    * - Return/Reject Check
+    * - DM_Performance
+      - Return/Reject Check
       - Categorises the case outcome, based on the values of ``Return Count`` and ``Reject Count``. 
       - ``Rejected``, ``Returned``, ``Both``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Return_Reject_Check`
     
-    * - Returned not Rejected
+    * - DM_Performance
+      - Returned not Rejected
       - Shows whether the case was returned to the requestor without being subsequently rejected. 
       - ``1``, ``0``
       - SG, SharePoint
+      - N/A
       - ``1`` = Returned not Rejected; ``0`` = else 
       - View details: :colrefopen:`perf_Returned_Not_Rejected`
 
-    * - Returned Case
+    * - DM_Performance
+      - Returned Case
       - Shows whether the case was returned at least once to the requestor during processing. 
       - ``1``, ``0``
       - SG, SharePoint
+      - N/A
       - ``1`` = returned; ``0`` = else 
       - View details: :colrefopen:`perf_Returned_Case`
 
-    * - Emergency Flag (Case)
+    * - DM_Performance
+      - Emergency Flag (Case)
       - Classifies cases as either Emergency or Standard based on a platform-specific flag or indicator field. 
       - ``Emergency``, ``Standard``
       - SG, TMS
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_Emergency_Flag_Case`
     
-    * - Emergency Flag (Country)
+    * - DM_Performance
+      - Emergency Flag (Country)
       - Classifies cases as Emergency or Standard based on the country-related emergency indicator. 
       - ``Emergency``, ``Standard``
       - SG, TMS
+      - N/A
       - Some platforms default all values to 'Standard'.
       - View details: :colrefopen:`perf_Emergency_Flag_Country`
     
-    * - Overdue
+    * - DM_Performance
+      - Overdue
       - Shows whether the case breached its SLA. 
       - ``1``, ``0``
       - SG, SharePoint
+      - N/A
       - ``1`` = overdue; ``0`` = not overdue 
       - View details: :colrefopen:`perf_Overdue`
 
-    * - SLA Met
+    * - DM_Performance
+      - SLA Met
       - Shows whether the case met its SLA. 
       - ``1``, ``0``
       - SG, TMS, SharePoint
+      - N/A
       - ``1`` = SLA met; ``0`` = SLA breached 
       - View details: :colrefopen:`perf_SLA_Met`
 
-    * - SLA Target (Hours)
+    * - DM_Performance
+      - SLA Target (Hours)
       - SLA target duration for completing a case, shown in hours. 
       - ``1``, ``2``, ``3``, ``4``
       - SG, TMS, SharePoint
+      - N/A
       - Converted from datetime duration or calculated from business days, depending on platform. 
       - View details: :colrefopen:`perf_SLA_Target_Hours`
     
-    * - SLA Target (Business Days)
+    * - DM_Performance
+      - SLA Target (Business Days)
       - SLA target duration for completing a case, shown in business days.
       - ``1``, ``2``, ``3``, ``4``
       - SG, TMS, SharePoint
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_SLA_Target_Business_Days`
     
-    * - SLA Description
+    * - DM_Performance
+      - SLA Description
       - Human-readable name of the SLA assigned to the case. 
-      - ``UNI CCC SLA - 1 Day``, ``UNI FIC SLA - 2 Days``
+      - ``CCC SLA - 1 Day``, ``FIC SLA - 2 Days``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_SLA_Description`
 
-    * - SLA Schedule
+    * - DM_Performance
+      - SLA Schedule
       - The working calendar/schedule against which the SLA is measured (e.g., working hours, payroll calendars, or business day rules). 
-      - ``UNI Bank Reconciliation``
+      - ``Bank Reconciliation``
       - SG
+      - N/A
       - N/A 
       - View details: :colrefopen:`perf_SLA_Schedule`
 
-    * - OLA Met
+    * - DM_Performance
+      - OLA Met
       - Shows whether the OLA was met for the case. 
       - ``1``, ``0``
       - SG
+      - N/A
       - ``1`` = OLA met; ``0`` = OLA breached. Based on breach flag from task SLA. 
       - View details: :colrefopen:`perf_OLA_Met`
-    
-    * - OLA Target (Hours)
-      - Target resolution time for OLA commitments, expressed in hours. 
-      - ``NULL``
-      - N/A
-      - Not populated
-      - View details: :colrefopen:`perf_OLA_Target_Hours`
-    
-    * - OLA Target (Business Days)
-      - Target resolution time for OLA commitments, expressed in business days.
-      - ``NULL``
-      - N/A
-      - Not populated 
-      - View details: :colrefopen:`perf_OLA_Target_Business_Days`
-
-    * - OLA Description
-      - OLA name assigned to the case. 
-      - ``UNI TRVL SLA - 3 days``
-      - SG
-      - N/A 
-      - View details: :colrefopen:`perf_OLA_Description`
-
-    * - Created By - User Name
-      - User ID of the person who created the case in the source system. 
-      - ``jsmith``, ``jsmith@outlook.com``
-      - SG
-      - N/A 
-      - 
-    
-    * - Created By - Name
-      - Full name of the person who created the case in the source system. 
-      - ``Jane Smith``
-      - SG, TMS, SharePoint
-      - N/A 
-      - 
-    
-    * - Created By - PERNR
-      - SAP personnel number of the person who created the case.
-      - ``01135678``
-      - SG
-      - N/A 
-      - 
-
-    * - Created By - Duty Station
-      - Service Area of the person who created the case. 
-      - ``Egypt``, ``Demo``
-      - SG
-      - Column name misleading: Values in the column are Service Areas, not duty stations.
-      - 
-
-    * - Created By - Org. Unit
-      - Organizational unit of the case creator, such as office, section, or division. 
-      - ``Islamabad, Pakistan``
-      - SG
-      - N/A 
-      - 
-    
-    * - Opened For - User Name
-      - Username of the person for whom the case was opened (i.e., the subject of the request).
-      - ``jsmith``
-      - SG
-      - N/A 
-      - 
-    
-    * - Opened For - Name
-      - Full name of the person for whom the case was opened (i.e., the subject of the request). 
-      - ``Jane Smith``
-      - SG
-      - N/A 
-      - 
-
-    * - Opened For - PERNR
-      - SAP personnel number of the person for whom the case was opened. 
-      - ``01135678``
-      - SG, TMS, SharePoint
-      - N/A 
-      - 
-
-    * - Opened For - Duty Station
-      - Service Area of the person for whom the case was opened. 
-      - ``Egypt``, ``Demo``
-      - SG, TMS
-      - Column name misleading: Values in the column are Service Areas, not duty stations. 
-      - 
-    
-    * - Opened For - Org. Unit
-      - Organizational unit of the person for whom the case was opened, such as office, section, or division. 
-      - ``Islamabad, Pakistan``
-      - SG, TMS
-      - N/A 
-      - 
-    
-    * - Subject Person - User Name
-      - Username of the person who is the subject of the case, if different from the requester.
-      - ``jsmith``
-      - SG, TMS
-      - N/A 
-      - 
-
-    * - Subject Person - Name
-      - Full name of the person who is the subject of the case, if different from the requester. 
-      - ``Jane Smith``
-      - SG, TMS, SharePoint
-      - N/A 
-      - 
-
-    * - Subject Person - PERNR
-      - SAP personnel number of the person who is the subject of the case. 
-      - ``01135678``
-      - SG, TMS, SharePoint
-      - N/A 
-      - 
-    
-    * - Subject Person - Duty Station
-      - Service Area of the person who is the subject of the case. 
-      - ``Egypt``, ``Demo``
-      - SG, TMS, SharePoint
-      - Column name misleading: Values in the column are Service Areas, not duty stations. 
-      - 
-    
-    * - Subject Person - Org. Unit
-      - Organizational unit of the person who is the subject of the case. 
-      - ``Islamabad, Pakistan``
-      - SG, TMS
-      - N/A 
-      - 
-
-    * - Assigned To - User Name
-      - Username of the person to whom the case was assigned. 
-      - ``jsmith``
-      - SG, TMS, SharePoint
-      - N/A 
-      - 
-
-    * - Assigned To - Name
-      - Full name of the person to whom the case was assigned. 
-      - ``Jane Smith``
-      - SG, TMS
-      - N/A 
-      - 
-    
-    * - Assigned To - PERNR
-      - SAP personnel number of the person to whom the case was assigned. 
-      - ``01135678``
-      - SG
-      - N/A 
-      - 
-    
-    * - Assigned To - Duty Station
-      - Service Area of the person to whom the case was assigned. 
-      - ``Egypt``, ``Demo``
-      - SG
-      - Column name misleading: Values in the column are Service Areas, not duty stations.
-      - 
-
-    * - Assigned To - Org. Unit
-      - Organizational unit of the person to whom the case was assigned. 
-      - ``Islamabad, Pakistan``
-      - SG, TMS
-      - N/A 
-      - 
-
-    * - Parked By - User Name
-      - Username of the person who parked the case. 
-      - ``jsmith``
-      - SG
-      - Park = Save invoice in SAP (for review, validation, or approval) before posting it for payment. 
-      - 
-    
-    * - Parked By - Name
-      - Full name of the person who parked the case. 
-      - ``Jane Smith``
-      - SG
-      - Park = Save invoice in SAP (for review, validation, or approval) before posting it for payment. 
-      - 
-    
-    * - Parked By - PERNR
-      - SAP personnel number of the person who parked the case. 
-      - ``01135678``
-      - SG, TMS, SharePoint
-      - Park = Save invoice in SAP (for review, validation, or approval) before posting it for payment. 
-      - 
-
-    * - Parked By - Duty Station
-      - Service Area of the person who parked the case 
-      - ``Egypt``, ``Demo``
-      - SG, TMS, SharePoint
-      - Column name misleading: Values in the column are Service Areas, not duty stations. Park = Save an invoice in SAP (for review, validation, or approval) before posting it for payment.
-      - 
-
-    * - Parked By - Org. Unit
-      - Organizational unit of the person who parked the case. 
-      - ``Islamabad, Pakistan``
-      - SG, TMS, SharePoint
-      - Park = Save an invoice in SAP (for review, validation, or approval) before posting it for payment. 
-      - 
-    
-    * - Closed By - User Name
-      - Username of the person who closed the case. 
-      - ``jsmith``
-      - SG
-      - N/A 
-      - 
-    
-    * - Closed By - Name
-      - Full name of the person who closed the case. 
-      - ``Jane Smith``
-      - SG, TMS
-      - N/A 
-      - 
-
-    * - Closed By - PERNR
-      - SAP personnel number of the person who closed the case. 
-      - ``01135678``
-      - SG
-      - N/A 
-      - 
-    
-    * - Closed By - Duty Station
-      - Service Area of the individual who closed the case. 
-      - ``Egypt``, ``Demo``
-      - SG, TMS
-      - Column name misleading: Values in the column are Service Areas, not duty stations.
-      - 
-
-    * - Closed By - Org. Unit
-      - Organizational unit of the person who closed the case. 
-      - ``Islamabad, Pakistan``
-      - SG, TMS
-      - N/A 
-      - 
-    
-    * - HR - PCAF (seconds)
-      - Elapsed time for processing PCAF, measured in seconds.
-      - ``12070581``
-      - SG
-      - PCAF = Payroll Clearance Action Form (used in Payroll for confirming that all obligations are settled and equipment returned before final payments can be made). 
-      - 
-
-    * - HR - PCAF (Business Days)
-      - Elapsed time for processing PCAF, measured in business days. 
-      - ``1.03``, ``19.12``
-      - SG, TMS, SharePoint
-      - PCAF = Payroll Clearance Action Form (used in Payroll for confirming that all obligations are settled and equipment returned before final payments can be made). 
-      - 
-    
-    * - GA - Cluster
-      - General accounting cluster responsible for processing or oversight of the case. 
-      - ``ClusterB - PPD UK``, ``DFAM``
-      - SG
-      - Cluster = A group of humanitarian organizations working together within specific sectors of emergency response, such as water, health, and logistics. (?)
-      - 
-
-    * - FIN - FI Document Number
-      - VISION FI document number linked to the case. 
-      - ``5100022611``
-      - SG
-      - N/A 
-      - 
-    
-    * - FIN - Fiscal Year
-      - Fiscal year of the financial transaction or VISION document linked to the case. 
-      - ``2023``
-      - SG
-      - N/A 
-      - 
-
-    * - FIN - Processor Error
-      - Shows whether a processor error occurred during financial processing. 
-      - ``true``, ``false``
-      - SG
-      - N/A 
-      - 
-    
-    * - VISION - Payment Terms
-      - SAP payment terms code from VISION, used to define conditions such as due dates and discount periods for financial transactions. 
-      - ``Z020``, ``Y109``
-      - N/A
-      - Not implemented in any case type. 
-      - 
-
-    * - FIN - Payment Terms in Days
-      - The number of days allowed for payment after invoice date.
-      - ``5``, ``10``, ``30``
-      - N/A
-      - Exists only to help update ``FIN - Combined SLA Met``.
-      - N/A
-    
-    * - FIN - Payment Document Number
-      - SAP payment document number from VISION, used to identify the financial document associated with a completed payment. 
-      - ``3230132864``
-      - N/A
-      - Not implemented in any case type. 
-      - N/A
-
-    * - FIN - Payment Fiscal Year
-      - Fiscal year in which the payment was processed in VISION. 
-      - ``2023``
-      - N/A
-      - Not implemented in any case type. 
-      - N/A
-    
-    * - FIN - Combined SLA Met
-      - Shows whether the combined SLA (covering both processing and payment steps) was met for the case.
-      - ``1``, ``0``
-      - SG, SharePoint
-      - ``1`` = met, ``0`` = breached
-      - 
-
-    * - FIN - End-to-end Flag
-      - Shows whether a Finance SG Case and an SAP Accounting Document are connected. 
-      - ``1``, ``0``
-      - SG
-      - If the value is ``1``, end-to-end reporting is possible for the case. 
-      - 
-    
-    * - FIN - Invoice Document Type
-      - Type of the financial transaction (e.g., standard invoice, credit memo, clearing). 
-      - ``AB``, ``DR``, ``KR``, ``ZT``
-      - SG
-      - Not implemented in any case type.
-      - N/A
-
-    * - FIN - Payment Reversed
-      - Shows whether the payment was reversed in VISION. 
-      - ``X``, ``NULL``, ``NULL``
-      - SG
-      - ``X``, ``NULL`` = reversed; ``NULL`` = not reversed. Field not implemented in any case type.
-      - N/A
-    
-    * - E2E - Open Date
-      - Opening date for end-to-end processing. 
-      - ``2023-07-07``
-      - SG
-      - N/A 
-      - 
-
-    * - E2E - Close Date
-      - Closing date for end-to-end processing. 
-      - ``2023-07-07``
-      - SG
-      - N/A 
-      - 
-    
-    * - E2E - SLA Met
-      - Shows whether the end-to-end processing met the SLA. 
-      - ``1``, ``0``
-      - SG
-      - ``1`` = met, ``0`` = breached 
-      - N/A
-
-    * - E2E - SLA Target
-      - SLA target resolution time for end-to-end processing. 
-      - ``2``, ``5``
-      - SG
-      - N/A 
-      - N/A
-    
-    * - E2E - Processing Time (Business Days)
-      - Total time taken to complete the end-to-end process, measured in business days. 
-      - ``6.136805``
-      - SG
-      - N/A 
-      - N/A
-
-    * - E2E - Elapsed Time(Business Days)
-      - Total calendar time from open to close of the end-to-end process, measured in business days. 
-      - ``12.860000``
-      - SG
-      - N/A 
-      - N/A
-    
-    * - E2E - Returned Case
-      - Shows whether the case involved at least one return during end-to-end processing. 
-      - ``1``, ``NULL``
-      - SG
-      - N/A 
-      - N/A
-
-    * - E2E - Invoicing Processing Time
-      - Time taken to complete the invoicing portion of the end-to-end process, measured in business days. 
-      - ``7.205451``
-      - SG
-      - N/A 
-      - N/A
-    
-    * - E2E - Payment Processing Time
-      - Time taken to complete the payment portion of the end-to-end process, measured in business days. 
-      - ``7.205451``
-      - SG
-      - N/A 
-      - N/A
-
-    * - FIN - CO Invoicing Cycle Time (Business Days)
-      - Duration between case initiation and completion of invoicing in VISION, measured in business days. 
-      - ``41``, ``69``
-      - SG
-      - N/A 
-      - 
-    
-    * - FIN - Invoice Amount
-      - Invoice Amount in USD
-      - ``4528.07``
-      - SG
-      - N/A 
-      - 
-
-    * - Client DB Flag
-      - Shows whether a row is in the Client Dashboard PBI report. 
-      - ``1``, ``0``
-      - N/A
-      - Value is hardcoded. ``1`` = in the dashboard, ``0`` = not in the dashboard.
-      - N/A
-    
-    * - RR59 Flag
-      - Shows whether a row is in the Country Office Performance Dashboard. 
-      - ``1``, ``0``
-      - N/A
-      - Value is hardcoded. ``1`` = in the dashboard, ``0`` = not in the dashboard. 
-      - N/A
-
-    * - OPS_W2 Flag
-      - N/A
-      - N/A
-      - N/A
-      - Inactive column.
-      - N/A
-    
-    * - OPS_M2 Flag
-      - N/A 
-      - N/A
-      - N/A
-      - Inactive column. 
-      - N/A
-
-    * - Internal_Dashboard_Flag
-      - Shows whether a row is in the Internal SLA Performance Dashboard PBI report. 
-      - ``1``, ``0``
-      - N/A
-      - Value is hardcoded. ``1`` = in the dashboard, ``0`` = not in the dashboard.
-      - N/A
-    
-    * - Related assignment group
-      - Name of the support or functional group responsible for handling the case. 
-      - ``Agora Support``, ``BUF Help Desk``
-      - SG
-      - N/A 
-      - N/A
-
-    * - Tier
-      - Support level responsible for handling the case, reflecting escalation or specialization within the assignment process. 
-      - ``Tier 1 - Customer Care``, ``Tier 2 - HR SME``
-      - SG
-      - N/A 
-      - N/A
-    
-    * - General enquiries - area
-      - Functional area to which a general enquiry case is routed.  
-      - ``Finance``, ``HR``
-      - SG
-      - N/A 
-      - ?
-
-    * - General enquiries - category
-      - Topic or subject matter of the general enquiry
-      - ``Change in dependent``, ``Entitlement travel``
-      - SG
-      - N/A 
-      - N/A
-    
-    * - Management_Dashboard_Flag
-      - Shows whether a row is in the Management Dashboard PBI report. 
-      - ``1``, ``0``
-      - N/A
-      - Value is hardcoded. ``1`` = in the dashboard, ``0`` = not in the dashboard. 
-      - N/A
-
-    * - Assignment Group - Demo
-      - Shows whether the assignment group belongs to the Demo. 
-      - ``1``, ``0``
-      - N/A
-      - Value is hardcoded. ``1`` = yes, ``0`` = no
-      - N/A
-    
-    * - GA - Fund Type
-      - Classification of the funding source linked to the General Accounting cluster (?) 
-      - ``Common services - GX``, ``Development/ ORR``
-      - SG
-      - Distinguishes between emergency and non-emergency types. (?) 
-      - 
-
-    * - FIN - Vendor Number
-      - Vendor number extracted from the case description based on invoice type. 
-      - ``S72007912``
-      - SG
-      - Logic varies depending on whether the invoice is Direct or PO-based. 
-      - 
-    
-    * - FIN - Vendor Name
-      - Name of the vendor. 
-      - ``Advantco International LLC``
-      - SG
-      - N/A 
-      - N/A
-
-    * - Exception Reason
-      - N/A 
-      - N/A
-      - SG, TMS, SharePoint
-      - ``NULL`` or ``Document Date in VISION doc is mistyped, cycle time is invalid, corrupts reports. Need fixing on VISION side``
-      - N/A
-    
-    * - FIN - Vendor Group
-      - N/A 
-      - ``NULL``
-      - N/A
-      - N/A 
-      - N/A
-
-    * - task.sys_id
-      - System ID for each task record in SG 
-      - ``b22a9ebf8705d1d4ee6465bc8bbb3593``
-      - SG
-      - N/A 
-      - 
-    
-    * - task_sla.sys_id
-      - System ID for the SLA that corresponds to the task in SG
-      - ``3e73f223db694450afce6c16ca96193d``
-      - SG
-      - N/A 
-      - 
-
-    * - contract_sla.sys_id
-      - System ID for the Contract SLA that corresponds to the task in SG 
-      - ``001d5c84db1f2fc0085184735b961997``
-      - SG
-      - N/A 
-      - 
-    
-    * - shc_case.sys_id
-      - System ID for each case record in SG 
-      - ``728b5ec587afc1149fddece09bbb35ec``
-      - SG
-      - N/A 
-      - 
-
-    * - task.Extract_Timestamp
-      - Timestamp when the Task row was last extracted 
-      - ``2023-07-07 08:47:53.000``
-      - N/A
-      - N/A 
-      - N/A
-    
-    * - task_sla.Extract_Timestamp
-      - Timestamp when the SLA data for the Task was last extracted. 
-      - ``2023-07-07 08:47:53.000``
-      - N/A
-      - N/A 
-      - N/A
-
-    * - contract_sla.Extract_Timestamp
-      - Timestamp when the Contract SLA data for the Task was last extracted 
-      - ``2023-07-07 08:47:53.000``
-      - N/A
-      - N/A 
-      - N/A
-    
-    * - sn_hr_core_case.Extract_Timestamp
-      - Timestamp when the HR core case data for the Task was last extracted 
-      - ``2023-07-07 08:47:53.000``
-      - N/A
-      - N/A 
-      - N/A
-
-    * - tabkey
-      - N/A 
-      - ``NULL``
-      - N/A
-      - N/A 
-      - N/A
-    
-    * - Processed_TimeStamp
-      - N/A 
-      - ``NULL``
-      - N/A
-      - N/A 
-      - N/A
-
-    * - MDM LFP Releaser
-      - Full name of LFP releaser
-      - ``Jane Smith``
-      - N/A
-      - N/A
-      - N/A
-
     
 .. ================================================================================================================================
 .. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1323,9 +834,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                         WHERE P.[Case Number] = M.[task.number]
                             AND P.[Last Update Datetime] = M.[task.sys_updated_on]
                     );
-                
-                -- Table [x_adsr_unall_travel_case] is a custom-built copy of [sn_hr_core_case]
-                -- with the aim to keep travel cases separate from other cases.
 
         .. tab-item:: SG CIC
 
@@ -1399,8 +907,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     ON A.[GTEXT_Service Area description] = i.[Subject Person - Duty Station]
                 WHERE 
                     i.Platform = 'TMS';
-                
-                -- Code to be reviewed, data should not come from raw tables.
 
         .. tab-item:: SharePoint JC
 
@@ -1493,8 +999,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 WHERE LEFT([Case Number],3) = 'INC'
                     AND DM.dbo.DM_SG_Incidents.[task.number] = DM_Performance.[Case Number]
                     AND DM_Performance.[Service Area - Name] IS NULL;
-
-                -- Code to be reviewed; data should not come from raw tables.
                 
         .. tab-item:: SG Trv
 
@@ -1611,9 +1115,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                     ON i.[Case Number] = M.[ID]
                 WHERE 
                     i.[Platform] = 'Sharepoint';
-
-                -- Updated in a temporary table called #temp
-                -- and at the end of the SP the values of #temp are inserted into the DM_Performance table.
 
 
 .. ===========================================================================================
@@ -1840,8 +1341,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 WHERE Region = 'Reg2R'
                     AND LEFT ( [Case Number] , 3 ) = 'INC'
 
-                -- Code to be reviewed; data should not come from raw tables.
-
         .. tab-item:: SG Trv
 
             - :fa:`database` *Lineage:* ``SN_raw.dbo.x_adsr_unall_travel_case.[u_Service_Area_code]`` → ``DM_Calendar.[Region]`` (keyed by ``DM_Calendar.[Service Area - Code]`` at latest ``DM_Calendar.[Master Date]``)
@@ -1891,8 +1390,6 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 INNER JOIN SAP_Raw.dbo.ZDEPT_UNIT AS R
                     ON I.[Service Area - Code] = R.[GSBER_Service Area]
                 WHERE I.[Case Number] LIKE 'CIC%';
-
-                -- Code to be reviewed, data should not come from raw tables.
 
         .. tab-item:: SG RAS
 
@@ -9258,471 +8755,3 @@ Filter with header icons > Expand row toggles for hidden fields > Click truncate
                 -- ?
 
 
-.. =====================================================================================================
-.. ======== OLA Target (Hours) =========================================================================
-.. =====================================================================================================
-
-.. colref-detail:: perf_OLA_Target_Hours
-    :title: OLA Target (Hours)
-
-    .. tab-set::
-        :class: dt-tabs-compact
-
-        .. tab-item:: SG Cases
-
-            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[contract_sla.duration]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-
-                DROP TABLE IF EXISTS #DM_Performance_OLA;
-                CREATE TABLE #DM_Performance_OLA
-                (
-                    [task.number]                         nvarchar(12)
-                    , [task_sla.sla:contract_sla.name]    nvarchar(255)
-                    , [task_sla.has_breached]             nvarchar(12)
-                    , [task_sla.sys_updated_on]           datetime
-                    , [contract_sla.duration]             datetime
-                );
-
-                INSERT INTO #DM_Performance_OLA
-                (   [task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached], [task_sla.sys_updated_on], [contract_sla.duration] )
-                SELECT
-                    [task.number]
-                    , [task_sla.sla:contract_sla.name]
-                    , [task_sla.has_breached]
-                    , [task_sla.sys_updated_on]
-                    , [contract_sla.duration]
-                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
-                WHERE [contract_sla.type.sys_choice] = 'OLA';
-
-                WITH cte AS
-                (
-                    SELECT ROW_NUMBER() OVER (PARTITION BY [task.number] ORDER BY [task.number], [task_sla.sys_updated_on]) AS row_num
-                    FROM #DM_Performance_OLA
-                )
-                DELETE FROM cte WHERE row_num > 1;
-
-                UPDATE DM_Performance
-                SET [OLA Target (Hours)] =
-                    DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', #DM_Performance_OLA.[contract_sla.duration])
-                FROM #DM_Performance_OLA
-                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
-                AND Platform = 'Request Portal'
-                AND LEFT([Case Number], 3) <> 'INC';
-
-        .. tab-item:: SG Inc
-
-            - :fa:`database` *Lineage:* N/A
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-                
-                -- Field not mentioned in p_DM_Performance_INC
-
-        .. tab-item:: SG Trv
-
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-contract_sla].[contract_sla.duration]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-
-                SELECT DISTINCT
-                    DATEDIFF_BIG(
-                        HOUR,
-                        '1970-01-01 00:00:00.000',
-                        C.[contract_sla.duration]
-                    ) AS [OLA Target (Hours)]
-                FROM SN.dbo.[10-task] AS M
-                INNER JOIN SN.dbo.[10-task_sla] AS S
-                    ON M.[task.sys_id] = S.[task_sla.task.value]
-                    AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
-                LEFT JOIN SN.dbo.[10-contract_sla] AS C
-                    ON C.[contract_sla.sys_id] = S.[task_sla.sys_id]
-                WHERE M.[task.number] LIKE 'TRV%'
-                    AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
-                    AND M.[task.sys_created_on] >= '2024-03-11'
-                    AND S.[task_sla.has_breached] IS NOT NULL
-                    AND ISNULL(M.[task.state.sys_choice], '') <> 'Cancelled'
-                    AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
-                    AND NOT EXISTS (
-                        SELECT 1
-                        FROM DM.dbo.DM_Performance AS P
-                        WHERE P.[Case Number] = M.[task.number]
-                            AND P.[Last Update Datetime] = M.[task.sys_updated_on]
-                    );
-
-        .. tab-item:: SG CIC
-
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-contract_sla].[contract_sla.duration]``
-            - :fa:`tag` *Setting Type:* Derived
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-
-            .. code-block:: tsql
-            
-                SELECT DISTINCT
-                    DATEDIFF_BIG(
-                        HOUR,
-                        '1970-01-01 00:00:00.000',
-                        C.[contract_sla.duration]
-                    ) AS [OLA Target (Hours)]
-                FROM SN.dbo.[10-task] AS M
-                LEFT JOIN SN.dbo.[10-task_sla] AS S
-                    ON M.[task.sys_id] = S.[task_sla.task.value]
-                    AND S.[task_sla.sla:contract_sla.name] = 'UNI Finance Invoice CIC OLA - 3 Days'
-                LEFT JOIN SN.dbo.[10-contract_sla] AS C
-                    ON C.[contract_sla.sys_id] = S.[task_sla.sys_id]
-                WHERE M.[task.number] LIKE 'CIC%'
-                    AND M.[task.state.sys_choice] NOT LIKE '%Cancel%'
-                    AND M.[task.state.sys_choice] NOT LIKE '%Read%';
-
-        .. tab-item:: SG RAS
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-
-                -- ?            
-
-        .. tab-item:: TMS
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                -- ?
-
-        .. tab-item:: SharePoint JC
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                -- ?
-
-
-.. =====================================================================================================
-.. ======== OLA Target (Business Days) =================================================================
-.. =====================================================================================================
-
-.. colref-detail:: perf_OLA_Target_Business_Days
-    :title: OLA Target (Business Days)
-
-    .. tab-set::
-        :class: dt-tabs-compact
-
-        .. tab-item:: SG Cases
-
-            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[contract_sla.duration]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-        
-                DROP TABLE IF EXISTS #DM_Performance_OLA;
-                CREATE TABLE #DM_Performance_OLA
-                (
-                    [task.number]                        nvarchar(12)
-                    , [task_sla.sla:contract_sla.name]   nvarchar(255)
-                    , [task_sla.has_breached]            nvarchar(12)
-                    , [task_sla.sys_updated_on]          datetime
-                    , [contract_sla.duration]            datetime
-                );
-
-                INSERT INTO #DM_Performance_OLA
-                    ([task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached],
-                    [task_sla.sys_updated_on], [contract_sla.duration])
-                SELECT
-                    [task.number]
-                    , [task_sla.sla:contract_sla.name]
-                    , [task_sla.has_breached]
-                    , [task_sla.sys_updated_on]
-                    , [contract_sla.duration]
-                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
-                WHERE [contract_sla.type.sys_choice] = 'OLA';
-
-                WITH cte AS (
-                    SELECT ROW_NUMBER() OVER (
-                        PARTITION BY [task.number]
-                        ORDER BY [task.number], [task_sla.sys_updated_on]
-                    ) AS row_num
-                    FROM #DM_Performance_OLA
-                )
-                DELETE FROM cte WHERE row_num > 1;
-                
-                UPDATE DM.dbo.DM_Performance
-                SET [OLA Target (Business Days)] =
-                    DATEDIFF_BIG(HOUR, '1970-01-01 00:00:00.000', #DM_Performance_OLA.[contract_sla.duration]) / 8
-                FROM #DM_Performance_OLA
-                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
-                AND Platform = 'Request Portal'
-                AND LEFT([Case Number], 3) <> 'INC'; 
-
-        .. tab-item:: SG Inc
-
-            - :fa:`database` *Lineage:* N/A
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-                
-                -- Field not mentioned in p_DM_Performance_INC
-
-        .. tab-item:: SG Trv
-
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-contract_sla].[contract_sla.duration]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                SELECT DISTINCT
-                    DATEDIFF_BIG(
-                        HOUR,
-                        '1970-01-01 00:00:00.000',
-                        C.[contract_sla.duration]
-                    ) / 8 AS [OLA Target (Business Days)]
-                FROM SN.dbo.[10-task] AS M
-                INNER JOIN SN.dbo.[10-task_sla] AS S
-                    ON M.[task.sys_id] = S.[task_sla.task.value]
-                    AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
-                LEFT JOIN SN.dbo.[10-contract_sla] AS C
-                    ON C.[contract_sla.sys_id] = S.[task_sla.sys_id]
-                WHERE M.[task.number] LIKE 'TRV%'
-                    AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
-                    AND M.[task.sys_created_on] >= '2024-03-11'
-                    AND S.[task_sla.has_breached] IS NOT NULL
-                    AND ISNULL(M.[task.state.sys_choice], '') <> 'Cancelled'
-                    AND NOT (M.[task.state.sys_choice] IS NULL AND NULLIF(M.[task.closed_at], '1900-01-01') IS NULL)
-                    AND NOT EXISTS (
-                        SELECT 1
-                        FROM DM.dbo.DM_Performance AS P
-                        WHERE P.[Case Number] = M.[task.number]
-                            AND P.[Last Update Datetime] = M.[task.sys_updated_on]
-                    );
-
-        .. tab-item:: SG CIC
-
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-contract_sla].[contract_sla.duration]``
-            - :fa:`tag` *Setting Type:* Derived 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-
-            .. code-block:: tsql
-
-                SELECT DISTINCT
-                    DATEDIFF_BIG(
-                        HOUR,
-                        '1970-01-01 00:00:00.000',
-                        C.[contract_sla.duration]
-                    ) / 8 AS [OLA Target (Business Days)]
-                FROM SN.dbo.[10-task] AS M
-                LEFT JOIN SN.dbo.[10-task_sla] AS S
-                    ON M.[task.sys_id] = S.[task_sla.task.value]
-                    AND S.[task_sla.sla:contract_sla.name] = 'UNI Finance Invoice CIC OLA - 3 Days'
-                LEFT JOIN SN.dbo.[10-contract_sla] AS C
-                    ON C.[contract_sla.sys_id] = S.[task_sla.sys_id]
-                WHERE M.[task.number] LIKE 'CIC%'
-                    AND M.[task.state.sys_choice] NOT LIKE '%Cancel%'
-                    AND M.[task.state.sys_choice] NOT LIKE '%Read%';
-
-        .. tab-item:: SG RAS
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                -- ?
-
-        .. tab-item:: TMS
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-
-                -- ?
-
-        .. tab-item:: SharePoint JC
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                -- ?
-
-
-.. =====================================================================================================
-.. ======== OLA Description ============================================================================
-.. =====================================================================================================
-
-.. colref-detail:: perf_OLA_Description
-    :title: OLA Description
-
-    .. tab-set::
-        :class: dt-tabs-compact
-
-        .. tab-item:: SG Cases
-
-            - :fa:`database` *Lineage:* ``DM.dbo.DM_SG_Cases.[task_sla.sla:contract_sla.name]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-        
-                DROP TABLE IF EXISTS #DM_Performance_OLA;
-                CREATE TABLE #DM_Performance_OLA
-                (
-                    [task.number]                        nvarchar(12)
-                    , [task_sla.sla:contract_sla.name]   nvarchar(255)
-                    , [task_sla.has_breached]            nvarchar(12)
-                    , [task_sla.sys_updated_on]          datetime
-                    , [contract_sla.duration]            datetime
-                );
-
-                INSERT INTO #DM_Performance_OLA
-                (   [task.number], [task_sla.sla:contract_sla.name], [task_sla.has_breached],
-                    [task_sla.sys_updated_on], [contract_sla.duration] )
-                SELECT
-                    [task.number]
-                    , [task_sla.sla:contract_sla.name]
-                    , [task_sla.has_breached]
-                    , [task_sla.sys_updated_on]
-                    , [contract_sla.duration]
-                FROM DM.dbo.DM_SG_Cases WITH (TABLOCK)
-                WHERE [contract_sla.type.sys_choice] = 'OLA';
-
-                WITH cte AS (
-                    SELECT ROW_NUMBER() OVER (
-                        PARTITION BY [task.number]
-                        ORDER BY [task.number], [task_sla.sys_updated_on]
-                    ) AS row_num
-                    FROM #DM_Performance_OLA
-                )
-                DELETE FROM cte WHERE row_num > 1;
-
-                UPDATE DM.dbo.DM_Performance
-                SET [OLA Description] = #DM_Performance_OLA.[task_sla.sla:contract_sla.name]
-                FROM #DM_Performance_OLA
-                WHERE #DM_Performance_OLA.[task.number] = [Case Number]
-                AND Platform = 'Request Portal'
-                AND LEFT([Case Number], 3) <> 'INC';
-
-        .. tab-item:: SG Inc
-
-            - :fa:`database` *Lineage:* N/A
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-                
-                -- Field not mentioned in p_DM_Performance_INC
-
-        .. tab-item:: SG Trv
-
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-task_sla].[task_sla.sla:contract_sla.name]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                SELECT DISTINCT
-                    S.[task_sla.sla:contract_sla.name] AS [OLA Description]
-                FROM SN.dbo.[10-task] AS M
-                INNER JOIN SN.dbo.[10-task_sla] AS S
-                    ON M.[task.sys_id] = S.[task_sla.task.value]
-                    AND S.[task_sla.sla:contract_sla.name] LIKE 'UNI%TRVL%SLA%'
-                WHERE M.[task.number] LIKE 'TRV%'
-                    AND M.[task.assignment_group:sys_user_group.name] LIKE '%Demo%'
-                    AND M.[task.sys_created_on] >= '2024-03-11'
-                    AND S.[task_sla.has_breached] IS NOT NULL
-                    AND ISNULL(M.[task.state.sys_choice], '') <> 'Cancelled'
-                    AND NOT (M.[task.state.sys_choice] IS NULL AND M.[task.closed_at] IS NULL)
-                    AND NOT EXISTS (
-                        SELECT 1
-                        FROM DM.dbo.DM_Performance AS P
-                        WHERE P.[Case Number] = M.[task.number]
-                            AND P.[Last Update Datetime] = M.[task.sys_updated_on]
-                    );
-
-        .. tab-item:: SG CIC
-
-            - :fa:`database` *Lineage:* ``SN.dbo.[10-task_sla].[task_sla.sla:contract_sla.name]``
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-
-            .. code-block:: tsql
-
-                SELECT DISTINCT
-                    S.[task_sla.sla:contract_sla.name] AS [OLA Description]
-                FROM SN.dbo.[10-task] AS M
-                LEFT JOIN SN.dbo.[10-task_sla] AS S
-                    ON M.[task.sys_id] = S.[task_sla.task.value]
-                    AND S.[task_sla.sla:contract_sla.name] = 'UNI Finance Invoice CIC OLA - 3 Days'
-                WHERE M.[task.number] LIKE 'CIC%'
-                    AND M.[task.state.sys_choice] NOT LIKE '%Cancel%'
-                    ND M.[task.state.sys_choice] NOT LIKE '%Read%';            
-
-        .. tab-item:: SG RAS
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-
-                -- ?
-
-        .. tab-item:: TMS
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:*
-        
-            .. code-block:: tsql
-
-                -- ?
-
-        .. tab-item:: SharePoint JC
-
-            - :fa:`database` *Lineage:* 
-            - :fa:`tag` *Setting Type:* 
-            - :fa:`cogs` *How:* 
-            - :fa:`filter` *Filter:* 
-        
-            .. code-block:: tsql
-
-                -- ?

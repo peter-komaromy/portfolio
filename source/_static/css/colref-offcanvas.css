@@ -589,3 +589,153 @@ html[data-theme="dark"] {
 .offcanvas.colref-offcanvas .sd-tab-content {
     box-shadow: none !important;
 }
+
+
+/* ============================================================
+   Column reference offcanvas: theme-safe color layer
+   Keep this block last.
+   ============================================================ */
+
+.offcanvas.colref-offcanvas {
+    --colref-oc-accent: var(--blue);
+    --colref-oc-bg: var(--pst-color-background);
+    --colref-oc-surface: var(--pst-color-surface);
+    --colref-oc-text: var(--pst-color-text-base);
+    --colref-oc-muted: var(--pst-color-text-muted);
+    --colref-oc-border: var(--pst-color-border);
+    --colref-oc-hover: color-mix(in srgb, var(--colref-oc-text) 7%, transparent);
+    --colref-oc-selected: color-mix(in srgb, var(--colref-oc-accent) 16%, transparent);
+
+    --bs-offcanvas-bg: var(--colref-oc-bg);
+    --bs-offcanvas-color: var(--colref-oc-text);
+    --bs-border-color: var(--colref-oc-border);
+
+    background: var(--colref-oc-bg) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .offcanvas-header,
+.offcanvas.colref-offcanvas .offcanvas-body,
+.offcanvas.colref-offcanvas .colref-toolbar {
+    background: var(--colref-oc-bg) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .offcanvas-header {
+    border-bottom-color: var(--colref-oc-accent) !important;
+}
+
+.offcanvas.colref-offcanvas :is(
+    .offcanvas-title,
+    .colref-oc-icon,
+    .colref-switcher-current,
+    .colref-dd-check,
+    .colref-kv-key
+) {
+    color: var(--colref-oc-accent) !important;
+}
+
+.offcanvas.colref-offcanvas :is(
+    .colref-switcher-icon,
+    .colref-switcher-prefix,
+    .colref-notes-toggle,
+    .colref-kv-key i,
+    .colref-kv-key svg
+) {
+    color: var(--colref-oc-muted) !important;
+}
+
+.offcanvas.colref-offcanvas .colref-kv-val {
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas ul.colref-kv > li,
+.offcanvas.colref-offcanvas ul.colref-kv.colref-meta > li,
+.offcanvas.colref-offcanvas .sd-card.no-bullets.colref-meta ul.colref-kv > li {
+    border-color: var(--colref-oc-border) !important;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-btn {
+    background: var(--colref-oc-surface) !important;
+    border-color: var(--colref-oc-border) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .colref-switcher-btn:hover,
+.offcanvas.colref-offcanvas .colref-switcher-btn:focus {
+    background: var(--colref-oc-hover) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu {
+    --bs-dropdown-bg: var(--colref-oc-surface);
+    --bs-dropdown-color: var(--colref-oc-text);
+    --bs-dropdown-link-color: var(--colref-oc-text);
+    --bs-dropdown-link-hover-color: var(--colref-oc-text);
+    --bs-dropdown-link-hover-bg: var(--colref-oc-hover);
+    --bs-dropdown-link-active-color: var(--colref-oc-text);
+    --bs-dropdown-link-active-bg: var(--colref-oc-selected);
+
+    background: var(--colref-oc-surface) !important;
+    border-color: var(--colref-oc-border) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item {
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item:hover,
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item:focus,
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item.active,
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item:active {
+    background: var(--colref-oc-hover) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas .dropdown-menu.colref-switcher-menu .dropdown-item.is-selected {
+    background: var(--colref-oc-selected) !important;
+    color: var(--colref-oc-text) !important;
+}
+
+.offcanvas.colref-offcanvas :is(code, .inline-code) {
+    background: var(--colref-oc-surface) !important;
+    color: var(--colref-oc-text) !important;
+    border-color: var(--colref-oc-border) !important;
+}
+
+html[data-theme="light"] .offcanvas.colref-offcanvas div.highlight,
+html[data-theme="light"] .offcanvas.colref-offcanvas div.highlight pre,
+html[data-theme="light"] .offcanvas.colref-offcanvas pre {
+    background: #f8f9fb !important;
+    color: var(--pst-color-text-base) !important;
+    border-color: var(--pst-color-border) !important;
+}
+
+html[data-theme="light"] .offcanvas.colref-offcanvas div.highlight :is(span, code),
+html[data-theme="light"] .offcanvas.colref-offcanvas pre :is(span, code) {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .offcanvas.colref-offcanvas div.highlight,
+html[data-theme="dark"] .offcanvas.colref-offcanvas div.highlight pre,
+html[data-theme="dark"] .offcanvas.colref-offcanvas pre {
+    background: #273241 !important;
+    color: #f3f6fb !important;
+    border-color: var(--pst-color-border) !important;
+}
+
+html[data-theme="dark"] .offcanvas.colref-offcanvas div.highlight :is(span, code),
+html[data-theme="dark"] .offcanvas.colref-offcanvas pre :is(span, code) {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .offcanvas.colref-offcanvas .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: .8;
+}
+
+html[data-theme="dark"] .offcanvas.colref-offcanvas .btn-close:hover {
+    opacity: 1;
+}
+

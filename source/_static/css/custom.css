@@ -1339,6 +1339,8 @@ img.pbi-inline-icon {
     margin-right: 0.25em;
 }
 
+/* -------------------------------------------------------------------- */
+
 .case-study-intro-grid {
     max-width: 100%;
     margin-bottom: 1rem;
@@ -1351,8 +1353,7 @@ img.pbi-inline-icon {
 }
 
 .case-study-facts {
-    font-size: 0.875rem;
-    line-height: 1.35;
+    font-size: 0.9rem;
     border-left: 4px solid var(--blue);
 }
 

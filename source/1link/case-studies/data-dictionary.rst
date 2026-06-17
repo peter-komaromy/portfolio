@@ -29,9 +29,9 @@ Data Dictionary
   .. grid-item-card::
     :columns: 6
 
-    I designed and built a *business data dictionary* for a data warehouse client. It had two audiences: Business users needed clear definitions, sample values, and source context, while data operations needed lineage, filters, and implementation logic without turning the main table into a technical inventory.
+    I designed and built a *data dictionary* for a data warehouse client. It had two audiences: **business users** needed clear definitions, sample values, and source context, while an **operations team** needed lineage, filters, and implementation logic without turning the main table into a technical inventory.
 
-    I used a layered documentation model. The visible table supports everyday lookup. Row toggles and the :fas:`circle-info;sd-text-info` icon open deeper technical notes only when needed.
+    I used a layered documentation model. The visible table supports everyday lookup. Row toggles and the :fas:`circle-info;sd-text-info` icon open technical notes only when needed.
 
     The sample below includes selected columns from four data marts. It shows search, filters, expandable rows, dropdown options, copy actions, popovers for truncated values, and offcanvases for technical details.
 
@@ -53,6 +53,8 @@ Data Dictionary
 .. =================================================================================================================
 .. --- DM_Changes Col. Ref. ---------------------------------------------------------------------------------------
 .. =================================================================================================================
+
+.. rubric:: *Sample 1*
 
 .. list-table::
     :header-rows: 1

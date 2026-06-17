@@ -8,20 +8,46 @@
         .bd-page-width { max-width: 100%; }
         .table thead tr { background-color: #fff; border-bottom: 2px solid #000; }
         :root{ --colref-colname-max: 30rem; --colref-samples-max: 34rem; }
-        p { margin-bottom: 4px; } 
+        html[data-theme="light"] { --card-title-color: #004080; } html[data-theme="dark"] {--card-title-color: #6195c9; }
+        .sd-card-title { color: var(--card-title-color); }
+        p { margin-bottom: 4px; }         
     </style>
-
 
 .. ================================================================================================================
 
-.. rst-class:: pst-primary-sidebar-narrow
+.. rst-class:: pst-primary-sidebar-narrow 
 
 Data Dictionary
 ===============
 
 |br|
 
-Filter with header icons > Expand row toggles for hidden fields > Click truncated text or  :fas:`circle-info;sd-text-info` for full details.
+.. grid:: 1 1 2 2
+  :gutter: 4
+  :class-container: case-study-intro-grid
+
+  .. grid-item-card::
+    :columns: 6
+
+    I designed and built a *business data dictionary* for a data warehouse client. It had two audiences: Business users needed clear definitions, sample values, and source context, while data operations needed lineage, filters, and implementation logic without turning the main table into a technical inventory.
+
+    I used a layered documentation model. The visible table supports everyday lookup. Row toggles and the :fas:`circle-info;sd-text-info` icon open deeper technical notes only when needed.
+
+    The sample below includes selected columns from four data marts. It shows search, filters, expandable rows, dropdown options, copy actions, popovers for truncated values, and offcanvases for technical details.
+
+  .. grid-item-card:: Skills shown
+    :columns: 6
+    :class-card: case-study-facts
+
+    :blue-bold:`Research` - Checked warehouse tables and stored procedures in SSMS with T-SQL.
+    
+    :blue-bold:`Content design` - Turned technical findings into definitions, examples, source context, and remarks.
+    
+    :blue-bold:`Information architecture` - Kept business content visible and moved lineage, filters, and SQL logic into expandable details.
+    
+    :blue-bold:`AI-supported review` - Used AI to identify lineage candidates, then checked the results manually.
+    
+    :blue-bold:`Implementation` - Built the sample with Sphinx, DataTables, Python extensions, CSS, and JavaScript.
 
 
 .. =================================================================================================================

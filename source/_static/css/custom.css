@@ -1338,3 +1338,24 @@ img.pbi-inline-icon {
     vertical-align: -0.12em;
     margin-right: 0.25em;
 }
+
+.case-study-intro-grid {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.case-study-page .para-list,
+.case-study-page .para-list + ul.simple,
+.case-study-page .case-study-intro-grid + p {
+    max-width: 68ch;
+}
+
+.case-study-facts {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    border-left: 4px solid var(--blue);
+}
+
+.case-study-facts .sd-card-body > p {
+    margin: 0.35rem 0;
+}      

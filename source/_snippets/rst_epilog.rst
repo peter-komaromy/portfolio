@@ -3,7 +3,7 @@
    --- SUBSTITUTION DEFINITIONS ----------------------------------------------
    ===========================================================================
 
-.. Substitutions are inline directives: define them here and use them inline
+   Substitutions are inline directives: define them here and use them inline
 
 .. ---- GENERIC SITE-WIDE --------------------------------------------
 
@@ -33,8 +33,7 @@
 
 .. ----- LINKS TO OPEN IN NEW BROWSER TAB ------------------------------
 
-    .. |ColRef_Excel_Link_DM_Trips| raw:: html
-
+    .. |ColRef_Excel_Link_DM_Trips| raw:: html        
         <a href="https://" target="_blank" rel="noopener">Excel version</a>
 
     

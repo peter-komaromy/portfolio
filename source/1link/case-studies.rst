@@ -1,4 +1,5 @@
-:html_theme.sidebar_secondary.remove: true
+..
+   :html_theme.sidebar_secondary.remove: true
 
 .. raw:: html
 
@@ -14,6 +15,7 @@
    </style>
 
 .. rst-class:: case-study-note pst-primary-sidebar-narrow
+
 
 Case Studies
 ============

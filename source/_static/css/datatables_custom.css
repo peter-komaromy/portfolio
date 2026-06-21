@@ -632,3 +632,60 @@ html[data-theme="dark"] .dt-container table.dataTable.dtr-inline.collapsed > tbo
     background: transparent !important;
     box-shadow: none !important;
 }
+
+/* ============================================================
+   ColumnControl dropdown dark-mode fixes
+   Keep this block last.
+   ============================================================ */
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown {
+    background: var(--dt-dark-surface) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown :is(
+    label,
+    span,
+    div,
+    p,
+    button,
+    input,
+    select
+) {
+    color: var(--dt-dark-text) !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown :is(input, select) {
+    background: var(--dt-dark-bg) !important;
+    color: var(--dt-dark-text) !important;
+    border-color: var(--dt-dark-border) !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown select option {
+    background: #151a21 !important;
+    color: #e6edf3 !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown button {
+    background: transparent !important;
+    color: var(--dt-dark-text) !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown button:hover,
+html[data-theme="dark"] .dt-container .dtcc-dropdown button:focus,
+html[data-theme="dark"] .dt-container .dtcc-dropdown button:active {
+    background: var(--dt-dark-hover) !important;
+    color: var(--dt-dark-text) !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown .dtcc-button,
+html[data-theme="dark"] .dt-container .dtcc-dropdown .dtcc-button span {
+    color: var(--dt-dark-text) !important;
+}
+
+html[data-theme="dark"] .dt-container .dtcc-dropdown svg {
+    color: var(--blue) !important;
+    stroke: currentColor !important;
+}

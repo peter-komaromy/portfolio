@@ -10,6 +10,7 @@
         :root{ --colref-colname-max: 30rem; --colref-samples-max: 34rem; }
         html[data-theme="light"] { --card-title-color: #004080; } html[data-theme="dark"] {--card-title-color: #6195c9; }
         .sd-card-title { color: var(--card-title-color); }
+        .sd-card-body { padding: 1.5rem 2rem; }
         p { margin-bottom: 4px; }         
     </style>
 
@@ -26,15 +27,21 @@ Data Dictionary
   :gutter: 4
   :class-container: case-study-intro-grid
 
-  .. grid-item-card::
+  .. grid-item-card:: Design approach
     :columns: 6
 
-    I designed and built a *data dictionary* for a data warehouse client. It had two audiences: **business users** needed clear definitions, sample values, and source context, while an **operations team** needed lineage, filters, and implementation logic without turning the main table into a technical inventory.
+    :blue-bold:`Purpose`
+    - Help data warehouse users look up and understand columns.
+    
+    :blue-bold:`Audience split`
+    - Business users needed quick answers. Operations users needed enough detail to verify data logic.
 
-    I used a layered documentation model. The visible table supports everyday lookup. Row toggles and the :fas:`circle-info;sd-text-info` icon open technical notes only when needed.
+    :blue-bold:`UX constraint`  
+    - Adding every technical field to the main table would make the dictionary harder to use.
 
-    The sample below includes selected columns from three data marts. It shows search, filters, expandable rows, dropdown options, copy actions, popovers for truncated values, and detail panels for technical context.
-
+    :blue-bold:`Solution`  
+    - A layered design: lookup fields stay visible while technical details open through row toggles and info popovers.
+    
   .. grid-item-card:: Skills shown
     :columns: 6
     :class-card: case-study-facts

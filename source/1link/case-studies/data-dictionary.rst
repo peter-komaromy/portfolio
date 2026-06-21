@@ -40,7 +40,7 @@ Data Dictionary
     - Adding every technical field to the main table would make the dictionary harder to use.
 
     :blue-bold:`Solution`  
-    - A layered design: lookup fields stay visible while technical details open through row toggles and info popovers.
+    - A layered design: lookup fields stay visible while technical details open through row toggles and popover panels.
     
   .. grid-item-card:: Skills shown
     :columns: 6
@@ -528,30 +528,12 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
     * - DM_Person
-      - PA0000.STAT2_Employment Status
-      - Shows whether the person is actively employed
-      - ``3``, ``0``,
-      - SAP
-      - PA0000 - HR Master Record: Infotype 0000 (Actions)
-      - ``3`` = active, ``0`` = withdrawn/inactivated
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
       - PA0000.STAT3_Special Payment Status
       - Shows whether the person has special payment status
       - ``1``, ``0``
       - SAP
       - PA0000 - HR Master Record: Infotype 0000 (Actions)
       - ``1`` = yes, ``0`` = no
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
-      - PA0000.MASSG_Reason for Action:T530T.MGTXT_Name of reason for action
-      - Text name of the reason for the personnel action
-      - ``Hire Person``, ``Promotion``
-      - SAP
-      - PA0000 - HR Master Record: Infotype 0000 (Actions)
-      - N/A
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
     * - DM_Person 
@@ -573,27 +555,9 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
     * - DM_Person
-      - PA0001.BTRTL_Personnel Subarea
-      - Code for the person's personnel subarea
-      - ``054D``, ``060D``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
       - PA0001.ENAME_Formatted Name of Employee or Applicant
       - Full name of the employee/applicant.
       - ``Jane Smith``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
-      - PA0001.FKBER_Functional Area
-      - Code that records the person's functional area
-      - ``FA5``, ``D02``, ``M03``
       - SAP
       - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
       - N/A
@@ -609,54 +573,9 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
 
     * - DM_Person
-      - PA0001.PERSG_Employee Group
-      - Code that represents the person's Employee Group
-      - ``1``, ``3``, ``C``, ``D``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``
-
-    * - DM_Person
-      - PA0001.PERSK_Employee Subgroup
-      - Code that represents the person's Employee Subgroup
-      - ``AM``, ``GN``, ``NO``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.SBMOD_Administrator Group
-      - Code that represents the person's Administrator Group
-      - ``456``, ``Demo``, ``LFP``, ``PAYR``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0001.SNAME_Employee’s Name (Sortable by LAST NAME FIRST NAME)
       - The person's sortable full name (LAST NAME FIRST NAME)
       - ``SMITH JANE``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.UNAME_Name of Person Who Changed Object
-      - SAP user name of the person who changed the record
-      - ``JSMITH``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.WERKS_Personnel Area
-      - Code for the person's Personnel Area
-      - ``006``, ``053``
       - SAP
       - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
       - N/A
@@ -717,24 +636,6 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0001.KOSTL_Cost Center:CSKT.KTEXT_General Name
-      - General name of the person's cost center
-      - ``Administrative Serv``, ``Alexandria, Egypt``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0001.KOSTL_Cost Center:CSKT.LTEXT_Description
-      - Long description of the person's cost center
-      - ``Administrative Serv``, ``Alexandria, Egypt``
-      - SAP
-      - PA0001 - HR Master Record: Infotype 0001 (Organizational Assignment)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0001.ORGEH_Organizational Unit:T527X.ORGTX_Short Text of Organizational Unit
       - Short name of the person's Organizational Unit
       - ``Finance Unit, Demo``, ``Operations Section, Egypt``
@@ -771,33 +672,6 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0002.BEGDA_Start Date
-      - Start date of the Personal Data record's validity period.
-      - ``2025-09-10``
-      - SAP
-      - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0002.ENDDA_End Date
-      - End date of the Personal Data record's validity period.
-      - ``2025-09-10``
-      - SAP
-      - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0002.FAMDT_Valid From Date of Current Marital Status
-      - Effective date from which the current marital status applies in SAP.
-      - ``2025-09-10``
-      - SAP
-      - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0002.GBDAT_Date of Birth
       - The person's date of birth as recorded in SAP
       - ``2025-09-10``
@@ -819,15 +693,6 @@ Data Dictionary
       - PA0002.GBJHR_Year of Birth
       - The person's year of birth
       - ``1981``
-      - SAP
-      - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0002.GBLND_Country of Birth
-      - Code for the person's country of birth
-      - ``012``
       - SAP
       - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
       - N/A
@@ -933,27 +798,9 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0002.NATI3_Third Nationality
-      - Code for the person's third nationality
-      - ``012``, ``060``
-      - SAP
-      - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0002.NATIO_Nationality
       - Code for the person's nationality
       - ``012``, ``060``
-      - SAP
-      - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0002.NCHMC_Last Name (Field for Search Help)
-      - Uppercase version of the person's last name for search purposes.
-      - ``SMITH``
       - SAP
       - PA0002 - HR Master Record: Infotype 0002 (Personal Data)
       - N/A
@@ -1023,15 +870,6 @@ Data Dictionary
       - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
 
     * - DM_Person
-      - PA0008.EIN03_Time/Measurement Unit
-      - Unit of time or measurement for the person's payroll data (field 03)
-      - ``030``
-      - SAP
-      - PA0008 - HR Master Record: Infotype 0008 (Basic Pay)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
       - PA0008.ITXEX_Text Exists for Infotype
       - Shows whether text is stored for this SAP Infotype
       - ``X``, ``NULL``
@@ -1044,42 +882,6 @@ Data Dictionary
       - PA0008.LGA01_Wage Type
       - Wage type applied to the person in payroll (field 01).
       - ``0010``
-      - SAP
-      - PA0008 - HR Master Record: Infotype 0008 (Basic Pay)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0008.LGA02_Wage Type
-      - Wage type applied to the person in payroll (field 02).
-      - ``0032``, ``0080``
-      - SAP
-      - PA0008 - HR Master Record: Infotype 0008 (Basic Pay)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0008.LGA03_Wage Type
-      - Wage type applied to the person in payroll (field 03).
-      - ``0032``, ``0050``, ``0080``
-      - SAP
-      - PA0008 - HR Master Record: Infotype 0008 (Basic Pay)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0008.LGA04_Wage Type
-      - Wage type applied to the person in payroll (field 04).
-      - ``0050``, ``0270``
-      - SAP
-      - PA0008 - HR Master Record: Infotype 0008 (Basic Pay)
-      - N/A
-      - Inserted unchanged from ``SAP.dbo.[20-PA_HRP]`` into ``DM.dbo.DM_Person``.
-
-    * - DM_Person
-      - PA0008.LGA05_Wage Type
-      - Wage type applied to the person in payroll (field 05).
-      - ``0050``, ``0350``
       - SAP
       - PA0008 - HR Master Record: Infotype 0008 (Basic Pay)
       - N/A

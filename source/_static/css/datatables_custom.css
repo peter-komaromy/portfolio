@@ -490,7 +490,6 @@ button.colref-open-icon:hover {
 
 /* ============================================================
    DataTables dark-mode fixes
-   Keep this block last.
    ============================================================ */
 
 html[data-theme="dark"] .dt-container {
@@ -635,7 +634,6 @@ html[data-theme="dark"] .dt-container table.dataTable.dtr-inline.collapsed > tbo
 
 /* ============================================================
    ColumnControl dropdown dark-mode fixes
-   Keep this block last.
    ============================================================ */
 
 html[data-theme="dark"] .dt-container .dtcc-dropdown {
@@ -645,15 +643,7 @@ html[data-theme="dark"] .dt-container .dtcc-dropdown {
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.45) !important;
 }
 
-html[data-theme="dark"] .dt-container .dtcc-dropdown :is(
-    label,
-    span,
-    div,
-    p,
-    button,
-    input,
-    select
-) {
+html[data-theme="dark"] .dt-container .dtcc-dropdown :is( label, span, div, p, button, input, select ) {
     color: var(--dt-dark-text) !important;
 }
 

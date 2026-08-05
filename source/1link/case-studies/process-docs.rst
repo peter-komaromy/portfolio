@@ -1,10 +1,9 @@
-Screen Mapping
-==============
-
-
-A list of key screen interactions performed by the bot with their variables and XPaths specified.
+Reference
+=========
 
 .. rubric:: *Sample 2*
+
+See below for a list of key screen interactions with their variables and XPaths specified.
 
 Report Download
 ^^^^^^^^^^^^^^^

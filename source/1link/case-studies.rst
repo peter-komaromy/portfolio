@@ -53,6 +53,7 @@ Sanitized reconstructions with synthetic names, systems, and values.
    :hidden:
    :maxdepth: 1
 
-   case-studies/portal-ux
+   
    case-studies/data-dictionary
+   case-studies/portal-ux
    case-studies/process-docs

@@ -23,15 +23,7 @@ Case Studies
 Sanitized reconstructions with synthetic names, systems, and values.
 
 .. grid:: 1 1 3 3
-   :gutter: 2
-
-   .. grid-item-card:: Portal UX
-      :shadow: sm
-      :class-card: sd-rounded-2 case-study-card
-
-      Entry points, navigation, onboarding paths, and maintenance links.
-
-      :doc:`Open case study <case-studies/portal-ux>`
+   :gutter: 2   
 
    .. grid-item-card:: Data Dictionary
       :shadow: sm
@@ -41,11 +33,19 @@ Sanitized reconstructions with synthetic names, systems, and values.
 
       :doc:`Open case study <case-studies/data-dictionary>`
 
-   .. grid-item-card:: Process Docs
+   .. grid-item-card:: Concept Article
       :shadow: sm
       :class-card: sd-rounded-2 case-study-card
 
-      Process logic, data-model context, and task-based procedures.
+      The process logic of preparing select tables for joins.
+
+      :doc:`Open case study <case-studies/portal-ux>`
+   
+   .. grid-item-card:: Reference
+      :shadow: sm
+      :class-card: sd-rounded-2 case-study-card
+
+      Screen interactions with their variables and XPaths specified.
 
       :doc:`Open case study <case-studies/process-docs>`
 

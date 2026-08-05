@@ -1,7 +1,7 @@
 Reference
 =========
 
-.. rubric:: *Sample 2*
+.. rubric:: *Sample 3*
 
 See below for a list of key screen interactions with their variables and XPaths specified.
 

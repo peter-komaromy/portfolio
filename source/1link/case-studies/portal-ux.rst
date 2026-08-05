@@ -1,7 +1,7 @@
 Concept Article
 ===============
 
-.. rubric:: *Sample 3*
+.. rubric:: *Sample 2*
 
 After extraction, all tables are prepared so they have a ``PERNR`` / ``USRID`` / email. For a summary of the logic applied to each, see the flowcharts below.
 

@@ -1,5 +1,5 @@
-Concept Article
-===============
+Preparing SAP Tables for Joins
+==============================
 
 .. rubric:: *Sample 2*
 

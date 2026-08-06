@@ -1,5 +1,5 @@
-Reference
-=========
+Automation Screen Reference
+===========================
 
 .. rubric:: *Sample 3*
 

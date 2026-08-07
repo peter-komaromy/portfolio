@@ -33,19 +33,19 @@ Sanitized reconstructions with synthetic names, systems, and values.
 
       :doc:`Open case study <case-studies/data-dictionary>`
 
-   .. grid-item-card:: Concept Article
+   .. grid-item-card:: SAP Table Logic
       :shadow: sm
       :class-card: sd-rounded-2 case-study-card
 
-      The process logic of preparing select tables for joins.
+      Filtering rules, validation flags and join conditions.
 
       :doc:`Open case study <case-studies/portal-ux>`
    
-   .. grid-item-card:: Reference
+   .. grid-item-card:: Screen Reference
       :shadow: sm
       :class-card: sd-rounded-2 case-study-card
 
-      Screen interactions with their variables and XPaths specified.
+      Screen interactions, variables, and XPath expressions.
 
       :doc:`Open case study <case-studies/process-docs>`
 

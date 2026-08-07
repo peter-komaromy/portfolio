@@ -5,7 +5,7 @@
 
    <style>
       .bd-main .bd-content .bd-article-container { max-width: 100%; }
-      .bd-page-width { max-width: 100%; }
+      /* .bd-page-width { max-width: 100%; } */
       .case-study-card { height: 100%; }
       .case-study-card .sd-card-body { display: flex; flex-direction: column; }
       .case-study-card .sd-card-body > p:last-child { margin-top: auto; }

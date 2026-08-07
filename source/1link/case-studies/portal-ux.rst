@@ -1,5 +1,5 @@
-Preparing SAP Tables for Joins
-==============================
+SAP Table Logic
+===============
 
 .. rubric:: *Sample 2*
 

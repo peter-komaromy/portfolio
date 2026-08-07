@@ -14,7 +14,7 @@
       .sd-card-title { color: var(--card-title-color); }
    </style>
 
-.. rst-class:: case-study-note pst-primary-sidebar-narrow
+.. rst-class:: case-study-note
 
 
 Case Studies

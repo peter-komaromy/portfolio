@@ -1,6 +1,8 @@
 SAP Table Logic
 ===============
 
+Different identifiers and record rules made the preparation of several SAP tables difficult to verify. I converted the logic into flowcharts that separate filtering, validation, and join conditions.
+
 .. rubric:: *Sample 2*
 
 After extraction, all tables are prepared so they have a ``PERNR`` / ``USRID`` / email. For a summary of the logic applied to each, see the flowcharts below.

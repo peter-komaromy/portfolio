@@ -1,12 +1,11 @@
 Screen Reference
 ================
 
+An automation relied on screen variables and XPath expressions across several application areas. I consolidated them into a task-based reference for easier lookup and maintenance.
+
 .. rubric:: *Sample 3*
 
 See below for a list of key screen interactions with their variables and XPaths specified.
-
-Report Download
-^^^^^^^^^^^^^^^
 
 .. rst-class:: img-caption-top
 
@@ -48,9 +47,6 @@ Report Download
     $sXP_spinner = '//div[@class="spinner"]'
 
 ----------------------------------------------------------------------------------------------------------
-
-Requisiton
-^^^^^^^^^^
 
 .. rst-class:: img-caption-top
 
@@ -96,9 +92,6 @@ Requisiton
     $sXP_Requisition_noRecords = '//tr[@class="noRecords"]'
 
 ------------------------------------------------------------------------------------------------
-
-Applications
-^^^^^^^^^^^^
 
 .. rst-class:: img-caption-top
 
@@ -167,9 +160,6 @@ Applications
     $sXP_Application_recordcount = '//*[@id="tabItem_tab__1"]//div[@class="recordCount"]'
 
 ------------------------------------------------------------------------------------------------
-
-Applicant Card & Flags
-^^^^^^^^^^^^^^^^^^^^^^
 
 .. rst-class:: img-caption-top
 
@@ -259,9 +249,6 @@ Applicant Card & Flags
 
 -------------------------------------------------------------------------------------------
 
-Offer Card
-^^^^^^^^^^
-
 .. rst-class:: img-caption-top
 
 *Offer Card*
@@ -303,9 +290,6 @@ Offer Card
     $sXP_Offer_PositionInfoElement = '//div[@id="sPositionNo_1_fieldInfo"]'
 
 -----------------------------------------------------------------------------------------------
-
-User Records
-^^^^^^^^^^^^
 
 .. rst-class:: img-caption-top
 
@@ -395,7 +379,5 @@ User Records
     $sXP_User_PositionInfoElement = '//div[@id="sPositionNo_1_fieldInfo"]'
     $sXP_User_PERNR = '//input[@id="sPerNr_1"]'
     $sXP_User_Index = '//input[@id="sIndex_1"]'
-
-|br|
 
 |br|

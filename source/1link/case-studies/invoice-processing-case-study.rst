@@ -385,6 +385,10 @@ results so that Blue Prism can decide whether processing may continue.
 
 The documentation also distinguishes the following outcomes:
 
+.. rst-class:: img-caption-top
+
+*Workflow outcomes*
+
 .. list-table::
   :header-rows: 1
   :widths: 30 30 40
@@ -411,6 +415,10 @@ The documentation also distinguishes the following outcomes:
 -------------------
 
 I documented existing controls separately from recommended improvements.
+
+.. rst-class:: img-caption-top
+
+*Security controls and recommendations*
 
 .. list-table::
   :header-rows: 1
@@ -447,6 +455,10 @@ operation.
 7.1 Matching phases
 -------------------
 
+.. rst-class:: img-caption-top
+
+*Vendor name matching flow*
+
 .. container:: tb-blue-rule-wide custom-mermaid
 
   .. mermaid::
@@ -468,6 +480,10 @@ operation.
 
 7.2 Controls against False Positives
 ------------------------------------
+
+.. rst-class:: img-caption-top
+
+*Vendor matching controls*
 
 .. list-table::
   :header-rows: 1
@@ -563,6 +579,10 @@ to reach either ``processed`` or ``failed`` before the next case begins.
 
 The source analysis revealed limitations that were important for maintainers
 but easy to miss in the implementation.
+
+.. rst-class:: img-caption-top
+
+*Operational constraints and consequences*
 
 .. list-table::
   :header-rows: 1

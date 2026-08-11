@@ -162,11 +162,7 @@ implementation detail only when required.
 The first model shows the systems involved and separates orchestration,
 financial processing, cloud extraction, and reporting.
 
-.. rst-class:: img-caption-top
-
-*System architecture*
-
-.. container:: tb-blue-rule-wide custom-mermaid
+.. rubric:: *System architecture*
 
   .. mermaid::
 

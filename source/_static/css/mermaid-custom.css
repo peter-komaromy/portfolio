@@ -56,10 +56,22 @@
     margin-top: 0em;
 }
 
+/*
 .custom-mermaid .mermaid-container>pre {
     display: contents !important;
 }
+*/
 
 .custom-mermaid .mermaid-container {
     padding-bottom: 2rem;
+}
+
+.custom-mermaid .mermaid-container > pre.mermaid {
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: normal;
 }

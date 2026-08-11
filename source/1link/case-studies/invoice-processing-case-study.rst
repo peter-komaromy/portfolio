@@ -1,6 +1,6 @@
-========================================
-Reverse-engineering Invoice Processing
-========================================
+==========================
+Reverse-engineering an RPA
+==========================
 
 1. Case Study
 =============
@@ -69,10 +69,7 @@ Maps system responsibilities and the decision path for one invoice case.
         BI -->|"Read for reporting"| SQL
 
 
-Per-case workflow
-^^^^^^^^^^^^^^^^^
-
-Reduces low-level RPA stages to the decisions that determine automatic or manual handling.
+:blue-bold:`Per-case workflow`: Reduces low-level RPA stages to the decisions that determine automatic or manual handling.
 
 .. rst-class:: img-caption-top
 
@@ -162,10 +159,7 @@ Sample 3: Interface Contract
 
 Documents the Azure workflow as a request, response, failure, and security contract.
 
-Request
-^^^^^^^
-
-The workflow accepts an HTTP ``POST`` request.
+:blue-bold:`Request`: The workflow accepts an HTTP ``POST`` request.
 
 .. code-block:: json
 
@@ -212,10 +206,7 @@ The workflow accepts an HTTP ``POST`` request.
     - Supplies known SAP bank-account records for validation.
 
 
-Response
-^^^^^^^^
-
-The response combines extracted values, confidence scores, and validation results.
+:blue-bold:`Response`: Combines extracted values, confidence scores, and validation results.
 
 .. code-block:: json
 
@@ -266,8 +257,7 @@ The documentation also distinguishes the following outcomes:
     - Apply the RPA validation rules before attempting the SAP write.
 
 
-Security record
-^^^^^^^^^^^^^^^
+:blue-bold:`Security record`
 
 .. rst-class:: img-caption-top
 
@@ -301,8 +291,7 @@ Sample 4: Validation Logic
 Explains how vendor matching combines normalization, several fuzzy scores, and a full-text fallback while limiting false positives.
 
 
-Matching phases
-^^^^^^^^^^^^^^^
+:blue-bold:`Matching phases`
 
 .. rst-class:: img-caption-top
 
@@ -327,8 +316,7 @@ Matching phases
         PASS2 -->|No| REVIEW["Report best candidate for manual review"]
 
 
-Controls against False Positives
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:blue-bold:`Controls against False Positives`
 
 .. rst-class:: img-caption-top
 
@@ -392,8 +380,7 @@ Separates recoverable case failures from failures that make continued processing
      - Preserve available exception details and proceed to controlled finalization.
 
 
-Status lifecycle
-^^^^^^^^^^^^^^^^
+:blue-bold:`Status lifecycle`
 
 .. rst-class:: img-caption-top
 
@@ -415,10 +402,7 @@ Status lifecycle
 Every recovery path must set the case to ``processed`` or ``failed`` before the next case begins.
 
 
-Operational constraints
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Records constraints that were visible only in implementation or configuration.
+:blue-bold:`Operational Constraints`: Records constraints that were visible only in implementation or configuration.
 
 .. rst-class:: img-caption-top
 

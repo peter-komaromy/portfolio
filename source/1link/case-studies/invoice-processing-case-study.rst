@@ -16,7 +16,6 @@ Reverse-engineering an RPA
 2. Work Samples
 ===============
 
-
 Sample 1: Architecture and Workflow
 -----------------------------------
 

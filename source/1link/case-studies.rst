@@ -22,7 +22,7 @@ Case Studies
 
 Sanitized reconstructions with synthetic names, systems, and values.
 
-.. grid:: 1 1 3 3
+.. grid:: 2
    :gutter: 2   
 
    .. grid-item-card:: Data Dictionary
@@ -32,6 +32,14 @@ Sanitized reconstructions with synthetic names, systems, and values.
       Searchable field documentation with lineage, filters, and notes.
 
       :doc:`Open case study <case-studies/data-dictionary>`
+
+   .. grid-item-card:: Reverse-engineering an RPA
+      :shadow: sm
+      :class-card: sd-rounded-2 case-study-card
+
+      Reconstruction of an unattended invoice-processing system
+
+      :doc:`Open case study <case-studies/invoice-processing-case-study>`
 
    .. grid-item-card:: SAP Table Logic
       :shadow: sm
@@ -52,8 +60,8 @@ Sanitized reconstructions with synthetic names, systems, and values.
 .. toctree::
    :hidden:
    :maxdepth: 1
-
    
    case-studies/data-dictionary
+   case-studies/invoice-processing-case-study
    case-studies/portal-ux
    case-studies/process-docs

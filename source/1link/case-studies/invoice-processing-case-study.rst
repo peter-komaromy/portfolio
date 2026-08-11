@@ -164,45 +164,45 @@ financial processing, cloud extraction, and reporting.
 
 .. rubric:: *System architecture*
 
-  .. mermaid::
+.. mermaid::
 
-    flowchart TB
-        subgraph CASES["Case management boundary"]
-            CASESVC["Case queue and attachments"]
-        end
+  flowchart TB
+      subgraph CASES["Case management boundary"]
+          CASESVC["Case queue and attachments"]
+      end
 
-        subgraph RPA["RPA runtime boundary"]
-            BP["Blue Prism orchestrator"]
-        end
+      subgraph RPA["RPA runtime boundary"]
+          BP["Blue Prism orchestrator"]
+      end
 
-        subgraph CORE["Core financial boundary"]
-            SAPREAD["SAP read operations"]
-            SAPPARK["SAP invoice parking"]
-        end
+      subgraph CORE["Core financial boundary"]
+          SAPREAD["SAP read operations"]
+          SAPPARK["SAP invoice parking"]
+      end
 
-        subgraph CLOUD["Cloud services boundary"]
-            LOGIC["Azure Logic Apps"]
-            EXTRACT["Document extraction"]
-            VALIDATE["Validation function"]
-        end
+      subgraph CLOUD["Cloud services boundary"]
+          LOGIC["Azure Logic Apps"]
+          EXTRACT["Document extraction"]
+          VALIDATE["Validation function"]
+      end
 
-        subgraph DATA["Reporting boundary"]
-            SQL[("Processing results database")]
-            BI["Business intelligence reports"]
-        end
+      subgraph DATA["Reporting boundary"]
+          SQL[("Processing results database")]
+          BI["Business intelligence reports"]
+      end
 
-        CASESVC -->|"Case fields and invoice"| BP
-        BP -->|"Vendor and purchase order lookups"| SAPREAD
-        SAPREAD -->|"Supporting financial data"| BP
-        BP -->|"Invoice and reference data"| LOGIC
-        LOGIC --> EXTRACT
-        LOGIC --> VALIDATE
-        LOGIC -->|"Extracted and validated fields"| BP
-        BP -->|"Validated invoice data"| SAPPARK
-        SAPPARK -->|"Parking result"| BP
-        BP -->|"Status and result"| CASESVC
-        BP -->|"Audit and processing result"| SQL
-        BI -->|"Read for reporting"| SQL
+      CASESVC -->|"Case fields and invoice"| BP
+      BP -->|"Vendor and purchase order lookups"| SAPREAD
+      SAPREAD -->|"Supporting financial data"| BP
+      BP -->|"Invoice and reference data"| LOGIC
+      LOGIC --> EXTRACT
+      LOGIC --> VALIDATE
+      LOGIC -->|"Extracted and validated fields"| BP
+      BP -->|"Validated invoice data"| SAPPARK
+      SAPPARK -->|"Parking result"| BP
+      BP -->|"Status and result"| CASESVC
+      BP -->|"Audit and processing result"| SQL
+      BI -->|"Read for reporting"| SQL
 
 
 5.1 Per-case workflow

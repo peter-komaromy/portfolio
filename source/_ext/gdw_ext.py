@@ -155,40 +155,6 @@ class VOnlyDirective(SphinxDirective):
         return container.children
 
 # ---------------------------------------------------------------------------
-'''
-class CustomCalloutDirective(Directive):
-    has_content = True
-    option_spec = {
-        "title": directives.unchanged_required,
-        "icon": directives.unchanged,
-    }
-
-    def run(self):
-        self.assert_has_content()
-        title_text = html.escape(self.options.get("title", "Note"))
-        icon_class = html.escape(self.options.get("icon", ""), quote=True)
-
-        outer_html_start = f"""
-<div class="custom-callout-outer">
-  <div class="callout-header">
-    <i class="{icon_class}"></i>
-    <span class="callout-title">&nbsp;{title_text}</span>
-  </div>
-  <div class="custom-callout-body">
-"""
-        outer_html_end = """
-  </div>
-</div>
-"""
-        container = nodes.container()
-        container += nodes.raw("", outer_html_start, format="html")
-        self.state.nested_parse(self.content, self.content_offset, container)
-        container += nodes.raw("", outer_html_end, format="html")
-        return [container]
-
-'''
-
-# -----------------------------------------------------------------------------
 
 _INLINE_BOOTSTRAP_INIT = r"""
 document.addEventListener('DOMContentLoaded', function() {
@@ -269,7 +235,6 @@ def setup(app):     # plug the new role/directive to Sphinx (requirement)
     roles.register_local_role("colrefopen", ColRefOpenRole())
 
     # Directives
-    # app.add_directive("callout", CustomCalloutDirective)
     app.add_directive("colref-detail", ColRefDetailDirective)
     app.add_config_value("docs_version", "fabric", "env")
     app.add_directive("vonly", VOnlyDirective)

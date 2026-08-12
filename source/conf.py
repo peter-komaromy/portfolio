@@ -65,8 +65,7 @@ html_js_files = [
     "js/colref-datatables-init.js",      # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/colref-offcanvas.js",
-    "js/mermaid-fullscreen-zoom.js",
-    #"js/sidebar-wip-dim.js",            # class you can apply to pages in development to dim their sidebar links
+    "js/mermaid-fullscreen-zoom.js"
 ]
 
 
@@ -103,24 +102,20 @@ datatables_js  = "js/datatables.min.js"
 datatables_css = "css/datatables.min.css"
 datatables_class = "datatable-disabled" # set to something non-existing which is never used
 datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
-
-# For HTML: keep as "raw" (client-side JS rendering); # For PDF/LaTeX: switch to "png" and ensure mmdc is installed
-mermaid_output_format = "raw"
+mermaid_output_format = "raw" # Mermaid: For HTML, keep as "raw" (client-side JS rendering); # For PDF/LaTeX, switch to "png" and ensure mmdc is installed
 mermaid_fullscreen = True
 mermaid_height = "600px"  # Inline preview
 mermaid_include_elk = True
 mermaid_fullscreen_button = "🔍"
 mermaid_d3_zoom = False  # the extension's built-in pan and wheel-zoom. It adds unlimited zoom both in and out when scroolwheeled and unlimited whitespace all around the image when panned. Disabled here because we need reasonable limits to these functions. To control those limits, custom js is added (see mermaid-fullscreen-zoom.js)
-
-# Optional: customize the injected Mermaid.js initialization (Useful for setting theme, font, or disabling security restrictions)
-# we are on version 2.0.1 which recommends mermaid_init_config:
 mermaid_init_config = {
     "startOnLoad": False,
     "sequence": {
         "useMaxWidth": True,
     },
 }
-
+# Optional: customize the injected Mermaid.js initialization (Useful for setting theme, font, or disabling security restrictions)
+# We are on version 2.0.1 which recommends mermaid_init_config (as above).
 # The 1.1.0 version relied on mermaid_init_js:
 # mermaid_init_js = """
 #    mermaid.initialize({
@@ -128,9 +123,7 @@ mermaid_init_config = {
 #        theme: 'default',
 #        sequence: { useMaxWidth: true },
 #    });
-
 # on why mermaid_init_js still worked for us: https://raw.githubusercontent.com/mgaitan/sphinxcontrib-mermaid/2.0.1/sphinxcontrib/mermaid/__init__.py
-
 
 # Only relevant if mermaid_output_format = "png" or "svg"
 # These are real mmdc CLI flags: https://github.com/mermaid-js/mermaid-cli

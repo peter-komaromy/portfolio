@@ -241,26 +241,6 @@ See below for a list of key screen interactions with their variables and XPaths 
     $sXP_Status_TargetStatusRow = '//*[@id="ctl00_Main__objApplicationSelect"]/option[contains(text(),"' & $sStatusOnboardingSurvey & '")]'
     $sJS_Status_Next  # JS that the "next" button calls: 'PageCallBack("next")'    
 
------
-
-.. rst-class:: img-caption-top
-
-*Confirm Status Change*
-
-.. container:: tb-blue-rule-wide
-
-    .. image:: /_static/png/TMS_Case_Closure/ScreenMapping_10b.png
-        :align: center
-        :width: 70%
-        :class: tb-blue-rule-wide
-        :alt: TMS_Case_Closure
-
-.. code-block:: powershell
-    :linenos:
-    :lineno-start: 3
-
-    $sXP_Status_StatusSubmit = '//*[@id="SubmitButton"]'  
-
 -------------------------------------------------------------------------------------------
 
 .. rst-class:: img-caption-top

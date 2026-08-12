@@ -35,14 +35,13 @@ def _slug(s: str) -> str:
 # -------------------------------------------------------------
 
 class BootstrapTooltipRole(SphinxRole):  # declared in a class -- extends the SphinxRole class
-    """
-    Usage:
-      :bstooltip:`Label <Tooltip text>`
-      :bstooltip:`Same label and tip`
     
-    must define a run method (requirement);
-    the main logic of the role; return: a tuple with a list of inline-level docutils nodes (and optionally, a list of system message nodes)
-    """
+    # Usage:
+    #  :bstooltip:`Label <Tooltip text>`
+    #  :bstooltip:`Same label and tip`
+    
+    # must define a run method (requirement);
+    # the main logic of the role; return: a tuple with a list of inline-level docutils nodes (and optionally, a list of system message nodes)    
 
     def run(self):                       
         text = self.text.strip()
@@ -65,11 +64,11 @@ class BootstrapTooltipRole(SphinxRole):  # declared in a class -- extends the Sp
 # -----------------------------------------------------------------
 
 class ColRefOpenRole(SphinxRole):
-    """
-    Usage:
-      View details: :colrefopen:`my_detail_id`               -> icon-only button
-      View details: :colrefopen:`View logic <my_detail_id>`  -> text button
-    """
+    
+    # Usage:
+    #   View details: :colrefopen:`my_detail_id`               -> icon-only button
+    #   View details: :colrefopen:`View logic <my_detail_id>`  -> text button
+    
     def run(self):
         text = self.text.strip()
 
@@ -103,13 +102,13 @@ class ColRefOpenRole(SphinxRole):
 # ---------------------------------------------------------------------------
 
 class ColRefDetailDirective(Directive):
-    """
-    Usage:
-      .. colref-detail:: my_detail_id
-         :title: Case Number
+    
+    # Usage:
+    #  .. colref-detail:: my_detail_id
+    #     :title: Case Number
 
-         (full content shown in offcanvas)
-    """
+    #     (full content shown in offcanvas)
+    
     has_content = True
     required_arguments = 1
     option_spec = {"title": directives.unchanged_required}
@@ -156,7 +155,7 @@ class VOnlyDirective(SphinxDirective):
         return container.children
 
 # ---------------------------------------------------------------------------
-
+'''
 class CustomCalloutDirective(Directive):
     has_content = True
     option_spec = {
@@ -187,6 +186,7 @@ class CustomCalloutDirective(Directive):
         container += nodes.raw("", outer_html_end, format="html")
         return [container]
 
+'''
 
 # -----------------------------------------------------------------------------
 
@@ -269,7 +269,7 @@ def setup(app):     # plug the new role/directive to Sphinx (requirement)
     roles.register_local_role("colrefopen", ColRefOpenRole())
 
     # Directives
-    app.add_directive("callout", CustomCalloutDirective)
+    # app.add_directive("callout", CustomCalloutDirective)
     app.add_directive("colref-detail", ColRefDetailDirective)
     app.add_config_value("docs_version", "fabric", "env")
     app.add_directive("vonly", VOnlyDirective)

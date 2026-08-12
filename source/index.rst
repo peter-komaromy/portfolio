@@ -60,76 +60,30 @@
                :gutter: 4
 
                .. grid-item::
-                  :columns: 3
+                  :columns: 4
          
                .. grid-item::
                   :columns: 2
          
-                  .. button-ref:: 1link/case-studies
+                  .. button-ref:: 1_case_studies/case-studies
                      :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
 
-                     View case studies
+                     View case studies               
 
                .. grid-item::
                   :columns: 2
 
-                  .. button-ref:: 2link/writing-samples
+                  .. button-ref:: 2_cv/cv
                      :ref-type: doc
                      :color: primary
                      :class: sd-mt-2
 
-                     View writing samples
+                     View CV
 
                .. grid-item::
-                  :columns: 2
-
-                  .. button-ref:: 3link/cv
-                     :ref-type: doc
-                     :color: primary
-                     :class: sd-mt-2
-
-                     Download CV
-
-               .. grid-item::
-                  :columns: 3
-
-   .. grid:: 1 2 2 4
-      :gutter: 2
-
-      .. grid-item-card:: Documentation Design
-         :shadow: sm
-         :class-card: sd-rounded-2
-         
-         Navigation, entry points, reusable templates, and page structures.
-
-         :doc:`Open documentation design <1link/case-studies/portal-ux>`
-
-      .. grid-item-card:: Data Documentation
-         :shadow: sm
-         :class-card: sd-rounded-2
-         
-         Lineage context, source logic, and data dictionary patterns.
-
-         :doc:`Open data documentation <1link/case-studies/data-dictionary>`
-
-      .. grid-item-card:: Writing Samples
-         :shadow: sm
-         :class-card: sd-rounded-2
-         
-         Procedures, concepts, references, and rewrite examples.
-
-         :doc:`Open writing samples <2link/writing-samples>`
-
-      .. grid-item-card:: Docs-as-Code
-         :shadow: sm
-         :class-card: sd-rounded-2
-         
-         Sphinx, GitHub Pages, and version-controlled publishing.
-
-         :doc:`Open docs-as-code <2link/writing-samples>`
-      
+                  :columns: 4      
 
    .. div:: gdw-meta
 
@@ -164,9 +118,8 @@
    :hidden:
    :includehidden:
    
-   1link/case-studies
-   2link/writing-samples
-   3link/cv
+   1_case_studies/case-studies
+   2_cv/cv
 
 
 

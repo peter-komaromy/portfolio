@@ -19,11 +19,8 @@ Reverse-engineering an RPA
     :blue-bold:`Demonstrates` - System analysis, information architecture, interface documentation, process visualization, and docs-as-code authoring.
 
 
-2. Work Samples
-===============
-
-Sample 1: Architecture and Workflow
------------------------------------
+Sample 1: Architecture & Workflow
+---------------------------------
 
 Maps system responsibilities and the decision path for one invoice case.
 
@@ -73,6 +70,7 @@ Maps system responsibilities and the decision path for one invoice case.
         BP -->|"Audit and processing result"| SQL
         BI -->|"Read for reporting"| SQL
 
+-----
 
 :blue-bold:`Per-case workflow`: Reduces low-level RPA stages to the decisions that determine automatic or manual handling.
 
@@ -105,6 +103,7 @@ Maps system responsibilities and the decision path for one invoice case.
         UPDATE --> LOG
         LOG --> END(["Case complete"])
 
+-----
 
 Sample 2: Data Flows
 --------------------
@@ -158,11 +157,14 @@ classification.
     - Case result, timestamps, processing status, document identifiers, and error details
     - Confidential
 
+-----
 
 Sample 3: Interface Contract
 ----------------------------
 
 Documents the Azure workflow as a request, response, failure, and security contract.
+
+-----
 
 :blue-bold:`Request`: The workflow accepts an HTTP ``POST`` request.
 
@@ -210,6 +212,7 @@ Documents the Azure workflow as a request, response, failure, and security contr
     - Yes
     - Supplies known SAP bank-account records for validation.
 
+-----
 
 :blue-bold:`Response`: Combines extracted values, confidence scores, and validation results.
 
@@ -261,6 +264,7 @@ The documentation also distinguishes the following outcomes:
     - Success response with values, scores, and validation results
     - Apply the RPA validation rules before attempting the SAP write.
 
+-----
 
 :blue-bold:`Security record`
 
@@ -289,12 +293,14 @@ The documentation also distinguishes the following outcomes:
       storage and rotation requirements.
     - Recommendation
 
+-----
 
 Sample 4: Validation Logic
 --------------------------
 
 Explains how vendor matching combines normalization, several fuzzy scores, and a full-text fallback while limiting false positives.
 
+-----
 
 :blue-bold:`Matching phases`
 
@@ -320,6 +326,7 @@ Explains how vendor matching combines normalization, several fuzzy scores, and a
         PASS2 -->|Yes| ACCEPT2["Accept full text match"]
         PASS2 -->|No| REVIEW["Report best candidate for manual review"]
 
+-----
 
 :blue-bold:`Controls against False Positives`
 
@@ -353,6 +360,7 @@ Explains how vendor matching combines normalization, several fuzzy scores, and a
 
 Diagnostic output records the best value, score, method, source, and phase results for investigating borderline matches.
 
+-----
 
 Sample 5: Exceptions and Operations
 -----------------------------------
@@ -384,6 +392,7 @@ Separates recoverable case failures from failures that make continued processing
      - Initialization, case loop control, and finalization
      - Preserve available exception details and proceed to controlled finalization.
 
+-----
 
 :blue-bold:`Status lifecycle`
 
@@ -406,6 +415,7 @@ Separates recoverable case failures from failures that make continued processing
 
 Every recovery path must set the case to ``processed`` or ``failed`` before the next case begins.
 
+-----
 
 :blue-bold:`Operational Constraints`: Records constraints that were visible only in implementation or configuration.
 

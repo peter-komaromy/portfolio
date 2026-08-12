@@ -1,9 +1,23 @@
 Screen Reference
 ================
 
-An automation relied on screen variables and XPath expressions across several application areas. I consolidated them into a task-based reference for easier lookup and maintenance.
+|br|
 
-.. rubric:: *Sample 3*
+.. grid:: 1
+  :class-container: case-study-intro-grid
+
+  .. grid-item-card:: Documentation challenge
+    :columns: 9
+
+    :blue-bold:`Starting point` - An automation relied on screen variables and XPath expressions across several application areas.
+
+    :blue-bold:`Problem` - The screen interactions had no consolidated reference for lookup and maintenance.
+
+    :blue-bold:`Work` - Mapped each interaction to its screen, variable, and XPath in a task-based reference.
+
+    :blue-bold:`Demonstrates` - Automation analysis, information architecture, reference documentation, and docs-as-code authoring.
+
+.. rubric:: *Work Samples*
 
 See below for a list of key screen interactions with their variables and XPaths specified.
 

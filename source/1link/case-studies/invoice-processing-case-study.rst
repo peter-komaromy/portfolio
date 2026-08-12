@@ -2,15 +2,21 @@
 Reverse-engineering an RPA
 ==========================
 
-1. Case Study
-=============
+|br|
 
-.. rst-class:: no-bullets at-a-glance
+.. grid:: 1
+  :class-container: case-study-intro-grid
 
-- :blue-bold:`Starting point`: A 2,268-line process reference derived from Blue Prism XML and scattered implementation material.
-- :blue-bold:`Problem`: No single view to connect system boundaries, data flows, decisions, validation rules, failures, or states.
-- :blue-bold:`Work`: Reconstructed the system and turned the findings into five focused documentation samples.
-- :blue-bold:`Demonstrates`: System analysis, information architecture, interface documentation, process visualization, and docs-as-code authoring.
+  .. grid-item-card:: Documentation challenge
+    :columns: 9
+
+    :blue-bold:`Starting point` - A 2,268-line process reference derived from Blue Prism XML and scattered implementation material.
+
+    :blue-bold:`Problem` - No single view to connect system boundaries, data flows, decisions, validation rules, failures, or states.
+
+    :blue-bold:`Work` - Reverse-engineered the RPA to document its overall structure, logic, and behavior.
+
+    :blue-bold:`Demonstrates` - System analysis, information architecture, interface documentation, process visualization, and docs-as-code authoring.
 
 
 2. Work Samples

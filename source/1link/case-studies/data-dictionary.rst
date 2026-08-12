@@ -30,30 +30,26 @@ Data Dictionary
   .. grid-item-card:: Design approach
     :columns: 6
 
-    :blue-bold:`Purpose`
-    - Help data warehouse users look up and understand columns.
-    
-    :blue-bold:`Audience split`
-    - Business users needed quick answers. Operations users needed enough detail to verify data logic.
+    :blue-bold:`Purpose` - Help data warehouse users look up and understand columns.
 
-    :blue-bold:`UX constraint`  
-    - Adding every technical field to the main table would make the dictionary harder to use.
+    :blue-bold:`Audience split` - Business users needed quick answers. Operations users needed enough detail to verify data logic.
 
-    :blue-bold:`Solution`  
-    - A layered design: lookup fields stay visible while technical details open through row toggles and popover panels.
+    :blue-bold:`UX constraint` - Adding every technical field to the main table would make the dictionary harder to use.
+
+    :blue-bold:`Solution` - A layered design where lookup fields stay visible while technical details open through row toggles and popover panels.
     
   .. grid-item-card:: Skills shown
     :columns: 6
     :class-card: case-study-facts
 
     :blue-bold:`Research` - Checked warehouse tables and stored procedures in SSMS with T-SQL.
-    
+
     :blue-bold:`Content design` - Turned technical findings into definitions, examples, source context, and remarks.
-    
+
     :blue-bold:`Information architecture` - Kept business content visible and moved lineage, filters, and SQL logic into expandable details.
-    
+
     :blue-bold:`AI review` - Used AI to identify lineage candidates, then checked the results manually.
-    
+       
     :blue-bold:`Implementation` - Built the sample with Sphinx, DataTables, Python extensions, CSS, and JavaScript.
 
 

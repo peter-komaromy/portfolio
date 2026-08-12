@@ -1346,6 +1346,18 @@ img.pbi-inline-icon {
     margin-bottom: 1rem;
 }
 
+.case-study-intro-grid .sd-card-title {
+    color: var(--blue);
+}
+
+.case-study-intro-grid .sd-card-body {
+    padding: 1.5rem 2rem;
+}
+
+.case-study-intro-grid .sd-card-body > p {
+    margin-bottom: 4px;
+}
+
 .case-study-page .para-list,
 .case-study-page .para-list + ul.simple,
 .case-study-page .case-study-intro-grid + p {

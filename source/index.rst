@@ -104,13 +104,13 @@
 
       .. raw:: html
 
-         <a class="gdw-utility__link" href="#" target="_blank" rel="noopener">GitHub</a>
+         <a class="gdw-utility__link" href="https://peter-komaromy.github.io/portfolio/index.html" target="_blank" rel="noopener">GitHub</a>
          <span class="gdw-utility__sep" aria-hidden="true">|</span>
-         <a class="gdw-utility__link" href="#" target="_blank" rel="noopener">LinkedIn</a>
+         <a class="gdw-utility__link" href="http://www.linkedin.com/in/péter-komáromy" target="_blank" rel="noopener">LinkedIn</a>
          <span class="gdw-utility__sep" aria-hidden="true">|</span>
-         <a class="gdw-utility__link" href="#" target="_blank" rel="noopener">CV</a>
+         <a class="gdw-utility__link" href="https://peter-komaromy.github.io/portfolio/2_cv/cv.html" target="_blank" rel="noopener">CV</a>
          <span class="gdw-utility__sep" aria-hidden="true">|</span>
-         <a class="gdw-utility__link" href="#" target="_blank" rel="noopener">Contact</a>
+         <a class="gdw-utility__link" href="http://www.linkedin.com/in/péter-komáromy" target="_blank" rel="noopener">Contact</a>
 
 .. -----------------------------------------------------------------------------------------
    

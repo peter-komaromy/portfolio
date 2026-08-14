@@ -20,8 +20,8 @@ Experience
 ==========
 
 
-NTT DATA Group Corporation
---------------------------
+NTT DATA Group Corp.
+--------------------
 
 **Technical Writer** \| Budapest, Hungary | August 2024 to present
 

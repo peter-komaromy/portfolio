@@ -5,4 +5,4 @@ sphinx-copybutton
 sphinx-togglebutton
 sphinx-datatables==1.0.0
 sphinxcontrib-jquery
-sphinxcontrib.mermaid
+sphinxcontrib-mermaid==2.0.1

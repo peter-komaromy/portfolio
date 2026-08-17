@@ -108,7 +108,7 @@ mermaid_fullscreen = True
 mermaid_height = "600px"  # Inline preview
 mermaid_include_elk = True
 mermaid_fullscreen_button = "🔍"
-mermaid_d3_zoom = False  # the extension's built-in pan and wheel-zoom. It adds unlimited zoom both in and out when scroolwheeled and unlimited whitespace all around the image when panned. Disabled here because we need reasonable limits to these functions. To control those limits, custom js is added (see mermaid-fullscreen-zoom.js)
+mermaid_d3_zoom = False  # the extension's built-in pan and wheel-zoom. It adds unlimited zoom both in and out when scrollwheeled and unlimited whitespace all around the image when panned. Disabled here because we need reasonable limits to these functions. To control those limits, custom js is added (see mermaid-fullscreen-zoom.js)
 mermaid_init_config = {
     "startOnLoad": False,
     "sequence": {
@@ -117,6 +117,7 @@ mermaid_init_config = {
 }
 # Optional: customize the injected Mermaid.js initialization (Useful for setting theme, font, or disabling security restrictions)
 # We are on version 2.0.1 which recommends mermaid_init_config (as above).
+# Actually, we are now on 2.1.0 (2026-08-17).
 # The 1.1.0 version relied on mermaid_init_js:
 # mermaid_init_js = """
 #    mermaid.initialize({

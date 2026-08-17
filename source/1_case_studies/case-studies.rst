@@ -45,9 +45,9 @@ Sanitized reconstructions with synthetic names, systems, and values.
       :shadow: sm
       :class-card: sd-rounded-2 case-study-card
 
-      Filtering rules, validation flags and join conditions.
+      A versioned user guide organized by environment and data tool.
 
-      :doc:`Open case study <case-studies/portal-ux>`
+      :doc:`Open case study <case-studies/connection-guide>`
    
    .. grid-item-card:: Screen Reference
       :shadow: sm
@@ -63,5 +63,5 @@ Sanitized reconstructions with synthetic names, systems, and values.
    
    case-studies/data-dictionary
    case-studies/invoice-processing-case-study
-   case-studies/portal-ux
+   case-studies/connection-guide
    case-studies/process-docs

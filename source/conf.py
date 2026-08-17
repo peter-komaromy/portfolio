@@ -65,7 +65,8 @@ html_js_files = [
     "js/colref-datatables-init.js",      # for interactive tables (sphinx-datatables) to work properly
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/colref-offcanvas.js",
-    "js/mermaid-fullscreen-zoom.js"
+    "js/mermaid-fullscreen-zoom.js",
+    "js/connection-guide-platform.js"
 ]
 
 
@@ -102,7 +103,7 @@ datatables_js  = "js/datatables.min.js"
 datatables_css = "css/datatables.min.css"
 datatables_class = "datatable-disabled" # set to something non-existing which is never used
 datatables_options = "{}"               # string here left empty because we init in colref_datatables_init.js
-mermaid_output_format = "raw" # Mermaid: For HTML, keep as "raw" (client-side JS rendering); # For PDF/LaTeX, switch to "png" and ensure mmdc is installed
+mermaid_output_format = "raw" # For HTML, keep as "raw" (client-side JS rendering); # For PDF/LaTeX, switch to "png" and ensure mmdc is installed
 mermaid_fullscreen = True
 mermaid_height = "600px"  # Inline preview
 mermaid_include_elk = True

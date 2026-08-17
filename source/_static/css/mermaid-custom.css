@@ -80,3 +80,7 @@
 .custom-mermaid.mermaid-auto-height .mermaid-container > pre.mermaid > svg {
     height: auto !important;
 }
+
+pre.mermaid > svg {
+    padding-top: 10px;
+}

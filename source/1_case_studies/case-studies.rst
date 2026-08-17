@@ -41,7 +41,7 @@ Sanitized reconstructions with synthetic names, systems, and values.
 
       :doc:`Open case study <case-studies/invoice-processing-case-study>`
 
-   .. grid-item-card:: SAP Table Logic
+   .. grid-item-card:: Connection Guide
       :shadow: sm
       :class-card: sd-rounded-2 case-study-card
 

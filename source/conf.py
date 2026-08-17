@@ -66,7 +66,7 @@ html_js_files = [
     "js/colref-datatables-tooltips.js",  # popovers have now replaced tooltips for datatables but still, best not to drop this before thorough review
     "js/colref-offcanvas.js",
     "js/mermaid-fullscreen-zoom.js",
-    "js/connection-guide-platform.js"
+    "js/connection-guide-platform.js",
 ]
 
 

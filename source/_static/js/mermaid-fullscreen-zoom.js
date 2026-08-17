@@ -5,6 +5,7 @@
 
 (() => {
     const MAX_SCALE = 5;
+    const INITIAL_SCALE = 1.5;
     const PAD_RATIO = 0.04;
 
     function enableFullscreenZoom() {
@@ -94,7 +95,8 @@
         d3.select(svg)
             .on('.zoom', null)
             .call(zoom)
-            .call(zoom.transform, d3.zoomIdentity);
+            //.call(zoom.transform, d3.zoomIdentity)
+            .call(zoom.scaleTo, INITIAL_SCALE);
 
         svg.dataset.fsZoomBound = '1';
     }

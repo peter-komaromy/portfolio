@@ -28,7 +28,7 @@ Maps system responsibilities and the decision path for one invoice case.
 
 *System architecture*
 
-.. container:: tb-blue-rule-wide custom-mermaid
+.. container:: tb-blue-rule-wide custom-mermaid mermaid-auto-height
 
   .. mermaid::
 

@@ -2,9 +2,10 @@
    ---- Mermaid --------------------------------------------
    ========================================================= */
 
+/*
 .mermaid-container>pre>svg {
     height: auto !important;
-}
+} */
 
 /* div.mermaid-container-fullscreen>pre.mermaid>svg {
 	height: auto !important;
@@ -74,4 +75,8 @@
     border: 0;
     background: transparent;
     line-height: normal;
+}
+
+.custom-mermaid.mermaid-auto-height .mermaid-container > pre.mermaid > svg {
+    height: auto !important;
 }
